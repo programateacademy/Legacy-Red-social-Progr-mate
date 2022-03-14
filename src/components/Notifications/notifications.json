@@ -1,0 +1,37 @@
+[
+    {
+        "idNotifications": 20,
+        "idPost": 1,
+        "user_info": "Pedro Gómez",
+        "date": "Hace 2 horas",
+        "type": "Ha comentado tu publicación"
+    },
+    {
+        "idNotifications": 21,
+        "idPost": 2,
+        "user_info": "Maria Gómez",
+        "date": "Hace 2 horas",
+        "type": "Le gusta tu publicación"
+    },
+    {
+        "idNotifications": 22,
+        "idPost": 3,
+        "user_info": "Maria Gómez",
+        "date": "Hace 2 horas",
+        "type": "Le gusta tu publicación"
+    },
+    {
+        "idNotifications": 23,
+        "idPost": 4,
+        "user_info": "Diana Gómez",
+        "date": "Hace 2 horas",
+        "type": "Ha comentado tu publicación"
+    },
+    {
+        "idNotifications": 24,
+        "idPost": 4,
+        "user_info": "Jose Gómez",
+        "date": "Hace 2 horas",
+        "type": "Ha comentado tu publicación"
+    }
+]

@@ -1,0 +1,112 @@
+@font-face {
+    font-family: Gilroy-bold;
+    src: url("../../assets/fonts/Gilroy-ExtraBold.otf") format("opentype");
+  }
+  @font-face {
+    font-family: Gilroy-light;
+    src: url("../../assets/fonts/Gilroy-Light.otf") format("opentype");
+  }
+  
+  /*=============== REUSABLE CSS CLASSES ===============*/
+  .section {
+    padding: 3rem 0 2rem;
+    width: 100%;
+    height: 100vh;
+    background-color: #ececec;
+    font-family: Gilroy-bold;
+  }
+  .section__global {
+    max-width: 1128px;
+    margin: 0 auto;
+  }
+  /*=============== ==================== ===============*/
+  .containerForum {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .containerTitle {
+    margin-bottom: 20px;
+  }
+  .title {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+  }
+  .lineTitle {
+    width: 100%;
+    height: 3px;
+    border: none;
+  }
+  /*================== FORUM  =================*/
+  .forumAdd {
+    display: flex;
+    flex-direction: column;
+  }
+  .forumAdd label{
+      margin: 10px 0 7px 0;
+  }
+  
+  .inputs,
+  .inputSelect,
+  .textArea {
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    outline: none;
+  }
+  .textArea {
+    resize: none;
+    height: 100px;
+  }
+  .inputSelect{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .inputFile{
+    padding: 10px;
+  }
+  .btnAdd{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      column-gap: 5px;
+      padding: 7px 20px;
+      border-radius: 15px;
+      background-color: #FFCC02;
+      color: #010101;
+      font-size: 16px;
+      text-decoration: none;
+      font-family: Gilroy-light;
+      border: none;
+    }
+    .btn__question:hover {
+      background-color: black;
+      color: #FFCC02;
+    }
+
+  .error {
+    color: red;
+    font-size: 13px;
+    letter-spacing: 0.8px;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+    font-family: Gilroy-bold;
+  }
+  
+  @media (max-width: 640px) {
+      .containerForum {
+          width: 90%;
+      }
+  } 
+   

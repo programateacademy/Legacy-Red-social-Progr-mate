@@ -1,0 +1,264 @@
+@font-face {
+    font-family: Gilroy-bold;
+    src: url("../../assets/fonts/Gilroy-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Gilroy-light;
+    src: url("../../assets/fonts/Gilroy-Light.otf") format("opentype");
+}
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+.section {
+    padding: 3rem 0 2rem;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ececec;
+    font-family: Gilroy-bold;
+}
+
+.section__global {
+    max-width: 1128px;
+    margin: 0 auto;
+}
+
+.section__title {
+    display: flex;
+    justify-content: center;
+    column-gap: 5px;
+    margin: 0;
+    animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+    0% {
+        left: 100rem;
+        color: #ffcc02;
+        width: 85%;
+    }
+    100% {
+        left: 200rem;
+        left: 50%;
+        color: black;
+        width: 100%;
+    }
+}
+
+.section__lineTitle {
+    width: 100px;
+    border: 2px solid #ffcc02;
+}
+
+.section__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding-top: 10px;
+}
+
+/*=============== QUESTION COMPONENT ===============*/
+.section__options {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*=============== SEARCH COMPONENT ===============*/
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.searchBox {
+    position: relative;
+    width: 80%;
+}
+
+.searchButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0 10px 10px 0;
+}
+.searchInput {
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+    width: 100%;
+}
+.clearFilter {
+    position: absolute;
+    right: 2%;
+    top: 55px;
+    cursor: pointer;
+}
+
+/* .container__search{
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+.searchQuestion{
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  width: 80%;
+} */
+
+/*=============== SEARCH COMPONENT ===============*/
+
+.btn__container,
+.questionAnswer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.questionAnswer {
+    margin-top: 20px;
+}
+
+.btn__question {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    padding: 7px 20px;
+    border-radius: 15px;
+    background-color: #ffcc02;
+    color: #010101;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: Gilroy-light;
+    border: none;
+    font-weight: bold;
+}
+
+.btn__question:hover {
+    background-color: black;
+    color: #ffcc02;
+}
+.btn__container {
+    position: relative;
+}
+.dropdown_content {
+    position: absolute;
+    top: 105%;
+    right: 0;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+    font-weight: 500;
+    color: #333;
+    width: 170px;
+    overflow: scroll;
+    max-height: 300px;
+}
+.dropdown_content .dropdown_item {
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.dropdown_content .dropdown_item:hover {
+    background: #f4f4f4;
+}
+
+.questionContainerMain {
+    /*border: 2.2px solid #92c149;*/
+    border: 2.2px solid #ffc107;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    box-shadow: 0px 10px 10px -6px black;
+}
+
+.question,
+.tagsItems,
+.name,
+.dateQuestion {
+    margin: 0;
+}
+
+.containerQuestion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*
+.question {
+    font-size: 17px;
+    height: 3rem;
+    color: black;
+}
+*/
+
+.question {
+    font-size: 17px;
+    height: 3rem;
+    color: black;
+    /*text-shadow: 2px 2px 2px #ffcc02;*/
+}
+
+/* -----------------------------------------------------*/
+
+.dateQuestion {
+    font-size: 14px;
+}
+
+.tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.tagsItems {
+    border: 2.2px solid #92c149;
+    padding: 0.5rem 1rem;
+    background-color: #d7d7d7;
+    border-radius: 5px;
+    font-family: Gilroy-light;
+    letter-spacing: 1.5px;
+    box-shadow: 0px 10px 10px -6px black;
+}
+
+.infoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn__answer {
+    cursor: pointer;
+}
+
+@media (max-width: 640px) {
+    .questionContainerMain {
+        padding: 1rem;
+    }
+    .containerQuestion {
+        display: block;
+    }
+    .name {
+        margin-bottom: 10px;
+    }
+    .searchQuestion {
+        width: 100%;
+    }
+}
+
+@media (max-width: 580px) {
+    .infoContainer {
+        display: block;
+    }
+}

@@ -1,0 +1,66 @@
+.footer {
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    /* margin-top: 40px; */
+}
+.containerFooter {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+.logoProgramate,
+.logoEducamas {
+    width: 170px;
+    height: 48px;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+}
+
+.listRedes {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 5px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.copyright {
+    color: white;
+}
+/* Large (lg) */
+@media (max-width: 1024px) {
+    .containerFooter {
+        margin: 0 16px;
+    }
+}
+/* Medium (md) */
+@media (max-width: 768px) {
+    .logoProgramate,
+    .logoEducamas {
+        width: 150px;
+        height: 40px;
+    }
+    .logo {
+        width: 25px;
+        height: 25px;
+    }
+    .copyright {
+        font-size: 14px;
+    }
+}
+/* Small (sm) */
+@media (max-width: 640px) {
+    .containerFooter {
+        flex-direction: column;
+        row-gap: 15px;
+    }
+    .copyright {
+        font-size: 13px;
+    }
+}

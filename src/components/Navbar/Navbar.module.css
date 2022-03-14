@@ -1,0 +1,136 @@
+.globalNav {
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    z-index: 5;
+}
+.globalNavContent {
+    max-width: 1124px;
+    margin: 0 auto;
+}
+.navBar {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    justify-content: space-between;
+}
+
+.navList {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    column-gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+.navList a {
+    text-decoration: none;
+    color: black;
+}
+.navListItem {
+    width: 100px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navListItem:hover {
+    background-color: white;
+    color: #ffcc02;
+}
+
+.navListItem p {
+    margin: 0;
+}
+.containerPhoto {
+    display: flex;
+    align-items: center;
+}
+
+.photoProfile {
+    width: 55px;
+    height: 55px;
+}
+/*========================= Dropdown ========================= */
+.dropdownLogOut {
+    width: 30px;
+    height: 30px;
+    user-select: none;
+    margin: 0 5px;
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.dropdownBtn {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdownBtn:hover {
+    color: #ffcc02;
+}
+
+.dropdownContent {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    background: #fff;
+    box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+    color: #333;
+    width: 145px;
+    border-radius: 10px;
+}
+.dropdownContent a {
+    text-decoration: none;
+    color: black;
+}
+.dropdownOptions {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+}
+/*========================= End Dropdown ========================= */
+
+@media (max-width: 640px) {
+    .globalNavContent {
+        margin: 0 10px;
+    }
+    .navBar {
+        height: 60px;
+    }
+    .navListItem {
+        height: 60px;
+        width: 90px;
+    }
+    .iconoEducamas {
+        width: 45px;
+        height: 45px;
+    }
+    .photoProfile {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .navListItem {
+        width: 60px;
+    }
+    .navList {
+        column-gap: 10px;
+    }
+    .navListItem {
+        font-size: 14px;
+    }
+    .navListItem p {
+        display: none;
+    }
+}

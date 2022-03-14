@@ -1,0 +1,36 @@
+
+.container1{
+    width: 100%;
+    height: 100%;
+    display: flex; 
+}
+
+.container2{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.icon_cont{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title{
+    color: #FFCC02;
+    font-weight: 900;
+}
+
+.icon_cont2{
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}

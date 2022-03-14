@@ -1,0 +1,21 @@
+.imgNotFound{
+    width: 250px;
+    height: 250px;
+}
+
+.NotFound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+@media (min-width:768px) {
+    .imgNotFound{
+        width: 350px;
+        height: 350px;
+    }
+    
+  }

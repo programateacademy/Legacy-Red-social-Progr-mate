@@ -1,0 +1,73 @@
+/* ------------- LOGIN--------------- */
+.container-login-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #D7D7D7;
+}
+.container-login-page {
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  padding: 50px;
+  background-color: #fff;
+}
+.logo {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+.container-login-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0 !important;
+}
+.form {
+  margin-top: 40px;
+}
+.button-login {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #ffd808;
+  margin: 45px auto;
+  padding: 10px;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+}
+.container-login-page a {
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}
+
+.container-login-page p {
+  font-size: 14px;
+  cursor: pointer;
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+/* ------------- MEDIA QUERIES --------------- */
+@media (max-width: 400px) {
+  .container-login-page  {
+    height: 100vh;
+    border-radius: 0;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo {
+    margin: 0 auto;
+  }
+  .button-login {
+    margin: 20px auto;
+  }
+}

@@ -1,0 +1,116 @@
+/* Notifications */
+.main {
+    width: 100%;
+    display: flex;
+    float: right;
+    gap: 1%;
+    background-color: white;
+    border-radius: 15px;
+}
+.main h2 {
+    margin-left: 8%;
+}
+.containerHome {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.notificationContainer {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    /* float: right; */
+    align-items: center;
+    width: auto;
+    /* right: 0px; */
+    /* margin: auto; */
+
+    border-color: rgb(0, 0, 0, 0.1);
+
+    transition: 0.7s;
+    border-radius: 20px;
+    margin-right: 7%;
+}
+
+.notification {
+    margin-bottom: 10px;
+    border-bottom: 3px solid rgb(0, 0, 0, 0.1);
+    border-radius: 20px;
+    height: auto;
+}
+
+.notification ul {
+    padding-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-block-start: 4px;
+    margin-block-end: 4px;
+    list-style: none;
+    display: flex;
+    justify-content: start;
+}
+
+.notification ul li {
+    padding-left: 10px;
+}
+
+.first {
+    /*width: 10%;*/
+    font-weight: bold;
+}
+
+.notification .fuzzy {
+    color: rgb(87, 87, 87);
+}
+
+.notification .space {
+    margin-left: 6%;
+    margin-right: 6%;
+    width: 100%;
+}
+
+.notification .fuzzy {
+    color: rgb(87, 87, 87);
+}
+
+.small_space {
+    display: flex;
+    justify-content: end;
+    margin-left: 6%;
+    margin-right: 6%;
+    width: 70%;
+}
+
+/*
+.main.active {
+  position: relative;
+  width: 50%;
+  right: 0px;
+  min-height: 85vh;
+  background: rgb(206, 206, 206);
+  transition: 0.7s;
+}
+*/
+.topbar {
+    width: 100%;
+    height: 100%;
+    padding-left: 25px;
+}
+
+@media (min-width: 700px) {
+    .main {
+        display: flex;
+        /*flex-direction: column;
+      columns: 3; */
+        /* margin-top: 10rem; */
+        float: right;
+        /*margin-left: 68%; */
+        /*width: 100%;*/
+        gap: 1%;
+        /* margin-right: 2rem; */
+    }
+    .titleIcons {
+        width: 7%;
+        margin-right: 10px;
+    }
+}

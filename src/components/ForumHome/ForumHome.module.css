@@ -1,0 +1,77 @@
+@font-face {
+    font-family: Gilroy-bold;
+    src: url("../../assets/fonts/Gilroy-ExtraBold.otf") format("opentype");
+  }
+  
+  /*=============== REUSABLE CSS CLASSES ===============*/
+  .section {
+    padding: 5rem 0 2rem;
+    width: 100%;
+    height: 100vh;
+    background-color: #ececec;
+    font-family: Gilroy-bold;
+  }
+  .section__global {
+    max-width: 1128px;
+    margin: 0 auto;
+  }
+  .section__title {
+    display: flex;
+    justify-content: center;
+    column-gap: 5px;
+    margin: 0;
+  }
+  .section__lineTitle {
+    width: 200px;
+    border: 2px solid #ffcc02;
+  }
+  .section__container {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    padding-top: 50px;
+    margin: 0 15px;
+  }
+  .section__options {
+    width: 300px;
+    height: 300px;
+    background-color: #ffcc02;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+  }
+  .section__options:hover {
+    opacity: 0.7;
+  }
+  .section__options p {
+    font-family: Gilroy-bold;
+    font-size: 20px;
+    letter-spacing: 7px;
+  }
+  
+  @media (max-width: 640px) {
+    .section {
+      padding: 3rem 0 2rem;
+    }
+    .section__container {
+      flex-direction: column;
+      padding-top: 20px;
+      row-gap: 20px;
+    }
+    .section__options {
+      width: 90%;
+      height: 200px;
+      margin: 0 auto;
+    }
+    .section__options p {
+      font-family: Gilroy-bold;
+      font-size: 16px;
+      letter-spacing: 7px;
+    }
+    
+  }
