@@ -26,7 +26,7 @@
     width: 100%;
     max-width: 540px;
     border-radius: 15px;
-    overflow-y: scroll;
+
 }
 .containNotifications {
     width: 28%;
@@ -36,9 +36,7 @@
     right: 10px;
     overflow: hidden;
 }
-::-webkit-scrollbar {
-    display: none;
-}
+
 
 .containFilter {
     width: 47%;
