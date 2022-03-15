@@ -2,10 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { showErrMsg, showSuccessMsg } from "../../../utils/notification";
-import { dispatchLogin } from "../../../redux/actions/authAction";
 import { useDispatch } from "react-redux";
-import { Input } from "../../../components/input/Input";
-import { getData } from "../../../helpers/fetch";
 import { baseUrl } from "../../../../config";
 
 import styles from "./Login.module.css";
@@ -64,13 +61,13 @@ function Login() {
           <h3>Bienvenido a la Red Alumni</h3>
         </div>
         <form className={styles.containerRightForm} onSubmit={handleSubmit}>
-          <Input
+          <input
             placeholder="Correo Electronico"
             name="email"
             value={email}
             onChange={handleChangeInput}
           />
-          <Input
+          <input
             type="Password"
             placeholder="Contraseña"
             name="password"
