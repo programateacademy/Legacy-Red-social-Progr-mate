@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../assets/styles/global2.css";
+import "../assets/styles/global.css";
 
 import { DataProvider } from "../context/DataContext";
 

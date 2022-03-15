@@ -74,7 +74,6 @@ function Autentification() {
                     exact
                     path="/forgot_password"
                     element={<ForgotPassword />}
-                    exact
                 />
                 <Route
                     exact
