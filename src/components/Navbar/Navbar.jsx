@@ -5,10 +5,9 @@ import iconoEducamas from "../../assets/images/iconoEducamas.png";
 import logoperfil from "../../assets/images/photoProfile.png";
 import { BiGroup, BiMessageRoundedAdd } from "react-icons/bi";
 import { BiHomeAlt } from "react-icons/bi";
-import { MdOutlineForum } from "react-icons/md"
 import { Link } from "react-router-dom";
 import DropdownLogOut from "./DropdownLogOut";
-
+import FilterHome from "../filterHome/FilterHome";
 
 const Navbar = () => {
     return (
@@ -22,6 +21,7 @@ const Navbar = () => {
                             className={styles.iconoEducamas}
                         />
                     </Link>
+                    <FilterHome/>
                     <ul className={styles.navList}>
                         <Link to="/home">
                             <li className={styles.navListItem}>

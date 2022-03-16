@@ -36,7 +36,6 @@ const HomePage = () => {
                 </Media>
                 <div className={style.mainContent}>
                     <div className={style.containFilter}>
-                        <FilterHome />
                         <Dropdown />
                     </div>
                     <Posts />

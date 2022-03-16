@@ -207,7 +207,6 @@ const FormJobs = () => {
                     <h3>Lugar de la oferta</h3>
                     <input
                         className={style.nom}
-                        className={style.nom}
                         type="text"
                         name="place"
                         value={postsJobs.place}
