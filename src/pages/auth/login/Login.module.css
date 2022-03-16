@@ -1,0 +1,80 @@
+/* ------------- LOGIN--------------- */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+.containerLeft,
+.containerRight {
+  width: 50%;
+}
+.containerLeft {
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.containerRight {
+  background-color: var(--secundary-background);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+.containerRightHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.containerRightHeader h3 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.containerLeft img {
+  width: 80%;
+}
+.containerRightForm {
+  width: 80%;
+}
+.containerRightForm input,
+.buttonLogin {
+  width: 100%;
+  height: 4.6rem;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 2rem;
+}
+.containerRightForm input {
+  background-color: var(--input-color);
+  color: var(--input-text);
+}
+.containerRightForm input::placeholder {
+  padding: 0.8rem;
+}
+.containerRightForm input:focus {
+  outline: none;
+  border: 1px solid #ADD2FA;
+  box-shadow:  0 0 5pt 2pt #D7E9FF;
+}
+.buttonLogin {
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+.forgotPassword {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+/* ------------- MEDIA QUERIES --------------- */
+@media (max-width: 700px) {
+  .containerLeft {
+    display: none;
+  }
+  .containerRight {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
+}

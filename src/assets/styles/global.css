@@ -1,25 +1,32 @@
 @font-face {
-    font-family: Gilroy-bold;
-    src: url("../fonts/Gilroy-ExtraBold.otf") format("opentype");
+  font-family: Gilroy-bold;
+  src: url("../fonts/Gilroy-ExtraBold.otf") format("opentype");
 }
 
 @font-face {
-    font-family: Gilroy-light;
-    src: url("../fonts/Gilroy-Light.otf") format("opentype");
+  font-family: Gilroy-light;
+  src: url("../fonts/Gilroy-Light.otf") format("opentype");
+}
+:root {
+  --main-color: #ffcc02;
+  --text-color: #000000;
+  --input-color: #eceff1;
+  --input-text: #c2c2c2;
+  --secundary-background: #ffffff;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
 }
 body {
-    margin: 0;
-    font-family: "Roboto", sans-serif;
-    padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
 }
 
 p {
-    font-family: Gilroy-light;
+  font-family: Gilroy-light;
 }

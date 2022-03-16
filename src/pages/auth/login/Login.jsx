@@ -2,13 +2,13 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { showErrMsg, showSuccessMsg } from "../../../utils/notification";
-import { dispatchLogin } from "../../../redux/actions/authAction";
 import { useDispatch } from "react-redux";
-import { Input } from "../../../components/input/Input";
-import logo from "../../../assets/images/educamas.png";
-import "./Login.css";
-import { getData } from "../../../helpers/fetch";
 import { baseUrl } from "../../../../config";
+
+import styles from "./Login.module.css";
+
+import logo from "../../../assets/images/programate-academy-blancos.png";
+import littleLogo from "../../../assets/images/logo-a.png";
 
 const initialState = {
   email: "",
@@ -51,33 +51,35 @@ function Login() {
   };
 
   return (
-    <div className="container-login-main">
-      <div className="container-login-page">
-        <img className="logo" src={logo} alt="logo-programate" />
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="container-login-form-content">
-            <Input
-              label="Correo"
-              placeholder="Luis@hotmail.com"
-              name="email"
-              value={email}
-              onChange={handleChangeInput}
-            />
-            <Input
-              type="Password"
-              label="Contraseña"
-              placeholder="********"
-              name="password"
-              value={password}
-              onChange={handleChangeInput}
-            />
-          </div>
-
-          <button className="button-login" type="submit">
+    <div className={styles.container}>
+      <div className={styles.containerLeft}>
+        <img src={logo} alt="Logo de programate" />
+      </div>
+      <div className={styles.containerRight}>
+        <div className={styles.containerRightHeader}>
+          <img className="logo" src={littleLogo} alt="logo pequeño programate" />
+          <h3>Bienvenido a la Red Alumni</h3>
+        </div>
+        <form className={styles.containerRightForm} onSubmit={handleSubmit}>
+          <input
+            placeholder="Correo Electronico"
+            name="email"
+            value={email}
+            onChange={handleChangeInput}
+          />
+          <input
+            type="Password"
+            placeholder="Contraseña"
+            name="password"
+            value={password}
+            onChange={handleChangeInput}
+          />
+          <button className={styles.buttonLogin} type="submit">
             INGRESAR
           </button>
-          <Link to="/forgot_password">Olvidaste la contraseña?</Link>
+          <Link  className={styles.forgotPassword} to="/forgot_password">¿Olvidaste la contraseña?</Link>
         </form>
+
       </div>
     </div>
   );
