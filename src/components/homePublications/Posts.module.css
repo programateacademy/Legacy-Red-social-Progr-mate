@@ -11,7 +11,7 @@
     width: 47%;
     max-width: 540px;
     width: 90%;
-   /*  width: 100%;
+    /*  width: 100%;
     max-width: 100%;
     width: 90%; */
     min-height: 90%;
@@ -20,10 +20,8 @@
     margin: auto;
     background-color: #d7d7d7;
     flex-direction: column;
-    border: 1px solid;
-    border-color: #92c149;
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 2px;
     padding: 5px 15px;
     margin-top: 5px;
     margin-bottom: 5px;
