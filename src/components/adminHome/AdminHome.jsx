@@ -8,11 +8,7 @@ import FormJobs from '../FormJobs/FormJobs'
 const AdminHome = () => {
 
     return (
-        <Fragment>
-                        
-                        <AdminCommunity/>
-                        <FormJobs/>
-        </Fragment>
+            <AdminCommunity/>
     );
 };
 
