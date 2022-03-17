@@ -5,13 +5,12 @@ import RenderPostHome from "../components/RenderPostHome/RenderPostHome";
 import EventCard from "../components/EventsCard/EventCard";
 import JobCard from "../components/JobCard/JobCard";
 import Posts from "../components/homePublications/Posts";
-import Dropdown from "../components/makingpost/Dropdown";
 import FilterHome from "../components/filterHome/FilterHome";
 import BodyProfile from "../components/Profile/BodyProfile";
 import Portfolio from "../components/portfolio/Portfolio";
 import style from "../components/filterHome/filterHome.module.css";
 import Notification from "../components/Notifications/Notification";
-
+import Makingpost from "../components/MakingPost/Makingpost";
 import Media from "react-media";
 
 const HomePage = () => {
@@ -36,7 +35,7 @@ const HomePage = () => {
                 </Media>
                 <div className={style.mainContent}>
                     <div className={style.containFilter}>
-                        <Dropdown />
+                        <Makingpost/>
                     </div>
                     <Posts />
                 </div>

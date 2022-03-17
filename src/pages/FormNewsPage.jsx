@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Footer from "../components/Footer/Footer";
 
 
-import Formnews from "../components/formnews/Formnews";
+import FormNews from "../components/FormNews/FormNews";
 import { DataContext } from "../context/DataContext";
 
 const FormNewsPage = () => {
@@ -11,7 +11,7 @@ const FormNewsPage = () => {
 
     return (
         <>
-            <Formnews />
+            <FormNews />
             <Footer/>
         </>
     );

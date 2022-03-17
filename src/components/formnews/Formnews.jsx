@@ -7,7 +7,7 @@ import HardSkills from "./HardSkills";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Formnews = () => {
+const FormNews = () => {
     const { posts, setPosts, idUser } = useContext(DataContext);
 
     const { user_info, title, type, description, images, technologies } = posts;
@@ -190,4 +190,4 @@ const Formnews = () => {
     );
 };
 
-export default Formnews;
+export default FormNews;

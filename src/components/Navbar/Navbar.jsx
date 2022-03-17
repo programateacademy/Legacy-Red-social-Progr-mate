@@ -11,7 +11,7 @@ import DropdownLogOut from "./DropdownLogOut";
 import Icon_news  from "../../assets/icons/Icon_new";
 import Icon_events from "../../assets/icons/Icon_events";
 import Icon_forum from "../../assets/icons/Icon_forum";
-import Icon_work from "../../assets/icons/Icon_work";
+import Icon_job from "../../assets/icons/Icon_job";
 
 const Navbar = () => {
     return (
@@ -34,7 +34,7 @@ const Navbar = () => {
             </Link>
             <Link to="/community">
               <li className={styles.navListItem}>
-                <Icon_work size="30" />
+                <Icon_job size="30" />
                 <p>Comunidad</p>
               </li>
             </Link>
