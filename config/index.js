@@ -1,3 +1,3 @@
 
-export const baseUrl = process.env.REACT_APP_URL_API;
+export const baseUrl = 'https://redsocialprogramate.herokuapp.com';
 

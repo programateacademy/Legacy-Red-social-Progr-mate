@@ -11,10 +11,10 @@ import DropdownLogOut from "./DropdownLogOut";
 import Icon_news  from "../../assets/icons/Icon_new";
 import Icon_events from "../../assets/icons/Icon_events";
 import Icon_forum from "../../assets/icons/Icon_forum";
-import Icon_work from "../../assets/icons/Icon_work";
+import Icon_job from "../../assets/icons/Icon_job";
 
 const Navbar = () => {
-  return (
+    return (
     <header className={styles.globalNav}>
       <div className={styles.globalNavContent}>
         <nav className={styles.navBar}>
@@ -34,7 +34,7 @@ const Navbar = () => {
             </Link>
             <Link to="/community">
               <li className={styles.navListItem}>
-                <Icon_work size="30" />
+                <Icon_job size="30" />
                 <p>Comunidad</p>
               </li>
             </Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
         </nav>
       </div>
     </header>
-  );
+);
 };
 
 export default Navbar;
