@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     list-style: none;
-    column-gap: 20px;
+    column-gap: 150px;
     margin: 0;
     padding: 0;
 }
@@ -30,7 +30,7 @@
     color: black;
 }
 .navListItem {
-    width: 100px;
+    width: 0px;
     height: 80px;
     display: flex;
     align-items: center;
@@ -98,6 +98,8 @@
     align-items: center;
     column-gap: 3px;
 }
+
+
 /*========================= End Dropdown ========================= */
 
 @media (max-width: 640px) {

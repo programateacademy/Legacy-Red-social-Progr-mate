@@ -28,19 +28,19 @@ const Navbar = () => {
           <ul className={styles.navList}>
             <Link to="/home">
               <li className={styles.navListItem}>
-                <BiHomeAlt size="30" />
+                <Icon_news size="30" />
                 <p>Home</p>
               </li>
             </Link>
             <Link to="/community">
               <li className={styles.navListItem}>
-                <BiGroup size="30" />
+                <Icon_work size="30" />
                 <p>Comunidad</p>
               </li>
             </Link>
             <Link to="/questions">
               <li className={styles.navListItem}>
-                <BiMessageRoundedAdd size="30" />
+                <Icon_forum size="30" />
                 <p>Foro</p>
               </li>
             </Link>
@@ -54,16 +54,7 @@ const Navbar = () => {
             <DropdownLogOut />
           </div>
           <div>
-            <Icon_news />
-          </div>
-          <div>
             <Icon_events />
-          </div>
-          <div>
-            <Icon_forum />
-          </div>
-          <div>
-            <Icon_work />
           </div>
         </nav>
       </div>
