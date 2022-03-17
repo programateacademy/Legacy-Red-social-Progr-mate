@@ -10,7 +10,7 @@ import BodyProfile from "../components/Profile/BodyProfile";
 import Portfolio from "../components/portfolio/Portfolio";
 import style from "../components/filterHome/filterHome.module.css";
 import Notification from "../components/Notifications/Notification";
-import Makingpost from "../components/MakingPost/Makingpost";
+import Makingpost from "../components/makingpost/Makingpost";
 import Media from "react-media";
 
 const HomePage = () => {
