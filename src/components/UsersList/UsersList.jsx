@@ -1,7 +1,7 @@
 import React, { useState, Fragment, useContext, useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import { getDataAll, updateData } from "../../helpers/fetch";
+import { getData, getDataAll, updateData } from "../../helpers/fetch";
 import FilterHome from "../filterHome/FilterHome";
 import { Search } from "../ForumQuestions/Search";
 import style from "./UsersList.module.css";
@@ -26,13 +26,10 @@ const UsersList = () => {
     useEffect(() => {
 
     }, [allUser, setAllUser]);
-
-
     return (
         <Fragment>
 
             <div className={style.container}>
-
                 <FilterHome/>
 
                 {allUser.map((user) => (
@@ -48,7 +45,6 @@ const UsersList = () => {
                             <br />
                             {/* {user.state ? "En línea" : "off line"} 
                             <br/>*/}
-                            <i>{user.cohorte.name}</i> 
                         </p>
                         <button
                             type="button"
