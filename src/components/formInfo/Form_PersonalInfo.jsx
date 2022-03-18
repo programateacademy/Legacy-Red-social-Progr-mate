@@ -79,7 +79,7 @@ const Form_PersonalInfo = () => {
     useEffect(async () => {
         if (params.id) {
             try {
-                const data = await getDataAll("profiles");
+                const data = await getDataAll("users");
                 const filter = data.filter(
                     (prof) => prof.user_info._id === idUser
                 );
