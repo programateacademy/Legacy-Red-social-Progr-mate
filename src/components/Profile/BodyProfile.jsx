@@ -48,7 +48,7 @@ const BodyProfile = () => {
     useEffect(async () => {
         if (idUser) {
             try {
-                const data = await getDataAll("profiles");
+                const data = await getDataAll("users");
                 if (!params.id) {
                     const filterData = data.filter(
                         (profile) => profile.user_info._id === idUser
