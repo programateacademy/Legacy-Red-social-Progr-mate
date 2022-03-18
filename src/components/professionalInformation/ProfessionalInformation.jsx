@@ -55,7 +55,7 @@ export const ProfessionalInformation = () => {
             if (dataProfile) {
                 e.preventDefault();
 
-                await sendData("profiles", {
+                await sendData("users", {
                     user_info: idUser,
                     github,
                     description,
