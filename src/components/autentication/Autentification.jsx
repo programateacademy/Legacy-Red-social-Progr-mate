@@ -42,6 +42,7 @@ import FormProject from "../../components/FormProject/FormProject";
 
 //admin
 import AdminHomePage from "../../pages/AdminHomePage";
+import { AdminCohort } from "../../pages/AdminCohort";
 
 function Autentification() {
     const auth = useSelector((state) => state.auth);
@@ -202,7 +203,12 @@ function Autentification() {
                     path="/addquestion"
                     element={isLogged ? <ForumQuestionsPage /> : <NotFound />}
                 />
-
+                
+                <Route
+                    exact
+                    path="admincohort"
+                    element={isLogged ? <AdminCohort /> : <NotFound />}
+                />
                 {/* Testing Routes to visualize components */}
             </Routes>
         </>
