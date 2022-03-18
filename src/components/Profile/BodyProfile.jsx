@@ -45,7 +45,7 @@ const BodyProfile = () => {
         }
     }, [idUser]);
 
-    useEffect(async () => {
+/*     useEffect(async () => {
         if (idUser) {
             try {
                 const data = await getDataAll("users");
@@ -65,7 +65,7 @@ const BodyProfile = () => {
                 console.log(error);
             }
         }
-    }, [idUser]);
+    }, [idUser]); */
 
     return (
         <div className={style.containBodyProfile}>

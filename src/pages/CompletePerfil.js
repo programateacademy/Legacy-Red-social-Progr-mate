@@ -28,7 +28,7 @@ const CompletePerfil = ({ value }) => {
     // console.log(email, _id, "imprimiendo email y id");
 
     const getAllProfiles = async () => {
-        const data = await getDataAll(`profiles`);
+        const data = await getDataAll(`users`);
 
         data.map((value) => {
             setItems((items) => [...items, value]);
