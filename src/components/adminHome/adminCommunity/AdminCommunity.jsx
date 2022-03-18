@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useContext, useEffect } from 'react'
-import { getDataAll, updateData } from '../../../helpers/fetch'
+import { getData, getDataAll, updateData } from '../../../helpers/fetch'
 import { useNavigate } from "react-router-dom";
 import style from '../../UsersList/UsersList.module.css'
 import { DataContext } from '../../../context/DataContext';
@@ -8,15 +8,17 @@ import FilterHome from "../../filterHome/FilterHome";
 //import ImagCaballero from '../../assets/images/ImagCaballero.png'
 
 
-const AdminCommunity = () =>  {
+const AdminCommunity = () => {
 
     // const [toogle, setToogle] = useState(true)
-
+    const [allCohorts, setCohorts] = useState([])
     const navigate = useNavigate()
     const [allUser, setAllUser] = useState([])
     useEffect(async () => {
         const dataToEdit = await getDataAll("users");
+        const dataCohort = await getDataAll("cohorte");
         setAllUser(dataToEdit)
+        setCohorts(dataCohort)
     }, [])
     const onToggle = (id) => {
         allUser.map((user) => {
@@ -25,8 +27,8 @@ const AdminCommunity = () =>  {
                 user.state = !user.state
                 /* setDataUser(user) */
                 console.log(user)
-                updateData("users",user._id,{
-                    state:user.state
+                updateData("users", user._id, {
+                    state: user.state
                 })
                 setAllUser(allUser)
                 navigate("/adminhome")
@@ -35,26 +37,27 @@ const AdminCommunity = () =>  {
 
     }
 
-/*     const [connection, setConnection] = useState()
 
-    useEffect(()=>{
-        
-        const loggedUser = window.localStorage.getItem("loggedAgoraUser")
-        const UserLogInfo = JSON.parse(loggedUser);
-        console.log(UserLogInfo.msg)
-
-        if(UserLogInfo.msg=='Login success!'){
-            setConnection(true) 
-        }
-
-       // UserLogInfo!=='undefined'? : setConnection(false)
-        console.log(connection)
-    },[])
- */
+    /*     const [connection, setConnection] = useState()
+    
+        useEffect(()=>{
+            
+            const loggedUser = window.localStorage.getItem("loggedAgoraUser")
+            const UserLogInfo = JSON.parse(loggedUser);
+            console.log(UserLogInfo.msg)
+    
+            if(UserLogInfo.msg=='Login success!'){
+                setConnection(true) 
+            }
+    
+           // UserLogInfo!=='undefined'? : setConnection(false)
+            console.log(connection)
+        },[])
+     */
     return (
         <Fragment>
             <div className={style.container}>
-                <FilterHome/>
+                <FilterHome />
                 <table>
                     <thead>
                         <tr>
@@ -62,10 +65,10 @@ const AdminCommunity = () =>  {
                             <th>Nombre</th>
                             <th>Cohorte</th>
                             <th>Correo</th>
-                            <th>Telefono</th>
+                            <th>Estado</th>
                         </tr>
                     </thead><tbody>
-                        
+
                         {allUser.map((user) => (
                             <tr key={user._id} >
                                 <td><img src={user.avatar} alt="ImagDama" /></td>
@@ -73,27 +76,33 @@ const AdminCommunity = () =>  {
                                     <p>{user.firstName} {user.middleName && user.middleName}</p>
                                 </td>
                                 <td>
-                                    <i>{user.cohorte.name}</i>
+                                    <i>{allCohorts.map(item => (
+                                        item._id === user.cohorte ? <p key={user._id}>{item.cohorte_name}</p> : ""
+                                    ))}</i>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    {user.email}
                                 </td>
                                 <td>
                                     <ul className={user.state ? style.icon_green : style.icon_Gray}>
                                         <i onClick={() => onToggle(user._id)} className="far fa-user" ></i>
+                                        {user.state ? 'Habilitado' : 'Deshabilitado'}
                                     </ul>
-                                </td>
-                                <td>
-                                    {user.state ? 'Habilitado' : 'Deshabilitado'}
                                 </td>
                                 <td>
                                     <button
                                         type="button"
                                         onClick={() => navigate(`/profile/${user._id}`)}
-                                        >
+                                    >
                                         Ver perfil
                                     </button>
                                 </td>
                             </tr>
-                                        ))
-                                        }
+                        ))
+                        }
                     </tbody>
                 </table>
             </div>
