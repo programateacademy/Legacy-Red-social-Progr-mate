@@ -19,6 +19,7 @@ const AdminCommunity = () => {
         const dataCohort = await getDataAll("cohorte");
         setAllUser(dataToEdit)
         setCohorts(dataCohort)
+        setFilterUser(dataToEdit)
     }, [])
     const onToggle = (id) => {
         allUser.map((user) => {
@@ -37,12 +38,10 @@ const AdminCommunity = () => {
     }
     
     const filter = (toSearch) => {
-        let userToSet = allUser.filter((users) => {if (users.email.toString.toLowerCase.includes(toSearch.toLowerCase())){
+        let userToSet = allUser.filter((users) => {if (users.email.toString().toLowerCase().includes(toSearch.toLowerCase())){
             return users
-        } else {
-            return []
         }})
-        console.log(allUser)
+        setFilterUser(userToSet)
         // setFilterUser(userToSet)
     }
 
@@ -60,7 +59,7 @@ const AdminCommunity = () => {
                             <th>Estado</th>
                         </tr>
                     </thead><tbody>
-                        {allUser.map((user) => (
+                        {filterUser.map((user) => (
                             <tr key={user._id} >
                                 <td><img src={user.avatar} alt="ImagDama" /></td>
                                 <td>

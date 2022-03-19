@@ -18,7 +18,7 @@ const Posts = () => {
 
     useEffect(async () => {
         try {
-            const data = await getDataAll("users");
+            const data = await  ("users");
             setDataUsers(data);
         } catch (error) {
             console.log(error);
