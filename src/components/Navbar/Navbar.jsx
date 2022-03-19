@@ -8,6 +8,7 @@ import { BiHomeAlt } from "react-icons/bi";
 import { MdOutlineForum } from "react-icons/md";
 import { Link } from "react-router-dom";
 import DropdownLogOut from "./DropdownLogOut";
+import Icon_home from "../../assets/icons/Icon_home";
 import Icon_news  from "../../assets/icons/Icon_new";
 import Icon_events from "../../assets/icons/Icon_events";
 import Icon_forum from "../../assets/icons/Icon_forum";
