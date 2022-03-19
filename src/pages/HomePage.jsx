@@ -12,50 +12,55 @@ import style from "../components/filterHome/filterHome.module.css";
 import Notification from "../components/Notifications/Notification";
 import Makingpost from "../components/makingpost/Makingpost";
 import Media from "react-media";
+import Modals from "../components/modals/Modals";
 
 const HomePage = () => {
     // const [widthScreen, setWidthScreen] = useState();
 
     return (
-        <div className={style.homePage}>
-            <Navbar />
-            {/* <Notification /> */}
+      <div className={style.homePage}>
+        <div>
+          <Navbar />
+          <Modals />
+        </div>
 
-            <div className={style.containBody}>
-                <Media query="(min-width: 1024px)">
-                    {(matches) => {
-                        return (
-                            matches && (
-                                <div className={style.containProfile}>
-                                    <BodyProfile />
-                                </div>
-                            )
-                        );
-                    }}
-                </Media>
-                <div className={style.mainContent}>
-                    <div className={style.containFilter}>
-                        <Makingpost/>
-                    </div>
-                    <Posts />
-                </div>
-                <Media query="(min-width: 1024px)">
-                    {(matches) => {
-                        return (
-                            matches && (
-                                <div className={style.containNotifications}>
-                                    <Notification />
-                                </div>
-                            )
-                        );
-                    }}
-                </Media>
+        {/* <Notification /> */}
+
+        <div className={style.containBody}>
+          <Media query="(min-width: 1024px)">
+            {(matches) => {
+              return (
+                matches && (
+                  <div className={style.containProfile}>
+                    <BodyProfile />
+                  </div>
+                )
+              );
+            }}
+          </Media>
+          <div className={style.mainContent}>
+            <div className={style.containFilter}>
+              <Makingpost />
             </div>
-            {/* <RenderPostHome />
+            <Posts />
+          </div>
+          <Media query="(min-width: 1024px)">
+            {(matches) => {
+              return (
+                matches && (
+                  <div className={style.containNotifications}>
+                    <Notification />
+                  </div>
+                )
+              );
+            }}
+          </Media>
+        </div>
+        {/* <RenderPostHome />
             <EventCard />
             <JobCard /> */}
-            <Footer />
-        </div>
+        <Footer />
+      </div>
     );
 };
 
