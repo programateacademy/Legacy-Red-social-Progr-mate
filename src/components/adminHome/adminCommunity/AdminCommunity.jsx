@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useContext, useEffect } from 'react'
-import { getData, getDataAll, updateData } from '../../../helpers/fetch'
+import { getDataAll, updateData } from '../../../helpers/fetch'
 import { useNavigate } from "react-router-dom";
 import style from '../../UsersList/UsersList.module.css'
 import Searcher from '../../Searcher/Searcher'
@@ -7,8 +7,12 @@ import DeleteButton from '../../DeleteButton/DeleteButton'
 //import ImagDama from '../../assets/images/ImagDama.png'
 //import ImagCaballero from '../../assets/images/ImagCaballero.png'
 
+import { DataContext } from '../../../context/DataContext';
+import FilterHome from "../../filterHome/FilterHome";
+
 
 const AdminCommunity = () => {
+
     const [allCohorts, setCohorts] = useState([])
     const navigate = useNavigate()
     const [allUser, setAllUser] = useState([])
@@ -34,6 +38,15 @@ const AdminCommunity = () => {
                 navigate("/adminhome")
             }
         })
+    }
+
+
+    const filter = (toSearch) => {
+        let userToSet = allUser.filter((users) => {if (users.email.toString().toLowerCase().includes(toSearch.toLowerCase())){
+            return users
+        }})
+        setFilterUser(userToSet)
+        // setFilterUser(userToSet)
     }
 
     return (

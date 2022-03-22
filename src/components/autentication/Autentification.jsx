@@ -42,14 +42,12 @@ import FormProject from "../../components/FormProject/FormProject";
 
 //admin
 import AdminHomePage from "../../pages/AdminHomePage";
+import { AdminCohort } from "../../pages/AdminCohort";
 
 function Autentification() {
     const auth = useSelector((state) => state.auth);
     const { isLogged, isAdmin } = auth;
-    // useEffect(() => {
 
-    // }, [isLogged])
-    /* const isLogged = true */
     return (
         <>
             <Routes>
@@ -84,14 +82,6 @@ function Autentification() {
                 {/* Flow elements */}
                 <Route exact path="/redirect" element={<Redirect />} />
                 <Route exact path="/dontallow" element={<DontAllow />} />
-
-                {/* Admin
-        validate => admin */}
-                <Route
-                    exact
-                    path="/adminhome"
-                    element={isLogged ? <AdminHomePage /> : <NotFound />}
-                />
 
                 {/* Home */}
                 <Route
@@ -203,7 +193,22 @@ function Autentification() {
                     element={isLogged ? <ForumQuestionsPage /> : <NotFound />}
                 />
 
-                {/* Testing Routes to visualize components */}
+                {/* Admin Routes */}
+
+                <Route
+                    exact
+                    path="admincohort"
+                    element={isAdmin ? <AdminCohort /> : <NotFound />}
+                />
+
+                <Route
+                    exact
+                    path="/adminhome"
+                    element={isLogged ? <AdminHomePage /> : <NotFound />}
+                />
+
+                {/* 404 */}
+                <Route path="/*" element={<NotFound />} />
             </Routes>
         </>
     );
