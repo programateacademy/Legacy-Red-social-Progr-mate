@@ -7,6 +7,7 @@ function CreateCohort() {
     const [user, setUser] = useState({})
     const [cohortData, setCohortData] = useState({})
 
+    /* Update cohort state */
     const handleCohort = (e) => {
         setNewCohort({
             ...newCohort,
@@ -14,6 +15,7 @@ function CreateCohort() {
         })
     }
     
+    /* Update user state */
     const handleUser = (e) => {
         setUser({
             ...user,
@@ -21,6 +23,7 @@ function CreateCohort() {
         })
     }
 
+    /* Add cohort for each user */
     const addCohortToUser = () => {
         setUsers(prevState => prevState.map(item => (
             { ...item, cohorte: cohortData._id }
@@ -28,6 +31,7 @@ function CreateCohort() {
 
     }
 
+    /* Add an user to users state */
     const onAdduser = (e) => {
         e.preventDefault()
         setUsers(prevState => [...prevState, user])
@@ -35,30 +39,35 @@ function CreateCohort() {
         e.target.reset()
     }
 
+    /* create cohort in data base */
     const sendCohort = async (event) => {
         event.preventDefault()
         await sendData("cohorte", newCohort)
         await obtainCohortData()
     }
 
+    /* create user in data base */
     const sendUsers = () => {
         users.forEach(async (item) => await sendData("users", item))
     }
 
+
+    /* obtain data of cohort */
     const obtainCohortData = async () => {
         const cohorts = await getDataAll("cohorte")
         const cohort = await cohorts.find(({ cohorte }) => cohorte === parseInt(newCohort.cohorte))
         setCohortData(cohort)
     }
 
+    /* delete user in state */
     const deleteUser = (userEmail) => {
         setUsers(users.filter(item => item.email !== userEmail))
     }
 
+    /* when cohort data is true */
     useEffect(() => {
         addCohortToUser()
         sendUsers()
-
     }, [cohortData])
 
     return (
