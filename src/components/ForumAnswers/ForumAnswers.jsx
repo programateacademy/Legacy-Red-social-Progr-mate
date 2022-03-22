@@ -1,9 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import {
-    BrowserRouter as Router,
-    useParams,
-    useLocation,
-} from "react-router-dom";
+import {BrowserRouter as Router, useParams, useLocation} from "react-router-dom";
 import { getData, getDataAll, sendData, deleteData } from "../../helpers/fetch";
 import styles from "./ForumAnswers.module.css";
 import { DataContext } from "../../context/DataContext";
@@ -15,10 +11,10 @@ const ForumAnswers = () => {
     const [comments, setComments] = useState([]);
     const [postComments, setPostComments] = useState([]);
     const [refresh, setRefresh] = useState(false);
-    const [clear, setClear] = useState(false);
+    // const [clear, setClear] = useState(false);
     const [comment, setComment] = useState("");
     const [question, setQuestion] = useState([]);
-    const [userComment, setUserComment] = useState([]);
+    // const [userComment, setUserComment] = useState([]);
 
     const { setDataUser, idUser } = useContext(DataContext);
     const searchUrl = idUser;
@@ -81,42 +77,40 @@ const ForumAnswers = () => {
     }, [questionId]);
 
     const onName = (id) => {
-        // console.log(users, "users");
         if (users.length > 0) {
             const user = users?.filter((user) => user._id === id);
             const userFilter = user[0];
-            // console.log(userFilter.firstName, comments, "nombres");
             return `${userFilter.firstName} ${userFilter.lastName}`;
         }
     };
 
     const onImage = (id) => {
-        // console.log(id, users, "id Imagen");
         if (users.length > 0) {
             const user = users?.filter((user) => user._id === id);
             const userFilter = user[0];
             return userFilter.avatar;
         }
-        // console.log(userFilter);
     };
 
     const onDelete = async (id) => {
         await deleteData("comments", id);
         setRefresh((refresh) => !refresh);
     };
+    console.log(question)
 
     return (
         <>
             <div className={styles.questionContainerMain}>
                 <div className={styles.containerQuestion}>
                     <h5 className={styles.question}>{question.title}</h5>
+                    <p className={styles.question}>{question.description}</p>
                     <p className={styles.dateQuestion}>
                         Creado: {question.createdAt}{" "}
                     </p>
                 </div>
                 <div className={styles.tagsContainer}></div>
                 <div className={styles.infoContainer}>
-                    <p className={styles.name}>Jhonatan Mosquera Velez</p>
+                    <p className={styles.name}> {question.user_info[4]} </p>
                 </div>
             </div>
             <p className={styles.title}>Respuestas</p>

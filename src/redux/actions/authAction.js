@@ -17,7 +17,6 @@ export const fetchUser = async (token) => {
 }
 
 export const dispatchGetUser = (res) => {
-    console.log(res.data.rol)
     return {
         type: ACTIONS.GET_USER,
         payload: {

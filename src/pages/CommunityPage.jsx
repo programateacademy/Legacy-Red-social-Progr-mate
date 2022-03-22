@@ -7,13 +7,12 @@ import UsersList from "../components/UsersList/UsersList"
 
 
 const CommunityPage = () => {
-   
 
     return (
         <>
-            <Navbar/>  
-            <UsersList/>
-            <Footer/>
+            <Navbar />
+            <UsersList />
+            <Footer />
         </>
     );
 };
