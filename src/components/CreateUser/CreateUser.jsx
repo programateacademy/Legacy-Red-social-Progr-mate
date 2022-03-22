@@ -9,11 +9,9 @@ const CreateUser = () => {
             ...userModel,
             [target.name]: target.value
         });
-        console.log(userModel)
     }
     const handleSubmit = async () => {
         await sendData('users', userModel)
-        
     }
     return (
         <form action="">
@@ -22,9 +20,8 @@ const CreateUser = () => {
             <input type="text" name='lastName' placeholder="Apellido" value={userModel.lastName} onChange={handleChange}/>
             <input type="text" name='contactNumber' placeholder="Telefono" value={userModel.contactNumber} onChange={handleChange}/>
             <input type="password" name='passwordHash' placeholder="Contraseña" value={userModel.passwordHash} onChange={handleChange}/>
-            <input type="submit" onClick={handleSubmit} name/>
+            <input type="submit" onClick={handleSubmit} />
         </form>
     )
 }
-
 export default CreateUser
