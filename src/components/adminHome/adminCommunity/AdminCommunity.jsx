@@ -2,19 +2,23 @@ import React, { useState, Fragment, useContext, useEffect } from 'react'
 import { getDataAll, updateData } from '../../../helpers/fetch'
 import { useNavigate } from "react-router-dom";
 import style from '../../UsersList/UsersList.module.css'
+import Searcher from './Searcher/Searcher'
+import { DataContext } from '../../../context/DataContext';
 import FilterHome from "../../filterHome/FilterHome";
 
 
 const AdminCommunity = () => {
-    
+
     const [allCohorts, setCohorts] = useState([])
     const navigate = useNavigate()
     const [allUser, setAllUser] = useState([])
+    const [filterUser, setFilterUser] = useState([])
     useEffect(async () => {
         const dataToEdit = await getDataAll("users");
         const dataCohort = await getDataAll("cohorte");
         setAllUser(dataToEdit)
         setCohorts(dataCohort)
+        setFilterUser(dataToEdit)
     }, [])
     const onToggle = (id) => {
         allUser.map((user) => {
@@ -30,12 +34,21 @@ const AdminCommunity = () => {
                 navigate("/adminhome")
             }
         })
-
     }
+
+  
+    const filter = (toSearch) => {
+        let userToSet = allUser.filter((users) => {if (users.email.toString().toLowerCase().includes(toSearch.toLowerCase())){
+            return users
+        }})
+        setFilterUser(userToSet)
+        // setFilterUser(userToSet)
+    }
+
     return (
         <Fragment>
+            <Searcher typeOfSearch='Busqueda por correo' filter={filter}/>
             <div className={style.container}>
-                <FilterHome />
                 <table>
                     <thead>
                         <tr>
@@ -46,8 +59,7 @@ const AdminCommunity = () => {
                             <th>Estado</th>
                         </tr>
                     </thead><tbody>
-
-                        {allUser.map((user) => (
+                        {filterUser.map((user) => (
                             <tr key={user._id} >
                                 <td><img src={user.avatar} alt="ImagDama" /></td>
                                 <td>
@@ -59,7 +71,6 @@ const AdminCommunity = () => {
                                     ))}</i>
                                 </td>
                                 <td>
-
                                 </td>
                                 <td>
                                     {user.email}
@@ -87,5 +98,4 @@ const AdminCommunity = () => {
         </Fragment>
     )
 }
-
 export default AdminCommunity
