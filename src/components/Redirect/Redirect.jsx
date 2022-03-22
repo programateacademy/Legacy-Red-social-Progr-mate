@@ -7,12 +7,10 @@ import { baseUrl } from '../../../config'
 
 
 const Redirect = () => {
-  const [isDisplayed, setIsDisplayed] = useState(false);
-  setTimeout(() => setIsDisplayed(true), 500);
   const dispatch = useDispatch()
   const token = useSelector(state => state.token)
   const auth = useSelector(state => state.auth)
-
+  const firstEntry = JSON.parse(localStorage.getItem('firstEntry'))
 
 
   useEffect(() => {
@@ -24,7 +22,6 @@ const Redirect = () => {
 
       const getToken = async () => {
         const res = await axios.post(`${baseUrl}/api/refresh_token`, { refreshtoken })
-        console.log(res)
         dispatch({ type: 'GET_TOKEN', payload: res.data.access_token })
       }
       getToken()
@@ -34,9 +31,9 @@ const Redirect = () => {
 
   useEffect(() => {
     if (token) {
-      const getUser = () => {
+      const getUser = async () => {
         dispatch(dispatchLogin())
-        return fetchUser(token).then(res => {
+        return await fetchUser(token).then(res => {
           dispatch(dispatchGetUser(res))
         })
       }
@@ -49,8 +46,7 @@ const Redirect = () => {
       <div>
         <div>
           <p>Redirigiendo..</p>
-          {isDisplayed && <Navigate replace to="/formprofile" />}
-
+          {firstEntry ? <Navigate replace to="/formprofile" /> : <Navigate replace to="/" />}
         </div>
       </div>
 

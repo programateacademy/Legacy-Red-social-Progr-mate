@@ -39,6 +39,7 @@ function Login() {
 
       setUser({ ...user, err: "", success: res.data.msg });
       window.localStorage.setItem("firstLogin", true);
+      localStorage.getItem('firstEntry') == null ? window.localStorage.setItem("firstEntry", true) : "";
       window.localStorage.setItem("loggedAgoraUser", JSON.stringify(res.data));
       showSuccessMsg(success);
 

@@ -14,7 +14,7 @@ function CreateCohort() {
             [e.target.name]: e.target.value
         })
     }
-    
+
     /* Update user state */
     const handleUser = (e) => {
         setUser({
@@ -28,7 +28,7 @@ function CreateCohort() {
         setUsers(prevState => prevState.map(item => (
             { ...item, cohorte: cohortData._id }
         )))
-
+        console.log("Agregada la nueva cohorte")
     }
 
     /* Add an user to users state */
@@ -48,7 +48,8 @@ function CreateCohort() {
 
     /* create user in data base */
     const sendUsers = () => {
-        users.forEach(async (item) => await sendData("users", item))
+        users.forEach((item) => sendData("users", item))
+        console.log("Enviado los usuarios")
     }
 
 
@@ -63,11 +64,18 @@ function CreateCohort() {
     const deleteUser = (userEmail) => {
         setUsers(users.filter(item => item.email !== userEmail))
     }
-
+    const showUsers = () => {
+        console.log(users)
+        console.log(cohortData)
+    }
     /* when cohort data is true */
     useEffect(() => {
+        console.log(cohortData)
+        console.log("Se entro a use effect")
         addCohortToUser()
+        console.log("Se Agregar las cohortes a los usuarios")
         sendUsers()
+        console.log("Se terminaron de enviar usuarios")
     }, [cohortData])
 
     return (
@@ -130,6 +138,8 @@ function CreateCohort() {
             </table>
 
             <input disabled={!users.length} type="submit" value="Crear Cohorte" form="cohort" />
+            <button onClick={showUsers}>Usuario</button>
+            <button onClick={sendUsers}>Enviar Usuarios</button>
         </>
     )
 }

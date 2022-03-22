@@ -43,6 +43,7 @@ import FormProject from "../../components/FormProject/FormProject";
 //admin
 import AdminHomePage from "../../pages/AdminHomePage";
 import { AdminCohort } from "../../pages/AdminCohort";
+import ForumAddResources from "../ForumAddResources/ForumAddResources";
 
 function Autentification() {
     const auth = useSelector((state) => state.auth);
@@ -51,12 +52,6 @@ function Autentification() {
     return (
         <>
             <Routes>
-                {/* Model */}
-
-                {/* <Route exact path="/formprofile" element={isLogged ? < CompletePerfil /> : <NotFound />} /> 
-
-        */}
-
                 {/* Login */}
                 <Route
                     exact
@@ -198,13 +193,13 @@ function Autentification() {
                 <Route
                     exact
                     path="admincohort"
-                    element={isAdmin ? <AdminCohort /> : <NotFound />}
+                    element={isAdmin ? <AdminCohort /> : <DontAllow />}
                 />
 
                 <Route
                     exact
                     path="/adminhome"
-                    element={isLogged ? <AdminHomePage /> : <NotFound />}
+                    element={isAdmin ? <AdminHomePage /> : <DontAllow />}
                 />
 
                 {/* 404 */}
