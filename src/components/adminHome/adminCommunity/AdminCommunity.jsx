@@ -1,14 +1,14 @@
-import React, { useState, Fragment, useContext, useEffect } from 'react'
+import React, { useState, Fragment, useEffect } from 'react'
 import { getDataAll, updateData } from '../../../helpers/fetch'
 import { useNavigate } from "react-router-dom";
 import style from '../../UsersList/UsersList.module.css'
 import Searcher from './Searcher/Searcher'
-import { DataContext } from '../../../context/DataContext';
-import FilterHome from "../../filterHome/FilterHome";
 
+import Searcher from '../../Searcher/Searcher'
+import DeleteButton from '../../DeleteButton/DeleteButton'
 
+/* Table of users - Renders in AdminHome */
 const AdminCommunity = () => {
-
     const [allCohorts, setCohorts] = useState([])
     const navigate = useNavigate()
     const [allUser, setAllUser] = useState([])

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {sendData} from '../../helpers/fetch'
 
+/* Create user - Renders in AdminHome*/
 const CreateUser = () => {
     const [userModel, setUserModel] = useState({})
 
