@@ -22,7 +22,6 @@ const Redirect = () => {
 
       const getToken = async () => {
         const res = await axios.post(`${baseUrl}/api/refresh_token`, { refreshtoken })
-        console.log(res)
         dispatch({ type: 'GET_TOKEN', payload: res.data.access_token })
       }
       getToken()
