@@ -38,8 +38,8 @@ const ForumAddQuestion = () => {
                     </div>
                     <Formik
                         initialValues={{
-                            title: "test1",
-                            description: "test2",
+                            title: "",
+                            description: "",
                             tags: [],
                             images: "",
                             type: "questions",

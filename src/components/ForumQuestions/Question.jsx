@@ -40,7 +40,7 @@ export const Question = ({ data }) => {
                     src={data.title && onImage(data.user_info)}
                 />
                 <h5 className={styles.question}>{data.title}</h5>
-
+                <p className={styles.question} >{data.description}</p>
                 <p className={styles.dateQuestion}>Creado: {date}</p>
             </div>
             <div className={styles.tagsContainer}>
