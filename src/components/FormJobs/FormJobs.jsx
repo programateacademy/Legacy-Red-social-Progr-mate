@@ -1,50 +1,33 @@
-import React, {
-    Fragment,
-    useContext,
-    useRef,
-    useState,
-    useEffect,
-} from "react";
+import React, {Fragment, useContext, useState, useEffect } from "react";
 import style from "./FormJobs.module.css";
 import logo from "../../assets/images/logo-a-color-.jpg";
 import { DataContext } from "../../context/DataContext";
 import { getData, sendData, updateData } from "../../helpers/fetch";
 import HardSkills from "../formInfo/HardSkills";
-import SoftSkills from "../formInfo/SoftSkills";
+import JobSoftSkills from "../formInfo/SoftSkills";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const FormJobs = () => {
     const { postsJobs, setPostsJobs, idUser } = useContext(DataContext);
-    const {
-        user_info,
-        title,
-        type,
-        company,
-        technologies,
-        softSkills,
-        place,
-        modality,
-        salary,
-        contact,
-        description,
-    } = postsJobs;
 
     const navigate = useNavigate();
     const params = useParams();
-
+    
+    
     useEffect(() => {
         setPostsJobs({ ...postsJobs, type: "jobs" });
     }, []);
 
     const [technical, setTechnical] = useState([]);
     const [softSkill, setsoftSkill] = useState([]);
+    console.log(submitData)
 
     //Enviar data del usuario al modelo de user y profile
 
     const submitData = async (e) => {
         e.preventDefault();
-
+        //Condition to publish the new job offer
         if (
             postsJobs.title.length <= 0 ||
             postsJobs.company.length <= 0 ||
@@ -56,6 +39,7 @@ const FormJobs = () => {
             postsJobs.softSkills.length <= 0 ||
             postsJobs.salary.length <= 0
         ) {
+            // message that pop if conditions arent fulfilles
             Swal.fire({
                 title: "Completar datos",
                 text: "Los campos de Nombre de la oferta,modalidad y salario son obligatorios",
@@ -68,6 +52,7 @@ const FormJobs = () => {
             try {
                 if (!params.id) {
                     await sendData("posts", postsJobs);
+                    
                 } else {
                     await updateData("posts", params.id, postsJobs);
                 }
@@ -80,7 +65,6 @@ const FormJobs = () => {
     };
 
     const onChange = ({ target }) => {
-        /* console.log(postsJobs); */
         const { name, value } = target;
         setPostsJobs({
             ...postsJobs,
@@ -88,11 +72,10 @@ const FormJobs = () => {
             user_info: idUser,
         });
     };
-
+    //Press enter to add the technologies to your job publication
     const onKeyHardSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
             technical.push(e.target.value);
-
             setPostsJobs({
                 ...postsJobs,
                 technologies: technical,
@@ -101,10 +84,10 @@ const FormJobs = () => {
             e.preventDefault();
         }
     };
-
+    //Press enter to add soft skills to your job offer
     const onKeySoftSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
-            const addTech = softSkill.push(e.target.value);
+            softSkill.push(e.target.value);
             setPostsJobs({
                 ...postsJobs,
                 softSkills: softSkill,
@@ -192,10 +175,10 @@ const FormJobs = () => {
                     <br />
                     <div className={style.tecnologias}>
                         {softSkill.map((skill, index) => (
-                            <SoftSkills
+                            <JobSoftSkills
                                 skill={skill}
                                 key={index}
-                                softSkills={softSkill}
+                                softSkill={softSkill}
                                 setsoftSkills={setsoftSkill}
                                 index={index}
                             />
@@ -221,7 +204,6 @@ const FormJobs = () => {
                         name="modality"
                         value={postsJobs.modality}
                         onChange={onChange}
-                        /* value="modality" */
                     >
                         <option value="select">Selecciona la modalidad</option>
                         <option className={style.opcion} value="Presencial">

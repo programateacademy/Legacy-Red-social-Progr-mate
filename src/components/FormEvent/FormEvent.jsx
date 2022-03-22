@@ -5,7 +5,6 @@ import { DataContext } from "../../context/DataContext";
 import { sendData } from "../../helpers/fetch";
 import { useNavigate } from "react-router-dom";
 import HardSkills from "../formInfo/HardSkills";
-import Swal from "sweetalert2";
 
 const FormEvent = () => {
     const { postsEvent, setPostsEvent, idUser } = useContext(DataContext);
@@ -15,6 +14,7 @@ const FormEvent = () => {
     const navigate = useNavigate();
 
     //Enviar data del usuario al modelo de user y profile
+    //Send data from the user to the user model and profile
     const submitData = async (e) => {
         e.preventDefault();
         try {
@@ -29,17 +29,8 @@ const FormEvent = () => {
         const { name, value } = e.target;
         setPostsEvent({ ...postsEvent, [name]: value, user_info: idUser });
     };
-    // const onCapture = (e) => {
-    //     const value = e.target.value;
 
-    //     if (e.key === "Enter" && value.length > 0) {
-    //         techs.push(e.target.value);
-    //         setPostsEvent({ ...postsEvent, technologies: techs });
-    //         e.target.value = "";
-    //         e.preventDefault();
-    //     }
-    // };
-
+    // Allows you to add the technologies pressing enter when you wnat to post an event
     const onKeyHardSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
             technical.push(e.target.value);
@@ -52,7 +43,7 @@ const FormEvent = () => {
             e.preventDefault();
         }
     };
-
+    // Post the publication and give it an event type
     useEffect(() => {}, [postsEvent, setPostsEvent]);
     useEffect(() => {
         setPostsEvent({ ...postsEvent, type: "event" });

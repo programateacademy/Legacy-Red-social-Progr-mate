@@ -2,8 +2,6 @@ import React from "react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import RenderPostHome from "../components/RenderPostHome/RenderPostHome";
-import EventCard from "../components/EventsCard/EventCard";
-import JobCard from "../components/JobCard/JobCard";
 import Posts from "../components/homePublications/Posts";
 import FilterHome from "../components/filterHome/FilterHome";
 import BodyProfile from "../components/Profile/BodyProfile";
@@ -56,7 +54,6 @@ const HomePage = () => {
           </Media>
         </div>
         {/* <RenderPostHome />
-            <EventCard />
             <JobCard /> */}
         <Footer />
       </div>
