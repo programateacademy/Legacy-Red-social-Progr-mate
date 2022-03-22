@@ -7,12 +7,10 @@ import { baseUrl } from '../../../config'
 
 
 const Redirect = () => {
-  const [isDisplayed, setIsDisplayed] = useState(false);
-  setTimeout(() => setIsDisplayed(true), 500);
   const dispatch = useDispatch()
   const token = useSelector(state => state.token)
   const auth = useSelector(state => state.auth)
-
+  const firstEntry = JSON.parse(localStorage.getItem('firstEntry'))
 
 
   useEffect(() => {
@@ -34,9 +32,9 @@ const Redirect = () => {
 
   useEffect(() => {
     if (token) {
-      const getUser = () => {
+      const getUser = async () => {
         dispatch(dispatchLogin())
-        return fetchUser(token).then(res => {
+        return await fetchUser(token).then(res => {
           dispatch(dispatchGetUser(res))
         })
       }
@@ -49,8 +47,7 @@ const Redirect = () => {
       <div>
         <div>
           <p>Redirigiendo..</p>
-          {isDisplayed && <Navigate replace to="/formprofile" />}
-
+          {firstEntry ? <Navigate replace to="/formprofile" /> : <Navigate replace to="/" />}
         </div>
       </div>
 

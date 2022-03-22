@@ -1,21 +1,14 @@
 import React, { useState, Fragment, useContext, useEffect } from "react";
-import { BiSearch } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import { getData, getDataAll, updateData } from "../../helpers/fetch";
+import { getDataAll, updateData } from "../../helpers/fetch";
 import FilterHome from "../filterHome/FilterHome";
-import { Search } from "../ForumQuestions/Search";
 import style from "./UsersList.module.css";
-//import ImagDama from '../../assets/images/ImagDama.png'
-//import ImagCaballero from '../../assets/images/ImagCaballero.png'
+
 
 const UsersList = () => {
 
-    const [toogle, setToogle] = useState(true)
     const navigate = useNavigate()
     const [allUser, setAllUser] = useState([])
-    const [filteredUser, setfilteredUser] = useState("");
-
-
 
     useEffect(async () => {
         const dataToEdit = await getDataAll("users");
@@ -23,9 +16,6 @@ const UsersList = () => {
         setAllUser(dataToEdit)
     }, [])
 
-    useEffect(() => {
-
-    }, [allUser, setAllUser]);
     return (
         <Fragment>
 
@@ -43,8 +33,7 @@ const UsersList = () => {
                             {user.firstName}{" "}
                             {user.middleName && user.middleName}
                             <br />
-                            {/* {user.state ? "En línea" : "off line"} 
-                            <br/>*/}
+
                         </p>
                         <button
                             type="button"
@@ -58,10 +47,7 @@ const UsersList = () => {
                                 user.state ? style.icon_green : style.icon_Gray
                             }
                         >
-                            <i
-                                /* onClick={() => onToggle(user._id)} */
-                                className="far fa-user"
-                            ></i>
+                            <i className="far fa-user"></i>
                         </ul>
                     </div>
                 ))}
