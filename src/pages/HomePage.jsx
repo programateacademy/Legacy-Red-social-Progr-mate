@@ -21,11 +21,9 @@ const HomePage = () => {
       <div className={style.homePage}>
         <div>
           <Navbar />
-          <Modals />
         </div>
 
         {/* <Notification /> */}
-
         <div className={style.containBody}>
           <Media query="(min-width: 1024px)">
             {(matches) => {
@@ -40,8 +38,9 @@ const HomePage = () => {
           </Media>
           <div className={style.mainContent}>
             <div className={style.containFilter}>
-              <Makingpost />
+              {/*<Makingpost />*/}
             </div>
+            <Modals />
             <Posts />
           </div>
           <Media query="(min-width: 1024px)">
