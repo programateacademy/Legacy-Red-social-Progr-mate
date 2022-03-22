@@ -2,9 +2,8 @@ import React, { useState, Fragment, useContext, useEffect } from 'react'
 import { getData, getDataAll, updateData } from '../../../helpers/fetch'
 import { useNavigate } from "react-router-dom";
 import style from '../../UsersList/UsersList.module.css'
-import Searcher from './Searcher/Searcher'
-import { DataContext } from '../../../context/DataContext';
-import FilterHome from "../../filterHome/FilterHome";
+import Searcher from '../../Searcher/Searcher'
+import DeleteButton from '../../DeleteButton/DeleteButton'
 //import ImagDama from '../../assets/images/ImagDama.png'
 //import ImagCaballero from '../../assets/images/ImagCaballero.png'
 
@@ -36,18 +35,10 @@ const AdminCommunity = () => {
             }
         })
     }
-    
-    const filter = (toSearch) => {
-        let userToSet = allUser.filter((users) => {if (users.email.toString().toLowerCase().includes(toSearch.toLowerCase())){
-            return users
-        }})
-        setFilterUser(userToSet)
-        // setFilterUser(userToSet)
-    }
 
     return (
         <Fragment>
-            <Searcher typeOfSearch='Busqueda por correo' filter={filter}/>
+            <Searcher typeOfSearch='Busqueda por correo' setFilter={setFilterUser} dataToFilter={allUser} objectKey={'email'}/>
             <div className={style.container}>
                 <table>
                     <thead>
@@ -88,6 +79,9 @@ const AdminCommunity = () => {
                                     >
                                         Ver perfil
                                     </button>
+                                </td>
+                                <td>
+                                    <DeleteButton endpoint={'users'} id={user._id}/>
                                 </td>
                             </tr>
                         ))
