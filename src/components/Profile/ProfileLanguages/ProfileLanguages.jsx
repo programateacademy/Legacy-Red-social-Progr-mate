@@ -4,8 +4,8 @@ import { DataContext } from "../../../context/DataContext";
 import style from "./ProfileLanguages.module.css";
 
 const ProfileLanguages = () => {
-    const { dataProfile } = useContext(DataContext);
-    const { lenguages } = dataProfile;
+    const { dataUser } = useContext(DataContext);
+    const { lenguages } = dataUser;
 
     return (
         <Fragment>

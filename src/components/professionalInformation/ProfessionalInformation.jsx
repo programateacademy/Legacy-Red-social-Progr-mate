@@ -10,21 +10,10 @@ import { getData, sendData, updateData } from "../../helpers/fetch";
 
 export const ProfessionalInformation = () => {
     const params = useParams();
-    const { dataProfile, setDataProfile, dataUser, setDataUser, idUser } =
+    const { dataUser, setDataUser, idUser } =
         useContext(DataContext);
     const navigate = useNavigate();
-
-    const {
-        user_info,
-        github,
-        description,
-        technicalSkills,
-        softSkills,
-        lenguages,
-        prev_studes,
-        experience,
-    } = dataProfile;
-
+    
     const {
         avatar,
         cohorte,
@@ -39,6 +28,14 @@ export const ProfessionalInformation = () => {
         secondSurname,
         state,
         _id,
+        user_info,
+        github,
+        description,
+        technicalSkills,
+        softSkills,
+        lenguages,
+        prev_studes,
+        experience,
     } = dataUser;
 
     //Traer data del usuario
@@ -52,10 +49,10 @@ export const ProfessionalInformation = () => {
     //Enviar data del usuario al modelo de user y profile
     const submitData = async (e) => {
         if (!params.id) {
-            if (dataProfile) {
+            if (dataUser) {
                 e.preventDefault();
 
-                await sendData("profiles", {
+                await sendData("users", {
                     user_info: idUser,
                     github,
                     description,
@@ -89,7 +86,7 @@ export const ProfessionalInformation = () => {
         } else {
             try {
                 await updateData("users", idUser, dataUser);
-                await updateData("profiles", dataProfile._id, dataProfile);
+                /* await updateData("users", dataUser._id, dataUser); */
                 navigate(`/profile`);
             } catch (error) {
                 console.log(error);
@@ -99,9 +96,9 @@ export const ProfessionalInformation = () => {
 
     const handleChangeEdu = ({ target }, id) => {
         const { name, value } = target;
-        setDataProfile({
-            ...dataProfile,
-            prev_studes: dataProfile.prev_studes.map((item) => ({
+        setDataUser({
+            ...dataUser,
+            prev_studes: dataUser.prev_studes.map((item) => ({
                 ...item,
                 [name]: item.id === id ? value : item[name],
             })),
@@ -109,10 +106,10 @@ export const ProfessionalInformation = () => {
     };
 
     const addEducationField = () => {
-        setDataProfile({
-            ...dataProfile,
+        setDataUser({
+            ...dataUser,
             prev_studes: [
-                ...dataProfile.prev_studes,
+                ...dataUser.prev_studes,
                 {
                     ...studyField,
                     id: uuid(),
@@ -127,9 +124,9 @@ export const ProfessionalInformation = () => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = function load() {
-            setDataProfile({
-                ...dataProfile,
-                prev_studes: dataProfile.prev_studes.map((item) => ({
+            setDataUser({
+                ...dataUser,
+                prev_studes: dataUser.prev_studes.map((item) => ({
                     ...item,
                     certificate:
                         item.id === id ? reader.result : item.certificate,
@@ -144,9 +141,9 @@ export const ProfessionalInformation = () => {
     };
 
     const deleteCertificate = (id) => {
-        setDataProfile({
-            ...dataProfile,
-            prev_studes: dataProfile.prev_studes.map((item) => ({
+        setDataUser({
+            ...dataUser,
+            prev_studes: dataUser.prev_studes.map((item) => ({
                 ...item,
                 certificate: item.id === id ? "" : item.certificate,
             })),
@@ -154,9 +151,9 @@ export const ProfessionalInformation = () => {
     };
 
     const deleteEducation = (id) => {
-        setDataProfile({
-            ...dataProfile,
-            prev_studes: dataProfile.prev_studes.filter(
+        setDataUser({
+            ...dataUser,
+            prev_studes: dataUser.prev_studes.filter(
                 (item) => item.id !== id
             ),
         });
@@ -164,9 +161,9 @@ export const ProfessionalInformation = () => {
 
     const handleChangeExperience = ({ target }, id) => {
         const { name, value } = target;
-        setDataProfile({
-            ...dataProfile,
-            experience: dataProfile.experience.map((item) => ({
+        setDataUser({
+            ...dataUser,
+            experience: dataUser.experience.map((item) => ({
                 ...item,
                 [name]: item.id === id ? value : item[name],
             })),
@@ -174,17 +171,17 @@ export const ProfessionalInformation = () => {
     };
 
     const deleteExperience = (id) => {
-        setDataProfile({
-            ...dataProfile,
-            experience: dataProfile.experience.filter((item) => item.id !== id),
+        setDataUser({
+            ...dataUser,
+            experience: dataUser.experience.filter((item) => item.id !== id),
         });
     };
 
     const addExperienceField = () => {
-        setDataProfile({
-            ...dataProfile,
+        setDataUser({
+            ...dataUser,
             experience: [
-                ...dataProfile.experience,
+                ...dataUser.experience,
                 {
                     ...experienceField,
                     id: uuid(),
@@ -259,7 +256,7 @@ const FieldEducation = ({
     deleteCertificate,
     deleteEducation,
 }) => {
-    const { dataProfile } = useContext(DataContext);
+    const { dataUser } = useContext(DataContext);
     return (
         <div className={style.education} id="0">
             <div className={style.inputs}>
@@ -336,7 +333,7 @@ const FieldEducation = ({
                     onChange={(e) => onFileChange(e, item.id)}
                 />
             </div>
-            {dataProfile.prev_studes.map(
+            {dataUser.prev_studes.map(
                 (dataCert) =>
                     item.id === dataCert.id &&
                     dataCert.certificate && (

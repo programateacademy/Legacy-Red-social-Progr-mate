@@ -2,7 +2,7 @@ import React from "react";
 import CompletePerfil from "./CompletePerfil";
 
 const EditProfile = () => {
-    return <CompletePerfil value={true} />;
+    return <CompletePerfil/>;
 };
 
 export default EditProfile;

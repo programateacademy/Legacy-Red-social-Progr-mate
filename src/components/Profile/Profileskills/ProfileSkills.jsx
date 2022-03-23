@@ -3,8 +3,8 @@ import { DataContext } from "../../../context/DataContext";
 import style from "./ProfileSkills.module.css";
 
 const ProfileSkills = () => {
-    const { dataProfile } = useContext(DataContext);
-    const { softSkills } = dataProfile;
+    const { dataUser } = useContext(DataContext);
+    const { softSkills } = dataUser;
 
     return (
         <>

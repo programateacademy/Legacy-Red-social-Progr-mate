@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { isEmail } from "../../../utils/validation";
 import { showErrMsg, showSuccessMsg } from "../../../utils/notification";
-import { Input } from "../../../components/input/Input";
-import logo from "../../../assets/images/educamas.png";
-import "./ForgotPassword.css";
+import logo from "../../../assets/images/logo-a.png";
+import styles from "./ForgotPassword.module.css";
 import { baseUrl } from "../../../../config";
+import { Link } from "react-router-dom";
 
 const initialState = {
   email: "",
@@ -23,7 +23,8 @@ function ForgotPassword() {
     setData({ ...data, [name]: value, err: "", success: "" });
   };
 
-  const forgotPassword = async () => {
+  const forgotPassword = async (e) => {
+    e.preventDefault();
     if (!isEmail(email))
       return setData({
         ...data,
@@ -44,28 +45,34 @@ function ForgotPassword() {
   };
 
   return (
-    <div className="container-main-forgotPassword">
-      <div className="container-forgotPassword">
-        <img className="logo" src={logo} alt="logo" />
-        <h2 className="title-forgotPassword">OLVIDASTE TU CONTRASEÑA?</h2>
-
-        <div className="container-info-forgotPassword">
+    <main className={styles.wrapper}>
+      <div className={styles.container}>
+        <img className={styles.containerLogo} src={logo} alt="logo" />
+        <h2 className={styles.containerTitle}>Recuperar contraseña</h2>
+        <p className={styles.containerInfo}>
+          Ingresa tu correo electrónico y te enviaremos un mensaje para restablecer la contraseña.
+        </p>
+        <form className={styles.containerForm} onSubmit={forgotPassword}>
           {err && showErrMsg(err)}
           {success && showSuccessMsg(success)}
-
-          <Input
+          <input
+            className={styles.containerFormInput}
             label="Ingresa tu correo electronico"
-            placeholder="Juan@hotmail.com"
+            placeholder="Correo Electrónico"
             name="email"
             value={email}
             onChange={handleChangeInput}
           />
-          <button className="button-forgotPassword" onClick={forgotPassword}>
-            Verificar tu correo
-          </button>
-        </div>
+          <input
+            type="submit"
+            className={styles.containerFormBtn}
+            onClick={forgotPassword}
+            value="Recuperar contraseña"
+          />
+        </form>
+        <Link className={styles.containerNavigate} to="/">Regresar al Login</Link>
       </div>
-    </div>
+    </main>
   );
 }
 

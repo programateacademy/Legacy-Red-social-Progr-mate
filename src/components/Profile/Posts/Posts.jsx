@@ -32,7 +32,7 @@ const Posts = () => {
         } catch (error) {
             console.log(error);
         }
-    }, [getPostsProfile]);
+    }, []);
 
     return (
         <Fragment>

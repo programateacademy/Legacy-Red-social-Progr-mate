@@ -4,7 +4,7 @@ import { getData, getDataAll } from "../../../helpers/fetch";
 import style from "./ProfileAbout.module.css";
 
 const ProfileAbout = () => {
-    const { dataProfile } = useContext(DataContext);
+    const { dataUser } = useContext(DataContext);
 
     // useEffect(async () => {
     //     if (idUser) {
@@ -19,7 +19,7 @@ const ProfileAbout = () => {
     //                 (profile) => profile.user_info?._id === idUser
     //             );
 
-    //             setDataProfile(filterData[0]);
+    //             setDataUser(filterData[0]);
     //             //console.log(filterData, "data del perfil"); !!!
     //         } catch (error) {
     //             console.log(error);
@@ -37,7 +37,7 @@ const ProfileAbout = () => {
                         </div>
                     </div>
                     <div>
-                        <p>{dataProfile?.description}</p>
+                        <p>{dataUser?.description}</p>
                     </div>
                 </div>
             </section>

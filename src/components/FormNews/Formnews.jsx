@@ -1,6 +1,5 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Formnews.module.css";
-
 import { getData, sendData, updateData } from "../../helpers/fetch";
 import { DataContext } from "../../context/DataContext";
 import HardSkills from "./HardSkills";
@@ -19,7 +18,7 @@ const FormNews = () => {
         setPosts({ ...posts, type: "news" });
     }, []);
 
-    //Enviar data de la noticia al modelo de post
+    //send data from the new to the model post 
     const submitData = async (e) => {
         e.preventDefault();
 
@@ -55,7 +54,6 @@ const FormNews = () => {
                 }
 
                 navigate(`/home`);
-                // history.push("/formevent");
             } catch (error) {
                 console.log(error);
             }
@@ -63,7 +61,6 @@ const FormNews = () => {
     };
 
     const onChange = ({ target }) => {
-        // console.log(posts);
         const { name, value } = target;
         setPosts({
             ...posts,
@@ -81,7 +78,6 @@ const FormNews = () => {
             });
             e.target.value = "";
             e.preventDefault();
-            // console.log(posts, technical);
         }
     };
 
