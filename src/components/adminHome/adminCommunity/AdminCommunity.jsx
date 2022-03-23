@@ -2,7 +2,6 @@ import React, { useState, Fragment, useEffect } from 'react'
 import { getDataAll, updateData } from '../../../helpers/fetch'
 import { useNavigate } from "react-router-dom";
 import style from '../../UsersList/UsersList.module.css'
-import Searcher from './Searcher/Searcher'
 
 import Searcher from '../../Searcher/Searcher'
 import DeleteButton from '../../DeleteButton/DeleteButton'
@@ -36,7 +35,7 @@ const AdminCommunity = () => {
         })
     }
 
-  
+
     const filter = (toSearch) => {
         let userToSet = allUser.filter((users) => {if (users.email.toString().toLowerCase().includes(toSearch.toLowerCase())){
             return users

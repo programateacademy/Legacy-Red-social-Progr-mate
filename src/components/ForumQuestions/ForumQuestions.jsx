@@ -12,6 +12,17 @@ function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 const ForumQuestions = () => {
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        let isMounted = true
+        const usersFetch = async() => {const data = await getDataAll(`users`);
+        if (isMounted) {setUsers(data)}}
+        usersFetch()
+        return () => {
+            isMounted = false;
+        }
+    }, []);
+
     const [questions, setQuestions] = useState([]);
     const [filterTag, setFilterTag] = useState("");
     const [dropdown, setDropdown] = useState(false);
@@ -26,10 +37,23 @@ const ForumQuestions = () => {
     };
 
     useEffect(() => {
-        allQuestions();
+        let isMounted = true
+        const questions = async () => {
+            if (isMounted) {allQuestions();}
+        };
+        questions();
+        return () => {
+            isMounted = false;
+        }
     }, [search]);
-
-    // console.log(questions, "preguntas");
+// This function filter the name and avatar of each question.
+    const filterPostCreator = (id, key) => {
+        const user = users.filter((user) => user._id === id);
+        const userFilter = user[0];
+        if (userFilter) {
+            return key?`${userFilter.firstName}  ${userFilter.lastName}`: `${userFilter.avatar}`;
+        }
+    };
     return (
         <section
             className={styles.section}
@@ -199,9 +223,7 @@ const ForumQuestions = () => {
                     </div>
                 </div>
                 <div className={styles.section__container}>
-                    {questions.map((data) => (
-                        <Question key={data._id} data={data} />
-                    ))}
+                    {questions.map((data) =>  (<Question key={data._id} data={data} name={filterPostCreator}/>))}
                 </div>
             </div>
         </section>

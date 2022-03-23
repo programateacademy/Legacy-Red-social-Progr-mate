@@ -16,12 +16,15 @@ export const Search = ({
 
     const navigate = useNavigate();
 
-    useEffect(async () => {
-        try {
+    useEffect(() => {
+        let isMounted = true;
+        const getUser =async() => {
             const data = await getDataAll("users");
-            setGetUsers(data);
-        } catch (error) {
-            console.log(error);
+            if (isMounted) {setGetUsers(data);}
+        }
+        getUser()
+        return () => {
+            isMounted = false;
         }
     }, []);
 
@@ -36,7 +39,7 @@ export const Search = ({
         return filteredUser;
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (searchText.length !== 0) {
             const filteredForum = questions.filter(
@@ -58,12 +61,17 @@ export const Search = ({
     };
 
     useEffect(() => {
-        const filteredForum = questions.filter((item) =>
+        let isMounted = true
+        const filterQuestions = async () =>{const filteredForum = questions.filter((item) =>
             item?.tags
                 ?.map((quest) => quest.toLowerCase())
                 .includes(filterTag.toLowerCase())
         );
-        setQuestions(filteredForum);
+        if (isMounted) {await setQuestions(filteredForum)};}
+        filterQuestions()
+        return () => {
+            isMounted = false;
+        }
     }, [filterTag]);
 
     return (

@@ -6,22 +6,25 @@ import style from "./UsersList.module.css";
 
 
 const UsersList = () => {
-
     const navigate = useNavigate()
     const [allUser, setAllUser] = useState([])
 
-    useEffect(async () => {
-        const dataToEdit = await getDataAll("users");
-
-        setAllUser(dataToEdit)
-    }, [])
+    useEffect(() => {
+        let isMounted = true
+        const data = async () => {
+            const dataToEdit = await getDataAll("users");
+            if(isMounted) {setAllUser(dataToEdit)}
+        }
+        data();
+        return () => {
+            isMounted = false;
+        }
+    },[])
 
     return (
         <Fragment>
-
             <div className={style.container}>
                 <FilterHome/>
-
                 {allUser.map((user) => (
                     <div key={user._id} className={style.card}>
                         <img
