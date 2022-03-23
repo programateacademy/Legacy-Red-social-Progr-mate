@@ -13,14 +13,13 @@ export const ProfessionalInformation = () => {
     const { dataProfile, setDataProfile, dataUser, setDataUser, idUser } =
         useContext(DataContext);
     const navigate = useNavigate();
-
     const {
         user_info,
         github,
         description,
         technicalSkills,
         softSkills,
-        lenguages,
+        languages,
         prev_studes,
         experience,
     } = dataProfile;
@@ -51,17 +50,13 @@ export const ProfessionalInformation = () => {
 
     //Enviar data del usuario al modelo de user y profile
     const submitData = async (e) => {
-        if (!params.id) {
+        if (params.id) {
             if (dataProfile) {
                 e.preventDefault();
-
-                await sendData("users", {
-                    user_info: idUser,
-                    github,
-                    description,
+                await updateData("users", idUser,{
                     technicalSkills,
                     softSkills,
-                    lenguages,
+                    languages,
                     prev_studes,
                     experience,
                 });
