@@ -21,7 +21,7 @@ export const dispatchGetUser = (res) => {
         type: ACTIONS.GET_USER,
         payload: {
             user: res.data,
-            isAdmin: res.data.role === 9 ? true : false
+            isAdmin: res.data.rol === 9 ? true : false
         }
     }
 }

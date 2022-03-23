@@ -13,13 +13,11 @@ const FormEventEdit = () => {
     const navigate = useNavigate();
 
     useEffect(async () => {
-        //console.log(params.id);
         const dataToEdit = await getData("posts", params.id);
         setTechs(dataToEdit.technologies);
         setPostsEvent(dataToEdit);
     }, []);
 
-    //Enviar data del usuario al modelo de user y profile
     const submitData = async (e) => {
         e.preventDefault();
         try {

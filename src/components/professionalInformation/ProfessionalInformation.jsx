@@ -55,7 +55,7 @@ export const ProfessionalInformation = () => {
             if (dataProfile) {
                 e.preventDefault();
 
-                await sendData("profiles", {
+                await sendData("users", {
                     user_info: idUser,
                     github,
                     description,
@@ -89,7 +89,7 @@ export const ProfessionalInformation = () => {
         } else {
             try {
                 await updateData("users", idUser, dataUser);
-                await updateData("profiles", dataProfile._id, dataProfile);
+                /* await updateData("users", dataProfile._id, dataProfile); */
                 navigate(`/profile`);
             } catch (error) {
                 console.log(error);

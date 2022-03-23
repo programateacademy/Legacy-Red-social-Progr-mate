@@ -2,105 +2,107 @@ import React, { useState, Fragment, useContext, useEffect } from 'react'
 import { getDataAll, updateData } from '../../../helpers/fetch'
 import { useNavigate } from "react-router-dom";
 import style from '../../UsersList/UsersList.module.css'
-import { DataContext } from '../../../context/DataContext';
-import FilterHome from "../../filterHome/FilterHome";
+import Searcher from '../../Searcher/Searcher'
+import DeleteButton from '../../DeleteButton/DeleteButton'
 //import ImagDama from '../../assets/images/ImagDama.png'
 //import ImagCaballero from '../../assets/images/ImagCaballero.png'
 
+import { DataContext } from '../../../context/DataContext';
+import FilterHome from "../../filterHome/FilterHome";
 
-const AdminCommunity = () =>  {
 
-    const [toogle, setToogle] = useState(true)
+const AdminCommunity = () => {
 
+    const [allCohorts, setCohorts] = useState([])
     const navigate = useNavigate()
     const [allUser, setAllUser] = useState([])
-    
+    const [filterUser, setFilterUser] = useState([])
     useEffect(async () => {
         const dataToEdit = await getDataAll("users");
-
+        const dataCohort = await getDataAll("cohorte");
         setAllUser(dataToEdit)
+        setCohorts(dataCohort)
+        setFilterUser(dataToEdit)
     }, [])
-
-    useEffect(() => {
-
-    }, [allUser, setAllUser]);
-
     const onToggle = (id) => {
         allUser.map((user) => {
             if (user._id === id) {
                 console.log(id, user._id);
                 user.state = !user.state
                 /* setDataUser(user) */
-
                 console.log(user)
-
-                updateData("users",user._id,{
-                    state:user.state
+                updateData("users", user._id, {
+                    state: user.state
                 })
-
                 setAllUser(allUser)
                 navigate("/adminhome")
-
             }
         })
-
     }
 
-/*     const [connection, setConnection] = useState()
 
-    useEffect(()=>{
-        
-        const loggedUser = window.localStorage.getItem("loggedAgoraUser")
-        const UserLogInfo = JSON.parse(loggedUser);
-        console.log(UserLogInfo.msg)
-
-        if(UserLogInfo.msg=='Login success!'){
-            setConnection(true) 
-        }
-
-       // UserLogInfo!=='undefined'? : setConnection(false)
-        console.log(connection)
-    },[])
- */
+    const filter = (toSearch) => {
+        let userToSet = allUser.filter((users) => {if (users.email.toString().toLowerCase().includes(toSearch.toLowerCase())){
+            return users
+        }})
+        setFilterUser(userToSet)
+        // setFilterUser(userToSet)
+    }
 
     return (
         <Fragment>
+            <Searcher typeOfSearch='Busqueda por correo' setFilter={setFilterUser} dataToFilter={allUser} objectKey={'email'}/>
             <div className={style.container}>
-
-                <FilterHome/>
-
-                {allUser.map((user) => (
-
-                    <div key={user._id} className={style.card}>
-                        <img className={style.img} src={user.avatar} alt="ImagDama" />
-                        <p className={style.p}>{user.firstName} {user.middleName && user.middleName}<br />
-                            {user.state ? 'Habilitado' : 'Deshabilitado'}<br/>
-                            {/* {user.connection ? 'En linea': 'Desconectado'} */}
-                            </p>
-                            <i>{user.cohorte.name}</i> 
-
-                            <button
-                            type="button"
-                            onClick={() => navigate(`/profile/${user._id}`)}
-                        >
-                            Ver perfil
-                        </button>
-
-
-
-
-                        <ul className={user.state ? style.icon_green : style.icon_Gray}>
-                            <i onClick={() => onToggle(user._id)} className="far fa-user" ></i>
-                        </ul>
-                    </div>
-
-                ))
-
-                }
-
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Nombre</th>
+                            <th>Cohorte</th>
+                            <th>Correo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead><tbody>
+                        {filterUser.map((user) => (
+                            <tr key={user._id} >
+                                <td><img src={user.avatar} alt="ImagDama" /></td>
+                                <td>
+                                    <p>{user.firstName} {user.middleName && user.middleName}</p>
+                                </td>
+                                <td>
+                                    <i>{allCohorts.map(item => (
+                                        item._id === user.cohorte ? <p key={user._id}>{item.cohorte_name}</p> : ""
+                                    ))}</i>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    {user.email}
+                                </td>
+                                <td>
+                                    <ul className={user.state ? style.icon_green : style.icon_Gray}>
+                                        <i onClick={() => onToggle(user._id)} className="far fa-user" ></i>
+                                        {user.state ? 'Habilitado' : 'Deshabilitado'}
+                                    </ul>
+                                </td>
+                                <td>
+                                    <button
+                                        type="button"
+                                        onClick={() => navigate(`/profile/${user._id}`)}
+                                    >
+                                        Ver perfil
+                                    </button>
+                                </td>
+                                <td>
+                                    <DeleteButton endpoint={'users'} id={user._id}/>
+                                </td>
+                            </tr>
+                        ))
+                        }
+                    </tbody>
+                </table>
             </div>
         </Fragment>
     )
 }
-
 export default AdminCommunity

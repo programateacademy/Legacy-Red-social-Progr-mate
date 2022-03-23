@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import Footer from "../components/Footer/Footer";
 import ForumAnswers from "../components/ForumAnswers/ForumAnswers";
-
 import Navbar from "../components/Navbar/Navbar";
 
 const ForumAnswersPage = () => {

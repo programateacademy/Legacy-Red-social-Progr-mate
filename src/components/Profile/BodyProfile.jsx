@@ -45,10 +45,10 @@ const BodyProfile = () => {
         }
     }, [idUser]);
 
-    useEffect(async () => {
+/*     useEffect(async () => {
         if (idUser) {
             try {
-                const data = await getDataAll("profiles");
+                const data = await getDataAll("users");
                 if (!params.id) {
                     const filterData = data.filter(
                         (profile) => profile.user_info._id === idUser
@@ -65,7 +65,7 @@ const BodyProfile = () => {
                 console.log(error);
             }
         }
-    }, [idUser]);
+    }, [idUser]); */
 
     return (
         <div className={style.containBodyProfile}>

@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./RenderPostHome.module.css";
-import news from "../../news.json";
 import { RenderPostGrid } from "./RenderPostGrid";
 
 /* This is the father component of the news */
