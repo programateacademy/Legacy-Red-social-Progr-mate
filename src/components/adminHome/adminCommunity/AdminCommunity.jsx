@@ -47,7 +47,7 @@ const AdminCommunity = () => {
 
     return (
         <Fragment>
-            <Searcher typeOfSearch='Busqueda por correo' filter={filter}/>
+            <Searcher typeOfSearch='Busqueda por correo' setFilter={setFilterUser} dataToFilter={allUser} objectKey={'email'}/>
             <div className={style.container}>
                 <table>
                     <thead>
@@ -88,6 +88,9 @@ const AdminCommunity = () => {
                                     >
                                         Ver perfil
                                     </button>
+                                </td>
+                                <td>
+                                    <DeleteButton endpoint={'users'} id={user._id}/>
                                 </td>
                             </tr>
                         ))
