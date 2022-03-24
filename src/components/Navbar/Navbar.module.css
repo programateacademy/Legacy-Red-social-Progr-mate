@@ -56,6 +56,14 @@
     width: 55px;
     height: 55px;
 }
+.btnNotification{
+    border: none;
+    background: none;
+}
+.imgProfile{
+    width: 40px;
+    border-radius: 10px;
+}
 /*========================= Dropdown ========================= */
 .dropdownLogOut {
     width: 30px;
