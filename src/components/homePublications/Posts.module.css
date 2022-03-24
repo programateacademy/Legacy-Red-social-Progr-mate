@@ -20,11 +20,11 @@
     margin: auto;
     background-color: #d7d7d7;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color:#ffffff;
     border-radius: 2px;
     padding: 5px 15px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 .postUser {

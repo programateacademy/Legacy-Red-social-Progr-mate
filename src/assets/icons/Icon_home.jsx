@@ -2,8 +2,8 @@ import * as React from "react"
 
 const Icon_home = (props) => (
   <svg
-    width={30}
-    height={30}
+    width={60}
+    height={60}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
