@@ -13,6 +13,7 @@ export const ProfessionalInformation = () => {
     const { dataProfile, setDataProfile, dataUser, setDataUser, idUser } =
         useContext(DataContext);
     const navigate = useNavigate();
+
     const {
         user_info,
         github,
