@@ -102,6 +102,7 @@ const ForumAnswers = () => {
         <>
             <div className={styles.questionContainerMain}>
                 <div className={styles.containerQuestion}>
+                    <img src={question.user_info?.avatar} alt="Avatar person asking" />
                     <h5 className={styles.question}>{question.title}</h5>
                     <p className={styles.question}>{question.description}</p>
                     <p className={styles.dateQuestion}>
@@ -113,7 +114,6 @@ const ForumAnswers = () => {
                     <p className={styles.name}> {question.user_info?.firstName} {question.user_info?.lastName} </p>
                 </div>
             </div>
-            <p className={styles.title}>Respuestas</p>
             <div className={styles.questionContainerMain}>
                 <form className={styles.from_container} onSubmit={submitData}>
                     <div className={styles.forms}>
@@ -135,7 +135,7 @@ const ForumAnswers = () => {
                     </div>
                 </form>
             </div>
-            <p className={styles.title}>Otras respuestas</p>
+            <p className={styles.title}> {question.comments?.length} Respuestas</p>
             {comments.map((comment, i) => (
                 <div key={i} className={styles.questionContainerMain}>
                     <br />

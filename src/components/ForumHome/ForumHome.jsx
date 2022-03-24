@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import styles from "./ForumHome.module.css";
 import { BiGroup } from "react-icons/bi";
 import { BiBox } from "react-icons/bi";
@@ -32,4 +32,4 @@ const ForumHome = () => {
   );
 };
 
-export default ForumHome;
+export default ForumHome; */
