@@ -20,7 +20,6 @@ const ForumAnswers = () => {
     const searchUrl = idUser;
 
 
-<<<<<<< HEAD
     const userInfo = async () => {
         const data = await getData("users", searchUrl);
         setUser(data);
@@ -35,17 +34,6 @@ const ForumAnswers = () => {
 
     const submitData = async (e) => {
         e.preventDefault();
-=======
-  const commentInfo = async () => {
-    const data = await getData("posts", questionId);
-    setComments((comments) => data.comments);
-    console.log(comments, "commets");
-  };
-
-  const submitData = async (e) => {
-    e.preventDefault();
-
->>>>>>> 51cfe82a00fec8e8eb974b5335ca494f16434b27
 
         try {
             await sendData(`posts/comment/${questionId}`, postComments);
@@ -147,7 +135,7 @@ const ForumAnswers = () => {
                     </div>
                 </form>
             </div>
-            <p className={styles.title}> {question.comments?.length} Respuestas</p>
+       <p className={styles.title}> {question.comments?.length} Respuestas</p>
             {comments.map((comment, i) => (
                 <div key={i} className={styles.questionContainerMain}>
                     <br />
@@ -169,17 +157,9 @@ const ForumAnswers = () => {
                 </div>
             ))}
 
-<<<<<<< HEAD
             <br />
         </>
     );
-=======
-  
-
-      <br />
-    </>
-  );
->>>>>>> 51cfe82a00fec8e8eb974b5335ca494f16434b27
 };
 
 export default ForumAnswers;
