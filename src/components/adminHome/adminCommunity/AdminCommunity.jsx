@@ -2,12 +2,15 @@ import React, { useState, Fragment, useEffect } from 'react'
 import { getDataAll, updateData } from '../../../helpers/fetch'
 import { useNavigate } from "react-router-dom";
 import style from '../../UsersList/UsersList.module.css'
-
 import Searcher from '../../Searcher/Searcher'
 import DeleteButton from '../../DeleteButton/DeleteButton'
+import Modal from "../../modals/Modal"
+import CompleteProfile from '../../CompleteProfile/CompleteProfile'
+import {useModals} from "../../modals/useModals"
 
 /* Table of users - Renders in AdminHome */
 const AdminCommunity = () => {
+    const [IsOpenModalCompleteProfile, openModalCompleteProfile, closeModalJobCompleteProfile] = useModals(false);
     const [allCohorts, setCohorts] = useState([])
     const navigate = useNavigate()
     const [allUser, setAllUser] = useState([])
@@ -36,13 +39,13 @@ const AdminCommunity = () => {
     }
 
 
-    const filter = (toSearch) => {
-        let userToSet = allUser.filter((users) => {if (users.email.toString().toLowerCase().includes(toSearch.toLowerCase())){
-            return users
-        }})
-        setFilterUser(userToSet)
-        // setFilterUser(userToSet)
-    }
+    // const filter = (toSearch) => {
+    //     let userToSet = allUser.filter((users) => {if (users.email.toString().toLowerCase().includes(toSearch.toLowerCase())){
+    //         return users
+    //     }})
+    //     setFilterUser(userToSet)
+    //     // setFilterUser(userToSet)
+    // }
 
     return (
         <Fragment>
@@ -90,6 +93,14 @@ const AdminCommunity = () => {
                                 </td>
                                 <td>
                                     <DeleteButton endpoint={'users'} id={user._id}/>
+                                </td>
+                                <td>
+                                    <button onClick={openModalCompleteProfile}>
+                                        EDITAR
+                                    </button>
+                                    <Modal isOpen={IsOpenModalCompleteProfile} closeModal={closeModalJobCompleteProfile}>
+                                        <CompleteProfile/>
+                                    </Modal>
                                 </td>
                             </tr>
                         ))
