@@ -7,7 +7,6 @@ import { BiBox } from "react-icons/bi";
 import { DataContext } from "../../context/DataContext";
 import { TagsInput } from "react-tag-input-component";
 
-import ReactTagInput from "@pathofdev/react-tag-input"; //Review !
 import "@pathofdev/react-tag-input/build/index.css"; //Review !
 import { useNavigate } from "react-router-dom";
 
@@ -58,7 +57,7 @@ const ForumAddQuestion = () => {
                                     "Por favor escriba su aporte";
                             }
 
-                            if (valores.images.size > 200000) {
+                            if (valores.images.size > 75000) {
                                 errores.images = "La foto es demasiado pesada";
                             }
                             return errores;
@@ -67,9 +66,6 @@ const ForumAddQuestion = () => {
                             valores.tags = tags;
                             setTags([]);
                             resetForm();
-                            /*     console.log("Formulario enviado");
-                            console.log(valores.images); */
-                            /* valores.images = getBase64(valores.images); */
                             await sendData("posts", valores);
                             navigate("/questions");
                         }}

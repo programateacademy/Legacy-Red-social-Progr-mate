@@ -8,6 +8,7 @@ import JobSoftSkills from "../formInfo/SoftSkills";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
+
 const FormJobs = () => {
     const { postsJobs, setPostsJobs, idUser } = useContext(DataContext);
 
@@ -23,7 +24,7 @@ const FormJobs = () => {
     const [softSkill, setsoftSkill] = useState([]);
     console.log(submitData)
 
-    //Enviar data del usuario al modelo de user y profile
+    //Send User data to user model and profile
 
     const submitData = async (e) => {
         e.preventDefault();
@@ -39,7 +40,7 @@ const FormJobs = () => {
             postsJobs.softSkills.length <= 0 ||
             postsJobs.salary.length <= 0
         ) {
-            // message that pop if conditions arent fulfilles
+            // message that pop if conditions arent fulfilled
             Swal.fire({
                 title: "Completar datos",
                 text: "Los campos de Nombre de la oferta,modalidad y salario son obligatorios",
@@ -96,6 +97,7 @@ const FormJobs = () => {
             e.preventDefault();
         }
     };
+    // Verify funtion
     const getDataJobs = async (id) => {
         try {
             const dataJobs = await getData("posts", id);

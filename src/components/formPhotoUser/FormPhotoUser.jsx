@@ -16,18 +16,12 @@ const FormPhotoUser = () => {
             avatar: "",
         });
     };
-    // useEffect(() => {
-    //     setDataUser({
-    //         ...dataUser,
-    //         _id: id,
-    //     })
-    // }, [])
 
     const onFileChange = (e) => {
         if (e.target.files.length) {
             const file = e.target.files[0];
-
-            if (file.size < 200000) {
+// the picture must be less than 75KB
+            if (file.size < 75000) {
                 if (file.type.includes("image")) {
                     const reader = new FileReader();
                     reader.readAsDataURL(file);
@@ -43,7 +37,7 @@ const FormPhotoUser = () => {
                     console.log("Hubo un error");
                 }
             } else {
-                alert(`El tamaño máximo es 200 KB`);
+                alert(`El tamaño máximo es 70 KB`);
             }
         }
         console.log(dataUser);
@@ -56,7 +50,6 @@ const FormPhotoUser = () => {
                 <h2>Completa tu perfil</h2>
             </div>
             <div className={style.welcome}>
-                {/* <p>Hola {dataUser.firstName}, completa tus datos</p> */}
                 <p>Hola {dataUser.firstName}, completa tus datos</p>
             </div>
             <form>

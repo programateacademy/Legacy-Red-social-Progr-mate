@@ -24,7 +24,7 @@ const FormProject = () => {
 
     const params = useParams();
 
-    //Enviar data del proyecto al modelo de portfolio
+    //Send the proyect data to the portfolio model
     const submitData = async (e) => {
         e.preventDefault();
 
@@ -67,7 +67,6 @@ const FormProject = () => {
     };
 
     const onChange = ({ target }) => {
-        // console.log(portfolio);
         const { name, value } = target;
         setPortfolio({
             ...portfolio,
@@ -85,7 +84,7 @@ const FormProject = () => {
             });
             e.target.value = "";
             e.preventDefault();
-            // console.log(posts, technical);
+            
         }
     };
 
@@ -110,14 +109,14 @@ const FormProject = () => {
 
     const onFileChange = (e) => {
         const file = e.target.files[0];
-        if (file.size < 200000) {
+        if (file.size < 75000) {
             const reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = function load() {
                 setPortfolio({ ...portfolio, image: reader.result });
             };
         } else {
-            alert(`El tamaño máximo es 200 KB`);
+            alert(`El tamaño máximo es 70 KB`);
         }
     };
 
