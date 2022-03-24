@@ -40,17 +40,6 @@ const HomePage = () => {
             <Modals />
             <Posts />
           </div>
-          <Media query="(min-width: 1024px)">
-            {(matches) => {
-              return (
-                matches && (
-                  <div className={style.containNotifications}>
-                    <Notification />
-                  </div>
-                )
-              );
-            }}
-          </Media>
         </div>
         {/* <RenderPostHome />
             <JobCard /> */}
