@@ -54,6 +54,7 @@ const ForumQuestions = () => {
             return key?`${userFilter.firstName}  ${userFilter.lastName}`: `${userFilter.avatar}`;
         }
     };
+    console.log(questions)
     return (
         <section
             className={styles.section}
@@ -65,7 +66,7 @@ const ForumQuestions = () => {
                 <div className={styles.section__head}>
                     <h1 className={styles.section__title}>
                         PREGUNTAS
-                        <RiQuestionLine size="27" />
+                        <RiQuestionLine size="17" />
                     </h1>
                     <hr className={styles.section__lineTitle} />
                 </div>
@@ -218,8 +219,7 @@ const ForumQuestions = () => {
                         )}
                     </div>
                     <div className={styles.questionAnswer}>
-                        <p>4 respuestas</p>
-                        <p>{questions.length} preguntas</p>
+                        <p>{questions.length} Preguntas</p>
                     </div>
                 </div>
                 <div className={styles.section__container}>

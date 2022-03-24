@@ -93,7 +93,7 @@ export const Search = ({
                     className={styles.clearFilter}
                     onClick={() => allQuestions()}
                 >
-                    Limpiar filtro
+                   <button>Limpiar filtro</button> 
                 </p>
             </form>
         </>
