@@ -36,9 +36,8 @@ import ForumQuestionsPage from "../../pages/ForumQuestionsPage";
 import HomePage from "../../pages/HomePage";
 
 //Profile
-import ProfilePage from "../../pages/ProfilePage";
-import PortfolioPage from "../../pages/PortfolioPage";
 import FormProject from "../../components/FormProject/FormProject";
+import ProfilePage from "../../pages/ProfilePage"
 
 //admin
 import AdminHomePage from "../../pages/AdminHomePage";
@@ -113,17 +112,6 @@ function Autentification() {
                     exact
                     path="/profile/:id"
                     element={isLogged ? <ProfilePage /> : <NotFound />}
-                />
-
-                <Route
-                    exact
-                    path="/portfolio"
-                    element={isLogged ? <PortfolioPage /> : <NotFound />}
-                />
-                <Route
-                    exact
-                    path="/portfolio/:id"
-                    element={isLogged ? <PortfolioPage /> : <NotFound />}
                 />
 
                 <Route

@@ -5,7 +5,6 @@ import RenderPostHome from "../components/RenderPostHome/RenderPostHome";
 import Posts from "../components/homePublications/Posts";
 import FilterHome from "../components/filterHome/FilterHome";
 import BodyProfile from "../components/Profile/BodyProfile";
-import Portfolio from "../components/portfolio/Portfolio";
 import style from "../components/filterHome/filterHome.module.css";
 import Notification from "../components/Notifications/Notification";
 import Makingpost from "../components/makingpost/Makingpost";
