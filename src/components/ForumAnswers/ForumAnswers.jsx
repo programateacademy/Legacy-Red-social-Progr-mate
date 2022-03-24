@@ -110,7 +110,7 @@ const ForumAnswers = () => {
                 </div>
                 <div className={styles.tagsContainer}></div>
                 <div className={styles.infoContainer}>
-                    <p className={styles.name}> 'hola' </p>
+                    <p className={styles.name}> {question.user_info?.firstName} {question.user_info?.lastName} </p>
                 </div>
             </div>
             <p className={styles.title}>Respuestas</p>

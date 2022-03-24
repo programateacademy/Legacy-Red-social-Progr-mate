@@ -2,8 +2,8 @@ import * as React from "react";
 
 const Icon_message = (props) => (
   <svg
-    width={195}
-    height={195}
+    width={60}
+    height={60}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

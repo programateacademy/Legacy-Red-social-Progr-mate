@@ -21,7 +21,7 @@ const Form_PersonalInfo = () => {
     const [softSkills, setsoftSkills] = useState([]);
     const [languages, setLanguages] = useState([]);
 
-    // console.log(idUser)
+   
 
     const onChange = ({ target }) => {
         // console.log(dataProfile);
@@ -31,12 +31,6 @@ const Form_PersonalInfo = () => {
             [name]: value,
         });
     };
-    // useEffect(() => {
-    //     setDataProfile({
-    //         ...dataProfile,
-    //         user_info: id,
-    //     })
-    // }, [])
     const onKeyHardSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
             technical.push(e.target.value);
@@ -51,7 +45,7 @@ const Form_PersonalInfo = () => {
 
     const onKeySoftSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
-            const addTech = softSkills.push(e.target.value);
+            softSkills.push(e.target.value);
             setDataProfile({
                 ...dataProfile,
                 softSkills: softSkills,
@@ -70,8 +64,6 @@ const Form_PersonalInfo = () => {
                 lenguages: languages,
             });
             e.target.value = "";
-            // console.log(languages);
-
             e.preventDefault();
         }
     };
@@ -80,12 +72,12 @@ const Form_PersonalInfo = () => {
         if (params.id) {
             try {
                 const data = await getDataAll("users");
+                /* obtain user data*/
                 const filter = data.filter(
-                    (prof) => prof.user_info._id === idUser
+                    (prof) => prof._id === idUser
                 );
-                // console.log(filter[0]);
                 setDataProfile(filter[0]);
-                setLanguages(filter[0].lenguages);
+                setLanguages(filter[0].languages);
                 setsoftSkills(filter[0].softSkills);
                 setTechnical(filter[0].technicalSkills);
             } catch (error) {
@@ -97,47 +89,14 @@ const Form_PersonalInfo = () => {
         <Fragment>
             <form className={style.form_container}>
                 {/* <div className={style.forms}>
-                    <h3>Nombre *</h3>
-                    <input
-                        className={style.nom}
-                        type="text"
-                        name="name"
-                        value={dataProfile.name}
-                        // onChange={onChange}
-                    />
-                </div> */}
-
-                <div className={style.forms}>
                     <h3>Link de Git Hub</h3>
                     <input
                         className={style.nom}
                         type="text"
                         name="github"
-                        value={dataProfile.github}
                         onChange={onChange}
                     />
                 </div>
-
-                {/* <div className={style.forms}>
-                    <h3>Cohorte *</h3>
-                    <select
-                        className={style.nom}
-                        name="cohorte"
-                        defaultValue="0"
-                        // onChange={onSelectChange}
-                    >
-                        <option value="0">Cohorte</option>
-                        <option value="1">Primeros</option>
-                        <option value="2">Quackoders</option>
-                    </select> */}
-                {/* <input
-                        className={style.nom}
-                        type="text"
-                        name="cohorte"
-                        value={dataProfile.cohorte}
-                        onChange={onChange}
-                    /> */}
-                {/* </div> */}
 
                 <div className={style.forms}>
                     <h3>Acerca de</h3>
@@ -145,11 +104,10 @@ const Form_PersonalInfo = () => {
                         className={style.textarea}
                         rows="3"
                         name="description"
-                        value={dataProfile.description}
                         onChange={onChange}
                     ></textarea>
                 </div>
-
+ */}
                 <div className={style.forms}>
                     <h3>Tecnologías</h3>
                     <input
@@ -201,7 +159,6 @@ const Form_PersonalInfo = () => {
                     <div
                         className={style.tecnologias}
                         id="languages"
-                        // ref={targetSkill}
                     >
                         {languages.map((skill, index) => (
                             <Languages

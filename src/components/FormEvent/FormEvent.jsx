@@ -6,6 +6,7 @@ import { sendData } from "../../helpers/fetch";
 import { useNavigate } from "react-router-dom";
 import HardSkills from "../formInfo/HardSkills";
 
+/* Create new event */
 const FormEvent = () => {
     const { postsEvent, setPostsEvent, idUser } = useContext(DataContext);
 
@@ -13,7 +14,6 @@ const FormEvent = () => {
 
     const navigate = useNavigate();
 
-    //Enviar data del usuario al modelo de user y profile
     //Send data from the user to the user model and profile
     const submitData = async (e) => {
         e.preventDefault();
@@ -44,7 +44,6 @@ const FormEvent = () => {
         }
     };
     // Post the publication and give it an event type
-    useEffect(() => {}, [postsEvent, setPostsEvent]);
     useEffect(() => {
         setPostsEvent({ ...postsEvent, type: "event" });
     }, []);

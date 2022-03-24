@@ -24,7 +24,6 @@ const UsersList = () => {
     return (
         <Fragment>
             <div className={style.container}>
-                <FilterHome/>
                 {allUser.map((user) => (
                     <div key={user._id} className={style.card}>
                         <img

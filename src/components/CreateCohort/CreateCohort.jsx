@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { getDataAll, sendData } from "../../helpers/fetch"
 
+/* Create cohort and his users - Renders in AdminCohort*/
 function CreateCohort() {
     const [newCohort, setNewCohort] = useState([])
     const [users, setUsers] = useState([])

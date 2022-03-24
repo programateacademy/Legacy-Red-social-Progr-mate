@@ -1,7 +1,7 @@
 // React imports
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 //Login imports
 import Login from "../../pages/auth/login/Login";
@@ -25,9 +25,6 @@ import FormJobsPage from "../../pages/FormJobsPage";
 import CommunityPage from "../../pages/CommunityPage";
 
 //Forum imports
-import ForumQuestions from "../ForumQuestions/ForumQuestions";
-import ForumAnswers from "../ForumAnswers/ForumAnswers";
-import ForumAddQuestion from "../ForumAddQuestion/ForumAddQuestion";
 import ForumPage from "../../pages/ForumPage";
 import ForumAnswersPage from "../../pages/ForumAnswersPage";
 import ForumQuestionsPage from "../../pages/ForumQuestionsPage";
@@ -36,14 +33,16 @@ import ForumQuestionsPage from "../../pages/ForumQuestionsPage";
 import HomePage from "../../pages/HomePage";
 
 //Profile
+import ProfilePage from "../../pages/ProfilePage";
 import FormProject from "../../components/FormProject/FormProject";
-import ProfilePage from "../../pages/ProfilePage"
+
 
 //admin
 import AdminHomePage from "../../pages/AdminHomePage";
 import { AdminCohort } from "../../pages/AdminCohort";
-import ForumAddResources from "../ForumAddResources/ForumAddResources";
 
+
+/* This component manage routes*/
 function Autentification() {
     const auth = useSelector((state) => state.auth);
     const { isLogged, isAdmin } = auth;
@@ -81,99 +80,99 @@ function Autentification() {
                 <Route
                     exact
                     path="/home"
-                    element={isLogged ? <HomePage /> : <NotFound />}
+                    element={isLogged ? <HomePage /> : <DontAllow />}
                 />
 
                 {/* Community */}
                 <Route
                     exact
                     path="/community"
-                    element={isLogged ? <CommunityPage /> : <NotFound />}
+                    element={isLogged ? <CommunityPage /> : <DontAllow />}
                 />
 
                 {/* Profile */}
                 <Route
                     exact
                     path="/formprofile"
-                    element={isLogged ? <CompletePerfil /> : <NotFound />}
+                    element={isLogged ? <CompletePerfil /> : <DontAllow />}
                 />
                 <Route
                     exact
                     path="/formprofile/:id"
-                    element={isLogged ? <EditProfile /> : <NotFound />}
+                    element={isLogged ? <EditProfile /> : <DontAllow />}
                 />
 
                 <Route
                     exact
                     path="/profile"
-                    element={isLogged ? <ProfilePage /> : <NotFound />}
+                    element={isLogged ? <ProfilePage /> : <DontAllow />}
                 />
                 <Route
                     exact
                     path="/profile/:id"
-                    element={isLogged ? <ProfilePage /> : <NotFound />}
+                    element={isLogged ? <ProfilePage /> : <DontAllow />}
                 />
-
+                
                 <Route
                     exact
                     path="/formproject"
-                    element={isLogged ? <FormProject /> : <NotFound />}
+                    element={isLogged ? <FormProject /> : <DontAllow />}
                 />
                 <Route
                     exact
                     path="/formproject/:id"
-                    element={isLogged ? <FormProject /> : <NotFound />}
+                    element={isLogged ? <FormProject /> : <DontAllow />}
                 />
 
                 {/* Forms */}
                 <Route
                     exact
                     path="/formevent"
-                    element={isLogged ? <FormEventPage /> : <NotFound />}
+                    element={isLogged ? <FormEventPage /> : <DontAllow />}
                 />
                 <Route
                     exact
                     path="/formeventedit/:id"
-                    element={isLogged ? <FormEventEdit /> : <NotFound />}
+                    element={isLogged ? <FormEventEdit /> : <DontAllow />}
                 />
 
                 <Route
                     exact
                     path="/formnews"
-                    element={isLogged ? <FormNewsPage /> : <NotFound />}
+                    element={isLogged ? <FormNewsPage /> : <DontAllow />}
                 />
                 <Route
                     exact
                     path="/formnews/:id"
-                    element={isLogged ? <FormNewsPage /> : <NotFound />}
+                    element={isLogged ? <FormNewsPage /> : <DontAllow />}
                 />
 
                 <Route
                     exact
                     path="/formjobs"
-                    element={isLogged ? <FormJobsPage /> : <NotFound />}
+                    element={isLogged ? <FormJobsPage /> : <DontAllow />}
                 />
                 <Route
                     exact
                     path="/formjobs/:id"
-                    element={isLogged ? <FormJobsPage /> : <NotFound />}
+                    element={isLogged ? <FormJobsPage /> : <DontAllow />}
                 />
 
                 {/* Forum */}
                 <Route
                     exact
                     path="/questions"
-                    element={isLogged ? <ForumPage /> : <NotFound />}
+                    element={isLogged ? <ForumPage /> : <DontAllow />}
                 />
                 <Route
                     exact
                     path="/questions/:questionId"
-                    element={isLogged ? <ForumAnswersPage /> : <NotFound />}
+                    element={isLogged ? <ForumAnswersPage /> : <DontAllow />}
                 />
                 <Route
                     exact
                     path="/addquestion"
-                    element={isLogged ? <ForumQuestionsPage /> : <NotFound />}
+                    element={isLogged ? <ForumQuestionsPage /> : <DontAllow />}
                 />
 
                 {/* Admin Routes */}
