@@ -6,7 +6,7 @@ import Searcher from '../../Searcher/Searcher'
 import DeleteButton from '../../DeleteButton/DeleteButton'
 import Modal from "../../modals/Modal"
 import CompleteProfile from '../../CompleteProfile/CompleteProfile'
-import {useModals} from "../../modals/useModals"
+import {useModals} from "../../modals/useModals.jsx"
 
 /* Table of users - Renders in AdminHome */
 const AdminCommunity = () => {
@@ -37,15 +37,6 @@ const AdminCommunity = () => {
             }
         })
     }
-
-
-    // const filter = (toSearch) => {
-    //     let userToSet = allUser.filter((users) => {if (users.email.toString().toLowerCase().includes(toSearch.toLowerCase())){
-    //         return users
-    //     }})
-    //     setFilterUser(userToSet)
-    //     // setFilterUser(userToSet)
-    // }
 
     return (
         <Fragment>
