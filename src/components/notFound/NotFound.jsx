@@ -5,14 +5,9 @@ import robot from './../../assets/images/robot.png'
 const NotFound = () => {
     return (
         <div className={style.NotFound} >
-             <div>
+            <div>
                 <img className={style.imgNotFound} src={robot} alt="robot" />
-
             </div>
-
-            
-
-
         </div>
     )
 }

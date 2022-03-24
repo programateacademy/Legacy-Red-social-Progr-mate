@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import styles from "../Navbar/Navbar.module.css";
 import iconoEducamas from "../../assets/images/iconoEducamas.png";
 import logoperfil from "../../assets/images/photoProfile.png";

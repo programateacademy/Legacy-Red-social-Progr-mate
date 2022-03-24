@@ -52,9 +52,14 @@ const News = ({
     };
 
     useEffect(() => {
-        getUser();
+        let isMounted = true
+    const getAsyncData = () => { getUser();
         commentInfo();
-        getUsers();
+        getUsers();}
+        getAsyncData()
+        return () => {
+            isMounted = false;
+        }
     }, []);
     useEffect(() => {
         commentInfo();
