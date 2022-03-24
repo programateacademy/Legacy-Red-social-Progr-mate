@@ -2,8 +2,8 @@ import * as React from "react";
 
 const Icon_events = (props) => (
   <svg
-    width="50px"
-    height="50px"
+    width={60}
+    height={60}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

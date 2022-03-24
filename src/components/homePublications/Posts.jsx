@@ -131,7 +131,8 @@ const Posts = () => {
                 Ver más
             </p> */}
             <p className={style.addPosts} onClick={showMorePosts}>
-                Ver más
+                Ver más 
+
             </p>
         </Fragment>
     );
