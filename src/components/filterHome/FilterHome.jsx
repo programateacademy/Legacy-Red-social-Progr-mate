@@ -3,6 +3,7 @@ import { DataContext } from "../../context/DataContext";
 
 import style from "./filterHome.module.css";
 
+/* Filter post in home -> NOT USING */
 const FilterHome = () => {
     const { filterHome, setFilterHome } = useContext(DataContext);
 
@@ -23,5 +24,3 @@ const FilterHome = () => {
         </div>
     );
 };
-
-export default FilterHome;
