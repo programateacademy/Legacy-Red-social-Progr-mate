@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import { showErrMsg, showSuccessMsg } from '../../../utils/notification'
 import { isLength, isMatch } from '../../../utils/validation'
 import './ResetPassword.css'
-import { Input } from '../../../components/input/Input'
 import logo from '../../../assets/images/logo-blanco-alta-.png'
 import { baseUrl } from '../../../../config'
 
@@ -65,14 +64,14 @@ function ResetPassword() {
         <div className='container-info-resetPassword'>
           {err && showErrMsg(err)}
           {success && showSuccessMsg(success)}
-          <Input
+          <input
             label='Contraseña'
             placeholder='******'
             name='password'
             value={password}
             onChange={handleChangeInput}
           />
-          <Input
+          <input
             label='Confirmar contraseña'
             placeholder='******'
             name='cf_password'

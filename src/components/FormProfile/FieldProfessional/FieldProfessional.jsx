@@ -20,7 +20,7 @@ export const FieldProfessional = () => {
         description,
         technicalSkills,
         softSkills,
-        lenguages,
+        languages,
         prev_studes,
         experience,
     } = dataProfile;
@@ -51,21 +51,19 @@ export const FieldProfessional = () => {
 
     //Enviar data del usuario al modelo de user y profile
     const submitData = async (e) => {
-        if (!params.id) {
+        console.log(dataProfile)
+        if (params.id) {
             if (dataProfile) {
                 e.preventDefault();
-
-                await sendData("users", {
-                    user_info: idUser,
-                    github,
-                    description,
-                    technicalSkills,
-                    softSkills,
-                    lenguages,
-                    prev_studes,
-                    experience,
-                });
-
+                // await sendData("users", {
+                //     user_info: idUser,
+                //     github,
+                //     description,
+                //     technicalSkills,
+                //     softSkills,
+                //     languages,
+                //     prev_studes,
+                // });
                 await updateData("users", idUser, {
                     avatar,
                     cohorte,
@@ -73,6 +71,9 @@ export const FieldProfessional = () => {
                     email,
                     firstName,
                     lastName,
+                    technicalSkills,
+                    softSkills,
+                    languages,
                     middleName,
                     passwordHash,
                     program,
@@ -80,6 +81,8 @@ export const FieldProfessional = () => {
                     secondSurname,
                     state,
                     _id: idUser,
+                    experience,
+                    prev_studes
                 });
                 navigate(`/profile`);
             } else {

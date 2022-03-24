@@ -2,12 +2,15 @@ import React, { useState, Fragment, useEffect } from 'react'
 import { getDataAll, updateData } from '../../../helpers/fetch'
 import { useNavigate } from "react-router-dom";
 import style from '../../UsersList/UsersList.module.css'
-
 import Searcher from '../../Searcher/Searcher'
 import DeleteButton from '../../DeleteButton/DeleteButton'
+import ModalCompleteProfile from '../ModalCompleteProfile/ModalCompleteProfile';
+
+
 
 /* Table of users - Renders in AdminHome */
 const AdminCommunity = () => {
+    
     const [allCohorts, setCohorts] = useState([])
     const navigate = useNavigate()
     const [allUser, setAllUser] = useState([])
@@ -33,15 +36,6 @@ const AdminCommunity = () => {
                 navigate("/adminhome")
             }
         })
-    }
-
-
-    const filter = (toSearch) => {
-        let userToSet = allUser.filter((users) => {if (users.email.toString().toLowerCase().includes(toSearch.toLowerCase())){
-            return users
-        }})
-        setFilterUser(userToSet)
-        // setFilterUser(userToSet)
     }
 
     return (
@@ -90,6 +84,9 @@ const AdminCommunity = () => {
                                 </td>
                                 <td>
                                     <DeleteButton endpoint={'users'} id={user._id}/>
+                                </td>
+                                <td>
+                                    <ModalCompleteProfile id={user._id}/>
                                 </td>
                             </tr>
                         ))

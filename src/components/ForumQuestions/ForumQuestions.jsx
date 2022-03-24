@@ -57,32 +57,35 @@ const ForumQuestions = () => {
     };
     console.log(questions)
     return (
-      <section
-        className={styles.section}
-        onClick={() => {
-          dropdown && setDropdown(false);
-        }}
-      >
-        <div className={styles.section__global}>
-          <div className={styles.section__head}>
-            <h1 className={styles.section__title}>
-              PREGUNTAS
-              <RiQuestionLine size="17" />
-            </h1>
-            <hr className={styles.section__lineTitle} />
-          </div>
-          <div className={styles.section__options}>
-            <Search
-              setQuestions={setQuestions}
-              questions={questions}
-              allQuestions={allQuestions}
-              filterTag={filterTag}
-              dropdown={dropdown}
-            />
-            <div className={styles.btn__container}>
-              <Link to="/addquestion" className={styles.btn__question}>
-                Añadir <BiMessageAdd />
-              </Link>
+        <section
+            className={styles.section}
+            onClick={() => {
+                dropdown && setDropdown(false);
+            }}
+        >
+            <div className={styles.section__global}>
+                <div className={styles.section__head}>
+                    <h1 className={styles.section__title}>
+                        PREGUNTAS
+                        <RiQuestionLine size="17" />
+                    </h1>
+                    <hr className={styles.section__lineTitle} />
+                </div>
+                <div className={styles.section__options}>
+                    <Search
+                        setQuestions={setQuestions}
+                        questions={questions}
+                        allQuestions={allQuestions}
+                        filterTag={filterTag}
+                        dropdown={dropdown}
+                    />
+                    <div className={styles.btn__container}>
+                        <Link
+                            to="/addquestion"
+                            className={styles.btn__question}
+                        >
+                            Añadir <BiMessageAdd />
+                        </Link>
 
               <button
                 className={styles.btn__question}

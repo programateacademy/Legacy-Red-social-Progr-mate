@@ -1,16 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import Form_PersonalInfo from "../components/formInfo/Form_PersonalInfo";
-import FormPhotoUser from "../components/formPhotoUser/FormPhotoUser";
-import { ProfessionalInformation } from "../components/FormProfile/ProfessionalInformation";
-import { DataContext } from "../context/DataContext";
-import { getDataAll, getData } from "../helpers/fetch";
-import {FieldProfessional} from "../components/FormProfile/FieldProfessional/FieldProfessional"
+import Form_PersonalInfo from "../formInfo/Form_PersonalInfo";
+import FormPhotoUser from "../formPhotoUser/FormPhotoUser";
+import { DataContext } from "../../context/DataContext";
+import { getDataAll, getData } from "../../helpers/fetch";
+import {FieldProfessional} from "../FormProfile/FieldProfessional/FieldProfessional"
 
-const CompletePerfil = () => {
+const ProfileEditor = ({id}) => {
     const { idUser, setDataProfile, dataProfile } =
         useContext(DataContext);
-
     const [status, setStatus] = useState(false);
     const [statusOff, setStatusOff] = useState(true);
     const [items, setItems] = useState([]);
@@ -27,9 +25,9 @@ const CompletePerfil = () => {
         <>
             <FormPhotoUser />
             <Form_PersonalInfo />
-            <FieldProfessional/>
+            <FieldProfessional />
         </>
     )
 };
 
-export default CompletePerfil;
+export default ProfileEditor;
