@@ -1,8 +1,8 @@
 import React from "react";
-import CompletePerfil from "./CompletePerfil";
+import CompleteProfile from "../components/CompleteProfile/CompleteProfile";
 
 const EditProfile = () => {
-    return <CompletePerfil/>;
+    return <CompleteProfile/>;
 };
 
 export default EditProfile;
