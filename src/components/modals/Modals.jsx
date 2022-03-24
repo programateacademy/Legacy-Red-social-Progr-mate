@@ -16,7 +16,7 @@ const Modals = () => {
   console.log(IsOpenModalJob)
   return (
     <div>
-      <h2>Hay algo quequieras compartir?</h2>
+      <h2>¿Hay algo que quieras compartir?</h2>
       <button onClick={openModalNews}>
         <Icon_news />
       </button>

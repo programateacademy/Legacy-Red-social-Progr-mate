@@ -5,19 +5,21 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BiUser } from "react-icons/bi";
 import axios from "axios";
 import { baseUrl } from "../../../config";
+import { useSelector } from "react-redux";
 
 const handleLogout = async () => {
     try {
         await axios.get(`${baseUrl}/api/logout`);
         window.localStorage.removeItem("firstLogin");
         window.location.href = "/login";
-        // console.log("Entrando")
     } catch (err) {
         window.location.href = "/login";
     }
 };
 
 function DropdownLogOut() {
+    const auth = useSelector((state) => state.auth);
+    const { isAdmin } = auth;
     const [isActive, setIsActive] = useState(false);
 
     return (
@@ -35,6 +37,14 @@ function DropdownLogOut() {
                             <BiUser size="24" color="black" /> Perfil
                         </div>
                     </Link>
+                    {isAdmin && (
+                        <Link to="/adminhome">
+                            <div className={styles.dropdownOptions}>
+                                <BiUser size="24" color="black" /> Panel de Administrador
+                            </div>
+                        </Link>
+                    )}
+
                     <Link to="/" onClick={handleLogout}>
                         <div className={styles.dropdownOptions}>
                             <AiOutlineCloseCircle size="24" /> Cerrar Sesión

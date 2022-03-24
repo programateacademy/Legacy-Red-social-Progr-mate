@@ -1,21 +1,23 @@
-import React from "react";
+import React,{useState, useContext} from "react";
 import styles from "../Navbar/Navbar.module.css";
 import iconoEducamas from "../../assets/images/iconoEducamas.png";
-import logoperfil from "../../assets/images/photoProfile.png";
-import { BiGroup, BiMessageRoundedAdd } from "react-icons/bi";
-import { BiHomeAlt } from "react-icons/bi";
-import { MdOutlineForum } from "react-icons/md";
 import { Link } from "react-router-dom";
 import DropdownLogOut from "./DropdownLogOut";
-import Icon_home from "../../assets/icons/Icon_home";
 import Icon_news  from "../../assets/icons/Icon_new";
 import Icon_events from "../../assets/icons/Icon_events";
 import Icon_forum from "../../assets/icons/Icon_forum";
 import Icon_job from "../../assets/icons/Icon_job";
-import Icon_message from "../../assets/icons/Icon_message";
-
+import Icon_alarm from "../../assets/icons/Icon_alarm";
+import Notification from "../Notifications/Notification"
+import { DataContext } from "../../context/DataContext";
+import altImg from "../../assets/images/avatar.png";
 
 const Navbar = () => {
+  const [activeNotification, setActiveNotification] = useState(false) 
+  const onSetActive = () => {setActiveNotification(!activeNotification)}
+  const { dataUser } = useContext(DataContext)
+  const {avatar} = dataUser
+
   return (
     <header className={styles.globalNav}>
       <div className={styles.globalNavContent}>
@@ -59,18 +61,24 @@ const Navbar = () => {
                 <p>FORUM</p>
               </li>
             </Link>
+            <li className={styles.navListItem} >
+              <button onClick={onSetActive} className={styles.btnNotification}>
+                <Icon_alarm/>
+              </button>
+              </li>
           </ul>
 
           <div className={styles.containerPhoto}>
-            <img
-              //src={logoperfil}
-              alt="Prográmate"
-              className={styles.photoProfile}
-            />
+            {avatar ? (
+              <img src={avatar} alt="Foto" className={styles.imgProfile}/>
+            ) : (
+                <img src={altImg} alt="Foto" className={styles.imgProfile}/>
+            )}
             <DropdownLogOut />
           </div>
         </nav>
       </div>
+      { activeNotification && <Notification/>}
     </header>
   );
 };
