@@ -22,6 +22,7 @@ const FormNews = () => {
     const submitData = async (e) => {
         e.preventDefault();
 
+// condition to publish news
         if (posts.title.length <= 0 || posts.description.length <= 0) {
             Swal.fire({
                 title: "Completar datos",
