@@ -99,7 +99,6 @@ export const DataProvider = ({ children }) => {
         type: "",
         company: "",
         technologies: [],
-        softSkills: [],
         place: "",
         modality: "",
         salary: "",
