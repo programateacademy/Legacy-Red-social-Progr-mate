@@ -43,7 +43,6 @@ import FormProject from "../../components/FormProject/FormProject";
 //admin
 import AdminHomePage from "../../pages/AdminHomePage";
 import { AdminCohort } from "../../pages/AdminCohort";
-import ForumAddResources from "../ForumAddResources/ForumAddResources";
 
 function Autentification() {
     const auth = useSelector((state) => state.auth);
