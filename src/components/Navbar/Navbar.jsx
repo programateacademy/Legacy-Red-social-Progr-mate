@@ -1,4 +1,3 @@
-import React from "react";
 import React, { useContext, useEffect, useState } from "react";
 import styles from "../Navbar/Navbar.module.css";
 import iconoEducamas from "../../assets/images/iconoEducamas.png";
