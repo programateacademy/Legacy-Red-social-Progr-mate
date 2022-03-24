@@ -8,7 +8,6 @@ import "./style_icon.css";
 const News = ({
     description,
     technologies,
-    softSkills,
     title,
     company,
     place,
@@ -224,14 +223,6 @@ const News = ({
                         {technologies &&
                             technologies.map((tech, index) => (
                                 <p key={`tech${index}`}>{tech}&nbsp;</p>
-                            ))}
-                    </div>
-                    <div className={style.techContains}>
-                        <p className={style.llavePost}>Habilidades:&nbsp;</p>
-
-                        {softSkills &&
-                            softSkills.map((soft, index) => (
-                                <p key={`soft${index}`}>{soft}&nbsp;</p>
                             ))}
                     </div>
                     <p>

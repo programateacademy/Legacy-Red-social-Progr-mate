@@ -76,26 +76,20 @@ export const Search = ({
 
     return (
         <>
-            <form className={styles.searchContainer} onSubmit={handleSubmit}>
-                <div className={styles.searchBox}>
-                    <input
-                        type="text"
-                        placeholder="Buscar pregunta"
-                        value={searchText}
-                        onChange={(e) => setSearchText(e.target.value)}
-                        className={styles.searchInput}
-                    />
-                    <button type="submit" className={styles.searchButton}>
-                        <BiSearch size="20" />
-                    </button>
-                </div>
-                <p
-                    className={styles.clearFilter}
-                    onClick={() => allQuestions()}
-                >
-                   <button>Limpiar filtro</button> 
-                </p>
-            </form>
+        <form className={styles.searchContainer} onSubmit={handleSubmit}>
+            <div className={styles.searchBox}>
+            <input
+                type="text"
+                placeholder="Buscar pregunta"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                className={styles.searchInput}
+            />
+            <button type="submit" className={styles.searchButton}>
+                <BiSearch size="20" />
+            </button>
+            </div>
+        </form>
         </>
     );
 };

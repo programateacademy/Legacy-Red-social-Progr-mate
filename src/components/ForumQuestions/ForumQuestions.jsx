@@ -9,7 +9,7 @@ import { getDataAll, getData } from "../../helpers/fetch";
 import { Search } from "./Search";
 
 function useQuery() {
-    return new URLSearchParams(useLocation().search);
+    return new URLSearchParams(useLocation().search); 
 }
 const ForumQuestions = () => {
     const [users, setUsers] = useState([]);
@@ -36,6 +36,7 @@ const ForumQuestions = () => {
         setQuestions(data.reverse());
     };
 
+    // get the questions to the page 
     useEffect(() => {
         let isMounted = true
         const questions = async () => {
@@ -86,147 +87,127 @@ const ForumQuestions = () => {
                             Añadir <BiMessageAdd />
                         </Link>
 
-                        <button
-                            className={styles.btn__question}
-                            onClick={() => setDropdown(!dropdown)}
-                        >
-                            Filtro <BiFilterAlt />
-                        </button>
+              <button
+                className={styles.btn__question}
+                onClick={() => setDropdown(!dropdown)}
+              >
+                Filtro <BiFilterAlt />
+              </button>
 
-                        {dropdown && (
-                            <div className={styles.dropdown_content}>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    HTML
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    CSS
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    Bootstrap
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    Tailwind
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    Javascript
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    React
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    Angular
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    VueJs
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    NodeJs
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    Express
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    Java
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    Python
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    MongoDB
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    MySQL
-                                </div>
-                                <div
-                                    className={styles.dropdown_item}
-                                    onClick={(e) =>
-                                        setFilterTag(e.target.innerText)
-                                    }
-                                >
-                                    Blockchain
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                    <div className={styles.questionAnswer}>
-                        <p>{questions.length} Preguntas</p>
-                    </div>
+              {dropdown && (
+                <div className={styles.dropdown_content}>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={() => allQuestions()}
+                  >
+                    Limpiar filtro
+                  </div>
+
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    HTML
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    CSS
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    Bootstrap
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    Tailwind
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    Javascript
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    React
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    Angular
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    VueJs
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    NodeJs
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    Express
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    Java
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    Python
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    MongoDB
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    MySQL
+                  </div>
+                  <div
+                    className={styles.dropdown_item}
+                    onClick={(e) => setFilterTag(e.target.innerText)}
+                  >
+                    Blockchain
+                  </div>
                 </div>
-                <div className={styles.section__container}>
-                    {questions.map((data) =>  (<Question key={data._id} data={data} name={filterPostCreator}/>))}
-                </div>
+              )}
             </div>
-        </section>
+            <div className={styles.questionAnswer}>
+              <p>4 respuestas</p>
+              <p>{questions.length} preguntas</p>
+            </div>
+          </div>
+          <div className={styles.section__container}>
+            {questions.map((data) => (
+              <Question key={data._id} data={data} name={filterPostCreator} />
+            ))}
+          </div>
+        </div>
+      </section>
     );
 };
 

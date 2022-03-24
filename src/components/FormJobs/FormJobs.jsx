@@ -4,7 +4,6 @@ import logo from "../../assets/images/logo-a-color-.jpg";
 import { DataContext } from "../../context/DataContext";
 import { getData, sendData, updateData } from "../../helpers/fetch";
 import HardSkills from "../formInfo/HardSkills";
-import JobSoftSkills from "../formInfo/SoftSkills";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -21,7 +20,6 @@ const FormJobs = () => {
     }, []);
 
     const [technical, setTechnical] = useState([]);
-    const [softSkill, setsoftSkill] = useState([]);
     console.log(submitData)
 
     //Send User data to user model and profile
@@ -37,7 +35,6 @@ const FormJobs = () => {
             postsJobs.contact.length <= 0 ||
             postsJobs.description.length <= 0 ||
             postsJobs.technologies.length <= 0 ||
-            postsJobs.softSkills.length <= 0 ||
             postsJobs.salary.length <= 0
         ) {
             // message that pop if conditions arent fulfilled
@@ -85,24 +82,12 @@ const FormJobs = () => {
             e.preventDefault();
         }
     };
-    //Press enter to add soft skills to your job offer
-    const onKeySoftSkills = (e) => {
-        if (e.key === "Enter" && e.target.value.length > 0) {
-            softSkill.push(e.target.value);
-            setPostsJobs({
-                ...postsJobs,
-                softSkills: softSkill,
-            });
-            e.target.value = "";
-            e.preventDefault();
-        }
-    };
+
     // Verify funtion
     const getDataJobs = async (id) => {
         try {
             const dataJobs = await getData("posts", id);
             setPostsJobs(dataJobs);
-            setsoftSkill(dataJobs.softSkills);
             setTechnical(dataJobs.technologies);
         } catch (error) {
             console.log(error);
@@ -160,28 +145,6 @@ const FormJobs = () => {
                                 key={index}
                                 technical={technical}
                                 setTechnical={setTechnical}
-                                index={index}
-                            />
-                        ))}
-                    </div>
-                </div>
-
-                <div className={style.forms}>
-                    <h3>Habilidades blandas</h3>
-                    <input
-                        className={style.nom}
-                        type="text"
-                        name="softSkills"
-                        onKeyDown={onKeySoftSkills}
-                    />
-                    <br />
-                    <div className={style.tecnologias}>
-                        {softSkill.map((skill, index) => (
-                            <JobSoftSkills
-                                skill={skill}
-                                key={index}
-                                softSkill={softSkill}
-                                setsoftSkills={setsoftSkill}
                                 index={index}
                             />
                         ))}

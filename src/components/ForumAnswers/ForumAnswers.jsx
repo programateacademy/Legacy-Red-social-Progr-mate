@@ -1,39 +1,43 @@
 import React, { useEffect, useState, useContext } from "react";
-import {BrowserRouter as Router, useParams, useLocation} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  useParams,
+  useLocation,
+} from "react-router-dom";
 import { getData, getDataAll, sendData, deleteData } from "../../helpers/fetch";
 import styles from "./ForumAnswers.module.css";
 import { DataContext } from "../../context/DataContext";
 
 const ForumAnswers = () => {
-    const { questionId } = useParams();
-    const [user, setUser] = useState([]);
-    const [users, setUsers] = useState([]);
-    const [comments, setComments] = useState([]);
-    const [postComments, setPostComments] = useState([]);
-    const [refresh, setRefresh] = useState(false);
-    // const [clear, setClear] = useState(false);
-    const [comment, setComment] = useState("");
-    const [question, setQuestion] = useState([]);
-    // const [userComment, setUserComment] = useState([]);
+  const { questionId } = useParams();
+  const [user, setUser] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [postComments, setPostComments] = useState([]);
+  const [refresh, setRefresh] = useState(false);
+  // const [clear, setClear] = useState(false);
+  const [comment, setComment] = useState("");
+  const [question, setQuestion] = useState([]);
+  // const [userComment, setUserComment] = useState([]);
 
-    const { setDataUser, idUser } = useContext(DataContext);
-    const searchUrl = idUser;
+  const { setDataUser, idUser } = useContext(DataContext);
+  const searchUrl = idUser;
 
+  const userInfo = async () => {
+    const data = await getData("users", searchUrl);
+    setUser(data);
+    console.log(data, "users");
+  };
 
-    const userInfo = async () => {
-        const data = await getData("users", searchUrl);
-        setUser(data);
-        console.log(data, "users");
-    };
+  const commentInfo = async () => {
+    const data = await getData("posts", questionId);
+    setComments((comments) => data.comments);
+    console.log(comments, "commets");
+  };
 
-    const commentInfo = async () => {
-        const data = await getData("posts", questionId);
-        setComments((comments) => data.comments);
-        console.log(comments, "commets");
-    };
+  const submitData = async (e) => {
+    e.preventDefault();
 
-    const submitData = async (e) => {
-        e.preventDefault();
 
         try {
             await sendData(`posts/comment/${questionId}`, postComments);
@@ -157,9 +161,11 @@ const ForumAnswers = () => {
                 </div>
             ))}
 
-            <br />
-        </>
-    );
+  
+
+      <br />
+    </>
+  );
 };
 
 export default ForumAnswers;
