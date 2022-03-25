@@ -85,7 +85,7 @@ const JobsProfile = ({
                             ))}
                     </div>
                     <div className={style.techContains}>
-                        <p className={style.llavePost}>Habilidades:&nbsp;</p>
+                        
 
                         {softSkills &&
                             softSkills.map((soft, index) => (

@@ -7,8 +7,10 @@ import {
 import { getData, getDataAll, sendData, deleteData } from "../../helpers/fetch";
 import styles from "./ForumAnswers.module.css";
 import { DataContext } from "../../context/DataContext";
+import { useNavigate  } from "react-router-dom";
 
 const ForumAnswers = () => {
+  const navigate = useNavigate();
   const { questionId } = useParams();
   const [user, setUser] = useState([]);
   const [users, setUsers] = useState([]);
@@ -100,6 +102,11 @@ const ForumAnswers = () => {
         await deleteData("comments", id);
         setRefresh((refresh) => !refresh);
     };
+    const onDeletequestions = async (id) => {
+        await deleteData("posts", id);
+        setRefresh((refresh) => !refresh);
+        navigate("/questions")
+    };
     console.log(question)
 
     return (
@@ -116,6 +123,14 @@ const ForumAnswers = () => {
                 <div className={styles.tagsContainer}></div>
                 <div className={styles.infoContainer}>
                     <p className={styles.name}> {question.user_info?.firstName} {question.user_info?.lastName} </p>
+                    
+                        <span
+                            className={styles.links}
+                            onClick={() => onDeletequestions(question._id)}
+                        >
+                            Eliminar
+                        </span>
+                    
                 </div>
             </div>
             <div className={styles.questionContainerMain}>
