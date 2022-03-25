@@ -5,7 +5,7 @@ import { deleteData, getData, getDataAll, sendData } from "../../helpers/fetch";
 import styles from "./Comment_likes.module.css";
 import "./style_icon.css";
 import style from "./Posts.module.css";
-
+import Icon_events from "../../assets/icons/Icon_events";
 const News = ({
     description,
     technologies,
@@ -171,6 +171,7 @@ const News = ({
                 <div className={style.icon_cont1}>
                     <div className={style.postUser}>
                         <div className={style.icon}>
+                      
                             {userPost?.avatar ? (
                                 <img src={userPost?.avatar} alt="Foto" />
                             ) : (
@@ -185,11 +186,11 @@ const News = ({
                             <br />
                             {userPost?.cohorte?.name}
 
-                            {/* <br /> <span>2 hr</span> */}
                         </p>
                     </div>
                     {idUser === user ? (
                         <div className={style.iconsModify}>
+                           
                             <i
                                 className="fas fa-pencil-alt"
                                 onClick={() => navigate(`/formeventedit/${id}`)}
@@ -200,7 +201,7 @@ const News = ({
                             ></i>
                         </div>
                     ) : rol === 9 ? (
-                        <div className={style.iconsModify}>
+                            <div className={style.iconsModify}>
                             <i
                                 className="far fa-trash-alt"
                                 onClick={deletePost}
@@ -209,6 +210,7 @@ const News = ({
                     ) : (
                         ""
                     )}
+                      <span><Icon_events/></span>
                 </div>
                 <div className={style.news}>
                     <h3>{title}</h3>
@@ -269,12 +271,6 @@ const News = ({
                                 index < 2 && previewComment(comment, index)
                         )}
 
-                        <span
-                            className={styles.more_comment}
-                            onClick={() => setMoreComments(!moreComments)}
-                        >
-                            Ver más comentarios
-                        </span>
                         {moreComments &&
                             comments.map(
                                 (comment, index) =>

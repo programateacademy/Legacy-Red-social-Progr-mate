@@ -5,7 +5,8 @@ import { deleteData, getData, getDataAll, sendData } from "../../helpers/fetch";
 import styles from "./Comment_likes.module.css";
 import style from "./Posts.module.css";
 import "./style_icon.css";
-const News = ({
+import Icon_job from "../../assets/icons/Icon_job";
+const Jobs = ({
     description,
     technologies,
     title,
@@ -52,16 +53,30 @@ const News = ({
 
     useEffect(() => {
         let isMounted = true
-    const getAsyncData = () => { getUser();
+        const getAsyncData = async () => {
+        if(isMounted){
+        getUser();
         commentInfo();
-        getUsers();}
+        getUsers();
+        }
+        }
         getAsyncData()
         return () => {
             isMounted = false;
         }
     }, []);
     useEffect(() => {
-        commentInfo();
+        let isMounted = true
+        const commentAsync = async () => {
+            if (isMounted) {
+                commentInfo();
+            }
+        }
+        commentAsync();
+        return () => {
+            isMounted = false;
+        }
+        
     }, [refresh, setRefresh]);
     let navigate = useNavigate();
 
@@ -177,6 +192,7 @@ const News = ({
                 <div className={style.icon_cont1}>
                     <div className={style.postUser}>
                         <div className={style.icon}>
+                        
                             {userPost?.avatar ? (
                                 <img src={userPost?.avatar} alt="Foto" />
                             ) : (
@@ -195,6 +211,7 @@ const News = ({
                     </div>
                     {idUser === user ? (
                         <div className={style.iconsModify}>
+                            
                             <i
                                 className="fas fa-pencil-alt"
                                 onClick={() => navigate(`/formjobs/${id}`)}
@@ -214,6 +231,7 @@ const News = ({
                     ) : (
                         ""
                     )}
+                    <span><Icon_job/></span>
                 </div>
                 <div className={style.news}>
                     <h3>{title}</h3>
@@ -282,12 +300,7 @@ const News = ({
                                 index < 2 && previewComment(comment, index)
                         )}
 
-                        <span
-                            className={styles.more_comment}
-                            onClick={() => setMoreComments(!moreComments)}
-                        >
-                            Ver más comentarios
-                        </span>
+                        
                         {moreComments &&
                             comments.map(
                                 (comment, index) =>
@@ -300,4 +313,4 @@ const News = ({
     );
 };
 
-export default News;
+export default Jobs;

@@ -3,14 +3,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import { DataContext } from "../../../context/DataContext";
 import { deleteData, getDataAll } from "../../../helpers/fetch";
 import style from "./Posts.module.css";
+import Technologies from "./Technologies";
 
-const Events = ({
+const NewsProfile = ({
     description,
+    images,
     technologies,
     title,
-    place,
-    link,
-    dateEvent,
     id,
     firstName,
     middleName,
@@ -18,7 +17,7 @@ const Events = ({
     cohorte,
     avatar,
 }) => {
-    const { setGetPostsProfile, idUser } = useContext(DataContext);
+    const { setGetPosts, idUser } = useContext(DataContext);
 
     let navigate = useNavigate();
     const params = useParams();
@@ -31,7 +30,7 @@ const Events = ({
             const filterData = data.filter(
                 (posts) => posts.user_info === idUser
             );
-            setGetPostsProfile(filterData.reverse());
+            setGetPosts(filterData.reverse());
         } catch (error) {
             console.log(error);
         }
@@ -55,7 +54,6 @@ const Events = ({
                             </b>
                             <br />
                             {cohorte.name}
-
                             {/* <br /> <span>2 hr</span> */}
                         </p>
                     </div>
@@ -63,7 +61,7 @@ const Events = ({
                         <div className={style.iconsModify}>
                             <i
                                 className="fas fa-pencil-alt"
-                                onClick={() => navigate(`/formeventedit/${id}`)}
+                                onClick={() => navigate(`/formnews/${id}`)}
                             ></i>
                             <i
                                 className="far fa-trash-alt"
@@ -75,25 +73,13 @@ const Events = ({
                 <div className={style.news}>
                     <h3>{title}</h3>
                     <p>{description}</p>
-                    <p>
-                        <span className={style.llavePost}>Link:&nbsp;</span>{" "}
-                        {link}
-                    </p>
-                    <p>
-                        {" "}
-                        <span className={style.llavePost}>Lugar:</span> &nbsp;
-                        {place}
-                    </p>
-                    <p>
-                        <span className={style.llavePost}>Fecha:</span> &nbsp;
-                        {dateEvent}
-                    </p>
-                    <div className={style.techContains}>
-                        <p className={style.llavePost}>Tecnologías:&nbsp;</p>
-
+                    <div className={style.image}>
+                        <img src={images} alt="Foto" />
+                    </div>
+                    <div className={style.techContain}>
                         {technologies &&
                             technologies.map((tech, index) => (
-                                <p key={`technologies${index}`}>{tech}&nbsp;</p>
+                                <Technologies tech={tech} key={index} />
                             ))}
                     </div>
                 </div>
@@ -112,4 +98,4 @@ const Events = ({
     );
 };
 
-export default Events;
+export default NewsProfile;

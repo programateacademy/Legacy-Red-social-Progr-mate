@@ -4,16 +4,13 @@ import { DataContext } from "../../../context/DataContext";
 import { deleteData, getDataAll } from "../../../helpers/fetch";
 import style from "./Posts.module.css";
 
-const News = ({
+const EventsProfile = ({
     description,
     technologies,
-    softSkills,
     title,
-    company,
     place,
-    modality,
-    salary,
-    contact,
+    link,
+    dateEvent,
     id,
     firstName,
     middleName,
@@ -27,7 +24,6 @@ const News = ({
     const params = useParams();
 
     const deletePost = async () => {
-        console.log("borrado");
         try {
             await deleteData("posts", id);
 
@@ -40,6 +36,7 @@ const News = ({
             console.log(error);
         }
     };
+
     return (
         <section className={style.container1}>
             <div className={style.container2}>
@@ -58,6 +55,7 @@ const News = ({
                             </b>
                             <br />
                             {cohorte.name}
+
                             {/* <br /> <span>2 hr</span> */}
                         </p>
                     </div>
@@ -65,7 +63,7 @@ const News = ({
                         <div className={style.iconsModify}>
                             <i
                                 className="fas fa-pencil-alt"
-                                onClick={() => navigate(`/formjobs/${id}`)}
+                                onClick={() => navigate(`/formeventedit/${id}`)}
                             ></i>
                             <i
                                 className="far fa-trash-alt"
@@ -77,43 +75,27 @@ const News = ({
                 <div className={style.news}>
                     <h3>{title}</h3>
                     <p>{description}</p>
-                    <div className={style.techContains}>
-                        <p className={style.llavePost}>Tecnologías:&nbsp; </p>
-                        {technologies &&
-                            technologies.map((tech, index) => (
-                                <p key={`tech${index}`}>{tech}&nbsp;</p>
-                            ))}
-                    </div>
-                    <div className={style.techContains}>
-                        <p className={style.llavePost}>Habilidades:&nbsp;</p>
-
-                        {softSkills &&
-                            softSkills.map((soft, index) => (
-                                <p key={`soft${index}`}>{soft}&nbsp;</p>
-                            ))}
-                    </div>
                     <p>
-                        <span className={style.llavePost}>Empresa:&nbsp;</span>&
-                        {company}
+                        <span className={style.llavePost}>Link:&nbsp;</span>{" "}
+                        {link}
                     </p>
                     <p>
-                        <span className={style.llavePost}>Lugar:&nbsp;</span>{" "}
+                        {" "}
+                        <span className={style.llavePost}>Lugar:</span> &nbsp;
                         {place}
                     </p>
                     <p>
-                        <span className={style.llavePost}>
-                            Modalidad:&nbsp;
-                        </span>{" "}
-                        {modality}
+                        <span className={style.llavePost}>Fecha:</span> &nbsp;
+                        {dateEvent}
                     </p>
-                    <p>
-                        <span className={style.llavePost}>Salario:&nbsp;</span>{" "}
-                        {salary}
-                    </p>
-                    <p>
-                        <span className={style.llavePost}>Contacto:&nbsp;</span>{" "}
-                        {contact}
-                    </p>
+                    <div className={style.techContains}>
+                        <p className={style.llavePost}>Tecnologías:&nbsp;</p>
+
+                        {technologies &&
+                            technologies.map((tech, index) => (
+                                <p key={`technologies${index}`}>{tech}&nbsp;</p>
+                            ))}
+                    </div>
                 </div>
                 <div className={style.icon_cont2}>
                     <div className={style.like}>
@@ -130,4 +112,4 @@ const News = ({
     );
 };
 
-export default News;
+export default EventsProfile;

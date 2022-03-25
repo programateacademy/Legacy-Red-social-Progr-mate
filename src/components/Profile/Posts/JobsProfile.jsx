@@ -3,13 +3,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import { DataContext } from "../../../context/DataContext";
 import { deleteData, getDataAll } from "../../../helpers/fetch";
 import style from "./Posts.module.css";
-import Technologies from "./Technologies";
 
-const News = ({
+const JobsProfile = ({
     description,
-    images,
     technologies,
+    softSkills,
     title,
+    company,
+    place,
+    modality,
+    salary,
+    contact,
     id,
     firstName,
     middleName,
@@ -17,12 +21,13 @@ const News = ({
     cohorte,
     avatar,
 }) => {
-    const { setGetPosts, idUser } = useContext(DataContext);
+    const { setGetPostsProfile, idUser } = useContext(DataContext);
 
     let navigate = useNavigate();
     const params = useParams();
 
     const deletePost = async () => {
+        console.log("borrado");
         try {
             await deleteData("posts", id);
 
@@ -30,12 +35,11 @@ const News = ({
             const filterData = data.filter(
                 (posts) => posts.user_info === idUser
             );
-            setGetPosts(filterData.reverse());
+            setGetPostsProfile(filterData.reverse());
         } catch (error) {
             console.log(error);
         }
     };
-
     return (
         <section className={style.container1}>
             <div className={style.container2}>
@@ -61,7 +65,7 @@ const News = ({
                         <div className={style.iconsModify}>
                             <i
                                 className="fas fa-pencil-alt"
-                                onClick={() => navigate(`/formnews/${id}`)}
+                                onClick={() => navigate(`/formjobs/${id}`)}
                             ></i>
                             <i
                                 className="far fa-trash-alt"
@@ -73,15 +77,43 @@ const News = ({
                 <div className={style.news}>
                     <h3>{title}</h3>
                     <p>{description}</p>
-                    <div className={style.image}>
-                        <img src={images} alt="Foto" />
-                    </div>
-                    <div className={style.techContain}>
+                    <div className={style.techContains}>
+                        <p className={style.llavePost}>Tecnologías:&nbsp; </p>
                         {technologies &&
                             technologies.map((tech, index) => (
-                                <Technologies tech={tech} key={index} />
+                                <p key={`tech${index}`}>{tech}&nbsp;</p>
                             ))}
                     </div>
+                    <div className={style.techContains}>
+                        <p className={style.llavePost}>Habilidades:&nbsp;</p>
+
+                        {softSkills &&
+                            softSkills.map((soft, index) => (
+                                <p key={`soft${index}`}>{soft}&nbsp;</p>
+                            ))}
+                    </div>
+                    <p>
+                        <span className={style.llavePost}>Empresa:&nbsp;</span>&
+                        {company}
+                    </p>
+                    <p>
+                        <span className={style.llavePost}>Lugar:&nbsp;</span>{" "}
+                        {place}
+                    </p>
+                    <p>
+                        <span className={style.llavePost}>
+                            Modalidad:&nbsp;
+                        </span>{" "}
+                        {modality}
+                    </p>
+                    <p>
+                        <span className={style.llavePost}>Salario:&nbsp;</span>{" "}
+                        {salary}
+                    </p>
+                    <p>
+                        <span className={style.llavePost}>Contacto:&nbsp;</span>{" "}
+                        {contact}
+                    </p>
                 </div>
                 <div className={style.icon_cont2}>
                     <div className={style.like}>
@@ -98,4 +130,4 @@ const News = ({
     );
 };
 
-export default News;
+export default JobsProfile;
