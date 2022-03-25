@@ -33,6 +33,10 @@ const EventsProfile = ({
     const [like, setLike] = useState(true);
     const [likes, setLikes] = useState([]);
     const [commentId, setCommentId] = useState([]);
+    
+    const [allCohorts, setCohorts] = useState([])
+
+    let navigate = useNavigate();
     const params = useParams();
     const commentInfo = async () => {
         const data = await getData("posts", id);
@@ -80,7 +84,6 @@ const EventsProfile = ({
         }
         
     }, [refresh, setRefresh]);
-    let navigate = useNavigate();
 
     const submitData = async (e) => {
         e.preventDefault();
@@ -149,6 +152,11 @@ const EventsProfile = ({
         setRefresh(!refresh);
     };
 
+    useEffect(async () => {
+        const dataCohort = await getDataAll("cohorte");
+        setCohorts(dataCohort)
+    }, []);
+
     const deletePost = async () => {
         try {
             await deleteData("posts", id);
@@ -207,8 +215,9 @@ const EventsProfile = ({
                                 {userPost?.lastName}
                             </b>
                             <br />
-                            {userPost?.cohorte?.name}
-
+                            <i>{allCohorts.map(item => (
+                                        item._id === cohorte ? <span key={cohorte}>{item.cohorte_name}</span> : ""
+                                    ))}</i>
                         </p>
                     </div>
                     {!params.id && (
