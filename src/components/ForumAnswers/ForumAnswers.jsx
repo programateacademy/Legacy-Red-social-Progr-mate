@@ -17,8 +17,9 @@ const ForumAnswers = () => {
   const [comment, setComment] = useState("");
   const [question, setQuestion] = useState([]);
   // const [userComment, setUserComment] = useState([]);
+  
 
-    const { setDataUser, idUser } = useContext(DataContext);
+    const { setDataUser, posts, idUser } = useContext(DataContext);
     const searchUrl = idUser;
 
 
@@ -103,6 +104,9 @@ const ForumAnswers = () => {
         setRefresh((refresh) => !refresh);
         navigate("/questions")
     };
+
+    let date = question.createdAt?.slice(0, 10);
+
     console.log(question)
 
     return (
@@ -113,21 +117,48 @@ const ForumAnswers = () => {
                     <h5 className={styles.question}>{question.title}</h5>
                     <p className={styles.question}>{question.description}</p>
                     <p className={styles.dateQuestion}>
-                        Creado: {question.createdAt}{" "}
+                        Creado: {date}
                     </p>
                 </div>
                 <div className={styles.tagsContainer}></div>
                 <div className={styles.infoContainer}>
                     <p className={styles.name}> {question.user_info?.firstName} {question.user_info?.lastName} </p>
-                    
-                        <span
+                    {user._id === question.user_info?._id ? (
+                        <div>
+                            <span
                             className={styles.links}
                             onClick={() => onDeletequestions(question._id)}
                         >
                             Eliminar
                         </span>
+                        
+                        <span
+                        className={styles.links}
+                        onClick={() => navigate(`/addquestion/${questionId}`)}
+                    >
+                        Editar
+                    </span></div>
+                   
+                        
+                    ): user.rol === 9 ? (
+                        <div>
+                        <span
+                        className={styles.links}
+                        onClick={() => onDeletequestions(question._id)}
+                    >
+                        Eliminar
+                    </span>
+                    
+                    <span
+                    className={styles.links}
+                    onClick={() => navigate(`/addquestion/${questionId}`)}
+                >
+                    Editar
+                </span></div>
+                    ): ( "") }
                     
                 </div>
+                
             </div>
             <div className={styles.questionContainerMain}>
                 <form className={styles.from_container} onSubmit={submitData}>
@@ -159,7 +190,7 @@ const ForumAnswers = () => {
 
                     <p className={styles.name}>{comment.comment}</p>
                     <p className={styles.dateQuestion}>
-                        Creado: {question.createdAt}{" "}
+                        Creado: {date}
                     </p>
                     {user._id === comment.user_id && (
                         <span

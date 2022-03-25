@@ -75,11 +75,7 @@ export const Search = ({
     }, [filterTag]);
 
     return (
-<<<<<<< HEAD
-      <>
-=======
         <>
->>>>>>> 51cfe82a00fec8e8eb974b5335ca494f16434b27
         <form className={styles.searchContainer} onSubmit={handleSubmit}>
             <div className={styles.searchBox}>
             <input
@@ -94,10 +90,6 @@ export const Search = ({
             </button>
             </div>
         </form>
-<<<<<<< HEAD
-      </>
-=======
         </>
->>>>>>> 51cfe82a00fec8e8eb974b5335ca494f16434b27
     );
 };
