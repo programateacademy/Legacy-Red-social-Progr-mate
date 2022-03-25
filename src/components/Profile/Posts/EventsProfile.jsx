@@ -56,7 +56,7 @@ const EventsProfile = ({
                             <br />
                             {cohorte.name}
 
-                            {/* <br /> <span>2 hr</span> */}
+                            
                         </p>
                     </div>
                     {!params.id && (
@@ -100,7 +100,7 @@ const EventsProfile = ({
                 <div className={style.icon_cont2}>
                     <div className={style.like}>
                         <i className="far fa-thumbs-up"></i>
-                        <span>23</span>
+                        <span>25</span>
                     </div>
                     <div className={style.like}>
                         <i className="far fa-comment-dots"></i>
