@@ -140,7 +140,7 @@ const ForumAnswers = () => {
                     </span></div>
                    
                         
-                    ): user.rol === 9 ? (
+                    ): rol === 9 ? (
                         <div>
                         <span
                         className={styles.links}
@@ -192,14 +192,21 @@ const ForumAnswers = () => {
                     <p className={styles.dateQuestion}>
                         Creado: {date}
                     </p>
-                    {user._id === comment.user_id && (
+                    {user._id === comment.user_id ? (
                         <span
                             className={styles.links}
                             onClick={() => onDelete(comment._id)}
                         >
                             Eliminar
                         </span>
-                    )}
+                    ): rol === 9 ? (
+                        <span
+                        className={styles.links}
+                        onClick={() => onDeletequestions(question._id)}
+                    >
+                        Eliminar
+                    </span>
+                    ) : ("")}
                 </div>
             ))}
 
