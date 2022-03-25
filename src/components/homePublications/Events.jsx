@@ -28,6 +28,8 @@ const News = ({
     const [userPost, setUserPost] = useState();
     const [like, setLike] = useState(true);
     const [likes, setLikes] = useState([]);
+    const [allCohorts, setCohorts] = useState([])
+
 
     let navigate = useNavigate();
 
@@ -49,6 +51,11 @@ const News = ({
         }
     };
 
+    useEffect(async () => {
+        const dataCohort = await getDataAll("cohorte");
+        setCohorts(dataCohort)
+    }, []);
+
     useEffect(() => {
         getUser();
         commentInfo();
@@ -59,6 +66,8 @@ const News = ({
     }, [setRefresh, refresh]);
     const submitData = async (e) => {
         e.preventDefault();
+    
+
 
         try {
             await sendData(`posts/comment/${id}`, postComments);
@@ -164,7 +173,6 @@ const News = ({
             console.log(error);
         }
     };
-
     return (
         <section className={style.container1}>
             <div className={style.container2}>
@@ -181,11 +189,12 @@ const News = ({
                         <p>
                             <b>
                                 {userPost?.firstName} {userPost?.middleName}{" "}
-                                {userPost?.lastName}
+                                {userPost?.lastName} 
                             </b>
                             <br />
-                            {userPost?.cohorte?.name}
-
+                            <i>{allCohorts.map(item => (
+                                        item._id === userPost?.cohorte ? <span key={userPost._id}>{item.cohorte_name}</span> : ""
+                            ))}</i>
                         </p>
                     </div>
                     {idUser === user ? (

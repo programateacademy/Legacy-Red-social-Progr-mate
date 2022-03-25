@@ -82,6 +82,8 @@ const Posts = () => {
         }
     }, []);
 
+    console.log(getPosts)
+
     return (
         <Fragment>
             {filterPosts()?.map((post) =>

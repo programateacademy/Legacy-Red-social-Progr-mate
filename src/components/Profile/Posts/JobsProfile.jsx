@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DataContext } from "../../../context/DataContext";
 import { deleteData, getDataAll } from "../../../helpers/fetch";
@@ -22,9 +22,14 @@ const JobsProfile = ({
     avatar,
 }) => {
     const { setGetPostsProfile, idUser } = useContext(DataContext);
-
+    const [allCohorts, setCohorts] = useState([])
     let navigate = useNavigate();
     const params = useParams();
+
+    useEffect(async () => {
+        const dataCohort = await getDataAll("cohorte");
+        setCohorts(dataCohort)
+    }, []);
 
     const deletePost = async () => {
         console.log("borrado");
@@ -57,8 +62,9 @@ const JobsProfile = ({
                                 {firstName} {middleName} {lastName}
                             </b>
                             <br />
-                            {cohorte.name}
-                            {/* <br /> <span>2 hr</span> */}
+                            <i>{allCohorts.map(item => (
+                                        item._id === cohorte ? <span key={cohorte}>{item.cohorte_name}</span> : ""
+                                    ))}</i>
                         </p>
                     </div>
                     {!params.id && (

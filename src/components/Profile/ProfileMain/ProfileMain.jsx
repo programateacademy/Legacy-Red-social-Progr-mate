@@ -9,7 +9,7 @@ import altImg from "../../../assets/images/avatar.png";
 
 const ProfileMain = ({ dataProfile }) => {
     const { dataUser, idUser } = useContext(DataContext);
-    const { avatar, firstName, middleName, lastName, cohorte } = dataUser;
+    const { avatar, firstName, middleName, lastName, cohorte, data } = dataUser;
 
     let navigate = useNavigate();
     const params = useParams();
@@ -18,7 +18,6 @@ const ProfileMain = ({ dataProfile }) => {
         // console.log(idUser);
         navigate(`/formprofile/${idUser}`);
     };
-
     return (
         <Fragment>
             <div className={style.container}>
