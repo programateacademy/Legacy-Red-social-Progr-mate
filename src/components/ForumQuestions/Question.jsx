@@ -34,6 +34,7 @@ export const Question = ({ data, name }) => {
                 >
                     Responder
                 </Link>
+                
             </div>
         </div>
     );

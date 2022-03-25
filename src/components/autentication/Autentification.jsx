@@ -175,6 +175,11 @@ function Autentification() {
                     path="/addquestion"
                     element={isLogged ? <ForumQuestionsPage /> : <DontAllow />}
                 />
+                <Route
+                    exact
+                    path="/addquestion/:questionId"
+                    element={isLogged ? <ForumQuestionsPage /> : <DontAllow />}
+                />
 
                 {/* Admin Routes */}
 
