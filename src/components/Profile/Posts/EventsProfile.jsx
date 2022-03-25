@@ -20,6 +20,7 @@ const EventsProfile = ({
     firstName,
     middleName,
     lastName,
+    cohorte
 }) => {
     const { setGetPosts, idUser } = useContext(DataContext);
     const [showComments, setShowComments] = useState(false);
@@ -211,8 +212,7 @@ const EventsProfile = ({
                         </div>
                         <p>
                             <b>
-                                {userPost?.firstName} {userPost?.middleName}{" "}
-                                {userPost?.lastName}
+                            {firstName} {middleName} {lastName}
                             </b>
                             <br />
                             <i>{allCohorts.map(item => (

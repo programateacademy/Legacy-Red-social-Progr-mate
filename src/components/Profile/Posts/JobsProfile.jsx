@@ -22,6 +22,7 @@ const JobsProfile = ({
     firstName,
     middleName,
     lastName,
+    cohorte
 }) => {
     const { setGetPosts, idUser } = useContext(DataContext);
     const [showComments, setShowComments] = useState(false);
