@@ -100,7 +100,6 @@ const Posts = () => {
                     <Jobs
                         description={post.description}
                         technologies={post.technologies}
-                        softSkills={post.softSkills}
                         title={post.title}
                         company={post.company}
                         place={post.place}
