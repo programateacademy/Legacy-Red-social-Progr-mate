@@ -39,7 +39,8 @@ import FormProject from "../../components/FormProject/FormProject";
 
 //admin
 import AdminHomePage from "../../pages/AdminHomePage";
-import { AdminCohort } from "../../pages/AdminCohort";
+import { AdminCohortPage } from "../../pages/AdminCohortPage";
+import { AdminForumPage } from "../../pages/AdminForumPage";
 
 
 /* This component manage routes*/
@@ -180,13 +181,19 @@ function Autentification() {
                 <Route
                     exact
                     path="admincohort"
-                    element={isAdmin ? <AdminCohort /> : <DontAllow />}
+                    element={isAdmin ? <AdminCohortPage /> : <DontAllow />}
                 />
 
                 <Route
                     exact
                     path="/adminhome"
                     element={isAdmin ? <AdminHomePage /> : <DontAllow />}
+                />
+                
+                <Route
+                    exact
+                    path="/adminforum"
+                    element={isAdmin ? <AdminForumPage/> : <DontAllow />}
                 />
 
                 {/* 404 */}

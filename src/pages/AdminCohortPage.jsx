@@ -1,7 +1,7 @@
 import React from 'react'
 import CreateCohort from '../components/CreateCohort/CreateCohort'
 
-function AdminCohort() {
+function AdminCohortPage() {
     return (
         <>
             <CreateCohort/>
@@ -9,4 +9,4 @@ function AdminCohort() {
     )
 }
 
-export { AdminCohort }
+export { AdminCohortPage }
