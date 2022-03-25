@@ -1,8 +1,11 @@
 import React from "react";
-import CompleteProfile from "../components/CompleteProfile/CompleteProfile";
+import ProfileEditor from "../components/ProfileEditor/ProfileEditor";
+import {useParams} from "react-router-dom";
 
 const EditProfile = () => {
-    return <CompleteProfile/>;
+
+    let params = useParams();
+    return <ProfileEditor idUser={params.id}/>;
 };
 
 export default EditProfile;

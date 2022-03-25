@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import style from '../../UsersList/UsersList.module.css'
 import Searcher from '../../Searcher/Searcher'
 import DeleteButton from '../../DeleteButton/DeleteButton'
-import ModalCompleteProfile from '../ModalCompleteProfile/ModalCompleteProfile';
 
 
 
@@ -86,7 +85,9 @@ const AdminCommunity = () => {
                                     <DeleteButton endpoint={'users'} id={user._id}/>
                                 </td>
                                 <td>
-                                    <ModalCompleteProfile id={user._id}/>
+                                    <button onClick={() => navigate(`/formprofile/${user._id}`)}>
+                                        EDITAR
+                                    </button>
                                 </td>
                             </tr>
                         ))
