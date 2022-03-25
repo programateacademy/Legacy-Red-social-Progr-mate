@@ -88,6 +88,15 @@ const Form_PersonalInfo = () => {
     return (
         <Fragment>
             <form className={style.form_container}>
+            <div className={style.forms}>
+                    <h3>Link de Git Hub</h3>
+                    <input
+                        className={style.nom}
+                        type="text"
+                        name="github"
+                        onChange={onChange}
+                    />
+                </div>
                 {/* <div className={style.forms}>
                     <h3>Link de Git Hub</h3>
                     <input
