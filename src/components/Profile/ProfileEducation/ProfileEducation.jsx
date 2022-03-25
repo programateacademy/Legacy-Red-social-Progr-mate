@@ -5,8 +5,8 @@ import Education from "./Education";
 import style from "./ProfileEducation.module.css";
 
 const ProfileEducation = () => {
-    const { dataProfile } = useContext(DataContext);
-    const { prev_studes } = dataProfile;
+    const { dataUser } = useContext(DataContext);
+    const { prev_studes } = dataUser;
 
     return (
         <Fragment>

@@ -3,8 +3,8 @@ import { DataContext } from "../../../context/DataContext";
 import style from "./Technologies.module.css";
 
 const Technologies = () => {
-    const { dataProfile } = useContext(DataContext);
-    const { technicalSkills } = dataProfile;
+    const { dataUser } = useContext(DataContext);
+    const { technicalSkills } = dataUser;
 
     return (
         <>

@@ -14,7 +14,7 @@ import ProfileMainHome from "./ProfileMainHome/ProfileMainHome";
 import { useParams } from "react-router-dom";
 
 const BodyProfile = () => {
-    const { idUser, setDataProfile, dataProfile, setDataUser } =
+    const { idUser, setDataUser, dataUser } =
         useContext(DataContext);
     const [showMain, setShowMain] = useState(false);
 
@@ -53,13 +53,13 @@ const BodyProfile = () => {
                     const filterData = data.filter(
                         (profile) => profile.user_info._id === idUser
                     );
-                    setDataProfile(filterData[0]);
+                    setDataUser(filterData[0]);
                 } else {
                     const filterData = data.filter(
                         (profile) => profile.user_info._id === params.id
                     );
                     console.log(filterData[0]);
-                    setDataProfile(filterData[0]);
+                    setDataUser(filterData[0]);
                 }
             } catch (error) {
                 console.log(error);
@@ -70,9 +70,9 @@ const BodyProfile = () => {
     return (
         <div className={style.containBodyProfile}>
             {!showMain ? (
-                <ProfileMain dataProfile={dataProfile} />
+                <ProfileMain dataUser={dataUser} />
             ) : (
-                <ProfileMainHome dataProfile={dataProfile} />
+                <ProfileMainHome dataUser={dataUser} />
             )}
 
             <ProfileAbout />

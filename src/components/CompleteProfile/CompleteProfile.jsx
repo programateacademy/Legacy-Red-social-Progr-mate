@@ -6,8 +6,9 @@ import { DataContext } from "../../context/DataContext";
 import { getDataAll, getData } from "../../helpers/fetch";
 import {FieldProfessional} from "../FormProfile/FieldProfessional/FieldProfessional"
 
-const CompleteProfile = () => {
-    const { idUser, setDataProfile, dataProfile } =
+
+const CompletePerfil = () => {
+    const { idUser, setDataUser, dataUser } =
         useContext(DataContext);
 
     const [status, setStatus] = useState(false);
@@ -19,7 +20,7 @@ const CompleteProfile = () => {
     firstEntry ? localStorage.setItem("firstEntry", false) : ""
 
     useEffect(() => {
-        setDataProfile({ ...dataProfile, user_info: idUser });
+        setDataUser({ ...dataUser, user_info: idUser });
     }, [idUser]);
 
     return (

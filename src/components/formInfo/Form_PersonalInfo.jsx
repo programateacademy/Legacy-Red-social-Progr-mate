@@ -15,7 +15,7 @@ import { useParams } from "react-router-dom";
 import { getDataAll } from "../../helpers/fetch";
 
 const Form_PersonalInfo = () => {
-    const { dataProfile, setDataProfile, idUser } = useContext(DataContext);
+    const { dataUser, setDataUser, idUser } = useContext(DataContext);
     const params = useParams();
     const [technical, setTechnical] = useState([]);
     const [softSkills, setsoftSkills] = useState([]);
@@ -24,18 +24,18 @@ const Form_PersonalInfo = () => {
    
 
     const onChange = ({ target }) => {
-        // console.log(dataProfile);
+        // console.log(dataUser);
         const { name, value } = target;
-        setDataProfile({
-            ...dataProfile,
+        setDataUser({
+            ...dataUser,
             [name]: value,
         });
     };
     const onKeyHardSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
             technical.push(e.target.value);
-            setDataProfile({
-                ...dataProfile,
+            setDataUser({
+                ...dataUser,
                 technicalSkills: technical,
             });
             e.target.value = "";
@@ -45,9 +45,9 @@ const Form_PersonalInfo = () => {
 
     const onKeySoftSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
-            softSkills.push(e.target.value);
-            setDataProfile({
-                ...dataProfile,
+            const addTech = softSkills.push(e.target.value);
+            setDataUser({
+                ...dataUser,
                 softSkills: softSkills,
             });
             e.target.value = "";
@@ -59,8 +59,8 @@ const Form_PersonalInfo = () => {
     const onKeyLanguages = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
             languages.push(e.target.value);
-            setDataProfile({
-                ...dataProfile,
+            setDataUser({
+                ...dataUser,
                 lenguages: languages,
             });
             e.target.value = "";
@@ -76,8 +76,9 @@ const Form_PersonalInfo = () => {
                 const filter = data.filter(
                     (prof) => prof._id === idUser
                 );
-                setDataProfile(filter[0]);
-                setLanguages(filter[0].languages);
+                // console.log(filter[0]);
+                setDataUser(filter[0]);
+                setLanguages(filter[0].lenguages);
                 setsoftSkills(filter[0].softSkills);
                 setTechnical(filter[0].technicalSkills);
             } catch (error) {
@@ -94,6 +95,7 @@ const Form_PersonalInfo = () => {
                         className={style.nom}
                         type="text"
                         name="github"
+                        value={dataUser.github}
                         onChange={onChange}
                     />
                 </div>

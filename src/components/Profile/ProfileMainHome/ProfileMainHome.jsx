@@ -7,8 +7,8 @@ import { DataContext } from "../../../context/DataContext";
 import { Link, useNavigate } from "react-router-dom";
 import altImg from "../../../assets/images/avatar.png";
 
-const ProfileMainHome = ({ dataProfile }) => {
-    const { dataUser, idUser } = useContext(DataContext);
+const ProfileMainHome = ({ dataUser }) => {
+    const { idUser } = useContext(DataContext);
     const { avatar, firstName, middleName, lastName, cohorte } = dataUser;
 
     let navigate = useNavigate();

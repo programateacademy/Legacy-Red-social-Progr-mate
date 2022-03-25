@@ -7,8 +7,8 @@ import { DataContext } from "../../../context/DataContext";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import altImg from "../../../assets/images/avatar.png";
 
-const ProfileMain = ({ dataProfile }) => {
-    const { dataUser, idUser } = useContext(DataContext);
+const ProfileMain = ({ dataUser }) => {
+    const { idUser } = useContext(DataContext);
     const { avatar, firstName, middleName, lastName, cohorte } = dataUser;
 
     let navigate = useNavigate();
@@ -55,7 +55,7 @@ const ProfileMain = ({ dataProfile }) => {
                                 </button>
                             )}
 
-                            <a href={dataProfile?.github} target="_blank">
+                            <a href={dataUser?.github} target="_blank">
                                 <button className={style.button} type="button">Ver Github</button>
                             </a>
                         </div>

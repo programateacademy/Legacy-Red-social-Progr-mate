@@ -25,16 +25,6 @@ export const DataProvider = ({ children }) => {
     //     localStorage.setItem("id", _id);
     // }, [_id]);
 
-    const [dataProfile, setDataProfile] = useState({
-        user_info: _id,
-        github: "",
-        description: "",
-        technicalSkills: [],
-        softSkills: [],
-        lenguages: [],
-        prev_studes: [{ ...studyField, id: uuid() }],
-        experience: [{ ...experienceField, id: uuid() }],
-    });
     const [dataUser, setDataUser] = useState({
         avatar: "",
         cohorte: { num: 1, name: "" },
@@ -49,6 +39,14 @@ export const DataProvider = ({ children }) => {
         secondSurname: "",
         state: true,
         _id: _id,
+        user_info: _id,
+        github: "",
+        description: "",
+        technicalSkills: [],
+        softSkills: [],
+        lenguages: [],
+        prev_studes: [{ ...studyField, id: uuid() }],
+        experience: [{ ...experienceField, id: uuid() }],
     });
     const [posts, setPosts] = useState({
         user_info: _id,
@@ -114,8 +112,6 @@ export const DataProvider = ({ children }) => {
     return (
         <DataContext.Provider
             value={{
-                dataProfile,
-                setDataProfile,
                 dataUser,
                 setDataUser,
                 idUser: _id,

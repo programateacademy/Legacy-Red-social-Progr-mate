@@ -5,8 +5,8 @@ import Experience from "./Experience";
 import style from "./ProfileExperience.module.css";
 
 const ProfileExperience = () => {
-    const { dataProfile } = useContext(DataContext);
-    const { experience } = dataProfile;
+    const { dataUser } = useContext(DataContext);
+    const { experience } = dataUser;
 
     return (
         <Fragment>
