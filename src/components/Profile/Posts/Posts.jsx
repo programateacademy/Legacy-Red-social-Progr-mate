@@ -2,10 +2,11 @@ import React, { Fragment, useContext, useEffect, useState } from "react";
 import { DataContext } from "../../../context/DataContext";
 import { getDataAll } from "../../../helpers/fetch";
 
-import News from "./News";
-import Jobs from "./Jobs";
-import Events from "./Events";
 import { useParams } from "react-router-dom";
+import JobsProfile from "./JobsProfile";
+import NewsProfile from "./NewsProfile";
+import EventsProfile from "./EventsProfile";
+
 
 const Posts = () => {
     const { setGetPostsProfile, getPostsProfile, idUser, dataUser } =
@@ -35,10 +36,10 @@ const Posts = () => {
     }, []);
 
     return (
-        <Fragment>
+        <>
             {getPostsProfile?.map((post) =>
                 post.type === "news" ? (
-                    <News
+                    <NewsProfile
                         description={post.description}
                         images={post.images}
                         technologies={post.technologies}
@@ -47,12 +48,13 @@ const Posts = () => {
                         firstName={firstName}
                         middleName={middleName}
                         lastName={lastName}
+                        
                         cohorte={cohorte}
                         avatar={avatar}
                         key={post._id}
                     />
                 ) : post.type === "jobs" ? (
-                    <Jobs
+                    <JobsProfile
                         description={post.description}
                         technologies={post.technologies}
                         softSkills={post.softSkills}
@@ -71,7 +73,7 @@ const Posts = () => {
                         key={post._id}
                     />
                 ) : post.type === "event" ? (
-                    <Events
+                    <EventsProfile
                         description={post.description}
                         technologies={post.technologies}
                         title={post.title}
@@ -88,7 +90,7 @@ const Posts = () => {
                     />
                 ) : null
             )}
-        </Fragment>
+        </>
     );
 };
 

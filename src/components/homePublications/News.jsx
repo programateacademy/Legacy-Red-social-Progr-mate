@@ -6,7 +6,7 @@ import style from "./Posts.module.css";
 import styles from "./Comment_likes.module.css";
 import Technologies from "./Technologies";
 import "./style_icon.css";
-
+import Icon_news  from "../../assets/icons/Icon_new";
 const News = ({ description, images, technologies, title, id, user, rol }) => {
     const { setGetPosts, idUser } = useContext(DataContext);
     const [showComments, setShowComments] = useState(false);
@@ -35,19 +35,40 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
         try {
             const data = await getData("users", user);
             setUserPost(data);
-            // console.log(data);
+            
         } catch (error) {
             console.log(error);
         }
     };
 
     useEffect(() => {
-        getUser();
-        commentInfo();
-        getUsers();
+        let isMounted = true
+        const getInfo = async () => {
+            if (isMounted) {
+                getUser();
+                commentInfo();
+                getUsers();
+            }
+        };
+          
+  
+        getInfo();
+        return () => {
+            isMounted = false;
+        }
+        
     }, []);
     useEffect(() => {
-        commentInfo();
+        let isMounted = true
+        const commentAsync = async () => {
+            if (isMounted) {
+                commentInfo();
+            }
+        }
+        commentAsync();
+        return () => {
+            isMounted = false;
+        }
     }, [refresh, setRefresh]);
 
     const deletePost = async () => {
@@ -61,7 +82,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
     };
 
     const toggle = () => {
-        console.log("click");
+        
         setShowComments(!showComments);
     };
     const submitData = async (e) => {
@@ -85,7 +106,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
     const onName = (id) => {
         const user = users.filter((user) => user._id === id);
         const userFilter = user[0];
-        // console.log(userFilter);
+        
         return `${userFilter.firstName} ${userFilter.lastName}`;
     };
 
@@ -101,7 +122,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
     };
     const submitLike = async () => {
         setLike(!like);
-        console.log("like");
+        
         const data = await getData("posts", id);
         const idPost = data.likes;
 
@@ -118,10 +139,10 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
     };
     const onDeleteLike = async () => {
         setLike(!like);
-        console.log("dislike");
+        
         likes.map((like) => {
             if (like.user_id === idUser) {
-                console.log(like.user_id, like._id);
+                
                 deleteData("likes", like._id);
                 setRefresh(!refresh);
             }
@@ -163,6 +184,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
                 <div className={style.icon_cont1}>
                     <div className={style.postUser}>
                         <div className={style.icon}>
+                            
                             {userPost?.avatar ? (
                                 <img src={userPost?.avatar} alt="Foto" />
                             ) : (
@@ -200,6 +222,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
                     ) : (
                         ""
                     )}
+                    <span><Icon_news/></span>
                 </div>
                 <div className={style.news}>
                     <h3>{title}</h3>
@@ -250,12 +273,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
                                 index < 2 && previewComment(comment, index)
                         )}
 
-                        <span
-                            className={styles.more_comment}
-                            onClick={() => setMoreComments(!moreComments)}
-                        >
-                            Ver más comentarios
-                        </span>
+                       
                         {moreComments &&
                             comments.map(
                                 (comment, index) =>
