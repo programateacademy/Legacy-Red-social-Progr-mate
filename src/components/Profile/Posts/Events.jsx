@@ -4,7 +4,7 @@ import { DataContext } from "../../../context/DataContext";
 import { deleteData, getDataAll } from "../../../helpers/fetch";
 import style from "./Posts.module.css";
 
-const News = ({
+const Events = ({
     description,
     technologies,
     title,
@@ -112,4 +112,4 @@ const News = ({
     );
 };
 
-export default News;
+export default Events;

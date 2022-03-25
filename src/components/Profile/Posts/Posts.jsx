@@ -7,6 +7,7 @@ import Jobs from "./Jobs";
 import Events from "./Events";
 import { useParams } from "react-router-dom";
 
+
 const Posts = () => {
     const { setGetPostsProfile, getPostsProfile, idUser, dataUser } =
         useContext(DataContext);
