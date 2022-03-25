@@ -7,7 +7,7 @@ function AdminForumPage() {
     return (
         <>
             <AdminNavigation />
-            <AdminCrudPosts name={"Foro"} nameType={"questions"}>
+            <AdminCrudPosts name={"Foro"} nameType={"questions"} fields={[]}>
                 <th>Etiquetas</th>
                 <th>Imagen</th>
             </AdminCrudPosts>
