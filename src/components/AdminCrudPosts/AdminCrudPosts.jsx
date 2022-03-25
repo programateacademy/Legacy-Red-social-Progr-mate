@@ -90,9 +90,9 @@ function AdminCrudPosts({ children, name, postType, fields, icon }) {
                                 <td key={i}>{post[field]}</td>
                             ))}
                             <td>
-                                <SwitchCreatePost postType={postType} idPost={post._id}>
+{/*                                 <SwitchCreatePost postType={postType} idPost={post._id}>
                                     Editar
-                                </SwitchCreatePost>
+                                </SwitchCreatePost> */}
                             </td>
                             <td><button onClick={() => { deletePost(post._id) }}>🗑️</button></td>
                         </tr>

@@ -7,9 +7,8 @@ import Modal from '../modals/Modal';
 import { useModals } from '../modals/useModals';
 
 /* Switch button to create post in Admin Panel */
-function SwitchCreatePost({ postType, children, idPost }) {
+function SwitchCreatePost({ postType, children}) {
     const [IsOpenModal, openModal, closeModal] = useModals(false);
-
     /* Button to render depending of post type */
     const selectType = () => { 
         switch (postType) {
@@ -18,7 +17,7 @@ function SwitchCreatePost({ postType, children, idPost }) {
             case 'event':
                 return <FormEvent />
             case 'jobs':
-                return <FormJobs idPost={idPost }/>
+                return <FormJobs/>
             case 'questions':
                 return <ForumAddQuestion />
             default:
