@@ -5,25 +5,7 @@ import { studyField, experienceField } from "../helpers/formProfile";
 
 export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
-    /*     const [idUser,setidUser]=useState(0)
-
-    useEffect(() => {
-    const auth = useSelector(state => state.auth)
-    const {_id} = auth.user
-    setidUser(_id)
-    }, [])  */
     const { _id, email } = useSelector((state) => state.auth.user);
-
-    // const { _id } = auth.user;
-    // const [infoUser, setInfoUser] = useState("");
-    // useEffect(() => {
-    //     setInfoUser(_id);
-    //     // console.log(_id);
-    // }, [_id]);
-
-    // useEffect(() => {
-    //     localStorage.setItem("id", _id);
-    // }, [_id]);
 
     const [dataProfile, setDataProfile] = useState({
         user_info: _id,
@@ -72,17 +54,6 @@ export const DataProvider = ({ children }) => {
         place: "",
     });
 
-    const initialStatePortfolio = {
-        profile_id: _id,
-        image: "",
-        title: "",
-        description_proyect: "",
-        deploy: "",
-        proyect_link: "",
-        technologies: [],
-    };
-    const [portfolio, setPortfolio] = useState(initialStatePortfolio);
-
     const [postsEvent, setPostsEvent] = useState({
         user_info: _id,
         title: "",
@@ -108,7 +79,8 @@ export const DataProvider = ({ children }) => {
 
     const [getPosts, setGetPosts] = useState();
     const [getPostsProfile, setGetPostsProfile] = useState();
-
+    const [users, setUsers]  = useState();
+    const [postsContext, setPostsContext]  = useState();
     const [filterHome, setFilterHome] = useState("");
 
     return (
@@ -120,13 +92,14 @@ export const DataProvider = ({ children }) => {
                 setDataUser,
                 idUser: _id,
                 email,
+                users,
+                setUsers,
                 posts,
                 setPosts,
+                postsContext,
+                setPostsContext,
                 postsEvent,
                 setPostsEvent,
-                setPortfolio,
-                portfolio,
-                initialStatePortfolio,
                 postsJobs,
                 setPostsJobs,
                 getPosts,

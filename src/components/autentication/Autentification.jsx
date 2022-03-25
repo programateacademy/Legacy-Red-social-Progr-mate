@@ -39,7 +39,11 @@ import FormProject from "../../components/FormProject/FormProject";
 
 //admin
 import AdminHomePage from "../../pages/AdminHomePage";
-import { AdminCohort } from "../../pages/AdminCohort";
+import { AdminCohortPage } from "../../pages/AdminCohortPage";
+import { AdminForumPage } from "../../pages/AdminForumPage";
+import { AdminEventsPage } from "../../pages/AdminEventsPage";
+import { AdminNewsPage } from "../../pages/AdminNewsPage";
+import { AdminJobsPage } from "../../pages/AdminJobsPage";
 
 
 /* This component manage routes*/
@@ -112,17 +116,6 @@ function Autentification() {
                     path="/profile/:id"
                     element={isLogged ? <ProfilePage /> : <DontAllow />}
                 />
-                
-                <Route
-                    exact
-                    path="/formproject"
-                    element={isLogged ? <FormProject /> : <DontAllow />}
-                />
-                <Route
-                    exact
-                    path="/formproject/:id"
-                    element={isLogged ? <FormProject /> : <DontAllow />}
-                />
 
                 {/* Forms */}
                 <Route
@@ -185,13 +178,35 @@ function Autentification() {
                 <Route
                     exact
                     path="admincohort"
-                    element={isAdmin ? <AdminCohort /> : <DontAllow />}
+                    element={isAdmin ? <AdminCohortPage /> : <DontAllow />}
                 />
 
                 <Route
                     exact
                     path="/adminhome"
                     element={isAdmin ? <AdminHomePage /> : <DontAllow />}
+                />
+                
+                <Route
+                    exact
+                    path="/adminforum"
+                    element={isAdmin ? <AdminForumPage/> : <DontAllow />}
+                />
+
+                <Route
+                    exact
+                    path="/adminevents"
+                    element={isAdmin ? <AdminEventsPage/> : <DontAllow />}
+                />
+                <Route
+                    exact
+                    path="/adminnews"
+                    element={isAdmin ? <AdminNewsPage/> : <DontAllow />}
+                />
+                <Route
+                    exact
+                    path="/adminjobs"
+                    element={isAdmin ? <AdminJobsPage/> : <DontAllow />}
                 />
 
                 {/* 404 */}
