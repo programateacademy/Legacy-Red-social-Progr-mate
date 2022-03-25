@@ -3,18 +3,20 @@ import {BrowserRouter as Router, useParams, useLocation} from "react-router-dom"
 import { getData, getDataAll, sendData, deleteData } from "../../helpers/fetch";
 import styles from "./ForumAnswers.module.css";
 import { DataContext } from "../../context/DataContext";
+import { useNavigate  } from "react-router-dom";
 
 const ForumAnswers = () => {
-    const { questionId } = useParams();
-    const [user, setUser] = useState([]);
-    const [users, setUsers] = useState([]);
-    const [comments, setComments] = useState([]);
-    const [postComments, setPostComments] = useState([]);
-    const [refresh, setRefresh] = useState(false);
-    // const [clear, setClear] = useState(false);
-    const [comment, setComment] = useState("");
-    const [question, setQuestion] = useState([]);
-    // const [userComment, setUserComment] = useState([]);
+  const navigate = useNavigate();
+  const { questionId } = useParams();
+  const [user, setUser] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [postComments, setPostComments] = useState([]);
+  const [refresh, setRefresh] = useState(false);
+  // const [clear, setClear] = useState(false);
+  const [comment, setComment] = useState("");
+  const [question, setQuestion] = useState([]);
+  // const [userComment, setUserComment] = useState([]);
 
     const { setDataUser, idUser } = useContext(DataContext);
     const searchUrl = idUser;
@@ -96,6 +98,11 @@ const ForumAnswers = () => {
         await deleteData("comments", id);
         setRefresh((refresh) => !refresh);
     };
+    const onDeletequestions = async (id) => {
+        await deleteData("posts", id);
+        setRefresh((refresh) => !refresh);
+        navigate("/questions")
+    };
     console.log(question)
 
     return (
@@ -112,6 +119,14 @@ const ForumAnswers = () => {
                 <div className={styles.tagsContainer}></div>
                 <div className={styles.infoContainer}>
                     <p className={styles.name}> {question.user_info?.firstName} {question.user_info?.lastName} </p>
+                    
+                        <span
+                            className={styles.links}
+                            onClick={() => onDeletequestions(question._id)}
+                        >
+                            Eliminar
+                        </span>
+                    
                 </div>
             </div>
             <div className={styles.questionContainerMain}>

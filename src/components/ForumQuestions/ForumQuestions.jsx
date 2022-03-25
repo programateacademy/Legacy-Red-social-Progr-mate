@@ -197,7 +197,6 @@ const ForumQuestions = () => {
               )}
             </div>
             <div className={styles.questionAnswer}>
-              <p>4 respuestas</p>
               <p>{questions.length} preguntas</p>
             </div>
           </div>
