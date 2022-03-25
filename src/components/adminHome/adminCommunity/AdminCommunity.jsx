@@ -1,9 +1,10 @@
-import React, { useState, Fragment, useEffect } from 'react'
+import React, { useState, Fragment, useEffect, useContext } from 'react'
 import { getDataAll, updateData } from '../../../helpers/fetch'
 import { useNavigate } from "react-router-dom";
 import style from '../../UsersList/UsersList.module.css'
 import Searcher from '../../Searcher/Searcher'
 import DeleteButton from '../../DeleteButton/DeleteButton'
+import { DataContext } from '../../../context/DataContext';
 
 
 
@@ -14,13 +15,27 @@ const AdminCommunity = () => {
     const navigate = useNavigate()
     const [allUser, setAllUser] = useState([])
     const [filterUser, setFilterUser] = useState([])
+    const { postsContext, setPostsContext } = useContext(DataContext)
+    
+    const fetchUsers = async () => {
+        const users = await getDataAll("users")
+        setAllUser(users)
+        setFilterUser(users)
+    }
+    
     useEffect(async () => {
+        if (postsContext) {
+            setAllUser(postsContext)
+            setFilterUser(postsContext)
+        }
+        else (
+            await fetchUsers()
+        )
         const dataToEdit = await getDataAll("users");
         const dataCohort = await getDataAll("cohorte");
-        setAllUser(dataToEdit)
         setCohorts(dataCohort)
-        setFilterUser(dataToEdit)
     }, [])
+    
     const onToggle = (id) => {
         allUser.map((user) => {
             if (user._id === id) {

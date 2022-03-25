@@ -1,6 +1,7 @@
 import * as React from "react";
-
+import styles from './icons.module.css';
 const Icon_alarm = (props) => (
+  <div className={styles.icon}>
   <svg
     width={40}
     height={42}
@@ -15,7 +16,9 @@ const Icon_alarm = (props) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </svg>
+    </svg>
+    </div>
+    
 );
 
 export default Icon_alarm;

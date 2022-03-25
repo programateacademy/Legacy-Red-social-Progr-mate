@@ -48,7 +48,6 @@ const Posts = () => {
                         firstName={firstName}
                         middleName={middleName}
                         lastName={lastName}
-                        
                         cohorte={cohorte}
                         avatar={avatar}
                         key={post._id}

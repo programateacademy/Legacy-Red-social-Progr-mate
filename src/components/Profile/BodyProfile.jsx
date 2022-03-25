@@ -45,28 +45,6 @@ const BodyProfile = () => {
         }
     }, [idUser]);
 
-/*     useEffect(async () => {
-        if (idUser) {
-            try {
-                const data = await getDataAll("users");
-                if (!params.id) {
-                    const filterData = data.filter(
-                        (profile) => profile.user_info._id === idUser
-                    );
-                    setDataProfile(filterData[0]);
-                } else {
-                    const filterData = data.filter(
-                        (profile) => profile.user_info._id === params.id
-                    );
-                    console.log(filterData[0]);
-                    setDataProfile(filterData[0]);
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        }
-    }, [idUser]); */
-
     return (
         <div className={style.containBodyProfile}>
             {!showMain ? (

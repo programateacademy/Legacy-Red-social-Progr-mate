@@ -19,6 +19,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
     const [like, setLike] = useState(true);
     const [likes, setLikes] = useState([]);
     const [userPost, setUserPost] = useState();
+    const [allCohorts, setCohorts] = useState([])
 
     let navigate = useNavigate();
 
@@ -40,6 +41,10 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
             console.log(error);
         }
     };
+    useEffect(async () => {
+        const dataCohort = await getDataAll("cohorte");
+        setCohorts(dataCohort)
+    }, []);
 
     useEffect(() => {
         let isMounted = true
@@ -197,8 +202,9 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
                                 {userPost?.lastName}
                             </b>
                             <br />
-                            {userPost?.cohorte?.name}
-                            {/* <br /> <span>2 hr</span> */}
+                            <i>{allCohorts.map(item => (
+                                        item._id === userPost?.cohorte ? <span key={userPost._id}>{item.cohorte_name}</span> : ""
+                            ))}</i>
                         </p>
                     </div>
                     {idUser === user ? (
