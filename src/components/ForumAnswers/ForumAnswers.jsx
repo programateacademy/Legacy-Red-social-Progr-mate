@@ -19,7 +19,7 @@ const ForumAnswers = () => {
   // const [userComment, setUserComment] = useState([]);
   
 
-    const { setDataUser, posts, idUser } = useContext(DataContext);
+    const { setDataUser, idUser } = useContext(DataContext);
     const searchUrl = idUser;
 
 
@@ -140,7 +140,7 @@ const ForumAnswers = () => {
                     </span></div>
                    
                         
-                    ): rol === 9 ? (
+                    ): user.rol === 9 ? (
                         <div>
                         <span
                         className={styles.links}
@@ -199,10 +199,10 @@ const ForumAnswers = () => {
                         >
                             Eliminar
                         </span>
-                    ): rol === 9 ? (
+                    ): user.rol === 9 ? (
                         <span
                         className={styles.links}
-                        onClick={() => onDeletequestions(question._id)}
+                        onClick={() => onDelete(comment._id)}
                     >
                         Eliminar
                     </span>
