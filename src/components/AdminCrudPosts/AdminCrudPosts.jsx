@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { DataContext } from '../../context/DataContext'
 import { deleteData, getData, getDataAll } from '../../helpers/fetch'
 import { SwitchCreatePost } from '../SwitchCreatePost/SwitchCreatePost'
@@ -14,6 +15,7 @@ import { SwitchCreatePost } from '../SwitchCreatePost/SwitchCreatePost'
 function AdminCrudPosts({ children, name, postType, fields, icon }) {
     const { postsContext, setPostsContext, users, setUsers } = useContext(DataContext)
     const [data, setData] = useState([])
+    const navigate = useNavigate()
 
     /* Get data of posts and then filter that data by type of post (typename) */
     const fetchData = async () => {
@@ -90,9 +92,12 @@ function AdminCrudPosts({ children, name, postType, fields, icon }) {
                                 <td key={i}>{post[field]}</td>
                             ))}
                             <td>
-{/*                                 <SwitchCreatePost postType={postType} idPost={post._id}>
-                                    Editar
-                                </SwitchCreatePost> */}
+                                <button onClick={() => navigate(
+                                    postType === 'news' ? `/formnews/${post._id}` :
+                                        postType === 'event' ? `/formeventedit/${post._id}` :
+                                            postType === 'jobs' ? `/formjobs/${post._id}` :
+                                                postType === 'questions' ? `/addquestion/${post._id}` : ''
+                                )}>Editar</button>
                             </td>
                             <td><button onClick={() => { deletePost(post._id) }}>🗑️</button></td>
                         </tr>

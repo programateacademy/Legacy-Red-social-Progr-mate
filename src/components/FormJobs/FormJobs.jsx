@@ -20,7 +20,6 @@ const FormJobs = () => {
     }, []);
 
     const [technical, setTechnical] = useState([]);
-    console.log(submitData)
 
     //Send User data to user model and profile
 
