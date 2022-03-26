@@ -30,14 +30,10 @@ const ProfileEditor = () => {
     prev_studes: [{ ...studyField, id: uuid() }],
     experience: [{ ...experienceField, id: uuid() }]
     })
-    const [dataProfile, setDataProfile] = useState({})
     const setDataUserFromChild = (data ) => {
         setDataUser(data)
     }
 
-    const setDataProfileFromChild = (data ) => {
-        setDataProfile(data)
-    }
     useEffect(async()=> {
         const data = await getData("users", params.id);
         setDataUser(data);
@@ -49,8 +45,8 @@ const ProfileEditor = () => {
     return (
         <>
             <FormPhotoUser dataUser={dataUser} setDataUser={setDataUserFromChild}/>
-            <Form_PersonalInfo dataUser={dataUser}  dataProfile={dataProfile} setDataUser={setDataUserFromChild} setDataProfile={setDataProfileFromChild}/>
-            <FieldProfessional dataUser={dataUser} dataProfile={dataProfile} setDataProfile={setDataProfileFromChild} setDataUser={setDataUserFromChild}/>
+            <Form_PersonalInfo dataUser={dataUser}  setDataUser={setDataUserFromChild} />
+            <FieldProfessional dataUser={dataUser} setDataUser={setDataUserFromChild}/>
         </>
     )
 };

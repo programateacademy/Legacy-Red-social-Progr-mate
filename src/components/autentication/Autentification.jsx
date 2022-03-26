@@ -102,7 +102,7 @@ function Autentification() {
                 />
                 <Route
                     exact
-                    path="/formprofile/:id"
+                    path="/formprofile/:type/:id"
                     element={isLogged ? <EditProfile /> : <DontAllow />}
                 />
 

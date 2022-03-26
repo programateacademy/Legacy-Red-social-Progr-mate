@@ -100,7 +100,7 @@ const AdminCommunity = () => {
                                     <DeleteButton endpoint={'users'} id={user._id}/>
                                 </td>
                                 <td>
-                                    <button onClick={() => navigate(`/formprofile/${user._id}`)}>
+                                    <button onClick={() => navigate(`/formprofile/adminhome/${user._id}`)}>
                                         EDITAR
                                     </button>
                                 </td>

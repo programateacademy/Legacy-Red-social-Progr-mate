@@ -8,7 +8,7 @@ import { DataContext } from "../../../../context/DataContext";
 import { getData, sendData, updateData } from "../../../../helpers/fetch";
 import {FieldEducation} from "../FieldEducation/FieldEducation"
 import { FieldExperience } from "../FieldExpirience/FieldExpirience";
-export const FieldProfessional = ({dataUser, setDataUser, dataProfile, setDataProfile}) => {
+export const FieldProfessional = ({dataUser, setDataUser}) => {
     const params = useParams();
     const navigate = useNavigate();
     
@@ -38,9 +38,9 @@ export const FieldProfessional = ({dataUser, setDataUser, dataProfile, setDataPr
 
     //Enviar data del usuario al modelo de user y profile
     const submitData = async (e) => {
-        console.log(dataProfile)
+        console.log(dataUser)
         if (params.id) {
-            if (dataProfile) {
+            if (dataUser) {
                 e.preventDefault();
                 // await sendData("users", {
                 //     user_info: params.id,
@@ -71,7 +71,7 @@ export const FieldProfessional = ({dataUser, setDataUser, dataProfile, setDataPr
                     experience,
                     prev_studes
                 });
-                navigate(`/profile`);
+                navigate(`/${params.type}`);
             } else {
                 e.preventDefault();
                 console.log("Error");
@@ -79,7 +79,7 @@ export const FieldProfessional = ({dataUser, setDataUser, dataProfile, setDataPr
         } else {
             try {
                 await updateData("users", params.id, dataUser);
-                /* await updateData("users", dataProfile._id, dataProfile); */
+                /* await updateData("users", dataUser._id, dataUser); */
                 navigate(`/profile`);
             } catch (error) {
                 console.log(error);
@@ -89,9 +89,9 @@ export const FieldProfessional = ({dataUser, setDataUser, dataProfile, setDataPr
 
     const handleChangeEdu = ({ target }, id) => {
         const { name, value } = target;
-        setDataProfile({
-            ...dataProfile,
-            prev_studes: dataProfile.prev_studes.map((item) => ({
+        setDataUser({
+            ...dataUser,
+            prev_studes: dataUser.prev_studes.map((item) => ({
                 ...item,
                 [name]: item.id === id ? value : item[name],
             })),
@@ -99,10 +99,10 @@ export const FieldProfessional = ({dataUser, setDataUser, dataProfile, setDataPr
     };
 
     const addEducationField = () => {
-        setDataProfile({
-            ...dataProfile,
+        setDataUser({
+            ...dataUser,
             prev_studes: [
-                ...dataProfile.prev_studes,
+                ...dataUser.prev_studes,
                 {
                     ...studyField,
                     id: uuid(),
@@ -117,9 +117,9 @@ export const FieldProfessional = ({dataUser, setDataUser, dataProfile, setDataPr
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = function load() {
-            setDataProfile({
-                ...dataProfile,
-                prev_studes: dataProfile.prev_studes.map((item) => ({
+            setDataUser({
+                ...dataUser,
+                prev_studes: dataUser.prev_studes.map((item) => ({
                     ...item,
                     certificate:
                         item.id === id ? reader.result : item.certificate,
@@ -134,9 +134,9 @@ export const FieldProfessional = ({dataUser, setDataUser, dataProfile, setDataPr
     };
 
     const deleteCertificate = (id) => {
-        setDataProfile({
-            ...dataProfile,
-            prev_studes: dataProfile.prev_studes.map((item) => ({
+        setDataUser({
+            ...dataUser,
+            prev_studes: dataUser.prev_studes.map((item) => ({
                 ...item,
                 certificate: item.id === id ? "" : item.certificate,
             })),
@@ -144,9 +144,9 @@ export const FieldProfessional = ({dataUser, setDataUser, dataProfile, setDataPr
     };
 
     const deleteEducation = (id) => {
-        setDataProfile({
-            ...dataProfile,
-            prev_studes: dataProfile.prev_studes.filter(
+        setDataUser({
+            ...dataUser,
+            prev_studes: dataUser.prev_studes.filter(
                 (item) => item.id !== id
             ),
         });
@@ -154,9 +154,9 @@ export const FieldProfessional = ({dataUser, setDataUser, dataProfile, setDataPr
 
     const handleChangeExperience = ({ target }, id) => {
         const { name, value } = target;
-        setDataProfile({
-            ...dataProfile,
-            experience: dataProfile.experience.map((item) => ({
+        setDataUser({
+            ...dataUser,
+            experience: dataUser.experience.map((item) => ({
                 ...item,
                 [name]: item.id === id ? value : item[name],
             })),
@@ -164,17 +164,17 @@ export const FieldProfessional = ({dataUser, setDataUser, dataProfile, setDataPr
     };
 
     const deleteExperience = (id) => {
-        setDataProfile({
-            ...dataProfile,
-            experience: dataProfile.experience.filter((item) => item.id !== id),
+        setDataUser({
+            ...dataUser,
+            experience: dataUser.experience.filter((item) => item.id !== id),
         });
     };
 
     const addExperienceField = () => {
-        setDataProfile({
-            ...dataProfile,
+        setDataUser({
+            ...dataUser,
             experience: [
-                ...dataProfile.experience,
+                ...dataUser.experience,
                 {
                     ...experienceField,
                     id: uuid(),

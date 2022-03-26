@@ -15,7 +15,7 @@ const ProfileMainHome = ({ dataProfile }) => {
 
     const editProfile = () => {
         // console.log(idUser);
-        navigate(`/formprofile/${idUser}`);
+        navigate(`/formprofile/home/${idUser}`);
     };
 
     return (

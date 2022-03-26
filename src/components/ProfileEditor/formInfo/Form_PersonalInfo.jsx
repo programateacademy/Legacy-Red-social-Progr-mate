@@ -11,28 +11,30 @@ import Languages from "./Languages";
 import HardSkills from "./HardSkills";
 import SoftSkills from "./SoftSkills";
 
-const Form_PersonalInfo = ({dataUser, setDataProfile, setDataUser ,dataProfile}) => {
+const Form_PersonalInfo = ({dataUser, setDataUser}) => {
     const [technical, setTechnical] = useState([]);
     const [softSkills, setsoftSkills] = useState([]);
     const [languages, setLanguages] = useState([]);
 
+    
     const onKeyHardSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
             technical.push(e.target.value);
-            setDataProfile({
+            setDataUser({
                 ...dataUser,
                 technicalSkills: technical,
             });
             e.target.value = "";
             e.preventDefault();
+            console.log(dataUser)
         }
-        console.log(dataUser)
+        
     };
 
     const onKeySoftSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
             softSkills.push(e.target.value);
-            setDataProfile({
+            setDataUser({
                 ...dataUser,
                 softSkills: softSkills,
             });
@@ -45,7 +47,7 @@ const Form_PersonalInfo = ({dataUser, setDataProfile, setDataUser ,dataProfile})
     const onKeyLanguages = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
             languages.push(e.target.value);
-            setDataProfile({
+            setDataUser({
                 ...dataUser,
                 lenguages: languages,
             });
@@ -80,8 +82,8 @@ const Form_PersonalInfo = ({dataUser, setDataProfile, setDataUser ,dataProfile})
                         name="description"
                         onChange={onChange}
                     ></textarea>
-                </div>
- */}
+                </div> */}
+
                 <div className={style.forms}>
                     <h3>Tecnologías</h3>
                     <input
@@ -97,6 +99,8 @@ const Form_PersonalInfo = ({dataUser, setDataProfile, setDataUser ,dataProfile})
                                 key={index}
                                 technical={technical}
                                 setTechnical={setTechnical}
+                                dataUser={dataUser}
+                                setDataUser={setDataUser}
                             />
                         ))}
                     </div>
@@ -116,6 +120,8 @@ const Form_PersonalInfo = ({dataUser, setDataProfile, setDataUser ,dataProfile})
                                 key={index}
                                 softSkills={softSkills}
                                 setsoftSkills={setsoftSkills}
+                                dataUser={dataUser}
+                                setDataUser={setDataUser}
                             />
                         ))}
                     </div>
@@ -138,6 +144,8 @@ const Form_PersonalInfo = ({dataUser, setDataProfile, setDataUser ,dataProfile})
                                 key={index}
                                 languages={languages}
                                 setLanguages={setLanguages}
+                                dataUser={dataUser}
+                                setDataUser={setDataUser}
                             />
                         ))}
                     </div>

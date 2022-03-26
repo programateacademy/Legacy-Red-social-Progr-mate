@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
 import { BiX } from "react-icons/bi";
-import { DataContext } from "../../../context/DataContext";
+const SoftSkills = ({ skill, softSkills, setsoftSkills,dataUser , setDataUser }) => {
 
-const JobSoftSkills = ({ skill, softSkill, setsoftSkill }) => {
-    const { dataProfile, setDataProfile } = useContext(DataContext);
 
     const deleteSkill = (e) => {
         e.preventDefault();
 
-        const soft = softSkill.filter((s) => s !== skill);
-        setsoftSkill(soft);
-        setDataProfile({
-            ...dataProfile,
+        console.log(softSkills);
+        const soft = softSkills.filter((s) => s !== skill);
+        setsoftSkills(soft);
+        setDataUser({
+            ...dataUser,
             softSkills: soft,
         });
     };
@@ -22,4 +21,5 @@ const JobSoftSkills = ({ skill, softSkill, setsoftSkill }) => {
     );
 };
 
-export default JobSoftSkills;
+export default SoftSkills;
+
