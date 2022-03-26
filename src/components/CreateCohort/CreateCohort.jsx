@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { getDataAll, sendData } from "../../helpers/fetch"
-
+import styles from "./styles.module.css"
+import Icon_cohorte from "../../assets/icons/Icon_cohorte"
 /* Create cohort and his users - Renders in AdminCohort*/
 function CreateCohort() {
     const [newCohort, setNewCohort] = useState([])
@@ -48,7 +49,7 @@ function CreateCohort() {
     /* Add cohort id for each user */
     const addCohortToUser = (idCohort) => {
         setUsers(prevState => prevState.map(item => (
-            { ...item, cohorte: idCohort}
+            { ...item, cohorte: idCohort }
         )))
     }
 
@@ -69,30 +70,34 @@ function CreateCohort() {
 
     return (
         <>
-            <p>Cohorte</p>
+            <p className={styles.title}><span><Icon_cohorte /></span>Cohorte</p>
 
-            <form id="cohort" onSubmit={sendCohort}>
-                <label>Numero de Cohorte</label>
-                <input type="number" name="cohorte" onChange={handleCohort} />
-                <label>Nombre de la Cohorte</label>
-                <input type="text" name="cohorte_name" onChange={handleCohort} />
+            <form id="cohort" onSubmit={sendCohort} className={`${styles.formCohort} ${styles.form}`}>
+                <div className={styles.formCohortContainer}>
+                    <label>Numero de Cohorte<span>*</span></label>
+                    <input type="number" name="cohorte" onChange={handleCohort} />
+                </div>
+                <div className={styles.formCohortContainer}>
+                    <label>Nombre de la Cohorte</label>
+                    <input type="text" name="cohorte_name" onChange={handleCohort} />
+                </div>
             </form>
 
             <p>Datos del usuario</p>
-            <form onSubmit={onAdduser}>
-                <label>Primer Nombre</label>
-                <input type="text" onChange={handleUser} name="firstName" />
+            <form onSubmit={onAdduser} className={`${styles.formUser} ${styles.form}`}>
+                <label>Primer Nombre<span>*</span></label>
+                <input type="text" onChange={handleUser} name="firstName" required/>
                 <label>Segundo Nombre</label>
                 <input type="text" onChange={handleUser} name="middleName" /><br />
-                <label>Primer Apellido</label>
+                <label>Primer Apellido<span>*</span></label>
                 <input type="text" onChange={handleUser} name="lastName" required />
-                <label>Segundo Apellido</label>
+                <label>Segundo Apellido<span>*</span></label>
                 <input type="text" onChange={handleUser} name="secondSurname" required /><br />
-                <label>Correo Electronico</label>
+                <label>Correo Electronico<span>*</span></label>
                 <input type="email" onChange={handleUser} name="email" required />
-                <label>Numero de Celular</label>
+                <label>Numero de Celular<span>*</span></label>
                 <input type="number" onChange={handleUser} name="contactNumber" required /><br />
-                <label>Contraseña</label>
+                <label>Contraseña<span>*</span></label>
                 <input type="text" onChange={handleUser} name="passwordHash" required /><br />
 
                 <input type="submit" value="Agregar Usuario" />

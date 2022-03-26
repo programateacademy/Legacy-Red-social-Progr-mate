@@ -1,0 +1,32 @@
+.title {
+  display: flex;
+  font-size: 1.6rem;
+  align-items: center;
+}
+.form input{
+    background-color: var(--input-color);
+    border: none;
+    border-radius: 5px;
+}
+.form label{
+    font-size: 1.6rem;
+}
+.form label span{
+    font-size: 1.6rem;
+    color: var(--required-fied);
+}
+
+
+
+.formCohort {
+  display: flex;
+}
+.formCohortContainer {
+  display: flex;
+  flex-direction: column;
+}
+.formCohortContainer input{
+    background-color: var(--input-color);
+    border: none;
+    border-radius: 5px;
+}

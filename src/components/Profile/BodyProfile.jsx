@@ -34,9 +34,11 @@ const BodyProfile = () => {
                 if (!params.id) {
                     const data = await getData("users", idUser);
                     setDataUser(data);
+                    localStorage.setItem("avatar", JSON.stringify(data.avatar));
                 } else {
                     const data = await getData("users", params.id);
                     setDataUser(data);
+                    localStorage.setItem("avatar", JSON.stringify(data.avatar));
                 }
                 //console.log(data,idUser)
             } catch (error) {
