@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react"
 import { getDataAll, sendData } from "../../helpers/fetch"
 import styles from "./styles.module.css"
 import Icon_cohorte from "../../assets/icons/Icon_cohorte"
+import { showErrMsg, showSuccess } from "../../utils/notification"
+import { useNavigate } from "react-router-dom"
 /* Create cohort and his users - Renders in AdminCohort*/
 function CreateCohort() {
     const [newCohort, setNewCohort] = useState([])
     const [users, setUsers] = useState([])
     const [user, setUser] = useState({})
-
+    const navigate = useNavigate()
     /* Update cohort state */
     const handleCohort = (e) => {
         setNewCohort({
@@ -35,8 +37,13 @@ function CreateCohort() {
     /* create cohort in data base */
     const sendCohort = async (event) => {
         event.preventDefault()
-        await sendData("cohorte", newCohort)
-        await obtainCohortId()
+        try {
+            await sendData("cohorte", newCohort)
+            await obtainCohortId()
+        } catch (err) {
+            console.log(err)
+            showErrMsg(err.response.data.error)
+        }
     }
 
     /* obtain id of cohort created in data base */
@@ -46,16 +53,27 @@ function CreateCohort() {
         addCohortToUser(cohort._id)
     }
 
-    /* Add cohort id for each user */
+    /* Add cohort id for each user and provisional random password*/
     const addCohortToUser = (idCohort) => {
-        setUsers(prevState => prevState.map(item => (
-            { ...item, cohorte: idCohort }
+        setUsers(prevState => prevState.map(user => (
+            {
+                ...user,
+                cohorte: idCohort,
+                passwordHash: Math.random().toString(36).slice(2)
+            }
         )))
     }
 
     /* create user in data base */
     const sendUsers = () => {
-        users.forEach(async (item) => await sendData("users", item))
+        try {
+            users.forEach(async (item) => await sendData("users", item))
+            showSuccess("Cohorte Creada", "Cohorte creada con éxito")
+            setTimeout(() => { navigate("/adminhome") }, 2000)
+        } catch (err) {
+            console.log(err)
+            showErrMsg(err.response.data.error)
+        }
     }
 
     /* delete user in state */
@@ -70,7 +88,7 @@ function CreateCohort() {
 
     return (
         <>
-            <p className={styles.title}><span><Icon_cohorte /></span>Cohorte</p>
+            <h1 className={styles.title}><span><Icon_cohorte /></span>Cohorte</h1>
 
             <form id="cohort" onSubmit={sendCohort} className={`${styles.formCohort} ${styles.form}`}>
                 <div className={styles.formCohortContainer}>
@@ -82,25 +100,37 @@ function CreateCohort() {
                     <input type="text" name="cohorte_name" onChange={handleCohort} />
                 </div>
             </form>
-
-            <p>Datos del usuario</p>
+            <div>
+                <h2 className={styles.subtitle}>Datos del usuario</h2>
+                <hr />
+            </div>
             <form onSubmit={onAdduser} className={`${styles.formUser} ${styles.form}`}>
-                <label>Primer Nombre<span>*</span></label>
-                <input type="text" onChange={handleUser} name="firstName" required/>
-                <label>Segundo Nombre</label>
-                <input type="text" onChange={handleUser} name="middleName" /><br />
-                <label>Primer Apellido<span>*</span></label>
-                <input type="text" onChange={handleUser} name="lastName" required />
-                <label>Segundo Apellido<span>*</span></label>
-                <input type="text" onChange={handleUser} name="secondSurname" required /><br />
-                <label>Correo Electronico<span>*</span></label>
-                <input type="email" onChange={handleUser} name="email" required />
-                <label>Numero de Celular<span>*</span></label>
-                <input type="number" onChange={handleUser} name="contactNumber" required /><br />
-                <label>Contraseña<span>*</span></label>
-                <input type="text" onChange={handleUser} name="passwordHash" required /><br />
+                <div className={styles.formCohortContainer}>
+                    <label>Primer Nombre<span>*</span></label>
+                    <input type="text" onChange={handleUser} name="firstName" required />
+                </div>
+                <div className={styles.formCohortContainer}>
+                    <label>Segundo Nombre</label>
+                    <input type="text" onChange={handleUser} name="middleName" />
+                </div>
+                <div className={styles.formCohortContainer}>
+                    <label>Primer Apellido<span>*</span></label>
+                    <input type="text" onChange={handleUser} name="lastName" required />
+                </div>
+                <div className={styles.formCohortContainer}>
+                    <label>Segundo Apellido<span>*</span></label>
+                    <input type="text" onChange={handleUser} name="secondSurname" required />
+                </div>
+                <div className={styles.formCohortContainer}>
+                    <label>Correo Electronico<span>*</span></label>
+                    <input type="email" onChange={handleUser} name="email" required />
+                </div>
+                <div className={styles.formCohortContainer}>
+                    <label>Numero de Celular<span>*</span></label>
+                    <input type="number" onChange={handleUser} name="contactNumber" required />
+                </div>
 
-                <input type="submit" value="Agregar Usuario" />
+                <input type="submit" value="Agregar Usuario" id={styles.button} />
             </form>
 
             <table>
@@ -131,8 +161,7 @@ function CreateCohort() {
                 </tbody>
             </table>
 
-            <input disabled={!users.length} type="submit" value="Crear Cohorte" form="cohort" />
-            <button onClick={sendUsers}>Enviar Usuarios</button>
+            <input disabled={!users.length} type="submit" value="Crear Cohorte" form="cohort" id={styles.button} />
         </>
     )
 }

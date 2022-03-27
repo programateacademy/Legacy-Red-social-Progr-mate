@@ -12,6 +12,7 @@ import Posts from "./Posts/Posts";
 import style from "./Posts/Posts.module.css";
 import ProfileMainHome from "./ProfileMainHome/ProfileMainHome";
 import { useParams } from "react-router-dom";
+import { UserQuestions } from "../UserQuestions/UserQuestions";
 
 const BodyProfile = () => {
     const { idUser, setDataProfile, dataProfile, setDataUser } =
@@ -50,18 +51,25 @@ const BodyProfile = () => {
     return (
         <div className={style.containBodyProfile}>
             {!showMain ? (
-                <ProfileMain dataProfile={dataProfile} />
+                <>
+                    <ProfileMain dataProfile={dataProfile} />
+                    <ProfileAbout />
+                    <ProfileSkills />
+                    <ProfileEducation />
+                    <ProfileExperience />
+                    <Technologies />
+                    <ProfileLanguages />
+                    <Posts />
+                </>
             ) : (
-                <ProfileMainHome dataProfile={dataProfile} />
+                <>
+                    <ProfileMainHome dataProfile={dataProfile} />
+                    <UserQuestions />
+                </>
             )}
 
-            <ProfileAbout />
-            <ProfileSkills />
-            <ProfileEducation />
-            <ProfileExperience />
-            <Technologies />
-            <ProfileLanguages />
-            {!showMain && <Posts />}
+
+
         </div>
     );
 };

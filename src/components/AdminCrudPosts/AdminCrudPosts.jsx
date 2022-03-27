@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { DataContext } from '../../context/DataContext'
-import { deleteData, getData, getDataAll } from '../../helpers/fetch'
+import { deleteData, getDataAll } from '../../helpers/fetch'
 import { SwitchCreatePost } from '../SwitchCreatePost/SwitchCreatePost'
 
 /* Table for render events, news, jobs, and forum CRUD
