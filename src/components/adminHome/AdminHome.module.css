@@ -1,0 +1,19 @@
+.home_container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #ECEFF1;
+}
+
+.admin_navigation {
+    width: 20%;
+    background-color: #fff;
+}
+
+.admin_comunity{
+    width: 80%;
+    margin: 2%;
+    background-color: #fff;
+    box-sizing: border-box;
+}

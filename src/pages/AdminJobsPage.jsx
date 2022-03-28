@@ -19,4 +19,4 @@ function AdminJobsPage() {
 }
 
 
-export { AdminJobsPage }
+export default AdminJobsPage 

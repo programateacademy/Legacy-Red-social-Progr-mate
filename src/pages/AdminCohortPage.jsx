@@ -13,4 +13,4 @@ function AdminCohortPage() {
     )
 }
 
-export { AdminCohortPage }
+export default AdminCohortPage 

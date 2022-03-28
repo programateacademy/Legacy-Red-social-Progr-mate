@@ -1,0 +1,53 @@
+.image {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    
+    box-sizing: border-box;
+}
+.table th {
+    background-color: #ECEFF1;
+}
+
+.btn {
+    background-color: none;
+    border: none;
+    width: 50px;
+    height: auto;
+
+}
+
+.container_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.container_table {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+.table td {
+    text-align: center;
+}
+
+.table thead {
+    position: sticky;
+    top: 82px;
+    height: 4em;
+}
+
+.table tr {
+    border-bottom: 1px solid;
+    font-size: 2rem;
+    
+}
