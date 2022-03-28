@@ -1,0 +1,42 @@
+.title {
+  display: flex;
+  font-size: 1.6rem;
+  align-items: center;
+}
+.subtitle {
+  font-size: 1.8rem;
+}
+.form input {
+  background-color: var(--input-color);
+  border: none;
+  /* border-radius: 5px; */
+  height: 3rem;
+  width: 25rem;
+}
+.form label {
+  font-size: 1.6rem;
+}
+.form label span {
+  font-size: 1.6rem;
+  color: var(--required-fied);
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60rem;
+  justify-content: space-around;
+}
+.formCohortContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#button {
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 5px;
+  color: black;
+  height: 3.2rem;
+  width: 25rem;
+}

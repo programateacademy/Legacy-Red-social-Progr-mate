@@ -9,11 +9,11 @@ import Modal from "./Modal.jsx"
 import { useModals } from "./useModals.jsx";
 
 
+
 const Modals = () => {
   const [IsOpenModalJob, openModalJob, closeModalJob] = useModals(false);
   const [IsOpenModalEvent, openModalEvent, closeModalEvent] = useModals(false);
   const [IsOpenModalNews, openModalNews, closeModalNews] = useModals(false);
-  console.log(IsOpenModalJob)
   return (
     <div>
       <h2>¿Hay algo que quieras compartir?</h2>
@@ -33,8 +33,6 @@ const Modals = () => {
         <Icon_events />
       </button>
       <Modal IsOpen={IsOpenModalEvent} closeModal={closeModalEvent}>
-        <h3>Evento</h3>
-        <p>Hola este es el contenido de mi modal event</p>
         <FormEvent />
       </Modal>
       
