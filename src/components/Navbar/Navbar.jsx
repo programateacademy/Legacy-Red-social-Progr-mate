@@ -63,12 +63,7 @@ const Navbar = () => {
                 <p>FORUM</p>
               </li>
             </Link>
-            <li className={styles.navListItem} >
-              <button onClick={onSetActive} className={styles.btnNotification}>
-                <Icon_alarm/>
-              </button>
-              </li>
-          </ul>
+            
 
           <div className={styles.containerPhoto}>
             {avatarUser ? (
@@ -76,8 +71,18 @@ const Navbar = () => {
             ) : (
                 <img src={altImg} alt="Foto" className={styles.imgProfile}/>
             )}
+            <div>
+              
+              <button onClick={onSetActive} className={styles.btnNotification}>
+                <Icon_alarm/>
+              </button>
+              
+            </div>
             <DropdownLogOut />
           </div>
+          </ul>
+
+          
         </nav>
       </div>
       { activeNotification && <Notification/>}
