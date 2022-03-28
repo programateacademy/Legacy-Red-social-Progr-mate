@@ -8,7 +8,6 @@ const AdminHomePage = () => {
         <>
             <Navbar/>                        
             <AdminHome/>
-            <Footer />
         </>
     );
 };

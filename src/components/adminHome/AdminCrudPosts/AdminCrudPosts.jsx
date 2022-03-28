@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { DataContext } from '../../context/DataContext'
-import { deleteData, getDataAll } from '../../helpers/fetch'
-import { SwitchCreatePost } from '../SwitchCreatePost/SwitchCreatePost'
-
+import { DataContext } from '../../../context/DataContext'
+import { deleteData, getDataAll } from '../../../helpers/fetch'
+import { SwitchCreatePost } from '../../SwitchCreatePost/SwitchCreatePost'
+import styles from '../adminCommunity/AdminCommunity.module.css'
 /* Table for render events, news, jobs, and forum CRUD
     props:
         name: string -> name of the table
@@ -59,7 +59,7 @@ function AdminCrudPosts({ children, name, postType, fields, icon }) {
             <SwitchCreatePost postType={postType}>
                 Crear {name.slice(0, -1)}
             </SwitchCreatePost>
-            <table>
+            <table className={styles.container_table}>
                 <thead>
                     <tr>
                         <th>Titulo</th>

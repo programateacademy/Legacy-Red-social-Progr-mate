@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AdminCommunity from './adminCommunity/AdminCommunity'
 import CreateUser from '../CreateUser/CreateUser'
 import  AdminNavigation  from '../AdminNavigation/AdminNavigation';
-import  AdminCrudPosts  from '../AdminCrudPosts/AdminCrudPosts';
+import  AdminCrudPosts  from './AdminCrudPosts/AdminCrudPosts';
 import CreateCohort from '../CreateCohort/CreateCohort'
 import style from "./AdminHome.module.css"
 /* Renders in AdminHomePage */
@@ -35,7 +35,7 @@ const AdminHome = () => {
             case 'forum':
                 return <AdminCrudPosts name={"Preguntas"} postType={"questions"} fields={[]}></AdminCrudPosts>
             case 'cohorts':
-                'cohorte'
+                return <CreateCohort/>
             case 'users':
                 return <AdminCommunity />
             default:

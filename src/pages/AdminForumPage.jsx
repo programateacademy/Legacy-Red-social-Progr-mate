@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminCrudPosts from '../components/AdminCrudPosts/AdminCrudPosts'
+import AdminCrudPosts from '../components/adminHome/AdminCrudPosts/AdminCrudPosts'
 import AdminNavigation from '../components/AdminNavigation/AdminNavigation'
 
 /*render in /adminforum */

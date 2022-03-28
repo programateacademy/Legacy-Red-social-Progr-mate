@@ -1,28 +1,30 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styles from './AdminNavigation.module.css'
 
-function AdminNavigation({setActiveState}) {
+function AdminNavigation({setActiveState, activePanel}) {
     const setActive = (panel) => {
         setActiveState(panel)
     }
+    
     return (
-            <ul>
-                <li>
+            <ul className={styles.list}>
+                <li className={`${styles.menu} ${activePanel == 'users' && styles.active}  `}>
                 <button onClick={() => setActive('users')}>Usuarios</button>
                 </li>
-                <li>
+                <li className={`${styles.menu} ${activePanel == 'cohorts' && styles.active}`}>
                     <button onClick={() => setActive('cohorts')}>Cohorte</button>
                 </li>
-                <li>
+                <li className={`${styles.menu} ${activePanel == 'jobs' && styles.active}`}>
                     <button onClick={() => setActive('jobs')}>Ofertas</button>
                 </li>
-                <li>
+                <li className={`${styles.menu} ${activePanel == 'news' && styles.active}`}>
                     <button onClick={() => setActive('news')}>Noticias</button>
                 </li>
-                <li>
+                <li className={`${styles.menu} ${activePanel == 'events' && styles.active}`}>
                     <button onClick={() => setActive('events')}>Eventos</button>
                 </li>
-                <li>
+                <li className={`${styles.menu} ${activePanel == 'forum' && styles.active}`}>
                     <button onClick={() => setActive('forum')}>Foro</button>
                 </li>
             </ul>
