@@ -47,7 +47,7 @@ const AdminCommunity = () => {
     return (
         <Fragment>
             <div className={style.container_row}>
-                <h1>Usuarios</h1>
+                <h1><span>🚀 </span>Usuarios</h1>
                 <Searcher typeOfSearch='Busqueda por correo' setFilter={setFilterUser} dataToFilter={users} objectKey={'email'}/>
             </div>
             <div className={style.container_table}>
