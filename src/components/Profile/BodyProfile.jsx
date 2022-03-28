@@ -38,7 +38,7 @@ const BodyProfile = () => {
           const data = await getData("users", params.id);
           setDataUser(data);
         }
-        //console.log(data,idUser)
+        
       } catch (error) {
         console.log(error);
       }

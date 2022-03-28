@@ -1,6 +1,7 @@
 .homePage {
     background-color: #ECEFF1;
     scrollbar-width: none;
+        
 }
 .containBody {
     display: flex;
@@ -21,6 +22,7 @@
     position: sticky;
     top: 50px;
     overflow: hidden;
+    height: 250px;
 }
 .mainContent {
     width: 100%;
