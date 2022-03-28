@@ -1,13 +1,13 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { Fragment, useContext } from "react";
 import style from "./ProfileMain.module.css";
 
 import { DataContext } from "../../../context/DataContext";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import altImg from "../../../assets/images/avatar.png";
 
 const ProfileMain = ({ dataProfile }) => {
     const { dataUser, idUser } = useContext(DataContext);
-    const { avatar, firstName, middleName, lastName, cohorte, data } = dataUser;
+    const { avatar, firstName, middleName, lastName, cohorte} = dataUser;
 
     let navigate = useNavigate();
     const params = useParams();
