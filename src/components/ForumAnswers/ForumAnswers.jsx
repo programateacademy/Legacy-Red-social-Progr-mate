@@ -4,6 +4,7 @@ import { getData, getDataAll, sendData, deleteData } from "../../helpers/fetch";
 import styles from "./ForumAnswers.module.css";
 import { DataContext } from "../../context/DataContext";
 import { useNavigate  } from "react-router-dom";
+import { RiQuestionLine } from "react-icons/ri";
 
 const ForumAnswers = () => {
   const navigate = useNavigate();
@@ -111,54 +112,42 @@ const ForumAnswers = () => {
 
     return (
         <>
+            <h1 className={styles.answer__title}>
+                FORO ALUMNI
+                <RiQuestionLine size="22" />
+            </h1>
+            <hr className={styles.question__lineTitle} />
             <div className={styles.questionContainerMain}>
                 <div className={styles.containerQuestion}>
                     <img src={question.user_info?.avatar} alt="Avatar person asking" />
-                    <h5 className={styles.question}>{question.title}</h5>
-                    <p className={styles.question}>{question.description}</p>
+                    <p className={styles.questionName}> {question.user_info?.firstName} {question.user_info?.lastName} </p>
                     <p className={styles.dateQuestion}>
                         Creado: {date}
                     </p>
                 </div>
+                <div>
+                <h5 className={styles.questionTitle}>{question.title}</h5>
+                <p className={styles.questionText}>{question.description}</p>
+                </div>
                 <div className={styles.tagsContainer}></div>
-                <div className={styles.infoContainer}>
-                    <p className={styles.name}> {question.user_info?.firstName} {question.user_info?.lastName} </p>
+
+
                     {user._id === question.user_info?._id ? (
-                        <div>
                             <span
                             className={styles.links}
                             onClick={() => onDeletequestions(question._id)}
                         >
                             Eliminar
                         </span>
-                        
-                        <span
-                        className={styles.links}
-                        onClick={() => navigate(`/addquestion/${questionId}`)}
-                    >
-                        Editar
-                    </span></div>
-                   
-                        
-                    ): user.rol === 9 ? (
-                        <div>
+
+                    ): user.rol === 9 ? (  
                         <span
                         className={styles.links}
                         onClick={() => onDeletequestions(question._id)}
                     >
                         Eliminar
                     </span>
-                    
-                    <span
-                    className={styles.links}
-                    onClick={() => navigate(`/addquestion/${questionId}`)}
-                >
-                    Editar
-                </span></div>
-                    ): ( "") }
-                    
-                </div>
-                
+                    ): ( "") }     
             </div>
             <div className={styles.questionContainerMain}>
                 <form className={styles.from_container} onSubmit={submitData}>
@@ -184,14 +173,16 @@ const ForumAnswers = () => {
        <p className={styles.title}> {question.comments?.length} Respuestas</p>
             {comments.map((comment, i) => (
                 <div key={i} className={styles.questionContainerMain}>
-                    <br />
-                    <p className={styles.name}>{onName(comment.user_id)}</p>
-                    <img src={onImage(comment.user_id)} />
-
-                    <p className={styles.name}>{comment.comment}</p>
-                    <p className={styles.dateQuestion}>
-                        Creado: {date}
-                    </p>
+                <div className={styles.answerInfoAnswer} >
+                    <img className={styles.answerAvatar} src={onImage(comment.user_id)} />
+                    <p className={styles.answerName} >{onName(comment.user_id)}</p>
+                    <p className={styles.dateQuestion2}>
+                    Creado: {date}
+                    </p> 
+                </div>
+                <div>
+                    <p className={styles.answerUserAnswer}>{comment.comment}</p>
+                </div>  
                     {user._id === comment.user_id ? (
                         <span
                             className={styles.links}
