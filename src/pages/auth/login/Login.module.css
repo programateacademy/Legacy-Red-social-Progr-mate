@@ -66,6 +66,7 @@
   font-size: 1.6rem;
   margin: 2rem 0;
   text-align: center;
+   color: black;
 }
 .forgotPassword:visited {
   color: black;
