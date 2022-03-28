@@ -12,6 +12,7 @@ import Posts from "./Posts/Posts";
 import style from "./BodyProfile.module.css";
 import ProfileMainHome from "./ProfileMainHome/ProfileMainHome";
 import { useParams } from "react-router-dom";
+import { UserQuestions } from "../UserQuestions/UserQuestions";
 
 const BodyProfile = () => {
   const { idUser, setDataProfile, dataProfile, setDataUser } =

@@ -17,7 +17,6 @@
 }
 .containProfile {
     width: 28%;
-    border-radius: 15px;
     position: sticky;
     top: 50px;
     overflow: hidden;

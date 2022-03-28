@@ -1,29 +1,34 @@
 .globalNav {
     background-color: rgb(255, 255, 255);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
     width: 100%;
     position: sticky;
     top: 0px;
     z-index: 5;
+    
 }
 .globalNavContent {
-    max-width: 1124px;
+    max-width: 90%;
     margin: 0 auto;
 }
 .navBar {
     display: flex;
-    align-items: center;
+    align-items:flex-end;
     height: 80px;
     justify-content: space-between;
 }
 
 .navList {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     list-style: none;
-    column-gap: 150px;
+    column-gap: 70px;
     margin: 0;
-    padding: 0;
+    padding: 0; 
+}
+
+.ul {
+  display: flex;
+  justify-content: left;
 }
 .navList a {
     text-decoration: none;
@@ -59,6 +64,7 @@
 .btnNotification{
     border: none;
     background: none;
+    padding: 0%;
 }
 .imgProfile{
     width: 40px;
@@ -112,6 +118,7 @@
 
 @media (max-width: 640px) {
     .globalNavContent {
+      max-width: 90%;
         margin: 0 10px;
     }
     .navBar {
@@ -124,6 +131,7 @@
     .iconoEducamas {
         width: 45px;
         height: 45px;
+;
     }
     .photoProfile {
         display: none;
@@ -135,7 +143,7 @@
         width: 60px;
     }
     .navList {
-        column-gap: 10px;
+        column-gap: 5px;
     }
     .navListItem {
         font-size: 14px;

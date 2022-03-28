@@ -13,17 +13,18 @@
   --input-color: #eceff1;
   --input-text: #c2c2c2;
   --secundary-background: #ffffff;
+  --required-fied : #e72a2a;
 }
 
 * {
   box-sizing: border-box;
 }
 html {
-  font-size: 62.5%;
+  font-size: 75%;
 }
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+   font-family: Gilroy-light;
   padding: 0;
 }
 

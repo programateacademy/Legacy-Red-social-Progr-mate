@@ -82,7 +82,6 @@ const Posts = () => {
         }
     }, []);
 
-    console.log(getPosts)
 
     return (
         <Fragment>

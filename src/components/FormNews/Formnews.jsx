@@ -1,5 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import styles from "./Formnews.module.css";
+import logo from "../../assets/images/logo-a-color-.jpg";
 import { getData, sendData, updateData } from "../../helpers/fetch";
 import { DataContext } from "../../context/DataContext";
 import HardSkills from "./HardSkills";
@@ -54,8 +55,9 @@ const FormNews = () => {
                     });
                 }
 
-                navigate(`/home`);
-            } catch (error) {
+                navigate("/questions");
+            }
+             catch (error) {
                 console.log(error);
             }
         }
@@ -112,15 +114,19 @@ const FormNews = () => {
     };
 
     return (
-        <section className={styles.section_container}>
+        <Fragment>
+        <div className={styles.headerPerfil}>
+                <img src={logo} alt="Educamás" />
+                <h2>Agregar Noticia</h2>
+            </div>
             <form className={styles.form_container} onSubmit={submitData}>
-                <h1 className={styles.title}>Noticias</h1>
                 <div className={styles.form}>
                     <h3>Nombre de la noticia</h3>
 
                     <input
                         className={styles.nom_input}
                         type="text"
+                        placeholder="Nombre de la noticia"
                         name="title"
                         value={posts.title}
                         onChange={onChange}
@@ -132,6 +138,7 @@ const FormNews = () => {
                 <div className={styles.form}>
                     <h3>Contenido escrito de la misma</h3>
                     <textarea
+                        placeholder="Breve descripción de la noticia" 
                         className={styles.textarea}
                         type="text"
                         name="description"
@@ -147,6 +154,7 @@ const FormNews = () => {
                     <h3 className={styles.subtitle}>Tecnologías</h3>
                     <input
                         className={styles.nom_input}
+                        placeholder="Tecnologías <Enter> para guardarla"
                         type="text"
                         name="tecno"
                         onKeyDown={onKeyTechnologies}
@@ -180,10 +188,10 @@ const FormNews = () => {
                     <br />
                 </div>
                 <div className={styles.send}>
-                    <button className="btn">Enviar</button>
+                    <button className="btn" onClick={navigate}>Enviar</button>
                 </div>
             </form>
-        </section>
+            </Fragment>
     );
 };
 

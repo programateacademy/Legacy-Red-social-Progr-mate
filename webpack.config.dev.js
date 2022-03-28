@@ -34,10 +34,15 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
+                    'style-loader',
                     {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
-                    "css-loader",
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: '[local]_[hash:base64:5]'
+                            }
+                        }
+                    }
                 ],
             },
             {

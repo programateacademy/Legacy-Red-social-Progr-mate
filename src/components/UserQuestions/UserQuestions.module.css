@@ -1,0 +1,29 @@
+.myquestions {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-left: 2rem;
+}
+.questionLink {
+  color: #3e4347;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+.questionLink div {
+  padding-bottom: 2rem;
+  margin-left: 2rem;
+}
+.question,
+.comments {
+  margin: 0;
+}
+.question {
+  font-size: 1.6rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 2rem;
+}
+.comments {
+  margin: 0;
+  font-size: 1.3rem;
+}

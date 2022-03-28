@@ -1,8 +1,15 @@
+<<<<<<< HEAD
+=======
+.containBodyProfile {
+    background-color: #ffffff;
+}
+
+>>>>>>> 9d8c3749bf0c8198bfda7fee82322368b38b1dac
 .container1 {
     width: 100%;
     height: 100%;
     display: flex;
-    background-color: #d7d7d7;
+    background-color: #ffffff;
     margin-top: 5px;
 }
 .container2 {
@@ -13,7 +20,7 @@
     display: flex;
     justify-content: center;
     margin: auto;
-    background-color: #d7d7d7;
+    background-color: #ffffff;
     flex-direction: column;
     border: 1px solid;
     border-color: #92c149;
