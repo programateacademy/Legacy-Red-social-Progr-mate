@@ -43,6 +43,10 @@ import  AdminForumPage  from "../../pages/AdminForumPage";
 import  AdminEventsPage  from "../../pages/AdminEventsPage";
 import  AdminNewsPage  from "../../pages/AdminNewsPage";
 import  AdminJobsPage  from "../../pages/AdminJobsPage";
+import { NewsSection } from "../NewsSection/newsSection";
+import Navbar from "../Navbar/Navbar";
+import { JobsSection } from "../JobsSection/JobsSection";
+import { EventsSection } from "../EventsSection/EventsSection";
 
 
 /* This component manage routes*/
@@ -52,12 +56,28 @@ function Autentification() {
 
     return (
         <>
+            <Navbar/>
             <Routes>
                 {/* Login */}
                 <Route
                     exact
                     path="/"
                     element={isLogged ? <HomePage /> : <Login />}
+                />
+                <Route
+                    exact
+                    path="/news"
+                    element={isLogged ? <NewsSection /> : <Login />}
+                />
+                <Route
+                    exact
+                    path="/jobs"
+                    element={isLogged ? <JobsSection /> : <Login />}
+                />
+                <Route
+                    exact
+                    path="/events"
+                    element={isLogged ? <EventsSection /> : <Login />}
                 />
                 <Route
                     exact
