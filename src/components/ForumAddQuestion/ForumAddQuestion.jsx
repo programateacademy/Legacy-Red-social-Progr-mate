@@ -28,6 +28,10 @@ const ForumAddQuestion = () => {
     return (
         <section className={styles.section}>
             <div className={styles.section__global}>
+                <div className={styles.containerYellow}>
+                    <h5 className={styles.yellowTitle}>Recuerda que:</h5>
+                    <p className={styles.yellowText}>Para realizar una pregunta debes verificar que sea explicativa, clara y si es necesario, busca el vocabulario técnico requerido para que la comunidad pueda resolverla efectivamente.</p>
+                </div>
                 <div className={styles.containerForum}>
                     <div className={styles.containerTitle}>
                         <h2 className={styles.title}>
@@ -121,7 +125,7 @@ const ForumAddQuestion = () => {
                                     value={tags}
                                     onChange={setTags}
                                     name="tags"
-                                    placeHolder="ingrese tecnologia"
+                                    placeHolder="Ingrese las etiquetas"
                                 />
                                 <em>Presionar enter para agregar</em>
                                 <label htmlFor="image">Añadir imagen</label>
@@ -148,9 +152,11 @@ const ForumAddQuestion = () => {
                                         </div>
                                     )}
                                 />
+                                <div className={styles.btnAsk}>
                                 <button className={styles.btnAdd} type="submit">
-                                    Publicar
+                                    Preguntar
                                 </button>
+                                </div>
                             </Form>
                         )}
                     </Formik>

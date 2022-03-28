@@ -9,6 +9,7 @@ import Modal from "./Modal.jsx"
 import { useModals } from "./useModals.jsx";
 
 
+
 const Modals = () => {
   const [IsOpenModalJob, openModalJob, closeModalJob] = useModals(false);
   const [IsOpenModalEvent, openModalEvent, closeModalEvent] = useModals(false);

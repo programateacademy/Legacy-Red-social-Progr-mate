@@ -63,14 +63,9 @@ const ForumQuestions = () => {
                 dropdown && setDropdown(false);
             }}
         >
+        
             <div className={styles.section__global}>
-                <div className={styles.section__head}>
-                    <h1 className={styles.section__title}>
-                        PREGUNTAS
-                        <RiQuestionLine size="17" />
-                    </h1>
-                    <hr className={styles.section__lineTitle} />
-                </div>
+
                 <div className={styles.section__options}>
                     <Search
                         setQuestions={setQuestions}
@@ -84,7 +79,7 @@ const ForumQuestions = () => {
                             to="/addquestion"
                             className={styles.btn__question}
                         >
-                            Añadir <BiMessageAdd />
+                            Preguntar <BiMessageAdd/>
                         </Link>
 
               <button
@@ -131,7 +126,7 @@ const ForumQuestions = () => {
                     className={styles.dropdown_item}
                     onClick={(e) => setFilterTag(e.target.innerText)}
                   >
-                    Javascript
+                    JavaScript
                   </div>
                   <div
                     className={styles.dropdown_item}
@@ -195,6 +190,15 @@ const ForumQuestions = () => {
                   </div>
                 </div>
               )}
+            </div>
+            <div>
+            <div className={styles.section__head}>
+                    <h1 className={styles.section__title}>
+                        FORO ALUMNI
+                        <RiQuestionLine size="22" />
+                    </h1>
+                    <hr className={styles.section__lineTitle} />
+                </div>
             </div>
             <div className={styles.questionAnswer}>
               <p>{questions.length} preguntas</p>
