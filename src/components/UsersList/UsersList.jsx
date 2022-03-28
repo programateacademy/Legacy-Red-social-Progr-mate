@@ -23,36 +23,48 @@ const UsersList = () => {
 
     return (
         <Fragment>
-            <div className={style.container}>
-                {allUser.map((user) => (
-                    <div key={user._id} className={style.card}>
-                        <img
-                            className={style.img}
-                            src={user.avatar}
-                            alt="ImagDama"
-                        />
-                        <p className={style.p}>
-                            {user.firstName}{" "}
-                            {user.middleName && user.middleName}
-                            <br />
+            <div className={style.fullBackground}>
+                <div className={style.container}>
+                    {allUser.map((user) => (
+                        <div key={user._id} className={style.card}>
+                            <img
+                                className={style.img}
+                                src={user.avatar}
+                                alt="ImagDama"
+                            />
 
-                        </p>
-                        <button
-                            type="button"
-                            onClick={() => navigate(`/profile/${user._id}`)}
-                        >
-                            Ver perfil
-                        </button>
+                            <div>
+                                <p className={style.p}>
+                                    {user.firstName}{" "}
+                                    {user.middleName && user.middleName}
+                                    <br />
 
-                        <ul
-                            className={
-                                user.state ? style.icon_green : style.icon_Gray
-                            }
-                        >
-                            <i className="far fa-user"></i>
-                        </ul>
-                    </div>
-                ))}
+                                </p>
+                                <div className={style.cohorteCom}>
+                                    {user.firstName}{" "}
+                                </div>
+                            </div>
+
+
+
+
+                            {/* <button
+                                type="button"
+                                onClick={() => navigate(`/profile/${user._id}`)}
+                            >
+                                Ver perfil
+                            </button> */}
+
+                            <ul
+                                className={
+                                    user.state ? style.icon_green : style.icon_Gray
+                                }
+                            >
+                                <i className="far fa-user"></i>
+                            </ul>
+                        </div>
+                    ))}
+                </div>
             </div>
         </Fragment>
     );

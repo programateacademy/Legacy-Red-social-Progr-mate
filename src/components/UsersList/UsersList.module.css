@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+
+.fullBackground{
+    background-color: #ECEFF1;
+}
+
 .container {
-    width: 90%;
+    width: 100%;
     height: 90%;
     display: flex;
     flex-direction: column;
     margin: auto;
     gap: 15px;
     flex-wrap: wrap;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    
+    padding: 30px;
 }
 
 .card {
@@ -20,33 +25,40 @@
     flex-wrap: wrap;
     border-radius: 10px;
     border: 1px solid;
-    border-color: #92C149;
-    
-
-
+    background-color: rgb(255, 255, 255);
+    border-color: #ffffff;
 }
 
 .img {
-    width: 50px;
-    
+    width: 120px; 
+    border-radius: 20px;
 }
+
 .p{
-    width: 160px;
+    margin-top: -10px;
+    width: 300px;
+    font-family: 'Questrial', sans-serif;
+    font-size: 30px;
 }
+
+.cohorteCom{
+    margin-top: -20px;
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
+}
+
 
 .icon_Gray i {
     font-size: 25px;
     color: #D7D7D7;
     font-size: 25px;
     cursor: pointer;
-
-
 }
 
 .icon_green i {
     display: flex;
-    color: #99fd02;
-    font-size: 25px;
+    color: #7D7D7D;
+    font-size: 50px;
     cursor: pointer;
 }
 
@@ -58,7 +70,6 @@ i {
 /* Large (lg) */
 @media (min-width: 1024px) {
 
-
     .container {
         width: 90%;
         flex-wrap: wrap;
@@ -67,7 +78,6 @@ i {
         gap: 20px;
         cursor: pointer;
         }
-
 
     .card {
         width: 45%;
