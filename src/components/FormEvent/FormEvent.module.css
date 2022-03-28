@@ -5,6 +5,7 @@
     flex-direction: column;
     margin: auto;
     margin-top: 30px;
+    
 }
 
 h3 {
@@ -18,13 +19,15 @@ h3 {
     height: 50px;
     display: flex;
     justify-content: center;
-    border-radius: 50px;
+    border-radius: 2px;
     border-style: solid;
     border: 1px solid;
+    border-color: #eceff1;
     padding: 0 15px;
     font-size: 18px;
     outline: none;
-    padding-left: 25px;
+    padding-left: 10px;
+    background-color: #eceff1;
 }
 
 .tecnologias button {
@@ -33,8 +36,9 @@ h3 {
     margin: 15px;
     border-radius: 10px;
     border: 1px solid;
-    border-color: #92c149;
-    background-color: antiquewhite;
+    border-color: #ffcc02;
+    background-color: #ffcc02 ;
+    
 }
 
 .tecnologias {
@@ -58,6 +62,7 @@ h3 {
     font-size: 18px;
     flex-wrap: wrap;
     margin: 10px 35%;
+    font-weight: bolder;
 }
 
 .enviar button:hover {

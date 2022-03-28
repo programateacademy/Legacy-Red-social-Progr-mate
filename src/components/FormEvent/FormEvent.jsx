@@ -5,7 +5,8 @@ import { DataContext } from "../../context/DataContext";
 import { sendData } from "../../helpers/fetch";
 import { useNavigate } from "react-router-dom";
 import HardSkills from "../formInfo/HardSkills";
-
+import Modals from "../modals/Modals"
+import Swal from "sweetalert2";
 /* Create new event */
 const FormEvent = () => {
     const { postsEvent, setPostsEvent, idUser } = useContext(DataContext);
@@ -13,16 +14,39 @@ const FormEvent = () => {
     const [technical, setTechnical] = useState([]);
 
     const navigate = useNavigate();
+    const [refresh, setRefresh] = useState(false);
+
+   
+
 
     //Send data from the user to the user model and profile
     const submitData = async (e) => {
         e.preventDefault();
+        //Condition to publish the new job offer
+        if (
+            postsEvent.title.length <= 0 ||
+            postsEvent.place.length <= 0 ||
+            postsEvent.description.length <= 0 
+        ) {
+            // message that pop if conditions arent fulfilled
+            Swal.fire({
+                title: "Completar datos",
+                text: "Los campos de Nombre del evento, lugar y son obligatorios",
+                icon: "error",
+                confirmButtonText: "Aceptar",
+                confirmButtonColor: "black",
+                timer: "6000",
+            });
+        } else {
         try {
             await sendData("posts", postsEvent);
-            navigate("/home");
+            setRefresh((refresh) => !refresh);
+            navigate("/questions");
+            
         } catch (error) {
             console.log("Error" + error);
         }
+    }
     };
 
     const handleChange = (e) => {
@@ -47,11 +71,14 @@ const FormEvent = () => {
     useEffect(() => {
         setPostsEvent({ ...postsEvent, type: "event" });
     }, []);
+
+
+ 
     return (
         <Fragment>
             <div className={style.headerPerfil}>
                 <img src={logo} alt="Educamás" />
-                <h2>Agregar evento</h2>
+                <h2>Agregar Evento</h2>
             </div>
             <form className={style.from_container} onSubmit={submitData}>
                 <div className={style.forms}>
@@ -114,9 +141,11 @@ const FormEvent = () => {
                 <div className={style.forms}>
                     <h3>Tecnologías</h3>
                     <input
+                        
                         className={style.nom}
                         type="text"
                         name="technologies"
+                        placeholder="Tecnologías <Enter> para guardarla"
                         onKeyDown={onKeyHardSkills}
                     />
                     <br />
@@ -134,7 +163,7 @@ const FormEvent = () => {
                 </div>
 
                 <div className={style.enviar}>
-                    <button className="btn">Enviar</button>
+                    <button className="btn" >Enviar</button>
                 </div>
             </form>
         </Fragment>

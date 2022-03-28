@@ -54,7 +54,7 @@ const FormNews = () => {
                     });
                 }
 
-                navigate(`/home`);
+                
             } catch (error) {
                 console.log(error);
             }
@@ -180,7 +180,7 @@ const FormNews = () => {
                     <br />
                 </div>
                 <div className={styles.send}>
-                    <button className="btn">Enviar</button>
+                    <button className="btn" onClick={navigate}>Enviar</button>
                 </div>
             </form>
         </section>

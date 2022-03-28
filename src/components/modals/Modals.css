@@ -1,0 +1,31 @@
+.containernewposts{
+    background-color: #ffff;
+    border-radius: 2px;
+    width: 90%;
+    display: grid;
+    justify-content: center;
+    margin: auto;
+    padding: 5px 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.buttonsnewposts {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 12px;
+}
+.buttonsnewposts > button {
+    border: 0;
+    background-color: #ffff;
+    cursor: pointer;
+    
+  
+}
+.buttonsnewposts > button > p{
+    margin: 0;
+}
+.buttonsnewposts > button :hover{
+    color: #FFD800;
+}
+
+  

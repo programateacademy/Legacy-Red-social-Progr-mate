@@ -7,6 +7,7 @@ import FormNews from "../FormNews/Formnews.jsx";
 import Icon_news from "../../assets/icons/Icon_new.jsx";
 import Modal from "./Modal.jsx"
 import { useModals } from "./useModals.jsx";
+import "./Modals.css";
 
 
 const Modals = () => {
@@ -15,29 +16,31 @@ const Modals = () => {
   const [IsOpenModalNews, openModalNews, closeModalNews] = useModals(false);
   console.log(IsOpenModalJob)
   return (
-    <div>
-      <h2>¿Hay algo que quieras compartir?</h2>
-      <button onClick={openModalNews}>
-        <Icon_news />
-      </button>
-      <Modal IsOpen={IsOpenModalNews} closeModal={closeModalNews}>
-        <FormNews />
-      </Modal>
+    <div className="containernewposts">
+      <h1>¿Hay algo que quieras compartir?</h1>
+      <div className="buttonsnewposts">
       <button onClick={openModalJob}>
         <Icon_job />
+        <p>JOBS</p>
       </button>
       <Modal IsOpen={IsOpenModalJob} closeModal={closeModalJob}>
         <FormJobs />
       </Modal>
+      <button onClick={openModalNews}>
+        <Icon_news />
+        <p>NEWS</p>
+      </button>
+      <Modal IsOpen={IsOpenModalNews} closeModal={closeModalNews}>
+        <FormNews />
+      </Modal>
       <button onClick={openModalEvent}>
         <Icon_events />
+        <p>EVENTS</p>
       </button>
       <Modal IsOpen={IsOpenModalEvent} closeModal={closeModalEvent}>
-        <h3>Evento</h3>
-        <p>Hola este es el contenido de mi modal event</p>
         <FormEvent />
       </Modal>
-      
+      </div>
     </div>
   );
 }

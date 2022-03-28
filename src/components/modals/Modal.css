@@ -9,6 +9,7 @@
   display:none;
   justify-content: center;
   align-items: center;
+ 
 } 
 
 .is-open {
@@ -23,7 +24,7 @@
   min-height: 200px;
   max-height: 900px;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: #ffffff;
 
 }
 
