@@ -15,7 +15,7 @@
   display: flex; 
 }
 
-.modal-container {
+.modalContainer {
   padding: 1rem;
   position: relative;
   min-width: 200px;
@@ -27,7 +27,7 @@
 
 }
 
-.modal-close{
+.modalClose{
   
   position: absolute;
   top: 1rem;

@@ -8,7 +8,7 @@ import { SwitchCreatePost } from '../SwitchCreatePost/SwitchCreatePost'
     props:
         name: string -> name of the table
         postType: string -> type of the post in database
-        fields: array -> unic field for each post
+        fields: array -> unic fields for each post
         children: array -> <td> to render in the body of table
         icon: string -> icon to render in the top of content
 */
