@@ -38,17 +38,12 @@ module.exports = {
                 use: ["style-loader", "css-loader", "sass-loader"],
             },
             {
-                test: /\.css$/,
+                test: /.css$/,
                 use: [
-                    'style-loader',
                     {
-                        loader: 'css-loader',
-                        options: {
-                            modules: {
-                                localIdentName: '[local]_[hash:base64:5]'
-                            }
-                        }
-                    }
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    "css-loader",
                 ],
             },
             {

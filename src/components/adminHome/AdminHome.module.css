@@ -11,8 +11,9 @@
     background-color: #fff;
 }
 
-.admin_comunity{
+.admin_panel{
     width: 80%;
+    height: 100%;
     margin: 2%;
     background-color: #fff;
     box-sizing: border-box;

@@ -109,4 +109,4 @@ function AdminCrudPosts({ children, name, postType, fields, icon }) {
     )
 }
 
-export { AdminCrudPosts }
+export default AdminCrudPosts 
