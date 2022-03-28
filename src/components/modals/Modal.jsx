@@ -1,13 +1,12 @@
 import React from "react";
-import "./Modal.css";
+import styles from "./Modal.module.css";
 
 const Modal = ({ children, IsOpen, closeModal }) => {
   const handleModalContainerClick = (e) => e.stopPropagation();
   return (
-    <article className={`modal ${IsOpen && 'is-open'}  `} onClick={closeModal}>
-      
-      <div className="modal-container" onClick={handleModalContainerClick}>
-        <button className="modal-close" onClick={closeModal}>
+    <article className={`${styles.modal} ${IsOpen && styles.isOpen}  `} onClick={closeModal}>
+      <div className={styles.modalContainer} onClick={handleModalContainerClick}>
+        <button className={ styles.modalClose} onClick={closeModal}>
           X
         </button>
         {children}

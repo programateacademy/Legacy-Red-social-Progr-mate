@@ -10,11 +10,11 @@ import { useModals } from "./useModals.jsx";
 import "./Modals.css";
 
 
+
 const Modals = () => {
   const [IsOpenModalJob, openModalJob, closeModalJob] = useModals(false);
   const [IsOpenModalEvent, openModalEvent, closeModalEvent] = useModals(false);
   const [IsOpenModalNews, openModalNews, closeModalNews] = useModals(false);
-  console.log(IsOpenModalJob)
   return (
     <div className="containernewposts">
       <h1>¿Hay algo que quieras compartir?</h1>
