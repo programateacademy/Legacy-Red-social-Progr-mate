@@ -13,7 +13,8 @@ const ProfileMainHome = ({ dataProfile }) => {
     let navigate = useNavigate();
 
     const editProfile = () => {
-        navigate(`/formprofile/${idUser}`);
+        // console.log(idUser);
+        navigate(`/formprofile/home/${idUser}`);
     };
 
     /* Obtain user cohort name */

@@ -34,16 +34,15 @@ import HomePage from "../../pages/HomePage";
 
 //Profile
 import ProfilePage from "../../pages/ProfilePage";
-import FormProject from "../../components/FormProject/FormProject";
 
 
 //admin
-import AdminHomePage from "../../pages/AdminHomePage";
-import { AdminCohortPage } from "../../pages/AdminCohortPage";
-import { AdminForumPage } from "../../pages/AdminForumPage";
-import { AdminEventsPage } from "../../pages/AdminEventsPage";
-import { AdminNewsPage } from "../../pages/AdminNewsPage";
-import { AdminJobsPage } from "../../pages/AdminJobsPage";
+import  AdminHomePage from "../../pages/AdminHomePage";
+import  AdminCohortPage  from "../../pages/AdminCohortPage";
+import  AdminForumPage  from "../../pages/AdminForumPage";
+import  AdminEventsPage  from "../../pages/AdminEventsPage";
+import  AdminNewsPage  from "../../pages/AdminNewsPage";
+import  AdminJobsPage  from "../../pages/AdminJobsPage";
 
 
 /* This component manage routes*/
@@ -102,7 +101,7 @@ function Autentification() {
                 />
                 <Route
                     exact
-                    path="/formprofile/:id"
+                    path="/formprofile/:type/:id"
                     element={isLogged ? <EditProfile /> : <DontAllow />}
                 />
 

@@ -14,4 +14,4 @@ function AdminNewsPage() {
 }
 
 
-export { AdminNewsPage }
+export default AdminNewsPage 

@@ -13,7 +13,8 @@ const ProfileMain = ({ dataProfile }) => {
     const params = useParams();
 
     const editProfile = () => {
-        navigate(`/formprofile/${idUser}`);
+        // console.log(idUser);
+        navigate(`/formprofile/home/${idUser}`);
     };
     return (
         <Fragment>

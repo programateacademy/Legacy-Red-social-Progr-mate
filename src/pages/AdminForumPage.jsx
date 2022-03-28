@@ -14,4 +14,4 @@ function AdminForumPage() {
 }
 
 
-export { AdminForumPage }
+export default AdminForumPage 

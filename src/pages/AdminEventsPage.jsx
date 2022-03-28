@@ -17,4 +17,4 @@ function AdminEventsPage() {
 }
 
 
-export { AdminEventsPage }
+export default AdminEventsPage 
