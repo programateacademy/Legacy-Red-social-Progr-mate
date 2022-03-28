@@ -18,6 +18,7 @@ import {
 
 import Logout from "../components/Logout/Logout";
 import { baseUrl } from "../../config";
+import Navbar from "../components/Navbar/Navbar";
 
 const App = () => {
     const dispatch = useDispatch();

@@ -1,15 +1,14 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import style from "./ProfileMain.module.css";
-/* import medalla1 from "../../../assets/images/medalla1.png";
-import medalla2 from "../../../assets/images/medalla2.png";
-import medalla3 from "../../../assets/images/medalla3.png"; */
 import { DataContext } from "../../../context/DataContext";
 import { Link, useNavigate } from "react-router-dom";
 import altImg from "../../../assets/images/avatar.png";
+import { getDataAll } from "../../../helpers/fetch";
 
 const ProfileMainHome = ({ dataProfile }) => {
     const { dataUser, idUser } = useContext(DataContext);
-    const { avatar, firstName, middleName, lastName, cohorte } = dataUser;
+    const { avatar, firstName, middleName, lastName } = dataUser;
+    const [cohort, setCohort] = useState();
 
     let navigate = useNavigate();
 
@@ -18,38 +17,43 @@ const ProfileMainHome = ({ dataProfile }) => {
         navigate(`/formprofile/home/${idUser}`);
     };
 
+    /* Obtain user cohort name */
+    const obtainCohort = async () => { 
+        const cohorts = await getDataAll("cohorte");
+        const cohort = await cohorts.find(cohort => cohort._id === dataUser.cohorte);
+        setCohort(cohort?.cohorte_name);
+    }
+
+    useEffect(async () => { 
+        await obtainCohort();
+    },[dataUser])
+
     return (
-        <Fragment>
-            <div className={style.container}>
-                <section className={style.cont}>
-                    <div className={style.circulo_cont}>
-                        <div className={style.circulo}>
-                            {avatar ? (
-                                <img src={avatar} alt="Foto" />
-                            ) : (
-                                <img src={altImg} alt="Foto" />
-                            )}
-                        </div>
-                    </div>
-                </section>
+        <div className={style.container}>
+            <section className={style.cont}>
+                <div className={style.photoContainer}>
+                    {avatar ? (
+                        <img src={avatar} alt="Foto" />
+                    ) : (
+                        <img src={altImg} alt="Foto" />
+                    )}
+                </div>
+            </section>
 
-                <section className={style.tex_cont}>
-                    <div className={style.tex}>
-                        <p>
-                            <b>
-                                {firstName} {middleName} {lastName}
-                            </b>
-                            <br /> {cohorte.name}
-                        </p>
-                    </div>
-
-                    <div className={style.icon} onClick={editProfile}>
-                        <p className={style.tex_editar}>Editar perfil</p>
-                        <i className="fas fa-pencil-alt"></i>
-                    </div>
-                </section>
-            </div>
-        </Fragment>
+            <section className={style.tex_cont}>
+                <div className={style.tex}>
+                    <p className={style.name}>
+                        <b>{firstName} {middleName} {lastName}</b>
+                    </p>
+                    <p className={style.cohort}>
+                       {cohort}
+                    </p>
+                </div>
+                <div className={style.icon} onClick={editProfile}>
+                    <i className="fas fa-pencil-alt"></i>
+                </div>
+            </section>
+        </div>
     );
 };
 

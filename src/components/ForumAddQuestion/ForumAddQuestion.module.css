@@ -15,9 +15,26 @@
     background-color: #ececec;
     font-family: Gilroy-bold;
   }
+  .containerYellow{
+    background-color: #FFCC02;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .yellowTitle{
+    font-size: 2.5rem;
+    padding-left: 1.4rem;
+  }
+  .yellowText{
+    font-size: 1.8rem;
+    padding: 1.4rem;
+  }
   .section__global {
     max-width: 1128px;
     margin: 0 auto;
+    display: flex;
   }
   /*=============== ==================== ===============*/
   .containerForum {
@@ -25,7 +42,6 @@
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
   .containerTitle {
@@ -55,7 +71,7 @@
   .inputSelect,
   .textArea {
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     background-color: #fff;
     outline: none;
@@ -80,13 +96,15 @@
       margin-top: 20px;
       column-gap: 5px;
       padding: 7px 20px;
-      border-radius: 15px;
+      border-radius: 5px;
       background-color: #FFCC02;
       color: #010101;
       font-size: 16px;
       text-decoration: none;
       font-family: Gilroy-light;
       border: none;
+      width: 30%;
+      cursor: pointer;
     }
     .btn__question:hover {
       background-color: black;
@@ -102,6 +120,10 @@
     align-items: center;
     column-gap: 3px;
     font-family: Gilroy-bold;
+  }
+  .btnAsk{
+    display: flex;
+    justify-content: center;
   }
   
   @media (max-width: 640px) {
