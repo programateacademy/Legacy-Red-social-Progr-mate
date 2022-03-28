@@ -1,6 +1,6 @@
 import React from 'react'
-import { AdminCrudPosts } from '../components/AdminCrudPosts/AdminCrudPosts'
-import { AdminNavigation } from '../components/AdminNavigation/AdminNavigation'
+import AdminCrudPosts from '../components/AdminCrudPosts/AdminCrudPosts'
+import AdminNavigation from '../components/AdminNavigation/AdminNavigation'
 
 /* prender in /adminjobs */
 function AdminJobsPage() {

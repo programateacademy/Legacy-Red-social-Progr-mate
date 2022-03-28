@@ -1,30 +1,32 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function AdminNavigation() {
-
+function AdminNavigation({setActiveState}) {
+    const setActive = (panel) => {
+        setActiveState(panel)
+    }
     return (
             <ul>
                 <li>
-                <Link to="/adminhome">Usuarios</Link>
+                <button onClick={() => setActive('users')}>Usuarios</button>
                 </li>
                 <li>
-                    <Link to="/admincohort">Cohorte</Link>
+                    <button onClick={() => setActive('cohorts')}>Cohorte</button>
                 </li>
                 <li>
-                    <Link to="/adminjobs">Ofertas</Link>
+                    <button onClick={() => setActive('jobs')}>Ofertas</button>
                 </li>
                 <li>
-                    <Link to="/adminnews">Noticias</Link>
+                    <button onClick={() => setActive('news')}>Noticias</button>
                 </li>
                 <li>
-                    <Link to="/adminevents">Eventos</Link>
+                    <button onClick={() => setActive('events')}>Eventos</button>
                 </li>
                 <li>
-                    <Link to="/adminforum">Foro</Link>
+                    <button onClick={() => setActive('forum')}>Foro</button>
                 </li>
             </ul>
     )
 }
 
-export {AdminNavigation}
+export default AdminNavigation
