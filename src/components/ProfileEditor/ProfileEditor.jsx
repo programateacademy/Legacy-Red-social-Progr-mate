@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Form_PersonalInfo from "./formInfo/Form_PersonalInfo";
 import FormPhotoUser from "./formPhotoUser/FormPhotoUser";
 import { getData } from "../../helpers/fetch";
-import {FieldProfessional} from "./FormProfile/FieldProfessional/FieldProfessional"
+import FieldProfessional from "./FormProfile/FieldProfessional/FieldProfessional"
 import { v4 as uuid } from "uuid";
 import { studyField, experienceField } from "../../helpers/formProfile";
 

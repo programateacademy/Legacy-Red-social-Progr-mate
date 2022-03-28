@@ -34,7 +34,6 @@ import HomePage from "../../pages/HomePage";
 
 //Profile
 import ProfilePage from "../../pages/ProfilePage";
-import FormProject from "../../components/FormProject/FormProject";
 
 
 //admin

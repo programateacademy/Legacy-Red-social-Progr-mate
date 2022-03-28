@@ -18,20 +18,15 @@ h3 {
     height: 35px;
     display: flex;
     justify-content: center;
-    border-radius: 50px;
-    border-style: solid;
-    border: 1px solid;
     padding: 0 15px;
     font-size: 18px;
-    outline: none;
-    background-color: white;
+    border-style: none;
+    background-color: #ECEFF1;
 }
 
 .textarea {
     width: 100%;
     font-size: 18px;
-    border-radius: 15px;
-    border: 1px solid;
     padding: 15px;
     outline: none;
 }
@@ -40,8 +35,6 @@ h3 {
     width: 100px;
     height: 30px;
     margin: 15px;
-    border-radius: 10px;
-    border: 1px solid;
     border-color: #92c149;
     background-color: #ffffff;
 }

@@ -46,7 +46,6 @@
     width: 49%;
 }
 .inputDate {
-    border-radius: 30px;
     width: 100%;
     height: 35px;
     padding: 8px 8px;
@@ -69,18 +68,15 @@
 }
 
 .inputPersonal {
-    border-radius: 50px;
     height: 35px;
     padding: 0px 15px;
     width: 100%;
     outline: none;
-    border: 1px solid;
     margin: 18px 0;
 }
 
 .inputFile {
     color: blue;
-    border-radius: 30px;
     overflow: hidden;
     position: relative;
     display: inline-block;

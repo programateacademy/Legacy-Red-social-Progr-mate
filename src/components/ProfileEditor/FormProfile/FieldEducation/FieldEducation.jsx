@@ -4,7 +4,7 @@ import { BiX } from "react-icons/bi";
 import style from "../ProfessionalInformation.module.css";
 import { DataContext } from "../../../../context/DataContext";
 
-export const FieldEducation = ({
+const FieldEducation = ({
     item,
     handleChange,
     onFileChange,
@@ -120,3 +120,5 @@ export const FieldEducation = ({
         </div>
     );
 };
+
+export default FieldEducation;

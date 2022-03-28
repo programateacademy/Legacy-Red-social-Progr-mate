@@ -6,9 +6,12 @@ import { v4 as uuid } from "uuid";
 import style from "../ProfessionalInformation.module.css";
 import { DataContext } from "../../../../context/DataContext";
 import { getData, sendData, updateData } from "../../../../helpers/fetch";
-import {FieldEducation} from "../FieldEducation/FieldEducation"
-import { FieldExperience } from "../FieldExpirience/FieldExpirience";
-export const FieldProfessional = ({dataUser, setDataUser}) => {
+import FieldEducation from "../FieldEducation/FieldEducation"
+import FieldExperience  from "../FieldExpirience/FieldExpirience";
+
+
+
+const FieldProfessional = ({dataUser, setDataUser}) => {
     const params = useParams();
     const navigate = useNavigate();
     
@@ -71,7 +74,8 @@ export const FieldProfessional = ({dataUser, setDataUser}) => {
                     experience,
                     prev_studes
                 });
-                navigate(`/${params.type}`);
+                let url = `/${params.type}`
+                navigate(url.toString())
             } else {
                 e.preventDefault();
                 console.log("Error");
@@ -241,3 +245,5 @@ export const FieldProfessional = ({dataUser, setDataUser}) => {
         </div>
     );
 };
+
+export default FieldProfessional;

@@ -2,7 +2,7 @@ import React from "react";
 import style from "../ProfessionalInformation.module.css";
 
 
-export const FieldExperience = ({ deleteExperience, handleChange, item }) => {
+const FieldExperience = ({ deleteExperience, handleChange, item }) => {
     return (
         <div className={style.experience} id="2">
             <div className={style.inputs}>
@@ -84,3 +84,5 @@ export const FieldExperience = ({ deleteExperience, handleChange, item }) => {
         </div>
     );
 };
+
+export default FieldExperience;
