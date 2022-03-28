@@ -89,7 +89,7 @@ const Posts = () => {
                 post.type === "news" ? (
                     <News
                         description={post.description}
-                        images={post.images}
+                        images={post.image}
                         technologies={post.technologies}
                         title={post.title}
                         id={post._id}
