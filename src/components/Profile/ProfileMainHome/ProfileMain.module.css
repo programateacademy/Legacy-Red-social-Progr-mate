@@ -1,24 +1,27 @@
 .container {
-    width: 100%;
-    height: 90%;
-    margin: auto;
-    font-family: "Roboto", sans-serif;
-    background-color: #ffffff;
-    padding: 20px 30px;
+  width: 100%;
+  height: 90%;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 2rem 2rem 0 2rem;
+
+  display: flex;
 }
 
 .cont {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin: auto;
-    align-items: flex-end;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: auto;
+  align-items: flex-end;
 }
 
-.circulo_cont {
-    width: 50%;
-    margin: auto;
+.photoContainer {
+  border-radius: 10px;
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
 }
 .circulo img {
     width: 90%;
@@ -60,33 +63,33 @@
 
 
 .tex_cont {
-    width: 100%;
-    display: flex;
-    justify-content: right;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
+  width: 100%;
+  margin-left: 1.2rem;
+  position: relative;
 }
 
 .tex {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 1rem;
 }
-
+.tex p {
+  margin: 0;
+}
+.name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-bottom: 1.2rem;
+}
+.cohort {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
 .icon {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    gap: 10px;
-    cursor: pointer;
-}
-.icon p {
-    margin: 0;
-}
-.icon i {
-    width: 20px;
+  top: 0px;
+  position: absolute;
+  right: -10px;
 }

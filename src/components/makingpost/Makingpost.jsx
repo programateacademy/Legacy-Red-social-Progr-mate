@@ -25,17 +25,20 @@ const Makingpost = () => {
 }
     return (
         <>
-            <div>
+            <div className="containerpost">
                 {checkPostType(postType)}
-                <button onClick={() => {setPostType("news")}}>
+                <li onClick={() => {setPostType("news")}}>
                     <Icon_news/>
-                </button>
-                <button onClick={() => {setPostType("events")}}>
+                    <p>news</p>
+                </li>
+                <li onClick={() => {setPostType("events")}}>
                     <Icon_events/>
-                </button>
-                <button onClick={() => {setPostType( "jobs")}}>
+                    <p>news</p>
+                </li>
+                <li onClick={() => {setPostType( "jobs")}}>
                     <Icon_job/>
-                </button>
+                    <p>news</p>
+                </li>
             </div>
         </>
     );

@@ -194,130 +194,120 @@ const Jobs = ({
         );
     };
     return (
-        <section className={style.container1}>
-            <div className={style.container2}>
-                <div className={style.icon_cont1}>
-                    <div className={style.postUser}>
-                        <div className={style.icon}>
-                        
-                            {userPost?.avatar ? (
-                                <img src={userPost?.avatar} alt="Foto" />
-                            ) : (
-                                <i className="far fa-user-circle"></i>
-                            )}
-                        </div>
-                        <p>
-                            <b>
-                                {userPost?.firstName} {userPost?.middleName}{" "}
-                                {userPost?.lastName}
-                            </b>
-                            <br />
-                            <i>{allCohorts.map(item => (
-                                        item._id === userPost?.cohorte ? <span key={userPost._id}>{item.cohorte_name}</span> : ""
-                            ))}</i>
-                        </p>
-                    </div>
-                    {idUser === user ? (
-                        <div className={style.iconsModify}>
-                            
-                            <i
-                                className="fas fa-pencil-alt"
-                                onClick={() => navigate(`/formjobs/${id}`)}
-                            ></i>
-                            <i
-                                className="far fa-trash-alt"
-                                onClick={deletePost}
-                            ></i>
-                        </div>
-                    ) : rol === 9 ? (
-                        <div className={style.iconsModify}>
-                            <i
-                                className="far fa-trash-alt"
-                                onClick={deletePost}
-                            ></i>
-                        </div>
+      <section className={style.container1}>
+        <div className={style.container2}>
+          <div className={style.icon_cont1}>
+            <div className={style.postUser}>
+              <div className={style.icon}>
+                {userPost?.avatar ? (
+                  <img src={userPost?.avatar} alt="Foto" />
+                ) : (
+                  <i className="far fa-user-circle"></i>
+                )}
+              </div>
+              <p>
+                <b>
+                  {userPost?.firstName} {userPost?.middleName}{" "}
+                  {userPost?.lastName}
+                </b>
+                <br />
+                <i>
+                  {allCohorts.map((item) =>
+                    item._id === userPost?.cohorte ? (
+                      <span key={userPost._id}>{item.cohorte_name}</span>
                     ) : (
-                        ""
-                    )}
-                    <span><Icon_job/></span>
-                </div>
-                <div className={style.news}>
-                    <h3>{title}</h3>
-                    <p>{description}</p>
-                    <div className={style.techContains}>
-                        <p className={style.llavePost}>Tecnologías:&nbsp; </p>
-                        {technologies &&
-                            technologies.map((tech, index) => (
-                                <p key={`tech${index}`}>{tech}&nbsp;</p>
-                            ))}
-                    </div>
-                    <p>
-                        <span className={style.llavePost}>Empresa:&nbsp;</span>{" "}
-                        {company}
-                    </p>
-                    <p>
-                        <span className={style.llavePost}>Lugar:&nbsp;</span>{" "}
-                        {place}
-                    </p>
-                    <p>
-                        <span className={style.llavePost}>
-                            Modalidad:&nbsp;
-                        </span>{" "}
-                        {modality}
-                    </p>
-                    <p>
-                        <span className={style.llavePost}>Salario:&nbsp;</span>{" "}
-                        {salary}
-                    </p>
-                    <p>
-                        <span className={style.llavePost}>Contacto:&nbsp;</span>{" "}
-                        {contact}
-                    </p>
-                </div>
-                <div className={style.icon_cont2}>
-                    <div className={style.like}>
-                        <i
-                            onClick={like ? submitLike : onDeleteLike}
-                            className={
-                                like
-                                    ? "far fa-thumbs-up "
-                                    : "far fa-thumbs-up red "
-                            }
-                        ></i>
-                        <span>{likes.length}</span>
-                    </div>
-                    <div className={style.like}>
-                        <i onClick={toggle} className="far fa-comment-dots"></i>
-                        <span>{comments.length}</span>
-                    </div>
-                </div>
-                {showComments && (
-                    <div>
-                        <p>deja tu comentario</p>
-                        <form className={styles.form} onSubmit={submitData}>
-                            <textarea
-                                name="comment"
-                                value={inputComment}
-                                className={styles.input_comment}
-                                onChange={handleChange}
-                            ></textarea>
-                            <button className={styles.submit}>Enviar</button>
-                        </form>
-                        {comments.map(
-                            (comment, index) =>
-                                index < 2 && previewComment(comment, index)
-                        )}
+                      ""
+                    )
+                  )}
+                </i>
+              </p>
+            </div>
+            {idUser === user ? (
+              <div className={style.iconsModify}>
+                <i
+                  className="fas fa-pencil-alt"
+                  onClick={() => navigate(`/formjobs/${id}`)}
+                ></i>
+                <i className="far fa-trash-alt" onClick={deletePost}></i>
+              </div>
+            ) : rol === 9 ? (
+              <div className={style.iconsModify}>
+                <i className="far fa-trash-alt" onClick={deletePost}></i>
+              </div>
+            ) : (
+              ""
+            )}
+            <span className="Icon_job">
+              <Icon_job />
+            </span>
+          </div>
+          <div className={style.news}>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <p>
+              <span className={style.llavePost}>Empresa:&nbsp;</span> {company}
+            </p>
+            <p>
+              <span className={style.llavePost}>Lugar:&nbsp;</span> {place}
+            </p>
+            <p>
+              <span className={style.llavePost}>Modalidad:&nbsp;</span>{" "}
+              {modality}
+            </p>
+            <p>
+              <span className={style.llavePost}>Salario:&nbsp;</span> {salary}
+            </p>
+            <p>
+              <span className={style.llavePost}>Contacto:&nbsp;</span> {contact}
+            </p>
+            <div className={style.techContains}>
+              <p className={style.llavePost}>Tecnologías:&nbsp; </p>
+              {technologies &&
+                technologies.map((tech, index) => (
+                  <p className={style.arrtech} key={`tech${index}`}>
+                    {tech}&nbsp;
+                  </p>
+                ))}
+            </div>
+          </div>
+          <div className={style.icon_cont2}>
+            <div className={style.like}>
+              <i
+                onClick={like ? submitLike : onDeleteLike}
+                className={like ? "far fa-thumbs-up " : "far fa-thumbs-up red "}
+              ></i>
+              <span>{likes.length}</span>
+            </div>
+            <div className={style.like}>
+              <i onClick={toggle} className="far fa-comment-dots"></i>
+              <span>{comments.length}</span>
+            </div>
+          </div>
+          {showComments && (
+            <div>
+              <p>deja tu comentario</p>
+              <form className={styles.form} onSubmit={submitData}>
+                <textarea
+                  name="comment"
+                  value={inputComment}
+                  className={styles.input_comment}
+                  onChange={handleChange}
+                ></textarea>
+                <button className={styles.submit}>Enviar</button>
+              </form>
+              {comments.map(
+                (comment, index) => index < 2 && previewComment(comment, index)
+              )}
 
-                        
-                        {moreComments &&
-                            comments.map(
-                                (comment, index) =>
-                                    index >= 2 && previewComment(comment, index)
-                            )}
-                    </div>
+              {moreComments &&
+                comments.map(
+                  (comment, index) =>
+                    index >= 2 && previewComment(comment, index)
                 )}
             </div>
-        </section>
+          )}
+        </div>
+      </section>
     );
 };
 

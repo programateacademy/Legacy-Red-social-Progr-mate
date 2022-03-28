@@ -1,19 +1,13 @@
-/* .container1 {
-    width: 47%;
-    max-width: 540px;
-    height: 100%;
-    display: flex;
-    background-color: red;
-    margin-top: 20px;
-} */
+.container1 {
+    display: flex;  
+    margin-top: 10px;
+}
 
 .container2 {
-    width: 47%;
-    max-width: 540px;
     width: 90%;
-    /*  width: 100%;
+    max-width: 640px;
+    width: 90%;
     max-width: 100%;
-    width: 90%; */
     min-height: 90%;
     display: flex;
     justify-content: center;
@@ -21,8 +15,7 @@
     background-color: #d7d7d7;
     flex-direction: column;
     background-color:#ffffff;
-    border-radius: 2px;
-    padding: 5px 15px;
+    padding: 5px 5px;
     margin-top: 5px;
     margin-bottom: 20px;
 }
@@ -65,15 +58,22 @@
 .iconsModify span{
     margin-top: 0;
     background: #ffd800;
-    border-radius: 2px;
+    border-radius: 1px;
     
 }
-.icon {
+.icon { 
     font-size: 50px;
 }
 .icon img {
     font-size: 14px;
     width: 50px;
+    margin-left: 5px;
+    border-radius:  5px;
+    background-color: #c2c2c2;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 5px;
 }
 .icon i {
     width: 50px;
@@ -81,16 +81,23 @@
 
 .techContains {
     display: flex;
-    /* justify-content: space-evenly; */
-    /* display: inline-block; */
 }
 
 .llavePost {
-    font-weight: bold;
+    font-weight:bolder;
+}
+
+.arrtech{
+  border: 1px #000;
+  background-color: #cccccc;
+  padding: 3px ;
+  border-radius: 2px; 
+  margin-right: 5px;
 }
 
 .news {
-    margin-bottom: 10px;
+    margin-bottom: 1px;
+    margin-left: 10px;
 }
 
 .news h3 {
@@ -110,10 +117,11 @@
 
 .tech {
     display: inline-block;
-    padding: 5px 10px;
-    border: 1px solid #7ad149;
-    border-radius: 5px;
-    font-size: 14px;
+      border: 1px #000;
+  background-color: #cccccc;
+  padding: 3px ;
+  border-radius: 2px; 
+  margin-right: 5px;
 }
 
 .like {
@@ -129,7 +137,7 @@
     cursor: pointer;
     font-weight: bold;
     text-decoration-line: underline;
-    text-decoration-color: #ffd800;
+    text-decoration-color: #000;
     float: right;
     font-size: 18px;
 }

@@ -1,10 +1,3 @@
-.input_comment{
-  width: 60%;
-  display: flex;
- margin: auto;
- justify-content: space-between
- ;
-}
 
 .styles.submit{
   width: 100px;
@@ -20,8 +13,6 @@
 .comment_div{
   display: flex;
   flex-direction: column;
-  border: 1px solid #fbcd38;
-  border-radius: 10px;
   margin-top: 13px;
 }
 .comment_div span{
@@ -31,7 +22,7 @@ padding-bottom: 10px;
 }
 .header{
   display: flex;
-
+  align-items: flex-end;
   justify-content: flex-start;
 }
 .name{
@@ -52,8 +43,8 @@ cursor: pointer;
 }
 .more_comment{
   font-size: 14px;
-cursor: pointer;
-margin-top: 3px;
+ cursor: pointer;
+ margin-top: 3px;
 }
 .more_comment:hover{
   text-decoration: underline;

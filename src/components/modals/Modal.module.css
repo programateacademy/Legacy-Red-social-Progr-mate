@@ -9,13 +9,15 @@
   display:none;
   justify-content: center;
   align-items: center;
+ 
 } 
 
-.is-open {
+.isOpen {
   display: flex; 
+  
 }
 
-.modal-container {
+.modalContainer {
   padding: 1rem;
   position: relative;
   min-width: 200px;
@@ -23,14 +25,18 @@
   min-height: 200px;
   max-height: 900px;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: #ffffff;
 
 }
 
-.modal-close{
+.modalClose{
   
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+
+@media (min-width: 768px){
+  
 }
 

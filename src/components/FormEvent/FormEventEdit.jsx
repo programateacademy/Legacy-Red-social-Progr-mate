@@ -50,7 +50,7 @@ const FormEventEdit = () => {
         <Fragment>
             <div className={style.headerPerfil}>
                 <img src={logo} alt="Educamás" />
-                <h2>Agregar evento</h2>
+                <h2>Agregar Evento</h2>
             </div>
             <form className={style.from_container} onSubmit={submitData}>
                 <div className={style.forms}>

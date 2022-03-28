@@ -17,6 +17,8 @@ const Navbar = () => {
   const onSetActive = () => {setActiveNotification(!activeNotification)}
   const { dataUser } = useContext(DataContext)
   const {avatar} = dataUser
+  !localStorage.getItem("avatar") && localStorage.setItem("avatar", JSON.stringify(avatar))
+  const avatarUser = JSON.parse(localStorage.getItem("avatar"))
 
   return (
     <header className={styles.globalNav}>
@@ -61,21 +63,26 @@ const Navbar = () => {
                 <p>FORUM</p>
               </li>
             </Link>
-            <li className={styles.navListItem} >
-              <button onClick={onSetActive} className={styles.btnNotification}>
-                <Icon_alarm/>
-              </button>
-              </li>
-          </ul>
+            
 
           <div className={styles.containerPhoto}>
-            {avatar ? (
-              <img src={avatar} alt="Foto" className={styles.imgProfile}/>
+            {avatarUser ? (
+              <img src={avatarUser} alt="Foto" className={styles.imgProfile}/>
             ) : (
                 <img src={altImg} alt="Foto" className={styles.imgProfile}/>
             )}
+            <div>
+              
+              <button onClick={onSetActive} className={styles.btnNotification}>
+                <Icon_alarm/>
+              </button>
+              
+            </div>
             <DropdownLogOut />
           </div>
+          </ul>
+
+          
         </nav>
       </div>
       { activeNotification && <Notification/>}
