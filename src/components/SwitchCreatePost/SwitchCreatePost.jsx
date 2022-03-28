@@ -5,6 +5,7 @@ import FormNews from '../FormNews/Formnews';
 import ForumAddQuestion from '../ForumAddQuestion/ForumAddQuestion';
 import Modal from '../modals/Modal';
 import { useModals } from '../modals/useModals';
+import styles from "./SwitchCreatePost.module.css";
 
 /* Switch button to create post in Admin Panel */
 function SwitchCreatePost({ postType, children}) {
@@ -26,7 +27,7 @@ function SwitchCreatePost({ postType, children}) {
     }
     return (
         <>
-            <button onClick={openModal}>
+            <button onClick={openModal} className={styles.button}>
                 {children}
             </button>
             <Modal IsOpen={IsOpenModal} closeModal={closeModal}>

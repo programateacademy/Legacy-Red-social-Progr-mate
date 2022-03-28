@@ -1,0 +1,9 @@
+.button{
+    margin: 0 2%;
+    height: 3rem;
+    width: 18rem;
+    border: none;
+    color: var(--text-color);
+    background-color: var(--main-color);
+    border-radius: 5px;
+}

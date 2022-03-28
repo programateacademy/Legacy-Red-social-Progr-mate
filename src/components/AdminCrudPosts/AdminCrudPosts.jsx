@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { DataContext } from '../../context/DataContext'
 import { deleteData, getDataAll } from '../../helpers/fetch'
 import { SwitchCreatePost } from '../SwitchCreatePost/SwitchCreatePost'
+import styles from "./AdminCrudPosts.module.css"
+
 
 /* Table for render events, news, jobs, and forum CRUD
     props:
@@ -52,59 +54,60 @@ function AdminCrudPosts({ children, name, postType, fields, icon }) {
     return (
         <>
             {/* Change emoji for icon (pass prop)*/}
-
             {/* <h1><span>{icon}</span>{name}</h1> */}
-            <h1><span>🚀 </span>{name}</h1>
+            <h1 className={styles.name}><span>🚀 </span>{name}</h1>
             {/* Create a new post */}
             <SwitchCreatePost postType={postType}>
                 Crear {name.slice(0, -1)}
             </SwitchCreatePost>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Titulo</th>
-                        <th>Descripción</th>
-                        <th>Usuario</th>
-                        <th>Comentarios</th>
-                        <th>Likes</th>
-                        <th>Tags</th>
-                        {children}
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map((post, index) => (
-                        <tr key={index}>
-                            <td>{post.title}</td>
-                            <td>{post.description}</td>
-                            <td>
-                                {users?.filter(user => (user._id === post.user_info))[0]?.firstName}&nbsp;
-                                {users?.filter(user => (user._id === post.user_info))[0]?.lastName}
-                            </td>
-                            <td>{post.comments.length}</td>
-                            <td>{post.likes.length}</td>
-                            <td>
-                                {post.technologies.map(tech => (<span key={tech}>{tech}</span>))}
-                                {post.tags.map(tag => (<span key={tag}>{tag}</span>))}
-                            </td>
-                            {fields.map((field, i) => (
-                                <td key={i}>{post[field]}</td>
-                            ))}
-                            <td>
-                                <button onClick={() => navigate(
-                                    postType === 'news' ? `/formnews/${post._id}` :
-                                        postType === 'event' ? `/formeventedit/${post._id}` :
-                                            postType === 'jobs' ? `/formjobs/${post._id}` :
-                                                postType === 'questions' ? `/addquestion/${post._id}` : ''
-                                )}>Editar</button>
-                            </td>
-                            <td><button onClick={() => { deletePost(post._id) }}>🗑️</button></td>
+            <div className={styles.tableContainer}>
+                <table className={styles.table}>
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Descripción</th>
+                            <th>Usuario</th>
+                            <th>Comentarios</th>
+                            <th>Likes</th>
+                            <th>Tags</th>
+                            {children}
+                            <th>Editar</th>
+                            <th>Eliminar</th>
                         </tr>
+                    </thead>
+                    <tbody>
+                        {data.map((post, index) => (
+                            <tr key={index}>
+                                <td>{post.title}</td>
+                                <td>{post.description}</td>
+                                <td>
+                                    {users?.filter(user => (user._id === post.user_info))[0]?.firstName}&nbsp;
+                                    {users?.filter(user => (user._id === post.user_info))[0]?.lastName}
+                                </td>
+                                <td>{post.comments.length}</td>
+                                <td>{post.likes.length}</td>
+                                <td>
+                                    {post.technologies.map(tech => (<span key={tech}>{tech}</span>))}
+                                    {post.tags.map(tag => (<span key={tag}>{tag}</span>))}
+                                </td>
+                                {fields.map((field, i) => (
+                                    <td key={i}>{post[field]}</td>
+                                ))}
+                                <td>
+                                    <button onClick={() => navigate(
+                                        postType === 'news' ? `/formnews/${post._id}` :
+                                            postType === 'event' ? `/formeventedit/${post._id}` :
+                                                postType === 'jobs' ? `/formjobs/${post._id}` :
+                                                    postType === 'questions' ? `/addquestion/${post._id}` : ''
+                                    )}>Editar</button>
+                                </td>
+                                <td><button onClick={() => { deletePost(post._id) }}>🗑️</button></td>
+                            </tr>
 
-                    ))}
-                </tbody>
-            </table>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </>
     )
 }
