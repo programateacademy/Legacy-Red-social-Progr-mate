@@ -14,7 +14,6 @@ import Redirect from "../Redirect/Redirect";
 import DontAllow from "../Messages/DontAllow";
 
 //Forms import
-import CompleteProfile from "../../components/CompleteProfile/CompleteProfile";
 import EditProfile from "../../pages/EditProfile";
 import FormEventPage from "../../pages/FormEventPage";
 import FormEventEdit from "../../components/FormEvent/FormEventEdit";
@@ -89,11 +88,6 @@ function Autentification() {
                 />
 
                 {/* Profile */}
-                <Route
-                    exact
-                    path="/formprofile"
-                    element={isLogged ? <CompleteProfile /> : <DontAllow />}
-                />
                 <Route
                     exact
                     path="/formprofile/:type/:id"

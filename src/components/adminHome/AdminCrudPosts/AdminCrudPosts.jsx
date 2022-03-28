@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { DataContext } from '../../context/DataContext'
-import { deleteData, getDataAll } from '../../helpers/fetch'
-import { SwitchCreatePost } from '../SwitchCreatePost/SwitchCreatePost'
-import styles from "./AdminCrudPosts.module.css"
-
-
+import { DataContext } from '../../../context/DataContext'
+import { deleteData, getDataAll } from '../../../helpers/fetch'
+import { SwitchCreatePost } from '../../SwitchCreatePost/SwitchCreatePost'
+import styles from '../adminCommunity/AdminCommunity.module.css'
 /* Table for render events, news, jobs, and forum CRUD
     props:
         name: string -> name of the table
