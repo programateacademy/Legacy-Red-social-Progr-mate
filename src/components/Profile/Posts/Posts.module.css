@@ -1,8 +1,3 @@
-.containBodyProfile {
-    background-color: #d7d7d7;
-    padding-bottom: 40px;
-}
-
 .container1 {
     width: 100%;
     height: 100%;
@@ -10,16 +5,6 @@
     background-color: #d7d7d7;
     margin-top: 5px;
 }
-
-/* .container1 {
-    width: 47%;
-    max-width: 540px;
-    height: 100%;
-    display: flex;
-    background-color: red;
-    margin-top: 20px;
-} */
-
 .container2 {
     width: 98%;
     max-width: 98%;

@@ -14,7 +14,7 @@ const ProfileEducation = () => {
                 <div className={style.container2}>
                     <div className={style.icon_cont}>
                         <div className={style.title}>
-                            <p>Educacion</p>
+                            <p>Educación</p>
                         </div>
                     </div>
                     {prev_studes?.map(

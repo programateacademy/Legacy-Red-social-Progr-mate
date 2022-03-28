@@ -1,0 +1,44 @@
+.containBodyProfile {
+    background-color: #d7d7d7;
+    padding-bottom: 40px;
+    
+}
+.profileBodyContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+.profileInfo1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profilePosts{
+    margin-top: 15px;
+}
+
+.button {
+    margin-top: 20px;
+    display: flex;
+    width: 120px;
+    height: 30px;
+    background-color: #ffcc02;
+    border-radius: 10px;
+    color: #010101;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+a{
+    text-decoration: none;
+}
+.button:hover {
+    background-color: black;
+    color: #ffcc02;
+}
+

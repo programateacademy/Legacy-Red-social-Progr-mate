@@ -12,12 +12,12 @@ const Technologies = () => {
                 <div className={style.container2}>
                     <div className={style.icon_cont}>
                         <div className={style.title}>
-                            <p>Tegnologías</p>
+                            <p>Tecnologías</p>
                         </div>
                     </div>
-                    <div>
+                    <div className={style.skill}>
                         {technicalSkills?.map((skill, index) => (
-                            <p className={style.skill} key={index}>
+                            <p  key={index}>
                                 {skill} -&nbsp;
                             </p>
                         ))}

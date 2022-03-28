@@ -29,18 +29,18 @@ const ProfileAbout = () => {
 
     return (
         <>
-            <section className={style.container1}>
-                <div className={style.container2}>
-                    <div className={style.icon_cont}>
+            
+            <div className={style.container1}>
+                
+
                         <div className={style.title}>
                             <p>Acerca de</p>
                         </div>
+                <div className={style.text}>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo adipisci placeat minima possimus ipsum quod hic a cum! Eligendi, cupiditate adipisci. Inventore provident commodi mollitia magni maiores soluta suscipit quasi.{/* {dataProfile?.description} */}</p>
                     </div>
-                    <div>
-                        <p>{dataProfile?.description}</p>
-                    </div>
-                </div>
-            </section>
+                
+            </div>
         </>
     );
 };

@@ -1,21 +1,16 @@
-
-.container1{
-    width: 100%;
-    height: 100%;
-    display: flex; 
-}
-
-.container2{
-    width: 90%;
-    height: 90%;
+.container1 {
+    width: 357px;
+    height: 177px;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #ffffff;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
-.icon_cont{
-    width: 100%;
+.icon_cont {
+    
     display: flex;
     flex-direction: row;
     align-items: center;
