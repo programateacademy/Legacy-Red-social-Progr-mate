@@ -9,10 +9,12 @@
   display:none;
   justify-content: center;
   align-items: center;
+ 
 } 
 
 .isOpen {
   display: flex; 
+  
 }
 
 .modalContainer {
@@ -23,7 +25,7 @@
   min-height: 200px;
   max-height: 900px;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: #ffffff;
 
 }
 
@@ -32,5 +34,9 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+
+@media (min-width: 768px){
+  
 }
 

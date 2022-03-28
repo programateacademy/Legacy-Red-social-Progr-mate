@@ -1,23 +1,14 @@
-.section_container{
-    padding: 3rem 0 2rem;
-    width: 100%;
-    min-height: 100vh;
-}
 
 .form_container {
     width: 90%;
+    height: 90%;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     margin: auto;
-    border: 1px solid #92c149;
-    border-radius: 10px;
+    border-radius: 2px;
     padding: 10px 45px;
     font-family: "Roboto", sans-serif;
-}
-.title {
-    display: inline-block;
-    text-align: center;
 }
 
 .subtitle {
@@ -26,29 +17,40 @@
 }
 .nom_input {
     width: 100%;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    padding: 10px;
-    font-size: 16px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    border-radius: 2px;
+    border-style: solid;
+    border: 1px solid;
+    border-color: #eceff1;
+    padding: 0 15px;
+    font-size: 18px;
     outline: none;
+    padding-left: 10px;
+    background-color: #eceff1;
 }
 .textarea {
     width: 100%;
     height: 150px;
     padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    font-size: 16px;
+    border: 1px solid ;
+    border-radius: 2px;
+    font-size: 18px;
     outline: none;
+    background-color: #eceff1;
+    border-color: #eceff1;
+    resize: none;
 }
 .tecno button {
-    width: 100px;
-    height: 30px;
+   width: 100px;
+    height: 90%;
+    padding: 3px;
     margin: 15px;
     border-radius: 10px;
     border: 1px solid;
-    border-color: #92c149;
-    background-color: #ffffff;
+    border-color: #ffcc02;
+    background-color: #ffcc02 ;
     cursor: pointer;
 }
 .tecno {
@@ -127,4 +129,26 @@
     .form {
         width: 100%;
     }
+}
+.headerPerfil {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0 10px;
+    border-bottom: 1px solid #ffcc02;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.headerPerfil h2 {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+}
+
+.headerPerfil img {
+    width: 60px;
+    position: absolute;
+    left: 0;
 }

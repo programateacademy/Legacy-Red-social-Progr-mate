@@ -33,7 +33,6 @@ const FormJobs = () => {
             postsJobs.modality.length <= 0 ||
             postsJobs.contact.length <= 0 ||
             postsJobs.description.length <= 0 ||
-            postsJobs.technologies.length <= 0 ||
             postsJobs.salary.length <= 0
         ) {
             // message that pop if conditions arent fulfilled
@@ -49,12 +48,13 @@ const FormJobs = () => {
             try {
                 if (!params.id) {
                     await sendData("posts", postsJobs);
+                    navigate("/questions");
                     
                 } else {
                     await updateData("posts", params.id, postsJobs);
                 }
 
-                navigate("/home");
+                
             } catch (error) {
                 console.log(error);
             }
@@ -102,13 +102,14 @@ const FormJobs = () => {
         <Fragment>
             <div className={style.headerPerfil}>
                 <img src={logo} alt="Educamás" />
-                <h2>Agregar una oferta</h2>
+                <h2>Agregar una Oferta</h2>
             </div>
             <form className={style.from_container} onSubmit={submitData}>
                 <div className={style.forms}>
                     <h3>Nombre de la oferta</h3>
                     <input
                         className={style.nom}
+                        placeholder="Nombre de la oferta"
                         type="text"
                         name="title"
                         value={postsJobs.title}
@@ -119,7 +120,7 @@ const FormJobs = () => {
                 <div className={style.forms}>
                     <h3>Empresa</h3>
                     <input
-                        placeholder=""
+                        placeholder="Nombre de la empresa"
                         className={style.nom}
                         type="text"
                         name="company"
@@ -134,6 +135,7 @@ const FormJobs = () => {
                         className={style.nom}
                         type="text"
                         name="technologies"
+                        placeholder="Tecnologías <Enter> para guardarla"
                         onKeyDown={onKeyHardSkills}
                     />
                     <br />
@@ -154,6 +156,7 @@ const FormJobs = () => {
                     <h3>Lugar de la oferta</h3>
                     <input
                         className={style.nom}
+                        placeholder="Lugar"
                         type="text"
                         name="place"
                         value={postsJobs.place}
@@ -188,6 +191,7 @@ const FormJobs = () => {
                         className={style.nom}
                         type="text"
                         name="salary"
+                        placeholder="Salario"
                         value={postsJobs.salary}
                         onChange={onChange}
                     />
@@ -201,6 +205,7 @@ const FormJobs = () => {
                         name="contact"
                         value={postsJobs.contact}
                         onChange={onChange}
+                        placeholder="Contacto"
                     />
                     <br />
                 </div>
@@ -214,6 +219,7 @@ const FormJobs = () => {
                         cols=""
                         value={postsJobs.description}
                         onChange={onChange}
+                        placeholder="Descripcion de la oferta"
                     ></textarea>
                     <br />
                 </div>

@@ -18,9 +18,9 @@
     margin: 15px;
     border-radius: 10px;
     border: 1px solid;
-    border-color: #92c149;
-    background-color: #ffffff;
-    font-family: "Roboto", sans-serif;
+    border-color: #ffcc02;
+    background-color: #ffcc02 ;
+    cursor: pointer;
 }
 
 .textarea {
@@ -30,9 +30,12 @@
     display: flex;
     justify-content: center;
     border: 1px solid;
-    border-radius: 30px;
+    border-radius: 2px;
     font-size: 18px;
     outline: none;
+    border-color: #eceff1;
+    background-color: #eceff1;
+    resize: none;
 }
 
 .subtitle, .opcion {
@@ -43,18 +46,22 @@
 
 .nom {
     width: 100%;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    border: 1px solid;
     padding: 10px;
     font-size: 16px;
     outline: none;
+    border-color: #eceff1;
+    background-color: #eceff1;
+    
 }
 .select {
     width: 100%;
     font-size: 16px;
     padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
+    border: 1px solid;
+    border-color: #eceff1;
+    border-radius: 2px;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
@@ -62,7 +69,7 @@
     background-repeat: no-repeat, repeat;
     background-position: right 0.7em top 50%, 0 0;
     background-size: 0.65em auto, 100%;
-    background-color: #ffff;
+    background-color: #eceff1;
 }
 
 
@@ -134,7 +141,7 @@
 /* Large (lg) */
 @media (min-width: 1024px) {
     .from_container {
-        width: 90%;
+        width: 100%;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-between;
