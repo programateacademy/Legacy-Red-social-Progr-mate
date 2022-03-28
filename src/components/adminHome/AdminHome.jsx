@@ -1,21 +1,55 @@
-import React, { Fragment } from 'react'
+import React, { useState } from 'react'
 import AdminCommunity from './adminCommunity/AdminCommunity'
 import CreateUser from '../CreateUser/CreateUser'
-import { AdminNavigation } from '../AdminNavigation/AdminNavigation';
+import  AdminNavigation  from '../AdminNavigation/AdminNavigation';
+import  AdminCrudPosts  from '../AdminCrudPosts/AdminCrudPosts';
+import CreateCohort from '../CreateCohort/CreateCohort'
 import style from "./AdminHome.module.css"
 /* Renders in AdminHomePage */
 const AdminHome = () => {
-
+    const [activePanel, setActivePanel] = useState('users')
+    const setActiveState = (panel) => {
+        setActivePanel(panel)
+        console.log(activePanel)
+    }
+    const panelReturned = (panel) => {
+        switch (panel) {
+            case 'news':
+                return <AdminCrudPosts name={"Noticias"} postType={"news"} fields={[]}/>
+            case 'jobs':
+                return (<AdminCrudPosts name={"Ofertas"} postType={"jobs"} fields={["company", "place", "modality", "salary", "contact"]}>
+                        <th>Compañia</th>
+                        <th>Lugar</th>
+                        <th>Modalidad</th>
+                        <th>Salario</th>
+                        <th>Contacto</th>
+                        </AdminCrudPosts>)
+            case 'events':
+                return (
+                    <AdminCrudPosts name={"Eventos"} postType={"event"} fields={["dateEvent", "link", "place"]}>
+                        <th>Fecha Evento</th>
+                        <th>Link</th>
+                        <th>Lugar</th>
+                    </AdminCrudPosts>
+                )
+            case 'forum':
+                return <AdminCrudPosts name={"Preguntas"} postType={"questions"} fields={[]}></AdminCrudPosts>
+            case 'cohorts':
+                'cohorte'
+            case 'users':
+                return <AdminCommunity />
+            default:
+                return <AdminCommunity />
+            }
+        }
     return (
-
             <div className={style.home_container}>
-                <div className={style.admin_navigation}><AdminNavigation/></div>
+                <div className={style.admin_navigation}><AdminNavigation setActiveState={setActiveState} activePanel={activePanel}/></div>
                 {/* <CreateUser /> */}
-                <div className={style.admin_comunity}>
-                    <AdminCommunity />
-                </div>
+                {<div className={style.admin_panel}>
+                    {panelReturned(activePanel)}
+                </div>}
             </div>
-        
     );
 };
 
