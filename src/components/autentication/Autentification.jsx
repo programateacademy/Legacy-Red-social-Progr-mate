@@ -38,11 +38,6 @@ import ProfilePage from "../../pages/ProfilePage";
 
 //admin
 import  AdminHomePage from "../../pages/AdminHomePage";
-import  AdminCohortPage  from "../../pages/AdminCohortPage";
-import  AdminForumPage  from "../../pages/AdminForumPage";
-import  AdminEventsPage  from "../../pages/AdminEventsPage";
-import  AdminNewsPage  from "../../pages/AdminNewsPage";
-import  AdminJobsPage  from "../../pages/AdminJobsPage";
 
 
 /* This component manage routes*/
@@ -176,36 +171,8 @@ function Autentification() {
 
                 <Route
                     exact
-                    path="admincohort"
-                    element={isAdmin ? <AdminCohortPage /> : <DontAllow />}
-                />
-
-                <Route
-                    exact
                     path="/adminhome"
                     element={isAdmin ? <AdminHomePage /> : <DontAllow />}
-                />
-                
-                <Route
-                    exact
-                    path="/adminforum"
-                    element={isAdmin ? <AdminForumPage/> : <DontAllow />}
-                />
-
-                <Route
-                    exact
-                    path="/adminevents"
-                    element={isAdmin ? <AdminEventsPage/> : <DontAllow />}
-                />
-                <Route
-                    exact
-                    path="/adminnews"
-                    element={isAdmin ? <AdminNewsPage/> : <DontAllow />}
-                />
-                <Route
-                    exact
-                    path="/adminjobs"
-                    element={isAdmin ? <AdminJobsPage/> : <DontAllow />}
                 />
 
                 {/* 404 */}

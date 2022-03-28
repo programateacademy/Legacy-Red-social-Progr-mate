@@ -35,7 +35,7 @@ const AdminHome = () => {
             case 'forum':
                 return <AdminCrudPosts name={"Preguntas"} postType={"questions"} fields={[]}></AdminCrudPosts>
             case 'cohorts':
-                'cohorte'
+                return <CreateCohort/>
             case 'users':
                 return <AdminCommunity />
             default:
