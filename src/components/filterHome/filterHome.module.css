@@ -28,7 +28,6 @@
     width: 100%;
     max-width: 540px;
     border-radius: 15px;
-
 }
 .containNotifications {
     width: 28%;
@@ -44,17 +43,6 @@
     width: 47%;
     max-width: 540px;
     margin: 25px auto;
-    /*background-color: #ffffff;*/
-
-    /*dth: 100%;
-    max-width: 100%;
-    margin: 0px auto;
-    background-color: #ffffff;
-    border-radius: 15px;
-    border: 1px solid #92c149;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;*/
 }
 
 .filter {
