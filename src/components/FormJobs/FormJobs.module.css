@@ -20,7 +20,7 @@
     border: 1px solid;
     border-color: #ffcc02;
     background-color: #ffcc02 ;
-  
+    cursor: pointer;
 }
 
 .textarea {
@@ -141,7 +141,7 @@
 /* Large (lg) */
 @media (min-width: 1024px) {
     .from_container {
-        width: 90%;
+        width: 100%;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-between;

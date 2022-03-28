@@ -5,7 +5,6 @@ import { DataContext } from "../../context/DataContext";
 import { sendData } from "../../helpers/fetch";
 import { useNavigate } from "react-router-dom";
 import HardSkills from "../formInfo/HardSkills";
-import Modals from "../modals/Modals"
 import Swal from "sweetalert2";
 /* Create new event */
 const FormEvent = () => {
