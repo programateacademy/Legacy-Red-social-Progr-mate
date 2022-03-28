@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../context/DataContext";
 import { getDataAll } from "../../helpers/fetch";
-
+import styles from "./UserQuestions.module.css";
 
 /* Questions maded by user -> renders in bodyprofile */
 function UserQuestions() {
@@ -25,12 +25,12 @@ function UserQuestions() {
 
     return (
         <div>
-            <h3>Mis Preguntas - Foro</h3>
+            <p className={styles.myquestions}>Mis Preguntas - FORO</p>
             {filterUserQuestions.map((question) => (
-                <Link key={question._id} to={`/questions/${question._id}`}>
+                <Link key={question._id} to={`/questions/${question._id}`} className={styles.questionLink}>
                     <div>
-                        <p>{question.title}</p>
-                        <p>Comentarios: {question.comments.length}</p>
+                        <p className={styles.question}>{question.title}</p>
+                        <p className={styles.comments}>Comentarios: {question.comments.length}</p>
                     </div>
                 </Link>
             ))}

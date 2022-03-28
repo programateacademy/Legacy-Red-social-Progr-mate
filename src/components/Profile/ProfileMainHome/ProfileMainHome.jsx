@@ -8,7 +8,7 @@ import { getDataAll } from "../../../helpers/fetch";
 const ProfileMainHome = ({ dataProfile }) => {
     const { dataUser, idUser } = useContext(DataContext);
     const { avatar, firstName, middleName, lastName } = dataUser;
-    const [cohort, setCohort] = useState("");
+    const [cohort, setCohort] = useState();
 
     let navigate = useNavigate();
 
