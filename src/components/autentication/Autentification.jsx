@@ -37,12 +37,12 @@ import ProfilePage from "../../pages/ProfilePage";
 
 
 //admin
-import AdminHomePage from "../../pages/AdminHomePage";
-import { AdminCohortPage } from "../../pages/AdminCohortPage";
-import { AdminForumPage } from "../../pages/AdminForumPage";
-import { AdminEventsPage } from "../../pages/AdminEventsPage";
-import { AdminNewsPage } from "../../pages/AdminNewsPage";
-import { AdminJobsPage } from "../../pages/AdminJobsPage";
+import  AdminHomePage from "../../pages/AdminHomePage";
+import  AdminCohortPage  from "../../pages/AdminCohortPage";
+import  AdminForumPage  from "../../pages/AdminForumPage";
+import  AdminEventsPage  from "../../pages/AdminEventsPage";
+import  AdminNewsPage  from "../../pages/AdminNewsPage";
+import  AdminJobsPage  from "../../pages/AdminJobsPage";
 
 
 /* This component manage routes*/
