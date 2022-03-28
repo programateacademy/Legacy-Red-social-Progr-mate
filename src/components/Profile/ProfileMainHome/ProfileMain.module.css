@@ -23,44 +23,11 @@
   height: 10rem;
   overflow: hidden;
 }
-.circulo img {
-    width: 90%;
-    margin: auto;
-    border-radius: 50%;
+.photoContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.but_cont a {
-    text-decoration: none;
-}
-
-.circulo {
-    width: 125px;
-    height: 125px;
-    border-radius: 100%;
-    background-color: #d7d7d7;
-    margin-top: 10px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-}
-
-.img_cont {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.but_cont {
-    width: 45;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
 
 .tex_cont {
   width: 100%;
@@ -69,12 +36,24 @@
 }
 
 .tex {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
-    font-size: 20px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+.tex p {
+  margin: 0;
+}
+.name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-bottom: 1.2rem;
+}
+.cohort {
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 .icon {
   top: 0px;
