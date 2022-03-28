@@ -12,7 +12,7 @@ import styles from '../adminCommunity/AdminCommunity.module.css'
         children: array -> <td> to render in the body of table
         icon: string -> icon to render in the top of content
 */
-function AdminCrudPosts({ children, name, postType, fields, icon }) {
+function AdminCrudPosts({ children, name, postType, fields, activePanel}) {
     const { postsContext, setPostsContext, users, setUsers } = useContext(DataContext)
     const [data, setData] = useState([])
     const navigate = useNavigate()
@@ -47,7 +47,7 @@ function AdminCrudPosts({ children, name, postType, fields, icon }) {
     useEffect(async () => {
         await fetchData()
         await fetchDataUser()
-    }, [])
+    }, [activePanel])
 
     return (
         <>
