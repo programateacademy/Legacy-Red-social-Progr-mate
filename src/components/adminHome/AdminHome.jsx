@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AdminCommunity from './adminCommunity/AdminCommunity'
 import CreateUser from '../CreateUser/CreateUser'
 import  AdminNavigation  from '../AdminNavigation/AdminNavigation';
-import  AdminCrudPosts  from '../AdminCrudPosts/AdminCrudPosts';
+import  AdminCrudPosts  from './AdminCrudPosts/AdminCrudPosts';
 import CreateCohort from '../CreateCohort/CreateCohort'
 import style from "./AdminHome.module.css"
 /* Renders in AdminHomePage */
@@ -15,9 +15,9 @@ const AdminHome = () => {
     const panelReturned = (panel) => {
         switch (panel) {
             case 'news':
-                return <AdminCrudPosts name={"Noticias"} postType={"news"} fields={[]}/>
+                return <AdminCrudPosts name={"Noticias"} postType={"news"} fields={[]} activePanel={activePanel}/>
             case 'jobs':
-                return (<AdminCrudPosts name={"Ofertas"} postType={"jobs"} fields={["company", "place", "modality", "salary", "contact"]}>
+                return (<AdminCrudPosts name={"Ofertas"} postType={"jobs"} fields={["company", "place", "modality", "salary", "contact"]} activePanel={activePanel}>
                         <th>Compañia</th>
                         <th>Lugar</th>
                         <th>Modalidad</th>
@@ -26,16 +26,16 @@ const AdminHome = () => {
                         </AdminCrudPosts>)
             case 'events':
                 return (
-                    <AdminCrudPosts name={"Eventos"} postType={"event"} fields={["dateEvent", "link", "place"]}>
+                    <AdminCrudPosts name={"Eventos"} postType={"event"} fields={["dateEvent", "link", "place"]} activePanel={activePanel}>
                         <th>Fecha Evento</th>
                         <th>Link</th>
                         <th>Lugar</th>
                     </AdminCrudPosts>
                 )
             case 'forum':
-                return <AdminCrudPosts name={"Preguntas"} postType={"questions"} fields={[]}></AdminCrudPosts>
+                return <AdminCrudPosts name={"Preguntas"} postType={"questions"} fields={[]} activePanel={activePanel}></AdminCrudPosts >
             case 'cohorts':
-                'cohorte'
+                return <CreateCohort/>
             case 'users':
                 return <AdminCommunity />
             default:

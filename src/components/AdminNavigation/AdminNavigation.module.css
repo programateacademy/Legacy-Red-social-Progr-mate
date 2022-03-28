@@ -1,0 +1,30 @@
+.list {
+    padding: 0;
+    
+}
+
+.list button {
+    font-size: 2rem;
+}
+.menu {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    list-style: none;
+    width: 100%;
+}
+.menu:hover {
+    opacity: 0.5;
+    border-left: 4px solid #FFCC02;
+}
+.menu button {
+    border-style: none;
+    background-color: transparent;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.active {
+    border-left: 4px solid #FFCC02;
+    background-color: rgba(255, 204, 2, 0.38)
+}

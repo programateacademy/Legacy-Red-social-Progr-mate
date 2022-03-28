@@ -39,7 +39,7 @@ const BodyProfile = () => {
           const data = await getData("users", params.id);
           setDataUser(data);
         }
-        
+
       } catch (error) {
         console.log(error);
       }
@@ -47,33 +47,39 @@ const BodyProfile = () => {
   }, [idUser]);
 
   return (
-    <div className={style.containBodyProfile}>
+    <>
       {!showMain ? (
-        <ProfileMain dataProfile={dataProfile} />
-      ) : (
-        <ProfileMainHome dataProfile={dataProfile} />
-      )}
-      <div className={style.profileBodyContainer}>
-        <div className={style.profileInfo1}>
-          <ProfileAbout />
-          <ProfileEducation />
-          <ProfileLanguages />
-          <Technologies />
+        <div className={style.containBodyProfile}>
+          <ProfileMain dataProfile={dataProfile} />
+          <div className={style.profileBodyContainer}>
+            <div className={style.profileInfo1}>
+              <ProfileAbout />
+              <ProfileEducation />
+              <ProfileLanguages />
+              <Technologies />
 
-          <a href={dataProfile?.github} target="_blank">
-            <button className={style.button} type="button">
-              Ver Github
-            </button>
-          </a>
+              <a href={dataProfile?.github} target="_blank">
+                <button className={style.button} type="button">
+                  Ver Github
+                </button>
+              </a>
+            </div>
+            <div className={style.profilePosts}>{!showMain && <Posts />}</div>
+            <div className={style.profileInfo2}>
+              <ProfileSkills />
+              <ProfileExperience />
+            </div>
+          </div>
         </div>
-              <div className={style.profilePosts}>{!showMain && <Posts />}</div>
-              <div className={style.profileInfo2}>
-        <ProfileSkills />
-        <ProfileExperience />
-      </div>
-      </div>
-      
-    </div>
+      ) : (
+        <div className={style.containBodyProfileHome}>
+          <ProfileMainHome dataProfile={dataProfile} />
+          <UserQuestions />
+        </div>
+      )}
+
+
+    </>
   );
 };
 

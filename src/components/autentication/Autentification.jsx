@@ -14,7 +14,6 @@ import Redirect from "../Redirect/Redirect";
 import DontAllow from "../Messages/DontAllow";
 
 //Forms import
-import CompleteProfile from "../../components/CompleteProfile/CompleteProfile";
 import EditProfile from "../../pages/EditProfile";
 import FormEventPage from "../../pages/FormEventPage";
 import FormEventEdit from "../../components/FormEvent/FormEventEdit";
@@ -38,11 +37,10 @@ import ProfilePage from "../../pages/ProfilePage";
 
 //admin
 import  AdminHomePage from "../../pages/AdminHomePage";
-import  AdminCohortPage  from "../../pages/AdminCohortPage";
-import  AdminForumPage  from "../../pages/AdminForumPage";
-import  AdminEventsPage  from "../../pages/AdminEventsPage";
-import  AdminNewsPage  from "../../pages/AdminNewsPage";
-import  AdminJobsPage  from "../../pages/AdminJobsPage";
+import { NewsSection } from "../NewsSection/newsSection";
+import Navbar from "../Navbar/Navbar";
+import { JobsSection } from "../JobsSection/JobsSection";
+import { EventsSection } from "../EventsSection/EventsSection";
 
 
 /* This component manage routes*/
@@ -52,12 +50,28 @@ function Autentification() {
 
     return (
         <>
+            <Navbar/>
             <Routes>
                 {/* Login */}
                 <Route
                     exact
                     path="/"
                     element={isLogged ? <HomePage /> : <Login />}
+                />
+                <Route
+                    exact
+                    path="/news"
+                    element={isLogged ? <NewsSection /> : <Login />}
+                />
+                <Route
+                    exact
+                    path="/jobs"
+                    element={isLogged ? <JobsSection /> : <Login />}
+                />
+                <Route
+                    exact
+                    path="/events"
+                    element={isLogged ? <EventsSection /> : <Login />}
                 />
                 <Route
                     exact
@@ -94,11 +108,6 @@ function Autentification() {
                 />
 
                 {/* Profile */}
-                <Route
-                    exact
-                    path="/formprofile"
-                    element={isLogged ? <CompleteProfile /> : <DontAllow />}
-                />
                 <Route
                     exact
                     path="/formprofile/:type/:id"
@@ -176,36 +185,8 @@ function Autentification() {
 
                 <Route
                     exact
-                    path="admincohort"
-                    element={isAdmin ? <AdminCohortPage /> : <DontAllow />}
-                />
-
-                <Route
-                    exact
                     path="/adminhome"
                     element={isAdmin ? <AdminHomePage /> : <DontAllow />}
-                />
-                
-                <Route
-                    exact
-                    path="/adminforum"
-                    element={isAdmin ? <AdminForumPage/> : <DontAllow />}
-                />
-
-                <Route
-                    exact
-                    path="/adminevents"
-                    element={isAdmin ? <AdminEventsPage/> : <DontAllow />}
-                />
-                <Route
-                    exact
-                    path="/adminnews"
-                    element={isAdmin ? <AdminNewsPage/> : <DontAllow />}
-                />
-                <Route
-                    exact
-                    path="/adminjobs"
-                    element={isAdmin ? <AdminJobsPage/> : <DontAllow />}
                 />
 
                 {/* 404 */}

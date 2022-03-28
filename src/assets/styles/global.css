@@ -24,10 +24,17 @@ html {
 }
 body {
   margin: 0;
-   font-family: Gilroy-light;
+  font-family: Gilroy-light;
   padding: 0;
+  min-height: 100vh
 }
-
+li {
+  font-family: Gilroy-light;
+}
 p {
   font-family: Gilroy-light;
+}
+
+#app {
+  min-height: 100vh
 }

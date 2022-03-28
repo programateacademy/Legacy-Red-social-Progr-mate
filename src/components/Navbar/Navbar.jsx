@@ -32,13 +32,13 @@ const Navbar = () => {
             />
           </Link>
           <ul className={styles.navList}>
-            <Link to="/home">
+            <Link to="/news">
               <li className={styles.navListItem}>
                 <Icon_news/>
                 <p>NEWS</p>
               </li>
             </Link>
-            <Link to="/community">
+            <Link to="/jobs">
               <li className={styles.navListItem}>
                 <Icon_job/>
                 <p>JOBS</p>
