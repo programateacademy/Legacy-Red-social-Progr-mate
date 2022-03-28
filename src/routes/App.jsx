@@ -18,7 +18,7 @@ import {
 
 import Logout from "../components/Logout/Logout";
 import { baseUrl } from "../../config";
-import Navbar from "../components/Navbar/Navbar";
+
 
 const App = () => {
     const dispatch = useDispatch();
@@ -33,9 +33,7 @@ const App = () => {
             const refreshtoken = user.refresh_token;
 
             const getToken = async () => {
-                /*                 const res = await axios.post('http://localhost:3001/api/refresh_token', { refreshtoken })
-                //console.log(res) */
-
+                
                 const res = await axios.post(`${baseUrl}/api/refresh_token`, {
                     refreshtoken,
                 });
@@ -63,7 +61,7 @@ const App = () => {
         <>
             <DataProvider>
                 <Router>
-                    {/* <Logout/>   */}
+                    
                     <Autentification />
                 </Router>
             </DataProvider>
