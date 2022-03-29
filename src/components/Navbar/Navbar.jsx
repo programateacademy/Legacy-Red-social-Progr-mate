@@ -1,4 +1,4 @@
-import React,{useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import styles from "../Navbar/Navbar.module.css";
 import iconoEducamas from "../../assets/images/iconoEducamas.png";
 import { Link } from "react-router-dom";

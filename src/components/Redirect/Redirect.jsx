@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { dispatchGetUser, dispatchLogin, fetchUser } from '../../redux/actions/authAction'
 import { Navigate } from 'react-router-dom'
 import { baseUrl } from '../../../config'
-import { getDataAll } from '../../helpers/fetch'
 
 
 const Redirect = () => {
@@ -12,8 +11,7 @@ const Redirect = () => {
   const token = useSelector(state => state.token)
   const auth = useSelector(state => state.auth)
   const firstEntry = JSON.parse(localStorage.getItem('firstEntry'))
-  const [userData, setUserData] = useState({})
-
+  const idUser = JSON.parse(localStorage.getItem('loggedAgoraUser')).id
 
   useEffect(async () => {
     const loggedUserJSON = window.localStorage.getItem('loggedAgoraUser')
@@ -49,7 +47,7 @@ const Redirect = () => {
         <div>
           <p>Redirigiendo..</p>
 {/*           {firstEntry ? <Navigate replace to={`/formprofile/home/:${idUser}`}/> : <Navigate replace to="/" />} */}
-          {firstEntry ? <Navigate replace to={`/formprofile/home/:${userData?._id}`}/> : <Navigate replace to="/" />}
+          {firstEntry ? <Navigate replace to={`/formprofile/home/${idUser}`}/> : <Navigate replace to="/" />}
         </div>
       </div>
 
