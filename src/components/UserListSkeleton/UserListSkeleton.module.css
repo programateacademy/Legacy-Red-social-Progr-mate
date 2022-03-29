@@ -1,0 +1,52 @@
+.card {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 2rem;
+  height: 12rem;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+.card div {
+  content: "";
+}
+.img,
+.name,
+.cohort {
+  background: linear-gradient(90deg, #ededed, #c9c9c9);
+  background-size: 400% 400%;
+  animation: loadingAnimation 2s ease-in-out infinite;
+}
+.img {
+  border-radius: 10px;
+  height: 7rem;
+  width: 7rem;
+  margin-right: 1.2rem;
+}
+.name {
+  width: 20rem;
+  height: 1.8rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+.cohort {
+  width: 18rem;
+  height: 1.2rem;
+  border-radius: 10px;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
