@@ -16,7 +16,7 @@ const UsersList = () => {
 
     useEffect(() => {
         let isMounted = true
-        !users && getUsers()
+        /* !users && getUsers() */
         return () => {
             isMounted = false;
         }

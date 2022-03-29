@@ -67,3 +67,11 @@
     width: 5rem;
   }
 }
+@media (max-width: 450px) {
+  .name {
+    width: 10rem;
+  }
+  .cohort {
+    width: 8rem;
+  }
+}
