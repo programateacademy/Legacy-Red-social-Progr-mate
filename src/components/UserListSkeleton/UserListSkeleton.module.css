@@ -1,13 +1,10 @@
 .card {
   display: flex;
-  justify-content: flex-start;
   height: 12rem;
   width: 45%;
   padding: 2rem;
-  justify-content: center;
   align-items: center;
   justify-content: space-around;
-  flex-wrap: wrap;
   background: #f7f7f7;
   cursor: pointer;
 }
@@ -48,5 +45,25 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+@media (max-width: 1000px) {
+  .card {
+    width: 80%;
+  }
+}
+@media (max-width: 450px) {
+  .card {
+    width: 80%;
+  }
+  .name {
+    width: 15rem;
+  }
+  .cohort {
+    width: 13rem;
+  }
+  .img {
+    height: 5rem;
+    width: 5rem;
   }
 }
