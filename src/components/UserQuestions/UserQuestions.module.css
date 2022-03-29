@@ -1,7 +1,7 @@
 .myquestions {
   font-size: 1.7rem;
   font-weight: 600;
-  margin-left: 2rem;
+  margin: 0 0 2rem 2rem;
 }
 .questionLink {
   color: #3e4347;
