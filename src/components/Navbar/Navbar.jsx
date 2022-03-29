@@ -16,13 +16,12 @@ import { getData } from "../../helpers/fetch";
 const Navbar = () => {
   const [activeNotification, setActiveNotification] = useState(false)
   const onSetActive = () => { setActiveNotification(!activeNotification) }
-  const { dataUser, setDataUser } = useContext(DataContext)
-  const { avatar } = dataUser
+  const { avatar, setAvatar } = useContext(DataContext)
   const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id
 
   const fetchUser = async () => {
     const res = await getData("users", idUser)
-    setDataUser(prevState => ({ ...prevState, avatar: res?.avatar }))
+    setAvatar(res.avatar)
   }
 
   !avatar ? fetchUser() : ""

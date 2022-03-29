@@ -1,9 +1,9 @@
 .card {
   display: flex;
   justify-content: flex-start;
-  padding: 0 2rem;
   height: 12rem;
-  width: 40%;
+  width: 45%;
+  padding: 2rem;
   justify-content: center;
   align-items: center;
   justify-content: space-around;

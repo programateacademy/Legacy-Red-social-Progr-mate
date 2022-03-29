@@ -82,6 +82,7 @@ export const DataProvider = ({ children }) => {
     const [users, setUsers]  = useState();
     const [postsContext, setPostsContext]  = useState();
     const [filterHome, setFilterHome] = useState("");
+    const [avatar, setAvatar] = useState();
 
     return (
         <DataContext.Provider
@@ -108,6 +109,8 @@ export const DataProvider = ({ children }) => {
                 filterHome,
                 setGetPostsProfile,
                 getPostsProfile,
+                avatar,
+                setAvatar,
             }}
         >
             {children}
