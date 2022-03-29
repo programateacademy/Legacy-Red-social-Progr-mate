@@ -102,7 +102,6 @@ function AdminCrudPosts({ children, name, postType, fields, activePanel}) {
                                 </td>
                                 <td><button onClick={() => { deletePost(post._id) }}><Icon_delete/></button></td>
                             </tr>
-
                         ))}
                     </tbody>
                 </table>
