@@ -1,0 +1,10 @@
+body{
+    background-color: #ECEFF1;
+}
+.eventsSection{
+    padding-top: 80px;
+}
+.eventsSection h2{
+    font-size: 40px;
+    text-align: center;
+}

@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 const FormNews = () => {
     const { posts, setPosts, idUser } = useContext(DataContext);
 
-    const { user_info, title, type, description, images, technologies } = posts;
+    const { user_info, title, type, description, image, technologies } = posts;
 
     const navigate = useNavigate();
     const params = useParams();
@@ -40,7 +40,7 @@ const FormNews = () => {
                         user_info: idUser,
                         title,
                         description,
-                        images,
+                        image,
                         technologies,
                         type,
                     });
@@ -49,7 +49,7 @@ const FormNews = () => {
                         user_info: idUser,
                         title,
                         description,
-                        images,
+                        image,
                         technologies,
                         type,
                     });
@@ -106,7 +106,7 @@ const FormNews = () => {
             const reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = function load() {
-                setPosts({ ...posts, images: reader.result });
+                setPosts({ ...posts, image: reader.result });
             };
         } else {
             alert(`El tamaño máximo es 200 KB`);
@@ -183,7 +183,7 @@ const FormNews = () => {
                         onChange={onFileChange}
                     />
                     {posts.images ? (
-                        <img src={posts.images} alt="File" />
+                        <img src={posts.image} alt="File" />
                     ) : null}
                     <br />
                 </div>

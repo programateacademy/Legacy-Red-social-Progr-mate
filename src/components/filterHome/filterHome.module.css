@@ -1,6 +1,7 @@
 .homePage {
     background-color: #ECEFF1;
     scrollbar-width: none;
+    padding-top: 80px;
 }
 .containBody {
     display: flex;
@@ -11,7 +12,7 @@
     gap: 15px;
     justify-content: center;
     margin: auto;
-    max-height: 300vh;
+    /* max-height: 300vh; */
     overflow: hidden;
     padding-bottom: 40px;
 }
@@ -19,7 +20,8 @@
     width: 28%;
     position: sticky;
     top: 50px;
-    height: 250px;
+    overflow: hidden;
+    height: 200px;
 }
 .mainContent {
     width: 100%;

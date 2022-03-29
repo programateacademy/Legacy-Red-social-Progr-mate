@@ -1,23 +1,33 @@
 import React, { Fragment, useContext, useEffect } from "react";
 
-import News from "./News";
-import Jobs from "./Jobs";
-import Events from "./Events";
+import News from "../homePublications/News";
+import Jobs from "../homePublications/Jobs";
+import Events from "../homePublications/Events";
 import { getData, getDataAll } from "../../helpers/fetch";
 import { DataContext } from "../../context/DataContext";
 import { useState } from "react";
-import style from "./Posts.module.css";
+import style from "../homePublications/Posts.module.css";
 
-const Posts = () => {
+const FilterPosts = (props) => {
+    const { postType } = props;
     const { getPosts, setGetPosts, filterHome, setFilterHome, idUser } =
         useContext(DataContext);
 
     const [dataUsers, setDataUsers] = useState([]);
     const [quantityPosts, setQuantityPosts] = useState(35);
     const [getRol, setGetRol] = useState(1);
-
+    const [data, setData] = useState([])
+    const fetchDataPosts = async () => {
+        
+            const data = await getDataAll("posts")
+            const filterData = await data.filter((post) => post.type === postType)
+            setData(filterData)
+        
+        
+    }
     useEffect(async () => {
         try {
+            fetchDataPosts();
             const data = await  ("users");
             setDataUsers(data);
         } catch (error) {
@@ -49,6 +59,7 @@ const Posts = () => {
     };
 
     const filterPosts = () => {
+        
         if (filterHome.length !== 0) {
             const filtered = getPosts.filter(
                 (post) =>
@@ -85,11 +96,11 @@ const Posts = () => {
 
     return (
         <Fragment>
-            {filterPosts()?.map((post) =>
+            {data?.map((post) =>
                 post.type === "news" ? (
                     <News
                         description={post.description}
-                        images={post.image}
+                        images={post.images}
                         technologies={post.technologies}
                         title={post.title}
                         id={post._id}
@@ -127,9 +138,7 @@ const Posts = () => {
                     />
                 ) : null
             )}
-            {/* <p className={style.backUp} onClick={showMorePosts}>
-                Ver más
-            </p> */}
+            
             <p className={style.addPosts} onClick={showMorePosts}>
                 Ver más 
 
@@ -138,4 +147,4 @@ const Posts = () => {
     );
 };
 
-export default Posts;
+export default FilterPosts;

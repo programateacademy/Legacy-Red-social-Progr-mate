@@ -79,7 +79,7 @@ export const DataProvider = ({ children }) => {
 
     const [getPosts, setGetPosts] = useState();
     const [getPostsProfile, setGetPostsProfile] = useState();
-    const [users, setUsers]  = useState();
+    const [users, setUsers]  = useState([]);
     const [postsContext, setPostsContext]  = useState();
     const [filterHome, setFilterHome] = useState("");
     const [avatar, setAvatar] = useState();

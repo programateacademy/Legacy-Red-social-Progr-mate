@@ -13,31 +13,22 @@ const AdminCommunity = () => {
     
     const [allCohorts, setCohorts] = useState([])
     const navigate = useNavigate()
-    const [allUser, setAllUser] = useState([])
+    // const [allUser, setAllUser] = useState([])
     const [filterUser, setFilterUser] = useState([])
-    const { postsContext, setPostsContext } = useContext(DataContext)
+    const {users, setUsers } = useContext(DataContext)
     
-    const fetchUsers = async () => {
-        const users = await getDataAll("users")
-        setAllUser(users)
-        setFilterUser(users)
-    }
+    
     
     useEffect(async () => {
-        if (postsContext) {
-            setAllUser(postsContext)
-            setFilterUser(postsContext)
-        }
-        else (
-            await fetchUsers()
-        )
-        const dataToEdit = await getDataAll("users");
+        const data = await getDataAll("users")
+        setUsers(data)
+        setFilterUser(data)
         const dataCohort = await getDataAll("cohorte");
         setCohorts(dataCohort)
     }, [])
     
     const onToggle = (id) => {
-        allUser.map((user) => {
+        users.map((user) => {
             if (user._id === id) {
                 console.log(id, user._id);
                 user.state = !user.state
@@ -46,7 +37,7 @@ const AdminCommunity = () => {
                 updateData("users", user._id, {
                     state: user.state
                 })
-                setAllUser(allUser)
+                setUsers(users)
                 navigate("/adminhome")
             }
         })
@@ -56,8 +47,8 @@ const AdminCommunity = () => {
     return (
         <Fragment>
             <div className={style.container_row}>
-                <h1>Usuarios</h1>
-                <Searcher typeOfSearch='Busqueda por correo' setFilter={setFilterUser} dataToFilter={allUser} objectKey={'email'}/>
+                <h1><span>🚀 </span>Usuarios</h1>
+                <Searcher typeOfSearch='Busqueda por correo' setFilter={setFilterUser} dataToFilter={users} objectKey={'email'}/>
             </div>
             <div className={style.container_table}>
                 <table className={style.table}>

@@ -5,6 +5,7 @@
     width: 100%;
     min-height: 100vh;
     background-color: #ECEFF1;
+    padding-top: 80px;
 }
 
 .admin_navigation {
@@ -19,5 +20,3 @@
     background-color: #fff;
     box-sizing: border-box;
 }
-
-
