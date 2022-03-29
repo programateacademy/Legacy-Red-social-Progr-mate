@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import AdminCommunity from './adminCommunity/AdminCommunity'
-import CreateUser from '../CreateUser/CreateUser'
 import  AdminNavigation  from '../AdminNavigation/AdminNavigation';
 import  AdminCrudPosts  from './AdminCrudPosts/AdminCrudPosts';
 import CreateCohort from '../CreateCohort/CreateCohort'
@@ -45,7 +44,6 @@ const AdminHome = () => {
     return (
             <div className={style.home_container}>
                 <div className={style.admin_navigation}><AdminNavigation setActiveState={setActiveState} activePanel={activePanel}/></div>
-                {/* <CreateUser /> */}
                 {<div className={style.admin_panel}>
                     {panelReturned(activePanel)}
                 </div>}

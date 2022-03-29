@@ -133,7 +133,7 @@ function Autentification() {
                 />
                 <Route
                     exact
-                    path="/formeventedit/:id"
+                    path="/formeventedit/:id/:user"
                     element={isLogged ? <FormEventEdit /> : <DontAllow />}
                 />
 
@@ -144,7 +144,7 @@ function Autentification() {
                 />
                 <Route
                     exact
-                    path="/formnews/:id"
+                    path="/formnews/:id/:user"
                     element={isLogged ? <FormNewsPage /> : <DontAllow />}
                 />
 
@@ -155,7 +155,7 @@ function Autentification() {
                 />
                 <Route
                     exact
-                    path="/formjobs/:id"
+                    path="/formjobs/:id/:jobs"
                     element={isLogged ? <FormJobsPage /> : <DontAllow />}
                 />
 
@@ -177,7 +177,7 @@ function Autentification() {
                 />
                 <Route
                     exact
-                    path="/addquestion/:questionId"
+                    path="/addquestion/:questionId/:user"
                     element={isLogged ? <ForumQuestionsPage /> : <DontAllow />}
                 />
 

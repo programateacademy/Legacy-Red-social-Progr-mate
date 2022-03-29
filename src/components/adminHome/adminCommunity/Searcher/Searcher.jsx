@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-
+import styles from './Searcher.module.css'
 let keys = ['email', 'cohorte']
 
 const Searcher =({typeOfSearch, setFilter, dataToFilter, objectKey}) => {
@@ -22,7 +22,7 @@ const Searcher =({typeOfSearch, setFilter, dataToFilter, objectKey}) => {
         setSearch(target.value)
     }
     return (
-        <input type="text" placeholder={typeOfSearch} value={search} onChange={handleChange}/>
+        <input className={styles.input} type="text" placeholder={typeOfSearch} value={search} onChange={handleChange}/>
     )
 }
 

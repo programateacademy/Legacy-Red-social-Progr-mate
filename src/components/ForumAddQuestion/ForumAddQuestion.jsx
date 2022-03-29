@@ -8,9 +8,10 @@ import { DataContext } from "../../context/DataContext";
 import { TagsInput } from "react-tag-input-component";
 
 import "@pathofdev/react-tag-input/build/index.css"; //Review !
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams} from "react-router-dom";
 
 const ForumAddQuestion = () => {
+    let params = useParams()
     const [tags, setTags] = useState([]);
     let navigate = useNavigate();
     const { dataUser, idUser } = useContext(DataContext);
@@ -46,7 +47,7 @@ const ForumAddQuestion = () => {
                             tags: [],
                             images: "",
                             type: "questions",
-                            user_info: idUser,
+                            user_info: params.user,
                         }}
                         validate={(valores) => {
                             let errores = {};
