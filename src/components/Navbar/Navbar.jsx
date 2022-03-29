@@ -22,7 +22,7 @@ const Navbar = () => {
 
   const fetchUser = async () => {
     const res = await getData("users", idUser)
-    setDataUser(prevState => ({ ...prevState, avatar: res.avatar }))
+    setDataUser(prevState => ({ ...prevState, avatar: res?.avatar }))
   }
 
   !avatar ? fetchUser() : ""

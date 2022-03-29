@@ -12,7 +12,6 @@ const Redirect = () => {
   const auth = useSelector(state => state.auth)
   const firstEntry = JSON.parse(localStorage.getItem('firstEntry'))
   const idUser = JSON.parse(localStorage.getItem('loggedAgoraUser')).id
-  console.log(idUser)
 
   useEffect(async () => {
     const loggedUserJSON = window.localStorage.getItem('loggedAgoraUser')
