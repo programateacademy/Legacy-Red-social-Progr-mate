@@ -15,7 +15,6 @@ const FormPhotoUser = () => {
             ...dataUser,
             avatar: "",
         });
-        localStorage.removeItem("avatar");
     };
 
     const onFileChange = (e) => {
@@ -33,7 +32,6 @@ const FormPhotoUser = () => {
                             ...dataUser,
                             avatar: reader.result,
                         });
-                        localStorage.setItem("avatar", JSON.stringify(reader.result));
                     };
                 } else {
                     console.log("Hubo un error");
