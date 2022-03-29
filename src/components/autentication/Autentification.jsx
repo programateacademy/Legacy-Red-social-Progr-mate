@@ -50,7 +50,6 @@ function Autentification() {
 
     return (
         <>
-            <Navbar/>
             <Routes>
                 {/* Login */}
                 <Route
