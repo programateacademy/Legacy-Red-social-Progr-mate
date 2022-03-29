@@ -5,7 +5,7 @@ import style from './AdminCommunity.module.css'
 import Searcher from './Searcher/Searcher'
 import DeleteButton from '../../DeleteButton/DeleteButton'
 import { DataContext } from '../../../context/DataContext';
-import CreateUser from './CreateUser/CreateUser'
+import CreateUser from '../CreateUser/CreateUser'
 import {useModals} from '../../modals/useModals'
 import Modal from '../../modals/Modal'
 

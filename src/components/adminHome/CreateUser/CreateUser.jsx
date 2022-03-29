@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {sendData} from '../../../../helpers/fetch'
+import {sendData} from '../../../helpers/fetch'
 import styles from './CreateUser.module.css'
 /* Create user - Renders in AdminHome*/
 const CreateUser = () => {
