@@ -5,10 +5,12 @@ import BodyProfile from "../components/Profile/BodyProfile";
 import style from "../components/filterHome/filterHome.module.css";
 import Media from "react-media";
 import Modals from "../components/modals/Modals";
+import Navbar from "../components/Navbar/Navbar";
 
 const HomePage = () => {
     return (
       <div className={style.homePage}>
+         <Navbar/>
         <div className={style.containBody}>
           <Media query="(min-width: 1024px)">
             {(matches) => {
