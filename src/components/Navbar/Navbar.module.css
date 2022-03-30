@@ -1,66 +1,40 @@
-.globalNav {
+
+.navBar {
+    margin: 0 auto;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0px;
     z-index: 5;
-    
-}
-.globalNavContent {
-    max-width: 90%;
-    margin: 0 auto;
-}
-.navBar {
+    width: 100%;
     display: flex;
-    align-items:flex-end;
+    align-items:center;
     height: 80px;
-    justify-content: space-between;
+    margin-bottom: 50px ;
 }
-
-.navList {
-    display: flex;
-    justify-content: right;
-    list-style: none;
-    column-gap: 70px;
-    margin: 0;
-    padding: 0; 
-}
-
-.ul {
-  display: flex;
-  justify-content: left;
-}
-.navList a {
-    text-decoration: none;
-    color: black;
-}
-.navListItem {
-    width: 0px;
-    height: 80px;
+.navTop{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: -1;
+}
+.navLeft{
+    display: flex;
+    align-items: center;
+}
+/* .navRight{
+    display: flex;
     justify-content: center;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.navListItem:hover {
-    background-color: white;
-    color: #ffcc02;
-}
-
-.navListItem p {
-    margin: 0;
-}
+    align-items: center;
+} */
 .containerPhoto {
     display: flex;
     align-items: center;
+    
 }
 
-.photoProfile {
-    width: 55px;
-    height: 55px;
-}
+
 .btnNotification{
     border: none;
     background: none;
@@ -69,6 +43,7 @@
 .imgProfile{
     width: 40px;
     border-radius: 10px;
+    
 }
 /*========================= Dropdown ========================= */
 .dropdownLogOut {
@@ -116,39 +91,6 @@
 
 /*========================= End Dropdown ========================= */
 
-@media (max-width: 640px) {
-    .globalNavContent {
-      max-width: 90%;
-        margin: 0 10px;
-    }
-    .navBar {
-        height: 60px;
-    }
-    .navListItem {
-        height: 60px;
-        width: 90px;
-    }
-    .iconoEducamas {
-        width: 45px;
-        height: 45px;
-;
-    }
-    .photoProfile {
-        display: none;
-    }
-}
 
-@media (max-width: 420px) {
-    .navListItem {
-        width: 60px;
-    }
-    .navList {
-        column-gap: 5px;
-    }
-    .navListItem {
-        font-size: 14px;
-    }
-    .navListItem p {
-        display: none;
-    }
-}
+
+

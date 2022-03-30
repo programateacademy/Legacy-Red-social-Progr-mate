@@ -1,6 +1,7 @@
 .homePage {
     background-color: #ECEFF1;
     scrollbar-width: none;
+    padding-top: 80px;
 }
 .containBody {
     display: flex;

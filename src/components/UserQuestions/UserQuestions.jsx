@@ -24,17 +24,21 @@ function UserQuestions() {
     }, [idUser])
 
     return (
-        <div>
-            <p className={styles.myquestions}>Mis Preguntas - FORO</p>
-            {filterUserQuestions.map((question) => (
-                <Link key={question._id} to={`/questions/${question._id}`} className={styles.questionLink}>
-                    <div>
-                        <p className={styles.question}>{question.title}</p>
-                        <p className={styles.comments}>Comentarios: {question.comments.length}</p>
-                    </div>
-                </Link>
-            ))}
-        </div>
+        <>
+            {filterUserQuestions.length > 0 &&
+                <div>
+                    <p className={styles.myquestions}>Mis Preguntas - FORO</p>
+                    {filterUserQuestions.map((question) => (
+                        <Link key={question._id} to={`/questions/${question._id}`} className={styles.questionLink}>
+                            <div>
+                                <p className={styles.question}>{question.title}</p>
+                                <p className={styles.comments}>Comentarios: {question.comments.length}</p>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            }
+        </>
     );
 }
 
