@@ -5,6 +5,8 @@ import { deleteData, getDataAll } from '../../../helpers/fetch'
 import { SwitchCreatePost } from '../../SwitchCreatePost/SwitchCreatePost'
 import styles from './AdminCrudPosts.module.css'
 import Icon_delete from "../../../assets/icons/Icon_delete"
+import { BsThreeDotsVertical} from 'react-icons/bs'
+
 /* Table for render events, news, jobs, and forum CRUD
     props:
         name: string -> name of the table
@@ -93,14 +95,23 @@ function AdminCrudPosts({ children, name, postType, fields, activePanel}) {
                                     <td key={i}>{post[field]}</td>
                                 ))}
                                 <td>
-                                    <button onClick={() => window.open(
+                                    <button
+                                        className={styles.editBtn}
+                                        onClick={() => window.open(
                                         postType === 'news' ? `/formnews/${post._id}/${post.user_info}` :
                                             postType === 'event' ? `/formeventedit/${post._id}/${post.user_info}` :
                                                 postType === 'jobs' ? `/formjobs/${post._id}/${post.user_info}` :
                                                     postType === 'questions' ? `/addquestion/${post._id}/${post.user_info}` : ''
-                                    ,'_blank')}>Editar</button>
+                                        , '_blank')}><BsThreeDotsVertical/></button>
                                 </td>
-                                <td><button onClick={() => { deletePost(post._id) }}><Icon_delete/></button></td>
+                                <td>
+                                    <button
+                                        className={styles.deleteBtn}
+                                        onClick={() => { deletePost(post._id) }}
+                                    >
+                                        <Icon_delete />
+                                    </button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
