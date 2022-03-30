@@ -10,8 +10,9 @@ import style from "./Form_PersonalInfo.module.css";
 import Languages from "./Languages";
 import HardSkills from "./HardSkills";
 import SoftSkills from "./SoftSkills";
-
-const Form_PersonalInfo = ({dataUser, setDataUser}) => {
+import Name from './Name'
+import Cohorte from './Cohorte'
+const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
     const [technical, setTechnical] = useState([]);
     const [softSkills, setsoftSkills] = useState([]);
     const [languages, setLanguages] = useState([]);
@@ -56,34 +57,60 @@ const Form_PersonalInfo = ({dataUser, setDataUser}) => {
         }
     };
 
+    
+    const onChange = (e) => {
+        if (e.key === "Enter") {
+            setDataUser({
+                ...dataUser,
+                [e.target.name]: e.target.value,
+            });
+            e.target.value = '';
+            e.preventDefault();
+        }
+    };
+    const selectChange = (e) => {
+        setDataUser({
+            ...dataUser,
+            [e.target.name]: e.target.value,
+        });
+        e.preventDefault();
+        console.log('allName()');
+    }
     useEffect(async () => {
         setLanguages(dataUser.languages);
         setsoftSkills(dataUser.softSkills);
         setTechnical(dataUser.technicalSkills);
     }, [dataUser]);
+
+    
     return (
         <Fragment>
             <form className={style.form_container}>
-                {/* <div className={style.forms}>
-                    <h3>Link de Git Hub</h3>
-                    <input
-                        className={style.nom}
-                        type="text"
-                        name="github"
-                        onChange={onChange}
-                    />
-                </div>
-
                 <div className={style.forms}>
-                    <h3>Acerca de</h3>
-                    <textarea
-                        className={style.textarea}
-                        rows="3"
-                        name="description"
-                        onChange={onChange}
-                    ></textarea>
-                </div> */}
-
+                    <Name nameField={dataUser.firstName} onChange={onChange} field={'firstName'} >
+                        <h3>Nombre</h3>
+                    </Name>
+                </div>
+                <div className={style.forms}>
+                    <Name nameField={dataUser.middleName} onChange={onChange} field={'middleName'} >
+                        <h3>Segundo Nombre</h3>
+                    </Name>
+                </div>
+                <div className={style.forms}>
+                    <Name nameField={dataUser.lastName} onChange={onChange} field={'lastName'} >
+                        <h3>Apellido</h3>
+                    </Name>
+                </div>
+                <div className={style.forms}>
+                    <Name nameField={dataUser.secondSurname} onChange={onChange} field={'secondSurname'} >
+                        <h3>Segundo Apellido</h3>
+                    </Name>
+                </div>
+                <div className={style.forms}>
+                    <Cohorte nameField={dataUser.cohorte} onChange={selectChange} field={'cohorte'} allCohorts={allCohorts}>
+                        <h3>Cohorte: {allCohorts.filter(item => ( item._id === dataUser.cohorte)).map(item => item.cohorte_name)}</h3>
+                    </Cohorte>
+                </div>
                 <div className={style.forms}>
                     <h3>Tecnologías</h3>
                     <input

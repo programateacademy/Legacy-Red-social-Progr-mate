@@ -7,7 +7,7 @@ import BodyProfile from "../components/Profile/BodyProfile";
 const ProfilePage = () => {
     return (
         <>
-             <Navbar/>
+            <Navbar/>
             <BodyProfile />
             <Footer />
         </>

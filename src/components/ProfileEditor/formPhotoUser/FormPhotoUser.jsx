@@ -46,11 +46,10 @@ const FormPhotoUser = ({dataUser, setDataUser}) => {
     return (
         <>
             <div className={style.headerPerfil}>
-                <img src={logo} alt="Educamás" />
                 <h2>Completa tu perfil</h2>
             </div>
             <div className={style.welcome}>
-                <p>Hola {dataUser.firstName}, completa tus datoooooos</p>
+                <p>Hola {`${dataUser.firstName} ${dataUser.middleName} ${dataUser.lastName} ${dataUser.secondSurname}`}, completa tus datos</p>
             </div>
             <form>
                 <div className={style.containPhoto}>

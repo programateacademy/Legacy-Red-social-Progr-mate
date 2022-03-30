@@ -76,7 +76,7 @@ export const DataProvider = ({ children }) => {
         contact: "",
         description: "",
     });
-
+    const [allCohorts, setCohorts] = useState([]);
     const [getPosts, setGetPosts] = useState();
     const [getPostsProfile, setGetPostsProfile] = useState();
     const [users, setUsers]  = useState([]);
@@ -111,6 +111,8 @@ export const DataProvider = ({ children }) => {
                 getPostsProfile,
                 avatar,
                 setAvatar,
+                allCohorts, 
+                setCohorts
             }}
         >
             {children}

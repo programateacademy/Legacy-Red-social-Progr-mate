@@ -68,11 +68,11 @@ const ForumAddQuestion = () => {
                             return errores;
                         }}
                         onSubmit={async (valores, { resetForm }) => {
-                            valores.tags = tags;
+                            {valores.tags = tags;
                             setTags([]);
                             resetForm();
                             await sendData("posts", valores);
-                            navigate("/questions");
+                            navigate("/questions");}
                         }}
                     >
                         {({ errors, setFieldValue }) => (

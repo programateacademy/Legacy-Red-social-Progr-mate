@@ -24,7 +24,7 @@ const JobsProfile = ({
     lastName,
     cohorte
 }) => {
-    const { setGetPosts, idUser } = useContext(DataContext);
+    const { setGetPosts, idUser, allCohorts, setCohorts } = useContext(DataContext);
     const [showComments, setShowComments] = useState(false);
     const [moreComments, setMoreComments] = useState(false);
     const [inputComment, setInputComment] = useState("");
@@ -37,7 +37,7 @@ const JobsProfile = ({
     const [likes, setLikes] = useState([]);
     const [commentId, setCommentId] = useState([]);
     
-    const [allCohorts, setCohorts] = useState([])
+
     let navigate = useNavigate();
     const params = useParams();
     const commentInfo = async () => {
