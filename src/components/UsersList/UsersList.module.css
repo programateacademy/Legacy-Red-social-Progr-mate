@@ -8,12 +8,8 @@
     margin: auto;
     gap: 15px;
     flex-wrap: wrap;
-<<<<<<< HEAD
-    padding-top: 100px;    
-=======
     padding: 30px;
     background-color: var(--background);
->>>>>>> dev
 }
 
 .card {
