@@ -16,7 +16,7 @@ const UsersList = () => {
 
     useEffect(() => {
         let isMounted = true
-        /* !users && getUsers() */
+        !users.length > 0 && getUsers()
         return () => {
             isMounted = false;
         }
@@ -25,7 +25,7 @@ const UsersList = () => {
     return (
         <Fragment>
             <div className={style.container}>
-                {users ?
+                {users.length > 0?
                     users.map((user) => (
                         <Link key={user._id} className={style.card} to={`/profile/${user._id}`}>
                             <img

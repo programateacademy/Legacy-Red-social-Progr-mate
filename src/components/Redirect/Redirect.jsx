@@ -19,7 +19,10 @@ const Redirect = () => {
     if (firstLogin && loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
       const refreshtoken = user.refresh_token
+<<<<<<< HEAD
       //setUserData(userFilter)
+=======
+>>>>>>> dev
       const getToken = async () => {
         const res = await axios.post(`${baseUrl}/api/refresh_token`, { refreshtoken })
         dispatch({ type: 'GET_TOKEN', payload: res.data.access_token })
