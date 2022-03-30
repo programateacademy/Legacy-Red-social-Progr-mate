@@ -35,4 +35,5 @@
 .editBtn{
   background: none;
   border: none;
+  cursor: pointer;
 }
