@@ -31,3 +31,8 @@
   font-size: 1rem;
   height: 5.5rem;
 }
+.deleteBtn,
+.editBtn{
+  background: none;
+  border: none;
+}
