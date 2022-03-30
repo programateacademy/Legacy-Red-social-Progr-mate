@@ -7,11 +7,22 @@ import Icon_alarm from "../../assets/icons/Icon_alarm";
 import Notification from "../Notifications/Notification"
 import { DataContext } from "../../context/DataContext";
 import altImg from "../../assets/images/avatar.png";
+<<<<<<< HEAD
+=======
 import { getData } from "../../helpers/fetch";
+>>>>>>> dev
 import { ItemsMenu } from "./components/ItemsMenu/ItemsMenu";
 import { MenuButton } from "./components/MenuButton/MenuButton";
 
 const Navbar = () => {
+<<<<<<< HEAD
+  const [activeNotification, setActiveNotification] = useState(false) 
+  const onSetActive = () => {setActiveNotification(!activeNotification)}
+  const { dataUser } = useContext(DataContext)
+  const {avatar} = dataUser
+  !localStorage.getItem("avatar") && localStorage.setItem("avatar", JSON.stringify(avatar))
+  const avatarUser = JSON.parse(localStorage.getItem("avatar"))
+=======
   const [activeNotification, setActiveNotification] = useState(false)
   const onSetActive = () => { setActiveNotification(!activeNotification) }
   const { avatar, setAvatar } = useContext(DataContext)
@@ -24,6 +35,7 @@ const Navbar = () => {
 
   !avatar ? fetchUser() : ""
 
+>>>>>>> dev
   const [ toggle, setToggle ] = useState(false)
   
   const handleClickMenu = () => {

@@ -59,6 +59,7 @@ const FormJobs = () => {
                 console.log(error);
             }
         }
+        navigate("/home");
     };
 
     const onChange = ({ target }) => {
@@ -66,7 +67,7 @@ const FormJobs = () => {
         setPostsJobs({
             ...postsJobs,
             [name]: value,
-            user_info: idUser,
+            user_info: params.user,
         });
     };
     //Press enter to add the technologies to your job publication

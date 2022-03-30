@@ -4,6 +4,7 @@ import { DataContext } from '../../../context/DataContext'
 import { deleteData, getDataAll } from '../../../helpers/fetch'
 import { SwitchCreatePost } from '../../SwitchCreatePost/SwitchCreatePost'
 import styles from './AdminCrudPosts.module.css'
+import Icon_delete from "../../../assets/icons/Icon_delete"
 /* Table for render events, news, jobs, and forum CRUD
     props:
         name: string -> name of the table
@@ -92,16 +93,15 @@ function AdminCrudPosts({ children, name, postType, fields, activePanel}) {
                                     <td key={i}>{post[field]}</td>
                                 ))}
                                 <td>
-                                    <button onClick={() => navigate(
-                                        postType === 'news' ? `/formnews/${post._id}` :
-                                            postType === 'event' ? `/formeventedit/${post._id}` :
-                                                postType === 'jobs' ? `/formjobs/${post._id}` :
-                                                    postType === 'questions' ? `/addquestion/${post._id}` : ''
-                                    )}>Editar</button>
+                                    <button onClick={() => window.open(
+                                        postType === 'news' ? `/formnews/${post._id}/${post.user_info}` :
+                                            postType === 'event' ? `/formeventedit/${post._id}/${post.user_info}` :
+                                                postType === 'jobs' ? `/formjobs/${post._id}/${post.user_info}` :
+                                                    postType === 'questions' ? `/addquestion/${post._id}/${post.user_info}` : ''
+                                    ,'_blank')}>Editar</button>
                                 </td>
-                                <td><button onClick={() => { deletePost(post._id) }}>🗑️</button></td>
+                                <td><button onClick={() => { deletePost(post._id) }}><Icon_delete/></button></td>
                             </tr>
-
                         ))}
                     </tbody>
                 </table>

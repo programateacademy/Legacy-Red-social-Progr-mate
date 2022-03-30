@@ -8,7 +8,7 @@ import HardSkills from "../formInfo/HardSkills";
 import Swal from "sweetalert2";
 /* Create new event */
 const FormEvent = () => {
-    const { postsEvent, setPostsEvent, idUser } = useContext(DataContext);
+    const { postsEvent, setPostsEvent } = useContext(DataContext);
 
     const [technical, setTechnical] = useState([]);
 
@@ -50,7 +50,7 @@ const FormEvent = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setPostsEvent({ ...postsEvent, [name]: value, user_info: idUser });
+        setPostsEvent({ ...postsEvent, [name]: value, user_info: params.user });
     };
 
     // Allows you to add the technologies pressing enter when you wnat to post an event
