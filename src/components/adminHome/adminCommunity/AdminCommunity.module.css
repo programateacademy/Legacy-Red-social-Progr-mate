@@ -47,7 +47,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 2%;
+}
+
+.container_row button {
+  padding: 1em ;
+  border-color: transparent;
+  background-color: #FFCC02;
+  border-radius: 5px;
 }
 
 

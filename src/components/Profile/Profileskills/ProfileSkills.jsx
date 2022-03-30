@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
-import { DataContext } from "../../../context/DataContext";
+import React from "react";
+
 import style from "./ProfileSkills.module.css";
 
-const ProfileSkills = () => {
-    const { dataProfile } = useContext(DataContext);
-    const { softSkills } = dataProfile;
+const ProfileSkills = (props) => {
+    const { dataUserProfile } = props;
+    
+
 
     return (
         <>
@@ -15,8 +16,8 @@ const ProfileSkills = () => {
                             <p>Habilidades</p>
                         </div>
                     </div>
-                    <div>
-                        {softSkills?.map((skill, index) => (
+                    <div className={style.icon_cont2}>
+                        {dataUserProfile.softSkills?.map((skill, index) => (
                             <p className={style.skill} key={index}>
                                 {skill} -&nbsp;
                             </p>

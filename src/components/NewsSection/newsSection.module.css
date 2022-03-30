@@ -1,5 +1,6 @@
 .newsSection{
     padding-top: 80px;
+    background: var(--background)
 }
 .newsSection h2{
     font-size: 40px;

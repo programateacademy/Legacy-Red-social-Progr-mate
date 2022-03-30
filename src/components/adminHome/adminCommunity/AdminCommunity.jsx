@@ -2,15 +2,16 @@ import React, { useState, Fragment, useEffect, useContext } from 'react'
 import { getDataAll, updateData } from '../../../helpers/fetch'
 import { useNavigate } from "react-router-dom";
 import style from './AdminCommunity.module.css'
-import Searcher from '../../Searcher/Searcher'
+import Searcher from './Searcher/Searcher'
 import DeleteButton from '../../DeleteButton/DeleteButton'
 import { DataContext } from '../../../context/DataContext';
-
-
+import CreateUser from '../CreateUser/CreateUser'
+import {useModals} from '../../modals/useModals'
+import Modal from '../../modals/Modal'
 
 /* Table of users - Renders in AdminHome */
 const AdminCommunity = () => {
-    
+    const [IsOpenModal, openModal, closeModal] = useModals(false);
     const [allCohorts, setCohorts] = useState([])
     const navigate = useNavigate()
     // const [allUser, setAllUser] = useState([])
@@ -48,9 +49,17 @@ const AdminCommunity = () => {
         <Fragment>
             <div className={style.container_row}>
                 <h1><span>🚀 </span>Usuarios</h1>
+            </div>
+            <div className={style.container_row}>
+                <button onClick={openModal}>
+                    Crear Usuario
+                </button>
+                <Modal IsOpen={IsOpenModal} closeModal={closeModal}>
+                    <CreateUser/>
+                </Modal>
                 <Searcher typeOfSearch='Busqueda por correo' setFilter={setFilterUser} dataToFilter={users} objectKey={'email'}/>
             </div>
-            <div className={style.container_table}>
+            <div className={style.tableContainer}>
                 <table className={style.table}>
                     <thead>
                         <tr>

@@ -37,7 +37,7 @@ const FormNews = () => {
             try {
                 if (!params.id) {
                     await sendData("posts", {
-                        user_info: idUser,
+                        user_info: params.user,
                         title,
                         description,
                         image,
@@ -46,7 +46,7 @@ const FormNews = () => {
                     });
                 } else {
                     await updateData("posts", params.id, {
-                        user_info: idUser,
+                        user_info: params.user,
                         title,
                         description,
                         image,
