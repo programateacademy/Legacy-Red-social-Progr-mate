@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 10rem;
+  padding-top: 10rem;
 }
 .containerRightHeader {
   display: flex;

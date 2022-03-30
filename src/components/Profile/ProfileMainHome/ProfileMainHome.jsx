@@ -3,8 +3,9 @@ import style from "./ProfileMain.module.css";
 import { DataContext } from "../../../context/DataContext";
 import { Link, useNavigate } from "react-router-dom";
 import altImg from "../../../assets/images/avatar.png";
-import { getDataAll } from "../../../helpers/fetch";
+import { getData} from "../../../helpers/fetch";
 
+/* profile card in home page */
 const ProfileMainHome = ({ dataProfile }) => {
     const { dataUser, idUser } = useContext(DataContext);
     const { avatar, firstName, middleName, lastName } = dataUser;
@@ -19,9 +20,8 @@ const ProfileMainHome = ({ dataProfile }) => {
 
     /* Obtain user cohort name */
     const obtainCohort = async () => { 
-        const cohorts = await getDataAll("cohorte");
-        const cohort = await cohorts.find(cohort => cohort._id === dataUser.cohorte);
-        setCohort(cohort?.cohorte_name);
+        const cohort = await getData("cohorte", dataUser.cohorte);
+        setCohort(cohort.cohorte_name);
     }
 
     useEffect(async () => { 
