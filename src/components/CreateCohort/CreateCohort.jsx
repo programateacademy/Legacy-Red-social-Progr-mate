@@ -133,33 +133,36 @@ function CreateCohort() {
                 <input type="submit" value="Agregar Usuario" id={styles.button} />
             </form>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Primer Nombre</th>
-                        <th>Segundo Nombre</th>
-                        <th>Primer Apellido</th>
-                        <th>Segundo Apellido</th>
-                        <th>Correo Electronico</th>
-                        <th>Numero de Celular</th>
-                        <th>Contraseña</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {users.map(item => (
-                        <tr key={item.email}>
-                            <th>{item.firstName}</th>
-                            <th>{item.middleName}</th>
-                            <th>{item.lastName}</th>
-                            <th>{item.secondSurname}</th>
-                            <th>{item.email}</th>
-                            <th>{item.contactNumber}</th>
-                            <th>{item.passwordHash}</th>
-                            <th><button onClick={() => { deleteUser(item.email) }}>Borrar</button></th>
+            <div className={styles.tableContainer}>
+                <table className={styles.table}>
+                    <thead>
+                        <tr>
+                            <th>Primer Nombre</th>
+                            <th>Segundo Nombre</th>
+                            <th>Primer Apellido</th>
+                            <th>Segundo Apellido</th>
+                            <th>Correo Electronico</th>
+                            <th>Numero de Celular</th>
+                            <th>Contraseña</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {users.map(item => (
+                            <tr key={item.email}>
+                                <td>{item.firstName}</td>
+                                <td>{item.middleName}</td>
+                                <td>{item.lastName}</td>
+                                <td>{item.secondSurname}</td>
+                                <td>{item.email}</td>
+                                <td>{item.contactNumber}</td>
+                                <td>{item.passwordHash}</td>
+                                <td><button onClick={() => { deleteUser(item.email) }}>Borrar</button></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+
 
             <input disabled={!users.length} type="submit" value="Crear Cohorte" form="cohort" id={styles.button} />
         </>
