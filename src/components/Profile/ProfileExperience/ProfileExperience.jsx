@@ -1,12 +1,12 @@
-import React, { Fragment, useContext } from "react";
-import { DataContext } from "../../../context/DataContext";
+import React, { Fragment} from "react";
+
 import Experience from "./Experience";
 
 import style from "./ProfileExperience.module.css";
 
-const ProfileExperience = () => {
-    const { dataProfile } = useContext(DataContext);
-    const { experience } = dataProfile;
+const ProfileExperience = (props) => {
+    const {dataUserProfile} = props
+    
 
     return (
         <Fragment>
@@ -17,14 +17,14 @@ const ProfileExperience = () => {
                             <p>Experiencia</p>
                         </div>
                     </div>
-                    {experience?.map(
+                    {dataUserProfile.experience?.map(
                         (exper, index) =>
                             exper.charge && (
                                 <Experience key={index} exper={exper} />
                             )
                     )}
 
-                    {/* <ProfileEducations /> */}
+                    
                 </div>
             </section>
         </Fragment>

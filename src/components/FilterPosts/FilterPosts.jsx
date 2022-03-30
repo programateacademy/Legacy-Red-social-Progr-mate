@@ -21,15 +21,14 @@ const FilterPosts = (props) => {
         
             const data = await getDataAll("posts")
             const filterData = await data.filter((post) => post.type === postType)
-            setData(filterData)
+            setData(filterData.reverse())
         
         
     }
     useEffect(async () => {
         try {
             fetchDataPosts();
-            const data = await  ("users");
-            setDataUsers(data);
+            
         } catch (error) {
             console.log(error);
         }
@@ -47,38 +46,6 @@ const FilterPosts = (props) => {
         }
     }, [idUser]);
 
-    const filteredUser = () => {
-        const filteredUser = dataUsers.filter((user) =>
-            user?.firstName
-                .concat(" ", user?.lastName)
-                .toLowerCase()
-                .includes(filterHome)
-        );
-
-        return filteredUser;
-    };
-
-    const filterPosts = () => {
-        
-        if (filterHome.length !== 0) {
-            const filtered = getPosts.filter(
-                (post) =>
-                    post?.type?.toLowerCase().includes(filterHome) ||
-                    post?.title?.toLowerCase().includes(filterHome) ||
-                    post?.company?.toLowerCase().includes(filterHome) ||
-                    post?.description?.toLowerCase().includes(filterHome) ||
-                    post?.technologies
-                        ?.map((tech) => tech.toLowerCase())
-                        .includes(filterHome) ||
-                    filteredUser()
-                        .map((user) => user._id)
-                        .includes(post?.user_info)
-            );
-            return filtered?.slice(0, quantityPosts);
-        } else {
-            return getPosts?.slice(0, quantityPosts);
-        }
-    };
 
     const showMorePosts = () => {
         setQuantityPosts(quantityPosts + 15);

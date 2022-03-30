@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import style from "./ProfileMain.module.css";
 import { DataContext } from "../../../context/DataContext";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import altImg from "../../../assets/images/avatar.png";
 import { getDataAll } from "../../../helpers/fetch";
 
@@ -13,7 +13,7 @@ const ProfileMainHome = ({ dataProfile }) => {
     let navigate = useNavigate();
 
     const editProfile = () => {
-        // console.log(idUser);
+        
         navigate(`/formprofile/home/${idUser}`);
     };
 
