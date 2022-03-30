@@ -202,21 +202,6 @@ const News = ({
                 </i>
               </p>
             </div>
-            {idUser === user ? (
-              <div className={style.iconsModify}>
-                <i
-                  className="fas fa-pencil-alt"
-                  onClick={() => navigate(`/formeventedit/${id}`)}
-                ></i>
-                <i className="far fa-trash-alt" onClick={deletePost}></i>
-              </div>
-            ) : rol === 9 ? (
-              <div className={style.iconsModify}>
-                <i className="far fa-trash-alt" onClick={deletePost}></i>
-              </div>
-            ) : (
-              ""
-            )}
             <span className="Icon_events">
               <Icon_events />
             </span>
@@ -253,15 +238,33 @@ const News = ({
                 onClick={like ? submitLike : onDeleteLike}
                 className={like ? "fa-regular fa-heart" : "fa-solid fa-heart red"}
               ></i>
-              <span>{likes.length}</span>
+            <span>{likes.length}</span>
             </div>
+            <div className={style.like}>
+               {idUser === user ? (
+              <div className={style.iconsModify}>
+                <i
+                  className="fas fa-pencil-alt"
+                  onClick={() => navigate(`/formeventedit/${id}`)}
+                ></i>
+                <i className="far fa-trash-alt" onClick={deletePost}></i>
+              </div>
+            ) : rol === 9 ? (
+              <div className={style.iconsModify}>
+                <i className="far fa-trash-alt" onClick={deletePost}></i>
+              </div>
+            ) : (
+              ""
+            )}
+              </div>
+
             <div className={style.like}>
               <i onClick={toggle} className="far fa-comment-dots"></i>
               <span>{comments.length}</span>
             </div>
           </div>
           {showComments && (
-            <div>
+            <div className={style.comment}>
               <p>deja tu comentario</p>
               <form className={styles.form} onSubmit={submitData}>
                 <textarea
@@ -273,7 +276,7 @@ const News = ({
                 <button className={styles.submit}>Enviar</button>
               </form>
               {comments.map(
-                (comment, index) => index < 2 && previewComment(comment, index)
+                (comment, index) => index < 15 && previewComment(comment, index)
               )}
 
               {moreComments &&

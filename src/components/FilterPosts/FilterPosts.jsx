@@ -95,12 +95,13 @@ const FilterPosts = (props) => {
 
 
     return (
-        <Fragment>
+        <div className={style.containerFilter}>
+        <div className={style.postFilters}>
             {data?.map((post) =>
                 post.type === "news" ? (
                     <News
                         description={post.description}
-                        images={post.images}
+                        images={post.image}
                         technologies={post.technologies}
                         title={post.title}
                         id={post._id}
@@ -143,7 +144,8 @@ const FilterPosts = (props) => {
                 Ver más 
 
             </p>
-        </Fragment>
+        </div>
+        </div>
     );
 };
 

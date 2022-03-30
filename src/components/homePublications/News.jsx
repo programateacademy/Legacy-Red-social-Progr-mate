@@ -277,7 +277,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
                 <button className={styles.submit}>Enviar</button>
               </form>
               {comments.map(
-                (comment, index) => index < 2 && previewComment(comment, index)
+                (comment, index) => index < 15 && previewComment(comment, index)
               )}
 
               {moreComments &&
