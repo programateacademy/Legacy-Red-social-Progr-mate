@@ -62,6 +62,10 @@
 .icon { 
     font-size: 50px;
 }
+.comment textarea{
+    resize: none;
+    width: 80%;
+}
 .icon img {
     font-size: 14px;
     width: 50px;
