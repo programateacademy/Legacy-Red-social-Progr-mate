@@ -1,12 +1,11 @@
-import React, { Fragment, useContext } from "react";
-import { DataContext } from "../../../context/DataContext";
+import React, { Fragment} from "react";
+
 import Education from "./Education";
 
 import style from "./ProfileEducation.module.css";
 
-const ProfileEducation = () => {
-    const { dataProfile } = useContext(DataContext);
-    const { prev_studes } = dataProfile;
+const ProfileEducation = (props) => {
+    const { dataUserProfile } = props;
 
     return (
         <Fragment>
@@ -17,14 +16,14 @@ const ProfileEducation = () => {
                             <p>Educación</p>
                         </div>
                     </div>
-                    {prev_studes?.map(
+                    {dataUserProfile.prev_studes?.map(
                         (study, index) =>
                             study.degree && (
                                 <Education key={index} study={study} />
                             )
                     )}
 
-                    {/* <ProfileEducations /> */}
+                    
                 </div>
             </section>
         </Fragment>

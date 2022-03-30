@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
-import { DataContext } from "../../../context/DataContext";
+import React from "react";
 import style from "./Technologies.module.css";
 
-const Technologies = () => {
-    const { dataProfile } = useContext(DataContext);
-    const { technicalSkills } = dataProfile;
+const Technologies = (props) => {
+    const { dataUserProfile } = props;
+    
 
     return (
         <>
@@ -16,7 +15,7 @@ const Technologies = () => {
                         </div>
                     </div>
                     <div className={style.skill}>
-                        {technicalSkills?.map((skill, index) => (
+                        {dataUserProfile.technicalSkills?.map((skill, index) => (
                             <p  key={index}>
                                 {skill} -&nbsp;
                             </p>

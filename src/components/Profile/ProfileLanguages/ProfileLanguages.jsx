@@ -1,11 +1,10 @@
-import React, { Fragment, useContext } from "react";
-import { DataContext } from "../../../context/DataContext";
+import React, { Fragment} from "react";
+
 
 import style from "./ProfileLanguages.module.css";
 
-const ProfileLanguages = () => {
-    const { dataProfile } = useContext(DataContext);
-    const { lenguages } = dataProfile;
+const ProfileLanguages = (props) => {
+    const { dataUserProfile } = props;
 
     return (
         <Fragment>
@@ -15,13 +14,12 @@ const ProfileLanguages = () => {
                         <p>Idiomas</p>
                     </div>
                     <div className={style.icon_cont2}>
-                        <div>
-                            <i className="far fa-check-circle"></i>
-                        </div>
-                        {lenguages?.map((lang, index) => (
+                        
+                        {dataUserProfile.languages?.map((lang, index) => (
                             <p className={style.text_cont} key={index}>
                                 {lang} &nbsp;
                             </p>
+                            
                         ))}
                     </div>
                 </div>

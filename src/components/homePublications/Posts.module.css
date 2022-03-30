@@ -1,12 +1,20 @@
 .container1 {
     display: flex;  
     margin-top: 10px;
+    width: 100%;
 
 }
+.containerFilter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.postFilters{
 
+    width: 70%;
+}
 .container2 {
-    width: 90%;
-    max-width: 640px;
     width: 90%;
     max-width: 100%;
     min-height: 90%;
@@ -16,9 +24,9 @@
     background-color: #d7d7d7;
     flex-direction: column;
     background-color:#ffffff;
-    padding: 5px 5px;
     margin-top: 5px;
     margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .postUser {
@@ -42,7 +50,7 @@
     flex-direction: row;
     align-items: start;
     width: 90%;
-    margin: 15px auto;
+    margin: 15px 15px 5px 15px;
 }
 
 .iconsModify {
@@ -51,32 +59,57 @@
 }
 
 .iconsModify i {
-    margin-left: 20px;
-    margin-top: 15px;
     font-size: 25px;
     cursor: pointer;
 }
 .iconsModify span{
     margin-top: 0;
-    background: #ffd800;
+    background: red;
     border-radius: 1px;
     
 }
 .icon { 
     font-size: 50px;
 }
+.comment textarea{
+    resize: none;
+    width: 80%;
+    height: 40px;
+}
+.comment{
+    padding-left: 25px;
+}
+.comment button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95px;
+    height: 40px;
+    background-color: #ffcc02;
+    border-radius: 2px;
+    color: #010101;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.comment button:hover{
+    background-color: black;
+    color: #ffcc02;
+}
 .icon img {
     font-size: 14px;
     width: 50px;
     margin-left: 5px;
     border-radius:  5px;
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
     margin-left: 10px;
     margin-top: 5px;
 }
 .icon i {
-    width: 50px;
+    width: 250px;
 }
 
 .techContains {
@@ -97,22 +130,20 @@
 
 .news {
     margin-bottom: 1px;
-    margin-left: 10px;
-}
-
-.news h3 {
     margin-left: 0;
 }
 
+.news h3 {
+    margin-left: 10px;
+}
+
 .news p {
-    margin-left: 0px;
+    margin-left: 10px;
 }
 
 .news img {
-    width: 80%;
-    max-height: 10rem;
+    width: 100%;
     margin: auto;
-    margin-left: 10%;
 }
 
 .tech {
@@ -130,6 +161,7 @@
 }
 
 .like i {
+    font-size: 25px;
     margin-right: 10px;
 }
 
@@ -142,17 +174,35 @@
     font-size: 18px;
 }
 
-/* @media (min-width: 768px) {
-    .container2 {
-        width: 85%;
-        max-width: 85%;
-        min-height: 90%;
+@media (max-width: 565px) {
+    .comment textarea{
+        resize: none;
+        width: 75%;
+        height: 32px;
     }
-} */
+    .comment button{
+        height: 32px;
+        width: 80px;
+    }
+}
+@media (max-width: 410px) {
+    .comment textarea{
+        resize: none;
+        width: 65%;
+        height: 28px;
+    }
+    .comment button{
+        height: 28px;
+        width: 70px;
+    }
+    .postFilters{
+        width: 95%;
+    }
+}
 
 @media (min-width: 1024px) {
     .container2 {
         min-width: 47%;
-        max-width: 540px;
+        /* max-width: 540px; */
     }
 }

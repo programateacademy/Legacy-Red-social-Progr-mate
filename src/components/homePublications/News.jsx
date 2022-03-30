@@ -212,6 +212,37 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
                 </i>
               </p>
             </div>
+            
+            <span className="Icon_news">
+              <Icon_news />
+            </span>
+          </div>
+          <div className={style.news}>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <div className={style.techContain}>
+              {/* <p className={style.llavePost}>Tecnologías:&nbsp; </p> */}
+              {technologies &&
+                technologies.map((tech, index) => (
+                  <Technologies
+                    className={style.arrtech}
+                    tech={tech}
+                    key={index}
+                  />
+                ))}
+            </div>
+            <img src={images} alt="Foto" />
+          </div>
+          <div className={style.icon_cont2}>
+            <div className={style.like}>
+              <i
+                onClick={like ? submitLike : onDeleteLike}
+                className={like ? "fa-regular fa-heart" : "fa-solid fa-heart red "}
+              ></i>
+              <span>{likes.length}</span>
+              
+            </div>
+            <div className={style.like}>
             {idUser === user ? (
               <div className={style.iconsModify}>
                 <i
@@ -227,46 +258,15 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
             ) : (
               ""
             )}
-            <span className="Icon_news">
-              <Icon_news />
-            </span>
-          </div>
-          <div className={style.news}>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <img src={images} alt="Foto" />
-            <div className={style.techContain}>
-              <p className={style.llavePost}>Tecnologías:&nbsp; </p>
-              {technologies &&
-                technologies.map((tech, index) => (
-                  <Technologies
-                    className={style.arrtech}
-                    tech={tech}
-                    key={index}
-                  />
-                ))}
-            </div>
-          </div>
-          <div className={style.icon_cont2}>
-            <div className={style.like}>
-              <i
-                onClick={like ? submitLike : onDeleteLike}
-                className={like ? "far fa-thumbs-up " : "far fa-thumbs-up red "}
-              ></i>
-              <span>{likes.length}</span>
             </div>
             <div className={style.like}>
               <i onClick={toggle} className="far fa-comment-dots"></i>
               <span>{comments.length}</span>
             </div>
-
-            {/*   <div>
-                        <i className="fas fa-share"></i>
-                    </div>*/}
           </div>
           {showComments && (
-            <div>
-              <p>deja tu comentario</p>
+            <div className={style.comment}>
+              <p>Deja tu comentario</p>
               <form className={styles.form} onSubmit={submitData}>
                 <textarea
                   name="comment"
@@ -277,7 +277,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
                 <button className={styles.submit}>Enviar</button>
               </form>
               {comments.map(
-                (comment, index) => index < 2 && previewComment(comment, index)
+                (comment, index) => index < 15 && previewComment(comment, index)
               )}
 
               {moreComments &&

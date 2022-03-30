@@ -33,6 +33,7 @@
 
 .icon_cont2 p {
     margin-top: 0;
+    font-size: 15px;
 }
 
 @media (min-width: 768px) {

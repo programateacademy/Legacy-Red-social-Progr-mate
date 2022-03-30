@@ -8,7 +8,7 @@
     margin: auto;
     gap: 15px;
     flex-wrap: wrap;
-    padding: 100px;
+    padding: 30px;
     background-color: var(--background);
 }
 
