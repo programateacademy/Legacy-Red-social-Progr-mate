@@ -13,14 +13,12 @@
     justify-content: center;
     margin: auto;
     /* max-height: 300vh; */
-    overflow: hidden;
     padding-bottom: 40px;
 }
 .containProfile {
     width: 28%;
     position: sticky;
-    top: 50px;
-    overflow: hidden;
+    top: 111px;
     height: 200px;
 }
 .mainContent {

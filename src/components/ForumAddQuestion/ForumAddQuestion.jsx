@@ -1,7 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import styles from "./ForumAddQuestion.module.css";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { sendData } from "../../helpers/fetch";
+import { Formik, Form, Field, ErrorMessage, useFormikContext } from "formik";
+import { getData, sendData, updateData } from "../../helpers/fetch";
 import { BiMessageAltX } from "react-icons/bi";
 import { BiBox } from "react-icons/bi";
 import { DataContext } from "../../context/DataContext";
@@ -12,9 +12,11 @@ import { useNavigate, useParams} from "react-router-dom";
 
 const ForumAddQuestion = () => {
     let params = useParams()
+    const [data, setData] = useState()
     const [tags, setTags] = useState([]);
     let navigate = useNavigate();
-    const { dataUser, idUser } = useContext(DataContext);
+    const { idUser } = useContext(DataContext);
+    
     function getBase64(file) {
         let reader = new FileReader();
         reader.readAsDataURL(file);
@@ -26,6 +28,27 @@ const ForumAddQuestion = () => {
         };
     }
 
+    /* Get data of question */
+    const getQuestion = async () => {
+        const dataQuestion = await getData("posts", params.questionId);
+        setData({
+            title: dataQuestion.title,
+            description: dataQuestion.description,
+            tags: dataQuestion.tags,
+            images: dataQuestion.images,
+            type: "questions",
+            user_info: dataQuestion.user_info
+        })
+    }
+
+    useEffect(async () => {  
+        /* Validate if question will be updated */
+        params.questionId && await getQuestion()
+     }, [])
+    
+
+
+  
     return (
         <section className={styles.section}>
             <div className={styles.section__global}>
@@ -41,14 +64,17 @@ const ForumAddQuestion = () => {
                         <hr className={styles.lineTitle} />
                     </div>
                     <Formik
-                        initialValues={{
-                            title: "",
-                            description: "",
-                            tags: [],
-                            images: "",
-                            type: "questions",
-                            user_info: params.user,
-                        }}
+                        enableReinitialize={true}
+                        initialValues={
+                            {
+                                title: data?.title ? data.title : "", 
+                                description: data?.description ? data.description : "",
+                                tags: data?.tags ? data.tags : [],
+                                images: data?.images ? data.images : [],
+                                type: "questions",
+                                user_info: data?.user_info ? data.user_info : idUser
+                            }
+                        }
                         validate={(valores) => {
                             let errores = {};
 
@@ -71,11 +97,11 @@ const ForumAddQuestion = () => {
                             valores.tags = tags;
                             setTags([]);
                             resetForm();
-                            await sendData("posts", valores);
+                            params.questionId ? await updateData("posts", params.questionId, valores) : await sendData("posts", valores);
                             navigate("/questions");
                         }}
                     >
-                        {({ errors, setFieldValue }) => (
+                        {({ errors, setFieldValue, values }) => (
                             <Form className={styles.forumAdd}>
                                 <label htmlFor="title">
                                     Titulo de la pregunta
