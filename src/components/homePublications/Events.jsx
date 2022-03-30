@@ -251,7 +251,7 @@ const News = ({
             <div className={style.like}>
               <i
                 onClick={like ? submitLike : onDeleteLike}
-                className={like ? "far fa-thumbs-up " : "far fa-thumbs-up red "}
+                className={like ? "fa-regular fa-heart" : "fa-solid fa-heart red"}
               ></i>
               <span>{likes.length}</span>
             </div>
