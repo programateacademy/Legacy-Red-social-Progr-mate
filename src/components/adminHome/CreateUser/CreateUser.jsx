@@ -4,27 +4,7 @@ import styles from './CreateUser.module.css'
 import {DataContext} from '../../../context/DataContext'
 /* Create user - Renders in AdminHome*/
 const CreateUser = () => {
-    const [userModel, setUserModel] = useState({
-            avatar: "",
-            cohorte: "" ,
-            contactNumber: '',
-            email: "",
-            firstName: "",
-            secondSurname: "",
-            lastName: "",
-            middleName: "",
-            passwordHash: "",
-            program: "Progamate",
-            rol: 0,
-            state: true,
-            github: "",
-            description: "",
-            technicalSkills: [],
-            softSkills: [],
-            languages: [],
-            prev_studes: [],
-            experience: []
-    });
+    const [userModel, setUserModel] = useState({});
     const {allCohorts, setCohorts}= useContext(DataContext);
 
     useEffect(async()=> {
@@ -38,7 +18,8 @@ const CreateUser = () => {
         });
         console.log(userModel)
     }
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         await sendData('users', userModel)
         console.log(userModel)
     }
