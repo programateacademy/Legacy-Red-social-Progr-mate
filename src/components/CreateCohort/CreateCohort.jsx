@@ -1,16 +1,36 @@
-import React, { useEffect, useState } from "react"
-import { getDataAll, sendData } from "../../helpers/fetch"
+import React, { useEffect, useState, useContext} from "react"
+import { sendData, getDataAll } from "../../helpers/fetch"
 import styles from "./styles.module.css"
 import Icon_cohorte from "../../assets/icons/Icon_cohorte"
-import { showErrMsg, showSuccess } from "../../utils/notification"
+import { showErrMsg } from "../../utils/notification"
 import { useNavigate } from "react-router-dom"
+import { DataContext } from "../../context/DataContext"
+import DeleteButton from "../DeleteButton/DeleteButton"
 /* Create cohort and his users - Renders in AdminCohort*/
 function CreateCohort() {
+    const {allCohorts, setCohorts}= useContext(DataContext);
     const [newCohort, setNewCohort] = useState([])
-    const [users, setUsers] = useState([])
-    const [user, setUser] = useState({})
     const navigate = useNavigate()
+    const [cohorts, set] = useState([])
     /* Update cohort state */
+
+    useEffect(() => {
+        set(allCohorts)
+    },[allCohorts])
+    
+    const updateCohorts = async () => {
+        const dataCohort = await getDataAll("cohorte");
+        set(dataCohort)
+    }
+
+    const checkCohort = (cohort) => {
+        let checkNumber = allCohorts.map((e) => e.cohorte == cohort.cohorte).filter(c => c === true)[0]
+        let checkName = allCohorts.map((e) => e.cohorte_name == cohort.cohorte_name).filter(c => c === true)[0]
+        if (checkNumber || checkName) {
+            console.log(allCohorts.map((e) => e.cohorte == cohort.cohorte).filter(c => c === true))
+            return false
+        } else { return true}
+    }
     const handleCohort = (e) => {
         setNewCohort({
             ...newCohort,
@@ -18,153 +38,56 @@ function CreateCohort() {
         })
     }
 
-    /* Update user state */
-    const handleUser = (e) => {
-        setUser({
-            ...user,
-            [e.target.name]: e.target.value
-        })
-    }
-
-    /* Add an user to users state */
-    const onAdduser = (e) => {
-        e.preventDefault()
-        setUsers(prevState => [...prevState, user])
-        setUser({})
-        e.target.reset()
-    }
 
     /* create cohort in data base */
     const sendCohort = async (event) => {
         event.preventDefault()
-        try {
-            await sendData("cohorte", newCohort)
-            await obtainCohortId()
-        } catch (err) {
-            console.log(err)
-            showErrMsg(err.response.data.error)
-        }
-    }
-
-    /* obtain id of cohort created in data base */
-    const obtainCohortId = async () => {
-        const cohorts = await getDataAll("cohorte")
-        const cohort = await cohorts.find(({ cohorte }) => cohorte === parseInt(newCohort.cohorte))
-        addCohortToUser(cohort._id)
-    }
-
-    /* Add cohort id for each user and provisional random password*/
-    const addCohortToUser = (idCohort) => {
-        setUsers(prevState => prevState.map(user => (
-            {
-                ...user,
-                cohorte: idCohort,
-                passwordHash: Math.random().toString(36).slice(2)
+        if (checkCohort(newCohort))
+            {try {
+                await sendData("cohorte", newCohort)
+            } catch (err) {
+                console.log(err)
+                showErrMsg(err.response.data.error)
             }
-        )))
-    }
-
-    /* create user in data base */
-    const sendUsers = () => {
-        try {
-            users.forEach(async (item) => await sendData("users", item))
-            showSuccess("Cohorte Creada", "Cohorte creada con éxito")
-            setTimeout(() => { navigate("/adminhome") }, 2000)
-        } catch (err) {
-            console.log(err)
-            showErrMsg(err.response.data.error)
+        } else {
+            alert("Numero de Cohorte existente")
         }
+        updateCohorts()
     }
-
-    /* delete user in state */
-    const deleteUser = (userEmail) => {
-        setUsers(users.filter(item => item.email !== userEmail))
-    }
-
-    useEffect(() => {
-        /* execute sendUsers when each user in state have cohort */
-        users.some(item => item.cohorte) && sendUsers()
-    }, [users])
-
     return (
         <>
             <h1 className={styles.title}><span><Icon_cohorte /></span>Cohorte</h1>
-
             <form id="cohort" onSubmit={sendCohort} className={`${styles.formCohort} ${styles.form}`}>
                 <div className={styles.formCohortContainer}>
                     <label>Numero de Cohorte<span>*</span></label>
-                    <input type="number" name="cohorte" onChange={handleCohort} />
+                    <input type="number" name="cohorte" onChange={handleCohort} required/>
                 </div>
                 <div className={styles.formCohortContainer}>
                     <label>Nombre de la Cohorte</label>
-                    <input type="text" name="cohorte_name" onChange={handleCohort} />
+                    <input type="text" name="cohorte_name" onChange={handleCohort} required/>
                 </div>
+                <input type="submit" className={styles.button} value="Crear Cohorte"/>
             </form>
-            <div>
-                <h2 className={styles.subtitle}>Datos del usuario</h2>
-                <hr />
-            </div>
-            <form onSubmit={onAdduser} className={`${styles.formUser} ${styles.form}`}>
-                <div className={styles.formCohortContainer}>
-                    <label>Primer Nombre<span>*</span></label>
-                    <input type="text" onChange={handleUser} name="firstName" required />
-                </div>
-                <div className={styles.formCohortContainer}>
-                    <label>Segundo Nombre</label>
-                    <input type="text" onChange={handleUser} name="middleName" />
-                </div>
-                <div className={styles.formCohortContainer}>
-                    <label>Primer Apellido<span>*</span></label>
-                    <input type="text" onChange={handleUser} name="lastName" required />
-                </div>
-                <div className={styles.formCohortContainer}>
-                    <label>Segundo Apellido<span>*</span></label>
-                    <input type="text" onChange={handleUser} name="secondSurname" required />
-                </div>
-                <div className={styles.formCohortContainer}>
-                    <label>Correo Electronico<span>*</span></label>
-                    <input type="email" onChange={handleUser} name="email" required />
-                </div>
-                <div className={styles.formCohortContainer}>
-                    <label>Numero de Celular<span>*</span></label>
-                    <input type="number" onChange={handleUser} name="contactNumber" required />
-                </div>
-
-                <input type="submit" value="Agregar Usuario" id={styles.button} />
-            </form>
-
-            <div className={styles.tableContainer}>
-                <table className={styles.table}>
+            <table className={styles.table}>
                     <thead>
                         <tr>
-                            <th>Primer Nombre</th>
-                            <th>Segundo Nombre</th>
-                            <th>Primer Apellido</th>
-                            <th>Segundo Apellido</th>
-                            <th>Correo Electronico</th>
-                            <th>Numero de Celular</th>
-                            <th>Contraseña</th>
+                            <th>#</th>
+                            <th>Cohorte</th>
+                            <th>Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {users.map(item => (
-                            <tr key={item.email}>
-                                <td>{item.firstName}</td>
-                                <td>{item.middleName}</td>
-                                <td>{item.lastName}</td>
-                                <td>{item.secondSurname}</td>
-                                <td>{item.email}</td>
-                                <td>{item.contactNumber}</td>
-                                <td>{item.passwordHash}</td>
-                                <td><button onClick={() => { deleteUser(item.email) }}>Borrar</button></td>
+                        {cohorts.map((item, index) => (
+                            <tr key={index}>
+                                <td>{item.cohorte}</td>
+                                <td>{item.cohorte_name}</td>
+                                <td>
+                                    <DeleteButton endpoint="cohorte" id={item._id} onClick={updateCohorts}/>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
-            </div>
-
-
-            <input disabled={!users.length} type="submit" value="Crear Cohorte" form="cohort" id={styles.button} />
         </>
     )
 }

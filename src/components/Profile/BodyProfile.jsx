@@ -16,15 +16,20 @@ import { UserQuestions } from "../UserQuestions/UserQuestions";
 import ProfilePortfolio from "./ProfilePortfolio/ProfilePortfolio";
 
 const BodyProfile = () => {
-  const { setDataProfile, dataProfile, setDataUser } = useContext(DataContext);
-  const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id
+  const { dataProfile, setDataUser } =
+    useContext(DataContext);
+  const params = useParams();
+  const idUserProfile = !params ? JSON.parse(localStorage.getItem("loggedAgoraUser")).id : params.id
+  const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id;
   const [showMain, setShowMain] = useState(false);
   const [dataUserProfile, setDataUserProfile] = useState([])
-  const params = useParams();
+
 
   const fetchDataUser = async () => {
-    const data = await getData("users", idUser);
-    setDataUserProfile(data);
+    if (idUserProfile) {
+      const data = await getData("users", idUserProfile);
+      setDataUserProfile(data);
+    }
   }
 
   useEffect(async () => {
@@ -40,7 +45,7 @@ const BodyProfile = () => {
     }
 
 
-  }, []);
+  }, [idUserProfile]);
 
   //Traer data del usuario
   useEffect(async () => {

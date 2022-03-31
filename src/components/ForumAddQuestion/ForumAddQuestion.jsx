@@ -94,11 +94,13 @@ const ForumAddQuestion = () => {
                             return errores;
                         }}
                         onSubmit={async (valores, { resetForm }) => {
-                            valores.tags = tags;
-                            setTags([]);
-                            resetForm();
-                            params.questionId ? await updateData("posts", params.questionId, valores) : await sendData("posts", valores);
-                            navigate("/questions");
+                            {
+                                valores.tags = tags;
+                                setTags([]);
+                                resetForm();
+                                params.questionId ? await updateData("posts", params.questionId, valores) : await sendData("posts", valores);
+                                navigate("/questions");
+                            }
                         }}
                     >
                         {({ errors, setFieldValue, values }) => (

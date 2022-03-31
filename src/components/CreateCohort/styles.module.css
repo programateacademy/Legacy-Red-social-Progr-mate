@@ -32,7 +32,7 @@
   flex-direction: column;
 }
 
-#button {
+.button {
   background-color: var(--main-color);
   border: none;
   border-radius: 5px;

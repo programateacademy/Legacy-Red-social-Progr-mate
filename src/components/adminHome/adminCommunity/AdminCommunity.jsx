@@ -13,11 +13,10 @@ import { BsThreeDotsVertical } from 'react-icons/bs'
 /* Table of users - Renders in AdminHome */
 const AdminCommunity = () => {
     const [IsOpenModal, openModal, closeModal] = useModals(false);
-    const [allCohorts, setCohorts] = useState([])
     const navigate = useNavigate()
     // const [allUser, setAllUser] = useState([])
     const [filterUser, setFilterUser] = useState([])
-    const {users, setUsers } = useContext(DataContext)
+    const {users, setUsers,allCohorts, setCohorts } = useContext(DataContext)
     
     
     

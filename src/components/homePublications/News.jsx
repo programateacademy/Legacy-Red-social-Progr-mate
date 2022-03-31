@@ -8,7 +8,7 @@ import Technologies from "./Technologies";
 import "./style_icon.css";
 import Icon_news  from "../../assets/icons/Icon_new";
 const News = ({ description, images, technologies, title, id, user, rol }) => {
-    const { setGetPosts, idUser } = useContext(DataContext);
+    const { setGetPosts, idUser,allCohorts, setCohorts} = useContext(DataContext);
     const [showComments, setShowComments] = useState(false);
     const [moreComments, setMoreComments] = useState(false);
     const [inputComment, setInputComment] = useState("");
@@ -19,7 +19,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
     const [like, setLike] = useState(true);
     const [likes, setLikes] = useState([]);
     const [userPost, setUserPost] = useState();
-    const [allCohorts, setCohorts] = useState([])
+    
 
     let navigate = useNavigate();
 
