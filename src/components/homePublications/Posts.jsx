@@ -17,11 +17,17 @@ const Posts = () => {
     const [getRol, setGetRol] = useState(1);
 
     useEffect(async () => {
+        let isMounted = true
+        const getData = async () => {
         try {
             const data = await  ("users");
             setDataUsers(data);
         } catch (error) {
             console.log(error);
+        }}
+        getData();
+        return () => {
+            isMounted = false;
         }
     }, []);
 
@@ -72,13 +78,19 @@ const Posts = () => {
     const showMorePosts = () => {
         setQuantityPosts(quantityPosts + 15);
     };
-
+    
     useEffect(async () => {
+        let isMounted = true
+        const getData = async () => {
         try {
             const data = await getDataAll("posts");
             setGetPosts(data.reverse());
         } catch (error) {
             console.log(error);
+        }}
+        getData();
+        return () => {
+            isMounted = false;
         }
     }, []);
 

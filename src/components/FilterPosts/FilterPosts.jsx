@@ -26,11 +26,18 @@ const FilterPosts = (props) => {
         
     }
     useEffect(async () => {
-        try {
+        let isMounted = true
+        const getData = async () => {
+        if (isMounted){ try {
             fetchDataPosts();
             
         } catch (error) {
             console.log(error);
+        } }
+        }
+        getData();
+        return () => {
+            isMounted = false;
         }
     }, []);
 
@@ -52,11 +59,18 @@ const FilterPosts = (props) => {
     };
 
     useEffect(async () => {
+        let isMounted = true;
+        const getData = async () => {
+            if (isMounted) {
         try {
             const data = await getDataAll("posts");
             setGetPosts(data.reverse());
         } catch (error) {
             console.log(error);
+        }  }}
+        getData();
+        return () => {
+            isMounted = false;
         }
     }, []);
 

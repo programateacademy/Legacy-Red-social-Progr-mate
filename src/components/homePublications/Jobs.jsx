@@ -19,7 +19,7 @@ const Jobs = ({
     user,
     rol,
 }) => {
-    const { setGetPosts, idUser,allCohorts, setCohorts } = useContext(DataContext);
+    const { setGetPosts, idUser,allCohorts} = useContext(DataContext);
     const [showComments, setShowComments] = useState(false);
     const [moreComments, setMoreComments] = useState(false);
     const [inputComment, setInputComment] = useState("");
@@ -53,10 +53,7 @@ const Jobs = ({
         }
     };
 
-    useEffect(async () => {
-        const dataCohort = await getDataAll("cohorte");
-        setCohorts(dataCohort)
-    }, []);
+    
 
     useEffect(() => {
         let isMounted = true
@@ -83,8 +80,7 @@ const Jobs = ({
         return () => {
             isMounted = false;
         }
-        
-    }, [refresh, setRefresh]);
+    }, [refresh]);
     let navigate = useNavigate();
 
     const submitData = async (e) => {
@@ -157,7 +153,6 @@ const Jobs = ({
     const deletePost = async () => {
         try {
             await deleteData("posts", id);
-
             const data = await getDataAll("posts");
             setGetPosts(data.reverse());
         } catch (error) {
