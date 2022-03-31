@@ -4,7 +4,7 @@ import logo from "../../assets/images/logo-a-color-.jpg";
 import { getData, sendData, updateData } from "../../helpers/fetch";
 import { DataContext } from "../../context/DataContext";
 import HardSkills from "./HardSkills";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const FormNews = () => {
@@ -13,7 +13,7 @@ const FormNews = () => {
     const { user_info, title, type, description, image, technologies } = posts;
 
     const navigate = useNavigate();
-    const params = useParams();
+    
 
     useEffect(() => {
         setPosts({ ...posts, type: "news" });
@@ -35,9 +35,9 @@ const FormNews = () => {
             });
         } else {
             try {
-                if (!params.id) {
+                if (!idUser) {
                     await sendData("posts", {
-                        user_info: params.user,
+                        user_info: idUser,
                         title,
                         description,
                         image,
@@ -45,8 +45,8 @@ const FormNews = () => {
                         type,
                     });
                 } else {
-                    await updateData("posts", params.id, {
-                        user_info: params.user,
+                    await updateData("posts",idUser, {
+                        user_info: idUser,
                         title,
                         description,
                         image,
@@ -95,8 +95,8 @@ const FormNews = () => {
     };
 
     useEffect(() => {
-        if (params.id) {
-            getDataNews(params.id);
+        if (idUser) {
+            getDataNews(idUser);
         }
     }, []);
 

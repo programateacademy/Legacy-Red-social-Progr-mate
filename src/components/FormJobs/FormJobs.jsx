@@ -51,7 +51,7 @@ const FormJobs = () => {
                     navigate("/questions");
                     
                 } else {
-                    await updateData("posts", params.id, postsJobs);
+                    await updateData("posts", idUser, postsJobs);
                 }
 
                 
@@ -67,7 +67,7 @@ const FormJobs = () => {
         setPostsJobs({
             ...postsJobs,
             [name]: value,
-            user_info: params.user,
+            user_info: idUser,
         });
     };
     //Press enter to add the technologies to your job publication
@@ -94,8 +94,8 @@ const FormJobs = () => {
         }
     };
     useEffect(() => {
-        if (params.id) {
-            getDataJobs(params.id);
+        if (idUser) {
+            getDataJobs(idUser);
         }
     }, []);
 
