@@ -38,7 +38,7 @@ const FormNews = ({user}) => {
                     await updateData("posts", params.id, data);
                 }
 
-                navigate("/questions");
+                navigate("/news");
             }
             catch (error) {
                 console.log(error);
