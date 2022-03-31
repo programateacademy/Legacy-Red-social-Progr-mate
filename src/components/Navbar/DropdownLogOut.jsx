@@ -21,7 +21,7 @@ function DropdownLogOut() {
     const auth = useSelector((state) => state.auth);
     const { isAdmin } = auth;
     const [isActive, setIsActive] = useState(false);
-
+    const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id;
     return (
         <div className={styles.dropdownLogOut}>
             <div
@@ -32,7 +32,7 @@ function DropdownLogOut() {
             </div>
             {isActive && (
                 <div className={styles.dropdownContent}>
-                    <Link to="/profile">
+                    <Link to={`/profile/${idUser}`}>
                         <div className={styles.dropdownOptions}>
                             <BiUser size="24" color="black" /> Perfil
                         </div>

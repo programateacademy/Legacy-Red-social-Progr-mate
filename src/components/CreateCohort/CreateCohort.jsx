@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext} from "react"
 import { sendData, getDataAll } from "../../helpers/fetch"
 import styles from "./styles.module.css"
-import Icon_cohorte from "../../assets/icons/Icon_cohorte"
+
 import { showErrMsg } from "../../utils/notification"
 import { useNavigate } from "react-router-dom"
 import { DataContext } from "../../context/DataContext"
@@ -10,7 +10,7 @@ import DeleteButton from "../DeleteButton/DeleteButton"
 function CreateCohort() {
     const {allCohorts, setCohorts}= useContext(DataContext);
     const [newCohort, setNewCohort] = useState([])
-    const navigate = useNavigate()
+    
     const [cohorts, set] = useState([])
     /* Update cohort state */
 
@@ -56,8 +56,9 @@ function CreateCohort() {
     }
     return (
         <>
-            <h1 className={styles.title}><span><Icon_cohorte /></span>Cohorte</h1>
+            
             <form id="cohort" onSubmit={sendCohort} className={`${styles.formCohort} ${styles.form}`}>
+            <h1 className={styles.title}>Cohorte</h1>
                 <div className={styles.formCohortContainer}>
                     <label>Numero de Cohorte<span>*</span></label>
                     <input type="number" name="cohorte" onChange={handleCohort} required/>

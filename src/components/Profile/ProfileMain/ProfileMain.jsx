@@ -7,14 +7,14 @@ import altImg from "../../../assets/images/avatar.png";
 
 const ProfileMain = ({ dataProfile }) => {
     const { dataUser, idUser } = useContext(DataContext);
-    const { avatar, firstName, middleName, lastName, cohorte} = dataUser;
+    
 
     let navigate = useNavigate();
     const params = useParams();
 
     const editProfile = () => {
         // console.log(idUser);
-        navigate(`/formprofile/home/${idUser}`);
+        navigate(`/formprofile/home/${dataProfile._id}`);
     };
     return (
         <Fragment>
@@ -24,8 +24,8 @@ const ProfileMain = ({ dataProfile }) => {
                       <div className={style.profileTitle}><h2>Tu perfil</h2></div>
             <div className={style.editandphoto}>
               <div className={style.circulo}>
-                {avatar ? (
-                  <img src={avatar} alt="Foto" />
+                {dataProfile.avatar ? (
+                  <img src={dataProfile.avatar} alt="Foto" />
                 ) : (
                   <img src={altImg} alt="Foto" />
                 )}
@@ -41,9 +41,9 @@ const ProfileMain = ({ dataProfile }) => {
             <div className={style.tex}>
               <p>
                 <b>
-                  {firstName} {middleName} {lastName}
+                  {dataProfile.firstName} {dataProfile.middleName} {dataProfile.lastName}
                 </b>
-                <br /> {cohorte.name}
+                
               </p>
             </div>
           </div>

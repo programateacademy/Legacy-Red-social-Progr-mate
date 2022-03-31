@@ -8,11 +8,11 @@ import NewsProfile from "./NewsProfile";
 import EventsProfile from "./EventsProfile";
 
 
-const Posts = () => {
+const Posts = ({dataUserProfile}) => {
     const { setGetPostsProfile, getPostsProfile, idUser, dataUser } =
         useContext(DataContext);
 
-    const { firstName, middleName, lastName, cohorte, avatar } = dataUser;
+    const { firstName, middleName, lastName, cohorte, avatar } = dataUserProfile;
 
     const params = useParams();
 
@@ -21,7 +21,7 @@ const Posts = () => {
             const data = await getDataAll("posts");
             if (!params.id) {
                 const filterData = data.filter(
-                    (posts) => posts.user_info === idUser
+                    (posts) => posts.user_info === dataUserProfile._id
                 );
                 setGetPostsProfile(filterData.reverse());
             } else {
@@ -33,7 +33,7 @@ const Posts = () => {
         } catch (error) {
             console.log(error);
         }
-    }, []);
+    }, [dataUserProfile]);
 
     return (
         <>

@@ -19,12 +19,10 @@ const BodyProfile = () => {
   const { dataProfile, setDataUser } =
     useContext(DataContext);
   const params = useParams();
-  const idUserProfile = !params ? JSON.parse(localStorage.getItem("loggedAgoraUser")).id : params.id
+  const idUserProfile = params.id
   const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id;
   const [showMain, setShowMain] = useState(false);
   const [dataUserProfile, setDataUserProfile] = useState([])
-
-
   const fetchDataUser = async () => {
     if (idUserProfile) {
       const data = await getData("users", idUserProfile);
@@ -69,7 +67,7 @@ const BodyProfile = () => {
     <>
       {!showMain ? (
         <div className={style.containBodyProfile}>
-          <ProfileMain dataProfile={dataProfile} />
+          <ProfileMain dataProfile={dataUserProfile} />
           <div className={style.profileBodyContainer}>
             <div className={style.profileInfo1}>
 
@@ -83,7 +81,7 @@ const BodyProfile = () => {
                 </button>
               </a>
             </div>
-            <div className={style.profilePosts}>{!showMain && <Posts />}</div>
+            <div className={style.profilePosts}>{!showMain && <Posts dataUserProfile={dataUserProfile} />}</div>
             <div className={style.profileInfo2}>
               <ProfileSkills dataUserProfile={dataUserProfile} />
               <ProfileExperience dataUserProfile={dataUserProfile} />

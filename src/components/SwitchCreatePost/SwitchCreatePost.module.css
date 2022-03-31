@@ -7,4 +7,11 @@
     background-color: var(--main-color);
     border-radius: 5px;
     cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.button:hover{
+    background-color: black;
+  color:#ffcc02;
+  transform: scale(1.1);
 }

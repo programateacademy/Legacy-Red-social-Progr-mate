@@ -4,5 +4,12 @@
     height: 3em;
     text-align: center;
     padding: 1em;
+    border-bottom: 3px solid #FFCC02;
+}
+.input:hover{
+    opacity: 0.5;
+}
+.input:focus{
+    outline: none;
 }
 

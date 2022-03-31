@@ -6,6 +6,7 @@
     min-height: 100vh;
     background-color: #ECEFF1;
     padding-top: 80px;
+    
 }
 
 .admin_navigation {
@@ -19,4 +20,21 @@
     margin: 2%;
     background-color: #fff;
     box-sizing: border-box;
+    padding: 5px;
+}
+
+@media (max-width: 750px) {
+    .home_container {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .admin_navigation{
+        width: 100%;
+        
+    }
+    .admin_panel{
+        width: 100%;
+        margin: 0;
+    }
+    
 }
