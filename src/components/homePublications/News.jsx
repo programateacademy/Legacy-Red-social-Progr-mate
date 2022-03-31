@@ -8,7 +8,7 @@ import Technologies from "./Technologies";
 import "./style_icon.css";
 import Icon_news  from "../../assets/icons/Icon_new";
 const News = ({ description, images, technologies, title, id, user, rol }) => {
-    const { setGetPosts, idUser,allCohorts, setCohorts} = useContext(DataContext);
+    const { setGetPosts, idUser, allCohorts, setCohorts} = useContext(DataContext);
     const [showComments, setShowComments] = useState(false);
     const [moreComments, setMoreComments] = useState(false);
     const [inputComment, setInputComment] = useState("");
@@ -20,7 +20,6 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
     const [likes, setLikes] = useState([]);
     const [userPost, setUserPost] = useState();
     
-
     let navigate = useNavigate();
 
     const commentInfo = async () => {
@@ -41,10 +40,10 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
             console.log(error);
         }
     };
-    useEffect(async () => {
+    const cohort = async () => {
         const dataCohort = await getDataAll("cohorte");
         setCohorts(dataCohort)
-    }, []);
+    }
 
     useEffect(() => {
         let isMounted = true
@@ -53,15 +52,13 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
                 getUser();
                 commentInfo();
                 getUsers();
+                cohort();
             }
         };
-          
-  
         getInfo();
         return () => {
             isMounted = false;
         }
-        
     }, []);
     useEffect(() => {
         let isMounted = true

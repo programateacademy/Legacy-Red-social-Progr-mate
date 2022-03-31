@@ -10,6 +10,8 @@ function UserQuestions() {
     const [filterUserQuestions, setFilterUserQuestions] = useState([])
 
     useEffect(async () => {
+        let isMounted = true
+        const getUserQuestions = async () => {
         if (!postsContext) {
             const data = await getDataAll("posts")
             /* Only get questions maded by user */
@@ -20,7 +22,9 @@ function UserQuestions() {
         else {
             const filterData = postsContext.filter((post) => post.type === "questions" && post.user_info === idUser)
             setFilterUserQuestions(filterData)
-        }
+        }}
+        await getUserQuestions()
+        return () => isMounted = false
     }, [idUser])
 
     return (

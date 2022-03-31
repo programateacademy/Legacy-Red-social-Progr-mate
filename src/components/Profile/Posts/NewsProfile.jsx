@@ -58,10 +58,6 @@ const NewsProfile = ({
       console.log(error);
     }
   };
-  useEffect(async () => {
-    const dataCohort = await getDataAll("cohorte");
-    setCohorts(dataCohort);
-  }, []);
 
   useEffect(() => {
     let isMounted = true;
@@ -89,7 +85,7 @@ const NewsProfile = ({
     return () => {
       isMounted = false;
     };
-  }, [refresh, setRefresh]);
+  }, [refresh]);
 
   const deletePost = async () => {
     try {
