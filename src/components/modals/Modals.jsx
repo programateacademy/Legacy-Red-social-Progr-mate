@@ -31,7 +31,7 @@ const Modals = () => {
         <p>NEWS</p>
       </button>
       <Modal IsOpen={IsOpenModalNews} closeModal={closeModalNews}>
-        <FormNews />
+        <FormNews user={true}/>
       </Modal>
       <button onClick={openModalEvent}>
         <Icon_events />

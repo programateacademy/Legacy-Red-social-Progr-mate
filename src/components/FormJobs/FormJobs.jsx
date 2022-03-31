@@ -93,11 +93,11 @@ const FormJobs = () => {
             console.log(error);
         }
     };
-    useEffect(() => {
-        if (idUser) {
-            getDataJobs(idUser);
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (idUser) {
+    //         getDataJobs(idUser);
+    //     }
+    // }, []);
 
     return (
         <Fragment>

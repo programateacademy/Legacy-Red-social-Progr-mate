@@ -4,12 +4,12 @@ import logo from "../../assets/images/logo-a-color-.jpg";
 import { getData, sendData, updateData } from "../../helpers/fetch";
 import { DataContext } from "../../context/DataContext";
 import HardSkills from "./HardSkills";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const FormNews = () => {
+const FormNews = ({user}) => {
     const { posts, setPosts, idUser } = useContext(DataContext);
-
+    const params = useParams();
     const { user_info, title, type, description, image, technologies } = posts;
 
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ const FormNews = () => {
     //send data from the new to the model post 
     const submitData = async (e) => {
         e.preventDefault();
-
+        console.log(user)
 // condition to publish news
         if (posts.title.length <= 0 || posts.description.length <= 0) {
             Swal.fire({
@@ -35,7 +35,7 @@ const FormNews = () => {
             });
         } else {
             try {
-                if (!idUser) {
+                if (user) {
                     await sendData("posts", {
                         user_info: idUser,
                         title,
@@ -45,8 +45,8 @@ const FormNews = () => {
                         type,
                     });
                 } else {
-                    await updateData("posts",idUser, {
-                        user_info: idUser,
+                    await updateData("posts",params.id, {
+                        user_info: params.id_user,
                         title,
                         description,
                         image,
@@ -57,7 +57,7 @@ const FormNews = () => {
 
                 navigate("/questions");
             }
-             catch (error) {
+            catch (error) {
                 console.log(error);
             }
         }
@@ -95,8 +95,8 @@ const FormNews = () => {
     };
 
     useEffect(() => {
-        if (idUser) {
-            getDataNews(idUser);
+        if (!user) {
+            getDataNews(params.id);
         }
     }, []);
 
@@ -188,7 +188,7 @@ const FormNews = () => {
                     <br />
                 </div>
                 <div className={styles.send}>
-                    <button className="btn" onClick={navigate}>Enviar</button>
+                    <button className="btn" onClick={submitData}>Enviar</button>
                 </div>
             </form>
             </Fragment>

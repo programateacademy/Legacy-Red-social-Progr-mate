@@ -107,6 +107,11 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                     </Name>
                 </div>
                 <div className={style.forms}>
+                    <Name nameField={dataUser.github} onChange={onChange} field={'github'} >
+                        <h3>Github</h3>
+                    </Name>
+                </div>
+                <div className={style.forms}>
                     <Cohorte nameField={dataUser.cohorte} onChange={selectChange} field={'cohorte'} allCohorts={allCohorts}>
                         <h3>Cohorte: {allCohorts.filter(item => ( item._id === dataUser.cohorte)).map(item => item.cohorte_name)}</h3>
                     </Cohorte>
