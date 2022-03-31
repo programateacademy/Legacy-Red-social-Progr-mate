@@ -16,11 +16,10 @@ import { UserQuestions } from "../UserQuestions/UserQuestions";
 import ProfilePortfolio from "./ProfilePortfolio/ProfilePortfolio";
 
 const BodyProfile = () => {
-  const { setDataProfile, dataProfile, setDataUser } =
-    useContext(DataContext);
-    const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id
+  const { setDataProfile, dataProfile, setDataUser } = useContext(DataContext);
+  const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id
   const [showMain, setShowMain] = useState(false);
-const [dataUserProfile,setDataUserProfile] = useState([])
+  const [dataUserProfile, setDataUserProfile] = useState([])
   const params = useParams();
 
   const fetchDataUser = async () => {
@@ -39,8 +38,8 @@ const [dataUserProfile,setDataUserProfile] = useState([])
     } catch (error) {
       console.log(error);
     }
-   
-    
+
+
   }, []);
 
   //Traer data del usuario
@@ -68,10 +67,10 @@ const [dataUserProfile,setDataUserProfile] = useState([])
           <ProfileMain dataProfile={dataProfile} />
           <div className={style.profileBodyContainer}>
             <div className={style.profileInfo1}>
-              
+
               <ProfileEducation dataUserProfile={dataUserProfile} />
               <ProfileLanguages dataUserProfile={dataUserProfile} />
-              <Technologies dataUserProfile={dataUserProfile}/>
+              <Technologies dataUserProfile={dataUserProfile} />
 
               <a href={dataProfile?.github} target="_blank">
                 <button className={style.button} type="button">
@@ -81,9 +80,9 @@ const [dataUserProfile,setDataUserProfile] = useState([])
             </div>
             <div className={style.profilePosts}>{!showMain && <Posts />}</div>
             <div className={style.profileInfo2}>
-              <ProfileSkills dataUserProfile={dataUserProfile}/>
+              <ProfileSkills dataUserProfile={dataUserProfile} />
               <ProfileExperience dataUserProfile={dataUserProfile} />
-              <ProfilePortfolio dataUserProfile={dataUserProfile}/>
+              <ProfilePortfolio dataUserProfile={dataUserProfile} />
             </div>
           </div>
         </div>

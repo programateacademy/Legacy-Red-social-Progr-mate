@@ -51,6 +51,7 @@ const Posts = () => {
                         cohorte={cohorte}
                         avatar={avatar}
                         key={post._id}
+                        user={post.user_info}
                     />
                 ) : post.type === "jobs" ? (
                     <JobsProfile
@@ -70,6 +71,7 @@ const Posts = () => {
                         cohorte={cohorte}
                         avatar={avatar}
                         key={post._id}
+                        user={post.user_info}
                     />
                 ) : post.type === "event" ? (
                     <EventsProfile
@@ -86,6 +88,7 @@ const Posts = () => {
                         cohorte={cohorte}
                         avatar={avatar}
                         key={post._id}
+                        user={post.user_info}
                     />
                 ) : null
             )}

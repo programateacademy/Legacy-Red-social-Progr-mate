@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import styles from "../Navbar/Navbar.module.css";
 import iconoEducamas from "../../assets/images/iconoEducamas.png";
 import { Link } from "react-router-dom";
@@ -18,14 +18,21 @@ const Navbar = () => {
   const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id
 
   const fetchUser = async () => {
-    const res = await getData("users", idUser)
-    setAvatar(res.avatar)
+    try {
+      const user = await getData("users", idUser)
+      setAvatar(user.avatar)
+    } catch (error) {
+      console.log("Error: "+ error)
+    }
   }
 
-  !avatar ? fetchUser() : ""
 
-  const [ toggle, setToggle ] = useState(false)
-  
+  useEffect(() => {
+    !avatar ? fetchUser() : ""
+  }, [idUser])
+
+  const [toggle, setToggle] = useState(false)
+
   const handleClickMenu = () => {
     setToggle(!toggle)
   };
@@ -37,40 +44,40 @@ const Navbar = () => {
       <nav className={styles.navBar}>
         <div className={styles.navTop}>
           <div className={styles.navLeft}>
-          <Link to="/home">
-            <img
-              src={iconoEducamas}
-              alt="Prográmate"
-              className={styles.iconoEducamas}
-            />
+            <Link to="/home">
+              <img
+                src={iconoEducamas}
+                alt="Prográmate"
+                className={styles.iconoEducamas}
+              />
             </Link>
-            <MenuButton onClickMenu={handleClickMenu} iconActive={toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars"}/>
-          
+            <MenuButton onClickMenu={handleClickMenu} iconActive={toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars"} />
+
           </div>
-          
-          
-          <ItemsMenu toggle={toggle} onClickItem={handleClickItem}/>
+
+
+          <ItemsMenu toggle={toggle} onClickItem={handleClickItem} />
           <div className={styles.containerPhoto}>
             {avatar ? (
-              <img src={avatar} alt="Foto" className={styles.imgProfile}/>
+              <img src={avatar} alt="Foto" className={styles.imgProfile} />
             ) : (
-                <img src={altImg} alt="Foto" className={styles.imgProfile}/>
+              <img src={altImg} alt="Foto" className={styles.imgProfile} />
             )}
-              <div>
-              
+            <div>
+
               <button onClick={onSetActive} className={styles.btnNotification}>
-                <Icon_alarm/>
+                <Icon_alarm />
               </button>
-              
+
             </div>
             <DropdownLogOut />
-            </div>
-            
+          </div>
+
         </div>
-        
-        </nav>
-      
-      { activeNotification && <Notification/>}
+
+      </nav>
+
+      {activeNotification && <Notification />}
     </header>
   );
 };
