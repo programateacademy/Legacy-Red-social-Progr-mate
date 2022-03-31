@@ -132,7 +132,7 @@ function Autentification() {
                 />
                 <Route
                     exact
-                    path="/formeventedit/:id/:user"
+                    path="/formeventedit/:id"
                     element={isLogged ? <FormEventEdit /> : <DontAllow />}
                 />
 

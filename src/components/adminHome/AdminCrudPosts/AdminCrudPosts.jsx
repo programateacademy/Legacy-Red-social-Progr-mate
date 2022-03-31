@@ -99,7 +99,7 @@ function AdminCrudPosts({ children, name, postType, fields, activePanel}) {
                                         className={styles.editBtn}
                                         onClick={() => window.open(
                                         postType === 'news' ? `/formnews/${post._id}` :
-                                            postType === 'event' ? `/formeventedit/${post._id}/${post.user_info}` :
+                                            postType === 'event' ? `/formeventedit/${post._id}` :
                                                 postType === 'jobs' ? `/formjobs/${post._id}` :
                                                     postType === 'questions' ? `/addquestion/${post._id}/${post.user_info}` : ''
                                         , '_blank')}><BsThreeDotsVertical/></button>
