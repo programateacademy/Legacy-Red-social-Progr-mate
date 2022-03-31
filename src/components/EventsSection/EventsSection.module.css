@@ -1,8 +1,7 @@
-body{
-    background-color: #ECEFF1;
-}
+
 .eventsSection{
     padding-top: 80px;
+    background: var(--background)
 }
 .eventsSection h2{
     font-size: 40px;

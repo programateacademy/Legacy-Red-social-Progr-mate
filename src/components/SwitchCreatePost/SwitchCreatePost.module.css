@@ -6,4 +6,5 @@
     color: var(--text-color);
     background-color: var(--main-color);
     border-radius: 5px;
+    cursor: pointer;
 }

@@ -4,8 +4,8 @@
   margin: auto;
   background-color: #ffffff;
   padding: 2rem;
-
   display: flex;
+  
 }
 
 .cont {
@@ -59,4 +59,5 @@
   top: 0px;
   position: absolute;
   right: -10px;
+  cursor: pointer;
 }

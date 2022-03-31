@@ -222,21 +222,7 @@ const Jobs = ({
                 </i>
               </p>
             </div>
-            {idUser === user ? (
-              <div className={style.iconsModify}>
-                <i
-                  className="fas fa-pencil-alt"
-                  onClick={() => navigate(`/formjobs/${id}`)}
-                ></i>
-                <i className="far fa-trash-alt" onClick={deletePost}></i>
-              </div>
-            ) : rol === 9 ? (
-              <div className={style.iconsModify}>
-                <i className="far fa-trash-alt" onClick={deletePost}></i>
-              </div>
-            ) : (
-              ""
-            )}
+
             <span className="Icon_job">
               <Icon_job />
             </span>
@@ -274,9 +260,26 @@ const Jobs = ({
             <div className={style.like}>
               <i
                 onClick={like ? submitLike : onDeleteLike}
-                className={like ? "far fa-thumbs-up " : "far fa-thumbs-up red "}
+                className={like ? "fa-regular fa-heart" : "fa-solid fa-heart red "}
               ></i>
               <span>{likes.length}</span>
+            </div>
+            <div className={style.like}>
+            {idUser === user ? (
+              <div className={style.iconsModify}>
+                <i
+                  className="fas fa-pencil-alt"
+                  onClick={() => navigate(`/formjobs/${id}`)}
+                ></i>
+                <i className="far fa-trash-alt" onClick={deletePost}></i>
+              </div>
+            ) : rol === 9 ? (
+              <div className={style.iconsModify}>
+                <i className="far fa-trash-alt" onClick={deletePost}></i>
+              </div>
+            ) : (
+              ""
+            )}
             </div>
             <div className={style.like}>
               <i onClick={toggle} className="far fa-comment-dots"></i>
@@ -284,7 +287,7 @@ const Jobs = ({
             </div>
           </div>
           {showComments && (
-            <div>
+            <div className={style.comment}>
               <p>deja tu comentario</p>
               <form className={styles.form} onSubmit={submitData}>
                 <textarea

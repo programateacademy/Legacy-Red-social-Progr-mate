@@ -1,5 +1,6 @@
 .jobsSection{
     padding-top: 80px;
+    background: var(--background)
 }
 .jobsSection h2{
     font-size: 40px;

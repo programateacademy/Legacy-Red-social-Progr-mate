@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
 .containBodyProfile {
     background-color: #ffffff;
 }
 
->>>>>>> 9d8c3749bf0c8198bfda7fee82322368b38b1dac
 .container1 {
     width: 100%;
     height: 100%;
@@ -58,16 +55,25 @@
 .iconsModify {
     display: flex;
     margin-top: 15px;
+    padding-left: 15px;
 }
 
 .iconsModify i {
     margin-left: 20px;
     cursor: pointer;
+
+    
 }
 
 .icon {
     font-size: 50px;
 }
+.comment textarea{
+    resize: none;
+    width: 80%;
+    
+}
+
 .icon img {
     font-size: 14px;
     width: 50px;
@@ -134,6 +140,9 @@
     float: right;
     font-size: 18px;
 }
+
+
+
 
 @media (min-width: 768px) {
     .container2 {

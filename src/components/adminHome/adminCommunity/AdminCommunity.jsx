@@ -8,6 +8,7 @@ import { DataContext } from '../../../context/DataContext';
 import CreateUser from '../CreateUser/CreateUser'
 import {useModals} from '../../modals/useModals'
 import Modal from '../../modals/Modal'
+import { BsThreeDotsVertical } from 'react-icons/bs'
 
 /* Table of users - Renders in AdminHome */
 const AdminCommunity = () => {
@@ -105,7 +106,7 @@ const AdminCommunity = () => {
                                 </td>
                                 <td>
                                     <button className={style.btn} onClick={() => window.open(`/formprofile/adminhome/${user._id}`, '_blank')} >
-                                        EDITAR
+                                        <BsThreeDotsVertical />
                                     </button>
                                 </td>
                                 <td>

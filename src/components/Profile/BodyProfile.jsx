@@ -3,7 +3,7 @@ import { DataContext } from "../../context/DataContext";
 import { getDataAll, getData } from "../../helpers/fetch";
 import Technologies from "./Technologies/Technologies";
 import ProfileMain from "./ProfileMain/ProfileMain";
-import ProfileAbout from "./ProfileAbout/ProfileAbout";
+
 import ProfileSkills from "./Profileskills/ProfileSkills";
 import ProfileEducation from "./ProfileEducation/ProfileEducation";
 import ProfileExperience from "./ProfileExperience/ProfileExperience";
@@ -13,19 +13,36 @@ import style from "./BodyProfile.module.css";
 import ProfileMainHome from "./ProfileMainHome/ProfileMainHome";
 import { useParams } from "react-router-dom";
 import { UserQuestions } from "../UserQuestions/UserQuestions";
+import ProfilePortfolio from "./ProfilePortfolio/ProfilePortfolio";
 
 const BodyProfile = () => {
-  const { idUser, setDataProfile, dataProfile, setDataUser } =
+  const { dataProfile, setDataUser } =
     useContext(DataContext);
-  const [showMain, setShowMain] = useState(false);
-
   const params = useParams();
+  const idUserProfile = !params ? JSON.parse(localStorage.getItem("loggedAgoraUser")).id : params.id
+  const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id;
+  const [showMain, setShowMain] = useState(false);
+const [dataUserProfile,setDataUserProfile] = useState([])
+  
 
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === "/" || path === "/home") {
-      setShowMain(true);
+  const fetchDataUser = async () => {
+    const data = await getData("users", idUserProfile);
+    setDataUserProfile(data);
+  }
+
+  useEffect(async () => {
+    try {
+      fetchDataUser();
+      const path = window.location.pathname;
+
+      if (path === "/" || path === "/home") {
+        setShowMain(true);
+      }
+    } catch (error) {
+      console.log(error);
     }
+   
+    
   }, []);
 
   //Traer data del usuario
@@ -53,10 +70,10 @@ const BodyProfile = () => {
           <ProfileMain dataProfile={dataProfile} />
           <div className={style.profileBodyContainer}>
             <div className={style.profileInfo1}>
-              <ProfileAbout />
-              <ProfileEducation />
-              <ProfileLanguages />
-              <Technologies />
+              
+              <ProfileEducation dataUserProfile={dataUserProfile} />
+              <ProfileLanguages dataUserProfile={dataUserProfile} />
+              <Technologies dataUserProfile={dataUserProfile}/>
 
               <a href={dataProfile?.github} target="_blank">
                 <button className={style.button} type="button">
@@ -66,8 +83,9 @@ const BodyProfile = () => {
             </div>
             <div className={style.profilePosts}>{!showMain && <Posts />}</div>
             <div className={style.profileInfo2}>
-              <ProfileSkills />
-              <ProfileExperience />
+              <ProfileSkills dataUserProfile={dataUserProfile}/>
+              <ProfileExperience dataUserProfile={dataUserProfile} />
+              <ProfilePortfolio dataUserProfile={dataUserProfile}/>
             </div>
           </div>
         </div>

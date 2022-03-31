@@ -19,7 +19,7 @@
 }
 
 .section__global {
-    max-width: 1128px;
+    max-width: 1240px;
     margin: 0 auto;
 }
 
@@ -133,6 +133,7 @@
     font-size: 16px;
     text-decoration: none;
     font-family: Gilroy-light;
+    cursor: pointer;
 }
 
 .btn__question:hover {
