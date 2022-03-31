@@ -1,4 +1,4 @@
-import React, {Fragment, useContext, useState, useEffect } from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
 import style from "./FormJobs.module.css";
 import logo from "../../assets/images/logo-a-color-.jpg";
 import { DataContext } from "../../context/DataContext";
@@ -13,8 +13,8 @@ const FormJobs = () => {
 
     const navigate = useNavigate();
     const params = useParams();
-    
-    
+
+
     useEffect(() => {
         setPostsJobs({ ...postsJobs, type: "jobs" });
     }, []);
@@ -49,12 +49,12 @@ const FormJobs = () => {
                 if (!params.id) {
                     await sendData("posts", postsJobs);
                     navigate("/questions");
-                    
+
                 } else {
                     await updateData("posts", idUser, postsJobs);
                 }
 
-                
+
             } catch (error) {
                 console.log(error);
             }
@@ -93,11 +93,11 @@ const FormJobs = () => {
             console.log(error);
         }
     };
-    // useEffect(() => {
-    //     if (idUser) {
-    //         getDataJobs(idUser);
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (idUser) {
+            getDataJobs(idUser);
+        }
+    }, []);
 
     return (
         <Fragment>

@@ -144,7 +144,7 @@ function Autentification() {
                 <Route
                     exact
                     path="/formnews/:id/:id_user"
-                    element={isLogged ? <FormNewsPage user={false}/> : <DontAllow />}
+                    element={isLogged ? <FormNewsPage/> : <DontAllow />}
                 />
 
                 <Route

@@ -20,7 +20,7 @@ const Makingpost = () => {
             case "events":
                 return <FormEvent/>
             case "news":
-                return <FormNews user={true}/>
+                return <FormNews/>
     }
 }
     return (

@@ -8,23 +8,18 @@ import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const FormNews = ({user}) => {
-    const { posts, setPosts, idUser } = useContext(DataContext);
+    const { idUser } = useContext(DataContext);
+    const [data, setData] = useState({});
     const params = useParams();
-    const { user_info, title, type, description, image, technologies } = posts;
 
     const navigate = useNavigate();
-    
-
-    useEffect(() => {
-        setPosts({ ...posts, type: "news" });
-    }, []);
 
     //send data from the new to the model post 
     const submitData = async (e) => {
         e.preventDefault();
         console.log(user)
 // condition to publish news
-        if (posts.title.length <= 0 || posts.description.length <= 0) {
+        if (data.title.length <= 0 || data.description.length <= 0) {
             Swal.fire({
                 title: "Completar datos",
                 text: "Los campos de Nombre de la noticia y Contenido escrito son obligatorios",
@@ -35,7 +30,7 @@ const FormNews = ({user}) => {
             });
         } else {
             try {
-                if (user) {
+                if (!params.id) {
                     await sendData("posts", {
                         user_info: idUser,
                         title,
@@ -65,8 +60,8 @@ const FormNews = ({user}) => {
 
     const onChange = ({ target }) => {
         const { name, value } = target;
-        setPosts({
-            ...posts,
+        setData({
+            ...data,
             [name]: value,
         });
     };
@@ -75,8 +70,8 @@ const FormNews = ({user}) => {
     const onKeyTechnologies = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
             technical.push(e.target.value);
-            setPosts({
-                ...posts,
+            setData({
+                ...data,
                 technologies: technical,
             });
             e.target.value = "";
@@ -87,7 +82,7 @@ const FormNews = ({user}) => {
     const getDataNews = async (id) => {
         try {
             const dataNews = await getData("posts", id);
-            setPosts(dataNews);
+            setData(dataNews);
             setTechnical(dataNews.technologies);
         } catch (error) {
             console.log(error);
@@ -100,13 +95,19 @@ const FormNews = ({user}) => {
         }
     }, []);
 
+    useEffect(() => {
+        setData({ ...data, type: "news" });
+    }, []);
+
+
+    
     const onFileChange = (e) => {
         const file = e.target.files[0];
         if (file.size < 200000) {
             const reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = function load() {
-                setPosts({ ...posts, image: reader.result });
+                setData({ ...data, image: reader.result });
             };
         } else {
             alert(`El tamaño máximo es 200 KB`);
@@ -128,7 +129,7 @@ const FormNews = ({user}) => {
                         type="text"
                         placeholder="Nombre de la noticia"
                         name="title"
-                        value={posts.title}
+                        value={data.title}
                         onChange={onChange}
                     />
 
@@ -144,7 +145,7 @@ const FormNews = ({user}) => {
                         name="description"
                         rows=""
                         cols=""
-                        value={posts.description}
+                        value={data.description}
                         onChange={onChange}
                     ></textarea>
                     <br />
@@ -182,8 +183,8 @@ const FormNews = ({user}) => {
                         name="image"
                         onChange={onFileChange}
                     />
-                    {posts.images ? (
-                        <img src={posts.image} alt="File" />
+                    {data.images ? (
+                        <img src={data.image} alt="File" />
                     ) : null}
                     <br />
                 </div>
