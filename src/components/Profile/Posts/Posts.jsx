@@ -41,7 +41,7 @@ const Posts = () => {
                 post.type === "news" ? (
                     <NewsProfile
                         description={post.description}
-                        images={post.images}
+                        images={post.image}
                         technologies={post.technologies}
                         title={post.title}
                         id={post._id}

@@ -117,10 +117,11 @@
 
 .tech {
     display: inline-block;
-    padding: 5px 10px;
-    border: 1px solid #7ad149;
-    border-radius: 5px;
-    font-size: 14px;
+  border: 1px #000;
+  background-color: #cccccc;
+  padding: 3px ;
+  border-radius: 2px; 
+  margin-right: 5px;
 }
 
 .like {

@@ -40,6 +40,7 @@ const NewsProfile = ({
   const [userPost, setUserPost] = useState();
 
   let navigate = useNavigate();
+  const params = useParams();
 
   const commentInfo = async () => {
     const data = await getData("posts", id);
@@ -170,126 +171,135 @@ const NewsProfile = ({
   const previewComment = (comment, index) => {
     return (
       <div key={index} className={styles.comments}>
-        <div className={styles.comment_div}>
-          <div className={styles.header}>
-            <img
-              className={styles.img}
-              src={onImage(comment.user_id)}
-              alt={comment.user_id}
-            />
-            <span className={styles.name}>{onName(comment.user_id)}</span>
-          </div>
+          <div className={styles.comment_div}>
+              <div className={styles.header}>
+                  <img
+                      className={styles.img}
+                      src={onImage(comment.user_id)}
+                      alt={comment.user_id}
+                  />
+                  <span className={styles.name}>
+                      {onName(comment.user_id)}
+                  </span>
+              </div>
 
-          <span>{comment.comment}</span>
-          {comment.user_id === idUser && (
-            <span
-              onClick={() => onDelete(comment._id)}
-              className={styles.delete}
-            >
-              Eliminar
-            </span>
-          )}
-        </div>
-      </div>
-    );
-  };
-
-  return (
-    <section className={style.container1}>
-      <div className={style.container2}>
-        <div className={style.icon_cont1}>
-          <div className={style.postUser}>
-            <div className={style.icon}>
-            {avatar ? (
-                                <img src={avatar} alt="Foto" />
-                            ) : (
-                                <i className="far fa-user-circle"></i>
-                            )}
-            </div>
-            <p>
-              <b>
-              {firstName} {middleName} {lastName}
-              </b>
-              <br />
-              <i>
-              {allCohorts.map(item => (
-                                        item._id === cohorte ? <span key={cohorte}>{item.cohorte_name}</span> : ""
-                                    ))}
-              </i>
-            </p>
-          </div>
-          {idUser === user ? (
-            <div className={style.iconsModify}>
-              <i
-                className="fas fa-pencil-alt"
-                onClick={() => navigate(`/formnews/${id}`)}
-              ></i>
-              <i className="far fa-trash-alt" onClick={deletePost}></i>
-            </div>
-          ) : rol === 9 ? (
-            <div className={style.iconsModify}>
-              <i className="far fa-trash-alt" onClick={deletePost}></i>
-            </div>
-          ) : (
-            ""
-          )}
-          <span>
-            <Icon_news />
-          </span>
-        </div>
-        <div className={style.news}>
-          <h3>{title}</h3>
-          <p>{description}</p>
-          <img src={images} alt="Foto" />
-          <div className={style.techContain}>
-            {technologies &&
-              technologies.map((tech, index) => (
-                <Technologies tech={tech} key={index} />
-              ))}
-          </div>
-        </div>
-        <div className={style.icon_cont2}>
-          <div className={style.like}>
-            <i
-              onClick={like ? submitLike : onDeleteLike}
-              className={like ? "far fa-thumbs-up " : "far fa-thumbs-up red "}
-            ></i>
-            <span>{likes.length}</span>
-          </div>
-          <div className={style.like}>
-            <i onClick={toggle} className="far fa-comment-dots"></i>
-            <span>{comments.length}</span>
-          </div>
-
-          {/*   <div>
-                            <i className="fas fa-share"></i>
-                        </div>*/}
-        </div>
-        {showComments && (
-          <div>
-            <p>deja tu comentario</p>
-            <form className={styles.form} onSubmit={submitData}>
-              <textarea
-                name="comment"
-                value={inputComment}
-                className={styles.input_comment}
-                onChange={handleChange}
-              ></textarea>
-              <button className={styles.submit}>Enviar</button>
-            </form>
-            {comments.map(
-              (comment, index) => index < 2 && previewComment(comment, index)
-            )}
-
-            {moreComments &&
-              comments.map(
-                (comment, index) => index >= 2 && previewComment(comment, index)
+              <span>{comment.comment}</span>
+              {comment.user_id === idUser && (
+                  <span
+                      onClick={() => onDelete(comment._id)}
+                      className={styles.delete}
+                  >
+                      Eliminar
+                  </span>
               )}
           </div>
-        )}
       </div>
-    </section>
   );
 };
 
+return (
+<section className={style.container1}>
+  <div className={style.container2}>
+    <div className={style.icon_cont1}>
+      <div className={style.postUser}>
+        <div className={style.icon}>
+          {avatar ? (
+            <img src={avatar} alt="Foto" />
+          ) : (
+            <i className="far fa-user-circle"></i>
+          )}
+        </div>
+        <p>
+          <b>
+            {firstName} {middleName}{" "}
+            {lastName}
+          </b>
+          <br />
+          <i>
+            {allCohorts.map((item) =>
+              item._id === cohorte ? (
+                <span key={cohorte}>{item.cohorte_name}</span>
+              ) : (
+                ""
+              )
+            )}
+          </i>
+        </p>
+      </div>
+      
+      <span className="Icon_news">
+        <Icon_news />
+      </span>
+    </div>
+    <div className={style.news}>
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <div className={style.techContain}>
+        {/* <p className={style.llavePost}>Tecnologías:&nbsp; </p> */}
+        {technologies &&
+          technologies.map((tech, index) => (
+            <Technologies
+              className={style.arrtech}
+              tech={tech}
+              key={index}
+            />
+          ))}
+      </div>
+      <img src={images} alt="Foto" />
+    </div>
+    <div className={style.icon_cont2}>
+      <div className={style.like}>
+        <i
+          onClick={like ? submitLike : onDeleteLike}
+          className={like ? "fa-regular fa-heart" : "fa-solid fa-heart red "}
+        ></i>
+        <span>{likes.length}</span>
+        
+      </div>
+      <div className={style.like}>
+      {!params.id && (
+                            <div className={style.iconsModify}>
+                                <i
+                                    className="fas fa-pencil-alt"
+                                    onClick={() => navigate(`/formnews/${id}`)}
+                                ></i>
+                                <i
+                                    className="far fa-trash-alt"
+                                    onClick={deletePost}
+                                ></i>
+                            </div>
+                        )}
+      </div>
+      <div className={style.like}>
+        <i onClick={toggle} className="far fa-comment-dots"></i>
+        <span>{comments.length}</span>
+      </div>
+    </div>
+    {showComments && (
+      <div className={style.comment}>
+        <p>Deja tu comentario</p>
+        <form className={styles.form} onSubmit={submitData}>
+          <textarea
+            name="comment"
+            value={inputComment}
+            className={styles.input_comment}
+            onChange={handleChange}
+          ></textarea>
+          <button className={styles.submit}>Enviar</button>
+        </form>
+        {comments.map(
+          (comment, index) => index < 15 && previewComment(comment, index)
+        )}
+
+        {moreComments &&
+          comments.map(
+            (comment, index) =>
+              index >= 2 && previewComment(comment, index)
+          )}
+      </div>
+    )}
+  </div>
+</section>
+);
+};
 export default NewsProfile;
