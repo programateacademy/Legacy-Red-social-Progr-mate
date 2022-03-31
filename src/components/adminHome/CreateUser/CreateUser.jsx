@@ -60,7 +60,7 @@ const CreateUser = () => {
                 onChange={handleChange}>
                 {allCohorts.map(item => <option value={item._id} key={item._id}>{item.cohorte_name}</option>)}
             </select>
-            <button onClick={handleSubmit} className={styles.btn}>Crear 112  Usuario</button>
+            <button onClick={handleSubmit} className={styles.btn}>Crear Usuario</button>
         </form>
     )
 }
