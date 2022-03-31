@@ -16,7 +16,10 @@
     width: 170px;
     height: 48px;
 }
-
+.logoEducamas{
+    object-fit: cover;
+    height: 55px;
+}
 .logo {
     width: 30px;
     height: 30px;

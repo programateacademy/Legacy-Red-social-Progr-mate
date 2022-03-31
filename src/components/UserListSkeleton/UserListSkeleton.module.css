@@ -53,9 +53,6 @@
   }
 }
 @media (max-width: 450px) {
-  .card {
-    width: 80%;
-  }
   .name {
     width: 15rem;
   }
@@ -74,4 +71,9 @@
   .cohort {
     width: 8rem;
   }
+}
+@media(max-width: 500px){
+    .card{
+        width: 97%;
+    }
 }

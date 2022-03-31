@@ -219,7 +219,7 @@ const News = ({
               {dateEvent}
             </p>
             <p>
-              <span className={style.llavePost}>Link:&nbsp;</span> {link}
+              <span className={style.llavePost}>Link:&nbsp;</span> <a href={link}>{link}</a>
             </p>
             <div className={style.techContains}>
               <p className={style.llavePost}>Tecnologías:&nbsp;</p>

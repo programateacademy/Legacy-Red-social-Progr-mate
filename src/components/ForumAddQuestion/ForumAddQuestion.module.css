@@ -132,3 +132,11 @@
       }
   } 
    
+  @media(max-width:900px){
+    .containerYellow{
+      display: none;
+    }
+    .containerForum{
+      width: 100%;
+    }
+  }

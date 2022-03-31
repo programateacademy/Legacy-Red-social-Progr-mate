@@ -132,7 +132,7 @@ function Autentification() {
                 />
                 <Route
                     exact
-                    path="/formeventedit/:id/:user"
+                    path="/formeventedit/:id"
                     element={isLogged ? <FormEventEdit /> : <DontAllow />}
                 />
 
@@ -143,8 +143,8 @@ function Autentification() {
                 />
                 <Route
                     exact
-                    path="/formnews/:id/:id_user"
-                    element={isLogged ? <FormNewsPage user={false}/> : <DontAllow />}
+                    path="/formnews/:id"
+                    element={isLogged ? <FormNewsPage/> : <DontAllow />}
                 />
 
                 <Route
@@ -154,7 +154,7 @@ function Autentification() {
                 />
                 <Route
                     exact
-                    path="/formjobs/:id/:jobs"
+                    path="/formjobs/:id"
                     element={isLogged ? <FormJobsPage /> : <DontAllow />}
                 />
 

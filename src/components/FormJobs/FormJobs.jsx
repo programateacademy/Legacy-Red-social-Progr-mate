@@ -9,17 +9,29 @@ import Swal from "sweetalert2";
 
 
 const FormJobs = () => {
-    const { postsJobs, setPostsJobs, idUser } = useContext(DataContext);
-
+    const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id
+    const [postData, setPostData] = useState({});
     const navigate = useNavigate();
     const params = useParams();
-    
-    
+    const [technical, setTechnical] = useState([]);
+
+    const getDataJobs = async (id)  => {
+        try {
+            const dataJobs = await getData("posts", id);
+            setPostData(dataJobs);
+            setTechnical(dataJobs.technologies);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     useEffect(() => {
-        setPostsJobs({ ...postsJobs, type: "jobs" });
+        if (params.id) {
+            getDataJobs(params.id);
+        }
     }, []);
 
-    const [technical, setTechnical] = useState([]);
+    
 
     //Send User data to user model and profile
 
@@ -27,13 +39,13 @@ const FormJobs = () => {
         e.preventDefault();
         //Condition to publish the new job offer
         if (
-            postsJobs.title.length <= 0 ||
-            postsJobs.company.length <= 0 ||
-            postsJobs.place.length <= 0 ||
-            postsJobs.modality.length <= 0 ||
-            postsJobs.contact.length <= 0 ||
-            postsJobs.description.length <= 0 ||
-            postsJobs.salary.length <= 0
+            postData.title.length <= 0 ||
+            postData.company.length <= 0 ||
+            postData.place.length <= 0 ||
+            postData.modality.length <= 0 ||
+            postData.contact.length <= 0 ||
+            postData.description.length <= 0 ||
+            postData.salary.length <= 0
         ) {
             // message that pop if conditions arent fulfilled
             Swal.fire({
@@ -47,11 +59,11 @@ const FormJobs = () => {
         } else {
             try {
                 if (!params.id) {
-                    await sendData("posts", postsJobs);
+                    await sendData("posts", postData);
                     navigate("/questions");
                     
                 } else {
-                    await updateData("posts", idUser, postsJobs);
+                    await updateData("posts", params.id, postData);
                 }
 
                 
@@ -64,40 +76,25 @@ const FormJobs = () => {
 
     const onChange = ({ target }) => {
         const { name, value } = target;
-        setPostsJobs({
-            ...postsJobs,
+        setPostData({
+            ...postData,
             [name]: value,
-            user_info: idUser,
+            ["type"]: "jobs",
+            ["user_info"]: postData.user_info ? postData.user_info : idUser
         });
     };
     //Press enter to add the technologies to your job publication
     const onKeyHardSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
             technical.push(e.target.value);
-            setPostsJobs({
-                ...postsJobs,
+            setPostData({
+                ...postData,
                 technologies: technical,
             });
             e.target.value = "";
             e.preventDefault();
         }
     };
-
-    // Verify funtion
-    const getDataJobs = async (id) => {
-        try {
-            const dataJobs = await getData("posts", id);
-            setPostsJobs(dataJobs);
-            setTechnical(dataJobs.technologies);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    // useEffect(() => {
-    //     if (idUser) {
-    //         getDataJobs(idUser);
-    //     }
-    // }, []);
 
     return (
         <Fragment>
@@ -113,7 +110,7 @@ const FormJobs = () => {
                         placeholder="Nombre de la oferta"
                         type="text"
                         name="title"
-                        value={postsJobs.title}
+                        value={postData.title}
                         onChange={onChange}
                     />
                     <br />
@@ -125,7 +122,7 @@ const FormJobs = () => {
                         className={style.nom}
                         type="text"
                         name="company"
-                        value={postsJobs.company}
+                        value={postData.company}
                         onChange={onChange}
                     />
                     <br />
@@ -160,7 +157,7 @@ const FormJobs = () => {
                         placeholder="Lugar"
                         type="text"
                         name="place"
-                        value={postsJobs.place}
+                        value={postData.place}
                         onChange={onChange}
                     />
                     <br />
@@ -170,7 +167,7 @@ const FormJobs = () => {
                     <select
                         className={style.select}
                         name="modality"
-                        value={postsJobs.modality}
+                        value={postData.modality}
                         onChange={onChange}
                     >
                         <option value="select">Selecciona la modalidad</option>
@@ -193,7 +190,7 @@ const FormJobs = () => {
                         type="text"
                         name="salary"
                         placeholder="Salario"
-                        value={postsJobs.salary}
+                        value={postData.salary}
                         onChange={onChange}
                     />
                     <br />
@@ -204,7 +201,7 @@ const FormJobs = () => {
                         className={style.nom}
                         type="text"
                         name="contact"
-                        value={postsJobs.contact}
+                        value={postData.contact}
                         onChange={onChange}
                         placeholder="Contacto"
                     />
@@ -218,7 +215,7 @@ const FormJobs = () => {
                         name="description"
                         rows=""
                         cols=""
-                        value={postsJobs.description}
+                        value={postData.description}
                         onChange={onChange}
                         placeholder="Descripcion de la oferta"
                     ></textarea>
