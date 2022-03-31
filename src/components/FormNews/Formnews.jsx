@@ -13,7 +13,6 @@ const FormNews = ({user}) => {
     const params = useParams();
 
     const navigate = useNavigate();
-    console.log(params)
     //send data from the new to the model post 
     const submitData = async (e) => {
         e.preventDefault();

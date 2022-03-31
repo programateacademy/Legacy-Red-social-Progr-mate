@@ -154,7 +154,7 @@ function Autentification() {
                 />
                 <Route
                     exact
-                    path="/formjobs/:id/:jobs"
+                    path="/formjobs/:id"
                     element={isLogged ? <FormJobsPage /> : <DontAllow />}
                 />
 
