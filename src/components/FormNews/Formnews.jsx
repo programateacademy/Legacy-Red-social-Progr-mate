@@ -55,7 +55,7 @@ const FormNews = () => {
                     });
                 }
 
-                navigate("/questions");
+                navigate("/news");
             }
              catch (error) {
                 console.log(error);

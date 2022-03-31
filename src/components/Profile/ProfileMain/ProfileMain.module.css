@@ -11,17 +11,14 @@
 }
 
 .cont {
-  width: 500px;
+
   display: flex;
   flex-direction: row;
-  margin: auto;
   justify-content: center;
   align-items: center;
 }
 
-.circulo_cont {
-  width: 50%;
-}
+
 .profileTitle {
   font-size: 20px;
   text-align: center;

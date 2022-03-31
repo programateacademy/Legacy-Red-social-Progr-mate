@@ -197,34 +197,81 @@ const EventsProfile = ({
             </div>
         );
     };
+
+    
     return (
-        <section className={style.container1}>
-            <div className={style.container2}>
-                <div className={style.icon_cont1}>
-                    <div className={style.postUser}>
-                        <div className={style.icon}>
-                      
-                        {avatar ? (
-                                <img src={avatar} alt="Foto" />
-                            ) : (
-                                <i className="far fa-user-circle"></i>
-                            )}
-                        </div>
-                        <p>
-                            <b>
-                            {firstName} {middleName} {lastName}
-                            </b>
-                            <br />
-                            <i>{allCohorts.map(item => (
-                                        item._id === cohorte ? <span key={cohorte}>{item.cohorte_name}</span> : ""
-                                    ))}</i>
-                        </p>
-                    </div>
-                    {!params.id && (
+      <section className={style.container1}>
+        <div className={style.container2}>
+          <div className={style.icon_cont1}>
+            <div className={style.postUser}>
+              <div className={style.icon}>
+                {avatar ? (
+                  <img src={avatar} alt="Foto" />
+                ) : (
+                  <i className="far fa-user-circle"></i>
+                )}
+              </div>
+              <p>
+                <b>
+                  {firstName} {middleName}{" "}
+                  {lastName}
+                </b>
+                <br />
+                <i>
+                  {allCohorts.map((item) =>
+                    item._id === cohorte ? (
+                      <span key={cohorte}>{item.cohorte_name}</span>
+                    ) : (
+                      ""
+                    )
+                  )}
+                </i>
+              </p>
+            </div>
+            <span className="Icon_events">
+              <Icon_events />
+            </span>
+          </div>
+          <div className={style.news}>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <p>
+              {" "}
+              <span className={style.llavePost}>Lugar:</span> &nbsp;
+              {place}
+            </p>
+            <p>
+              <span className={style.llavePost}>Fecha:</span> &nbsp;
+              {dateEvent}
+            </p>
+            <p>
+              <span className={style.llavePost}>Link:&nbsp;</span> {link}
+            </p>
+            <div className={style.techContains}>
+              <p className={style.llavePost}>Tecnologías:&nbsp;</p>
+
+              {technologies &&
+                technologies.map((tech, index) => (
+                  <p className={style.arrtech} key={`technologies${index}`}>
+                    {tech}&nbsp;
+                  </p>
+                ))}
+            </div>
+          </div>
+          <div className={style.icon_cont2}>
+            <div className={style.like}>
+              <i
+                onClick={like ? submitLike : onDeleteLike}
+                className={like ? "fa-regular fa-heart" : "fa-solid fa-heart red"}
+              ></i>
+            <span>{likes.length}</span>
+            </div>
+            <div className={style.like}>
+            {!params.id && (
                             <div className={style.iconsModify}>
                                 <i
                                     className="fas fa-pencil-alt"
-                                    onClick={() => navigate(`/formeventedit/${id}`)}
+                                    onClick={() => navigate(`/formevents/${id}`)}
                                 ></i>
                                 <i
                                     className="far fa-trash-alt"
@@ -232,76 +279,38 @@ const EventsProfile = ({
                                 ></i>
                             </div>
                         )}
-                      <span><Icon_events/></span>
-                </div>
-                <div className={style.news}>
-                    <h3>{title}</h3>
-                    <p>{description}</p>
-                    <p>
-                        <span className={style.llavePost}>Link:&nbsp;</span>{" "}
-                        {link}
-                    </p>
-                    <p>
-                        {" "}
-                        <span className={style.llavePost}>Lugar:</span> &nbsp;
-                        {place}
-                    </p>
-                    <p>
-                        <span className={style.llavePost}>Fecha:</span> &nbsp;
-                        {dateEvent}
-                    </p>
-                    <div className={style.techContains}>
-                        <p className={style.llavePost}>Tecnologías:&nbsp;</p>
+              </div>
 
-                        {technologies &&
-                            technologies.map((tech, index) => (
-                                <p key={`technologies${index}`}>{tech}&nbsp;</p>
-                            ))}
-                    </div>
-                </div>
-                <div className={style.icon_cont2}>
-                    <div className={style.like}>
-                        <i
-                            onClick={like ? submitLike : onDeleteLike}
-                            className={
-                                like
-                                    ? "far fa-thumbs-up "
-                                    : "far fa-thumbs-up red "
-                            }
-                        ></i>
-                        <span>{likes.length}</span>
-                    </div>
-                    <div className={style.like}>
-                        <i onClick={toggle} className="far fa-comment-dots"></i>
-                        <span>{comments.length}</span>
-                    </div>
-                </div>
-                {showComments && (
-                    <div>
-                        <p>deja tu comentario</p>
-                        <form className={styles.form} onSubmit={submitData}>
-                            <textarea
-                                name="comment"
-                                value={inputComment}
-                                className={styles.input_comment}
-                                onChange={handleChange}
-                            ></textarea>
-                            <button className={styles.submit}>Enviar</button>
-                        </form>
-                        {comments.map(
-                            (comment, index) =>
-                                index < 2 && previewComment(comment, index)
-                        )}
+            <div className={style.like}>
+              <i onClick={toggle} className="far fa-comment-dots"></i>
+              <span>{comments.length}</span>
+            </div>
+          </div>
+          {showComments && (
+            <div className={style.comment}>
+              <p>deja tu comentario</p>
+              <form className={styles.form} onSubmit={submitData}>
+                <textarea
+                  name="comment"
+                  value={inputComment}
+                  className={styles.input_comment}
+                  onChange={handleChange}
+                ></textarea>
+                <button className={styles.submit}>Enviar</button>
+              </form>
+              {comments.map(
+                (comment, index) => index < 15 && previewComment(comment, index)
+              )}
 
-                        {moreComments &&
-                            comments.map(
-                                (comment, index) =>
-                                    index >= 2 && previewComment(comment, index)
-                            )}
-                    </div>
+              {moreComments &&
+                comments.map(
+                  (comment, index) =>
+                    index >= 2 && previewComment(comment, index)
                 )}
             </div>
-        </section>
+          )}
+        </div>
+      </section>
     );
 };
 

@@ -40,7 +40,7 @@ const FormEvent = () => {
         try {
             await sendData("posts", postsEvent);
             setRefresh(!refresh);
-            navigate("/questions");
+            navigate("/events");
             
         } catch (error) {
             console.log("Error" + error);
