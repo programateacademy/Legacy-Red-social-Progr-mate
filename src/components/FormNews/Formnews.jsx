@@ -8,17 +8,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const FormNews = ({user}) => {
-    const { idUser } = useContext(DataContext);
+    const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id
     const [data, setData] = useState({});
     const params = useParams();
 
     const navigate = useNavigate();
-
+    console.log(params)
     //send data from the new to the model post 
     const submitData = async (e) => {
         e.preventDefault();
         console.log(user)
-// condition to publish news
+        // condition to publish news
         if (data.title.length <= 0 || data.description.length <= 0) {
             Swal.fire({
                 title: "Completar datos",
@@ -31,23 +31,12 @@ const FormNews = ({user}) => {
         } else {
             try {
                 if (!params.id) {
-                    await sendData("posts", {
-                        user_info: idUser,
-                        title,
-                        description,
-                        image,
-                        technologies,
-                        type,
-                    });
+                    console.log(data)
+                    console.log("Noticia Creada")
+                    await sendData("posts", data);
                 } else {
-                    await updateData("posts",params.id, {
-                        user_info: params.id_user,
-                        title,
-                        description,
-                        image,
-                        technologies,
-                        type,
-                    });
+                    console.log("Actualizada")
+                    await updateData("posts", params.id, data);
                 }
 
                 navigate("/questions");
@@ -63,6 +52,8 @@ const FormNews = ({user}) => {
         setData({
             ...data,
             [name]: value,
+            ["type"]: "news",
+            ["user_info"]: data.user_info ? data.user_info : idUser
         });
     };
 
@@ -90,15 +81,10 @@ const FormNews = ({user}) => {
     };
 
     useEffect(() => {
-        if (!user) {
+        if (params.id) {
             getDataNews(params.id);
         }
     }, []);
-
-    useEffect(() => {
-        setData({ ...data, type: "news" });
-    }, []);
-
 
     
     const onFileChange = (e) => {
