@@ -102,7 +102,6 @@ const FormNews = ({user}) => {
     return (
         <Fragment>
         <div className={styles.headerPerfil}>
-                <img src={logo} alt="Educamás" />
                 <h2>Agregar Noticia</h2>
             </div>
             <form className={styles.form_container} onSubmit={submitData}>

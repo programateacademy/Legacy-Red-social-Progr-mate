@@ -109,6 +109,7 @@
     height: 65px;
     margin-left: 10px;
     margin-top: 5px;
+    object-fit: cover;
 }
 .icon i {
     width: 250px;
