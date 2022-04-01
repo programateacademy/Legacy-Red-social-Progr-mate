@@ -17,7 +17,13 @@
   justify-content: center;
   align-items: center;
 }
-
+.photoSkeleton{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #ededed, #c9c9c9);
+  background-size: 400% 400%;
+  animation: loadingAnimation 2s ease-in-out infinite;
+}
 
 .profileTitle {
   font-size: 20px;
@@ -128,5 +134,16 @@
 
   .circulo {
     margin-top: 25px;
+  }
+}
+@keyframes loadingAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
