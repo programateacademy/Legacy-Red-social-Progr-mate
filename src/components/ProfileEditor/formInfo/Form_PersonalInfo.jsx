@@ -191,8 +191,9 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                     </div>
                 </div>
                 <div className={style.forms}>
-                <h3>Acerca de mi</h3>
-                    <textarea name="aboutMe" cols="30" rows="10" placeholder={dataUser.description} className={style.textarea}></textarea>
+                    <Name nameField={dataUser.description} onChange={onChange} field={'description'} >
+                        <h3>Acerca de mi</h3>
+                    </Name>
                 </div>
                 
             </form>

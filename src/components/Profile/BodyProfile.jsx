@@ -14,6 +14,7 @@ import ProfileMainHome from "./ProfileMainHome/ProfileMainHome";
 import { useParams } from "react-router-dom";
 import { UserQuestions } from "../UserQuestions/UserQuestions";
 import ProfilePortfolio from "./ProfilePortfolio/ProfilePortfolio";
+import AboutMe from "./AboutMe/AboutMe";
 
 const BodyProfile = () => {
   const { dataProfile, setDataUser } =
@@ -70,7 +71,7 @@ const BodyProfile = () => {
           <ProfileMain dataProfile={dataUserProfile} />
           <div className={style.profileBodyContainer}>
             <div className={style.profileInfo1}>
-
+              <AboutMe dataUserProfile={dataUserProfile}/>
               <ProfileEducation dataUserProfile={dataUserProfile} />
               <ProfileLanguages dataUserProfile={dataUserProfile} />
               <Technologies dataUserProfile={dataUserProfile} />
@@ -91,7 +92,7 @@ const BodyProfile = () => {
         </div>
       ) : (
         <div className={style.containBodyProfileHome}>
-          <ProfileMainHome dataProfile={dataProfile} />
+          <ProfileMainHome dataProfile={dataUserProfile} />
           <UserQuestions />
         </div>
       )}

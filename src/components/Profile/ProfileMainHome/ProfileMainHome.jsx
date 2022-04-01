@@ -7,10 +7,10 @@ import { getData, getDataAll} from "../../../helpers/fetch";
 
 /* profile card in home page */
 const ProfileMainHome = ({ dataProfile }) => {
-    const { dataUser, idUser } = useContext(DataContext);
+    const { dataUser} = useContext(DataContext);
     const { avatar, firstName, middleName, lastName } = dataUser;
     const [cohort, setCohort] = useState();
-
+    const idUser = JSON.parse(localStorage.getItem("loggedAgoraUser")).id;
     let navigate = useNavigate();
 
     const editProfile = () => {
