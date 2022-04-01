@@ -82,7 +82,7 @@ const BodyProfile = () => {
                 </button>
               </a>
             </div>
-            <div className={style.profilePosts}>{!showMain && <Posts dataUserProfile={dataUserProfile} />}</div>
+            {!showMain && <Posts dataUserProfile={dataUserProfile} />}
             <div className={style.profileInfo2}>
               <ProfileSkills dataUserProfile={dataUserProfile} />
               <ProfileExperience dataUserProfile={dataUserProfile} />
