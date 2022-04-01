@@ -27,10 +27,10 @@ const ProfileMain = ({ dataProfile }) => {
                 {dataProfile.avatar ? (
                   <img src={dataProfile.avatar} alt="Foto" />
                 ) : (
-                  <img src={altImg} alt="Foto" />
+                  <div className={style.photoSkeleton}></div>
                 )}
               </div>
-              <div>
+              <div className={style.editContainer}>
                 {params.id === idUser && (
                   <div className={style.icon} onClick={editProfile}>
                     <i className="fas fa-pencil-alt"></i>

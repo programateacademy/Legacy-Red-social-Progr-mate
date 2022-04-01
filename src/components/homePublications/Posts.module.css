@@ -2,7 +2,7 @@
     display: flex;  
     margin-top: 10px;
     width: 100%;
-
+    
 }
 .containerFilter{
     display: flex;
@@ -15,6 +15,7 @@
     width: 70%;
 }
 .container2 {
+   
     width: 90%;
     max-width: 100%;
     min-height: 90%;
@@ -109,6 +110,7 @@
     height: 65px;
     margin-left: 10px;
     margin-top: 5px;
+    object-fit: cover;
 }
 .icon i {
     width: 250px;

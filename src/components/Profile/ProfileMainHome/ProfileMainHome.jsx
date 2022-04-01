@@ -28,7 +28,8 @@ const ProfileMainHome = ({ dataProfile }) => {
     useEffect(async () => { 
         await obtainCohort();
     },[dataUser])
-
+    console.log(cohort)
+    console.log(dataUser)
     return (
         <div className={style.container}>
             <section className={style.cont}>
@@ -36,7 +37,7 @@ const ProfileMainHome = ({ dataProfile }) => {
                     {avatar ? (
                         <img src={avatar} alt="Foto" />
                     ) : (
-                        <img src={altImg} alt="Foto" />
+                        <div className={style.photoSkeleton}></div>
                     )}
                 </div>
             </section>

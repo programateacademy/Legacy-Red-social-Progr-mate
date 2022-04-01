@@ -59,7 +59,7 @@ const FormJobs = () => {
         } else {
             try {
                 if (!params.id) {
-                    await sendData("posts", postsJobs);
+                    await sendData("posts", postData);
                     navigate("/jobs");
                     
                 } else {
@@ -99,7 +99,6 @@ const FormJobs = () => {
     return (
         <Fragment>
             <div className={style.headerPerfil}>
-                <img src={logo} alt="Educamás" />
                 <h2>Agregar una Oferta</h2>
             </div>
             <form className={style.from_container} onSubmit={submitData}>
@@ -128,12 +127,12 @@ const FormJobs = () => {
                     <br />
                 </div>
                 <div className={style.forms}>
-                    <h3>Tecnologías</h3>
+                    <h3>Tecnologías </h3>
                     <input
                         className={style.nom}
                         type="text"
                         name="technologies"
-                        placeholder="Tecnologías <Enter> para guardarla"
+                        placeholder="Tecnologías <dar enter para añadir>"
                         onKeyDown={onKeyHardSkills}
                     />
                     <br />

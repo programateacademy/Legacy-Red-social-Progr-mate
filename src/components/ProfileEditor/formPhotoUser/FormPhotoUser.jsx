@@ -10,10 +10,9 @@ const FormPhotoUser = ({dataUser, setDataUser}) => {
     const [pathImage, setPathImage] = useState("");
 
     const deleteImage = () => {
-        console.log(dataUser)
         setDataUser({
             ...dataUser,
-            avatar: "",
+            avatar: "https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png",
         });
     };
 
@@ -41,7 +40,6 @@ const FormPhotoUser = ({dataUser, setDataUser}) => {
                 alert(`El tamaño máximo es 70 KB`);
             }
         }
-        console.log(dataUser);
     };
 
     return (

@@ -100,84 +100,85 @@ const FormNews = ({user}) => {
     };
 
     return (
-        <Fragment>
+      <Fragment>
         <div className={styles.headerPerfil}>
-                <img src={logo} alt="Educamás" />
-                <h2>Agregar Noticia</h2>
+        
+          <h2>Agregar Noticia</h2>
+        </div>
+        <form className={styles.form_container} onSubmit={submitData}>
+          <div className={styles.form}>
+            <h3>Nombre de la noticia</h3>
+
+            <input
+              className={styles.nom_input}
+              type="text"
+              placeholder="Nombre de la noticia"
+              name="title"
+              value={data.title}
+              onChange={onChange}
+            />
+
+            <br />
+          </div>
+
+          <div className={styles.form}>
+            <h3>Contenido escrito de la misma</h3>
+            <textarea
+              placeholder="Breve descripción de la noticia"
+              className={styles.textarea}
+              type="text"
+              name="description"
+              rows=""
+              cols=""
+              value={data.description}
+              onChange={onChange}
+            ></textarea>
+            <br />
+          </div>
+
+          <div className={styles.form}>
+            <h3 className={styles.subtitle}>Tecnologías</h3>
+            <input
+              className={styles.nom_input}
+              placeholder="Tecnologías <dar enter para añadir>"
+              type="text"
+              name="tecno"
+              onKeyDown={onKeyTechnologies}
+            />
+            <br />
+            <div className={styles.tecno}>
+              {technical.map((skill, index) => (
+                <HardSkills
+                  skill={skill}
+                  key={index}
+                  technical={technical}
+                  setTechnical={setTechnical}
+                  index={index}
+                />
+              ))}
             </div>
-            <form className={styles.form_container} onSubmit={submitData}>
-                <div className={styles.form}>
-                    <h3>Nombre de la noticia</h3>
+          </div>
 
-                    <input
-                        className={styles.nom_input}
-                        type="text"
-                        placeholder="Nombre de la noticia"
-                        name="title"
-                        value={data.title}
-                        onChange={onChange}
-                    />
+          <div className={styles.form}>
+            <h3>Imagen</h3>
 
-                    <br />
-                </div>
-
-                <div className={styles.form}>
-                    <h3>Contenido escrito de la misma</h3>
-                    <textarea
-                        placeholder="Breve descripción de la noticia" 
-                        className={styles.textarea}
-                        type="text"
-                        name="description"
-                        rows=""
-                        cols=""
-                        value={data.description}
-                        onChange={onChange}
-                    ></textarea>
-                    <br />
-                </div>
-
-                <div className={styles.form}>
-                    <h3 className={styles.subtitle}>Tecnologías</h3>
-                    <input
-                        className={styles.nom_input}
-                        placeholder="Tecnologías <Enter> para guardarla"
-                        type="text"
-                        name="tecno"
-                        onKeyDown={onKeyTechnologies}
-                    />
-                    <br />
-                    <div className={styles.tecno}>
-                        {technical.map((skill, index) => (
-                            <HardSkills
-                                skill={skill}
-                                key={index}
-                                technical={technical}
-                                setTechnical={setTechnical}
-                                index={index}
-                            />
-                        ))}
-                    </div>
-                </div>
-
-                <div className={styles.form}>
-                    <h3>Imagen</h3>
-
-                    <input
-                        className={styles.image}
-                        type="file"
-                        name="image"
-                        onChange={onFileChange}
-                    required/>
-                    {data.images ? (
-                        <img src={data.image} alt="File" />
-                    ) : null}
-                    <br />
-                </div>
-                <div className={styles.send}>
-                    <button className="btn" onClick={submitData}>Enviar</button>
-                </div>
-            </form>
-            </Fragment>
+            <input
+              className={styles.image}
+              type="file"
+              name="image"
+              onChange={onFileChange}
+              required
+            />
+            {data.images ? <img src={data.image} alt="File" /> : null}
+            <br />
+          </div>
+          <div className={styles.send}>
+            <button className="btn" onClick={submitData}>
+              Enviar
+            </button>
+          </div>
+        </form>
+      </Fragment>
     );
 };
 

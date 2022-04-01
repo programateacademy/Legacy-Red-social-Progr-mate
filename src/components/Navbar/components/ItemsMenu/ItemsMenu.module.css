@@ -17,6 +17,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+
   }
   .menu__elements li {
     font-size: 15px;
@@ -26,7 +27,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1em;
+   
   }
   .menu__elements p{
       margin: 0;

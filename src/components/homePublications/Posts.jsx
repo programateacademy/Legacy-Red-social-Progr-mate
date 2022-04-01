@@ -7,6 +7,7 @@ import { getData, getDataAll } from "../../helpers/fetch";
 import { DataContext } from "../../context/DataContext";
 import { useState } from "react";
 import style from "./Posts.module.css";
+import SkeletonPost from "../SkeletonPost/SkeletonPost";
 
 const Posts = () => {
     const { getPosts, setGetPosts, filterHome, setFilterHome, idUser } =
@@ -19,12 +20,13 @@ const Posts = () => {
     useEffect(async () => {
         let isMounted = true
         const getData = async () => {
-        try {
-            const data = await  ("users");
-            setDataUsers(data);
-        } catch (error) {
-            console.log(error);
-        }}
+            try {
+                const data = await ("users");
+                setDataUsers(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
         getData();
         return () => {
             isMounted = false;
@@ -78,75 +80,81 @@ const Posts = () => {
     const showMorePosts = () => {
         setQuantityPosts(quantityPosts + 15);
     };
-    
+
     useEffect(async () => {
         let isMounted = true
         const getData = async () => {
-        try {
-            const data = await getDataAll("posts");
-            setGetPosts(data.reverse());
-        } catch (error) {
-            console.log(error);
-        }}
+            try {
+                const data = await getDataAll("posts");
+                setGetPosts(data.reverse());
+            } catch (error) {
+                console.log(error);
+            }
+        }
         getData();
         return () => {
             isMounted = false;
         }
     }, []);
 
-
     return (
         <Fragment>
-            {filterPosts()?.map((post) =>
-                post.type === "news" ? (
-                    <News
-                        description={post.description}
-                        images={post.image}
-                        technologies={post.technologies}
-                        title={post.title}
-                        id={post._id}
-                        user={post.user_info ? post.user_info : ""}
-                        rol={getRol}
-                        key={post._id}
-                    />
-                ) : post.type === "jobs" ? (
-                    <Jobs
-                        description={post.description}
-                        technologies={post.technologies}
-                        title={post.title}
-                        company={post.company}
-                        place={post.place}
-                        modality={post.modality}
-                        salary={post.salary}
-                        contact={post.contact}
-                        id={post._id}
-                        user={post.user_info ? post.user_info : ""}
-                        rol={getRol}
-                        key={post._id}
-                    />
-                ) : post.type === "event" ? (
-                    <Events
-                        description={post.description}
-                        technologies={post.technologies}
-                        title={post.title}
-                        place={post.place}
-                        link={post.link}
-                        dateEvent={post.dateEvent}
-                        id={post._id}
-                        user={post.user_info ? post.user_info : ""}
-                        rol={getRol}
-                        key={post._id}
-                    />
-                ) : null
-            )}
-            {/* <p className={style.backUp} onClick={showMorePosts}>
-                Ver más
-            </p> */}
-            <p className={style.addPosts} onClick={showMorePosts}>
-                Ver más 
+            {filterPosts() && getPosts.length ?
+                <>
+                    {filterPosts()?.map((post) =>
+                        post.type === "news" ? (
+                            <News
+                                description={post.description}
+                                images={post.image}
+                                technologies={post.technologies}
+                                title={post.title}
+                                id={post._id}
+                                user={post.user_info ? post.user_info : ""}
+                                rol={getRol}
+                                key={post._id}
+                            />
+                        ) : post.type === "jobs" ? (
+                            <Jobs
+                                description={post.description}
+                                technologies={post.technologies}
+                                title={post.title}
+                                company={post.company}
+                                place={post.place}
+                                modality={post.modality}
+                                salary={post.salary}
+                                contact={post.contact}
+                                id={post._id}
+                                user={post.user_info ? post.user_info : ""}
+                                rol={getRol}
+                                key={post._id}
+                            />
+                        ) : post.type === "event" ? (
+                            <Events
+                                description={post.description}
+                                technologies={post.technologies}
+                                title={post.title}
+                                place={post.place}
+                                link={post.link}
+                                dateEvent={post.dateEvent}
+                                id={post._id}
+                                user={post.user_info ? post.user_info : ""}
+                                rol={getRol}
+                                key={post._id}
+                            />
+                        ) : null
+                    )}
+                    <p className={style.addPosts} onClick={showMorePosts}>
+                        Ver más
 
-            </p>
+                    </p>
+                </>
+                :
+                [...Array(5)].map((x, i) => (
+                    <SkeletonPost key={i} />
+                ))
+            }
         </Fragment>
+
     );
 };
 

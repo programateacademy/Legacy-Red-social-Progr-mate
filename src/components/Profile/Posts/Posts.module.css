@@ -1,159 +1,152 @@
 .containBodyProfile {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .container1 {
-    width: 100%;
-    display: flex;
-    background-color: #ffffff;
-    margin-top: 5px;
-    
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+  margin-top: 5px;
 }
 .container2 {
-    width: 98%;
-    max-width: 98%;
-    /* width: 90%; */
-    min-height: 90%;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    background-color: #ffffff;
-    flex-direction: column;
-    border: 1px solid;
-    border-color: #92c149;
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 5px 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.postUser {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  width: 98%;
+  max-width: 98%;
+  /* width: 90%; */
+  min-height: 90%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: #ffffff;
+  flex-direction: column;
+  border: 1px solid;
+  border-color: #92c149;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 5px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .icon_cont1 {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 20px;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
 }
 
 .icon_cont2 {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: start;
-    width: 90%;
-    margin: 15px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: start;
+  width: 90%;
+  margin: 15px auto;
 }
 
 .iconsModify {
-    display: flex;
-    margin-top: 15px;
-    padding-left: 15px;
+  display: flex;
+  margin-top: 15px;
+  padding-left: 15px;
+}
+.profilePosts {
+  margin-top: 15px;
+  min-width: 500px;
 }
 
 .iconsModify i {
-    margin-left: 20px;
-    cursor: pointer;
-
-    
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 .icon {
-    font-size: 50px;
+  font-size: 50px;
 }
-.comment textarea{
-    resize: none;
-    width: 80%;
-    
+.comment textarea {
+  resize: none;
+  width: 80%;
 }
 
 .icon img {
-    font-size: 14px;
-    width: 50px;
+  font-size: 14px;
+  width: 50px;
 }
 .icon i {
-    width: 50px;
+  width: 50px;
 }
 
 .techContains {
-    display: flex;
-    /* justify-content: space-evenly; */
-    /* display: inline-block; */
+  display: flex;
+  /* justify-content: space-evenly; */
+  /* display: inline-block; */
 }
 
 .llavePost {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .news {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .news h3 {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .news p {
-    margin-left: 0px;
+  margin-left: 0px;
 }
 .news .image {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 .news img {
-    max-width: 100%;
-    max-height: 500px;
-    min-width: 50%;
+  max-width: 100%;
+  max-height: 500px;
+  min-width: 50%;
 }
 
 .tech {
-    display: inline-block;
+  display: inline-block;
   border: 1px #000;
   background-color: #cccccc;
-  padding: 3px ;
-  border-radius: 2px; 
+  padding: 3px;
+  border-radius: 2px;
   margin-right: 5px;
 }
 
 .like {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .like i {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .addPosts {
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration-line: underline;
-    text-decoration-color: #ffd800;
-    float: right;
-    font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration-line: underline;
+  text-decoration-color: #ffd800;
+  float: right;
+  font-size: 18px;
 }
 
-
 @media (min-width: 768px) {
-    .container2 {
-        width: 90%;
-        max-width: 90%;
-        min-height: 90%;
-    }
+  .container2 {
+    width: 90%;
+    max-width: 90%;
+    min-height: 90%;
+  }
 }
 
 @media (min-width: 1024px) {
-    .container2 {
-        width: 98%;
-        max-width: 1112px;
-    }
+  .container2 {
+    width: 98%;
+    max-width: 1112px;
+  }
 }
