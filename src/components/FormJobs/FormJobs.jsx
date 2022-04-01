@@ -128,12 +128,12 @@ const FormJobs = () => {
                     <br />
                 </div>
                 <div className={style.forms}>
-                    <h3>Tecnologías</h3>
+                    <h3>Tecnologías </h3>
                     <input
                         className={style.nom}
                         type="text"
                         name="technologies"
-                        placeholder="Tecnologías <Enter> para guardarla"
+                        placeholder="Tecnologías <dar enter para añadir>"
                         onKeyDown={onKeyHardSkills}
                     />
                     <br />

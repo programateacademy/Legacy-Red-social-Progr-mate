@@ -1,13 +1,13 @@
 
 .form_container {
-    width: 90%;
+    width: 98%;
     height: 90%;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     margin: auto;
     border-radius: 2px;
-    padding: 10px 45px;
+    padding: 10px 30px;
     font-family: "Roboto", sans-serif;
 }
 
@@ -24,7 +24,7 @@
     border-style: solid;
     border: 1px solid;
     border-color: #eceff1;
-    padding: 0 15px;
+    padding: 0px;
     font-size: 18px;
     outline: none;
     padding-left: 10px;
@@ -43,15 +43,15 @@
     resize: none;
 }
 .tecno button {
-   width: 100px;
-    height: 90%;
-    padding: 3px;
-    margin: 15px;
-    border-radius: 10px;
-    border: 1px solid;
-    border-color: #ffcc02;
-    background-color: #ffcc02 ;
-    cursor: pointer;
+   width: 120px;
+   height: 90%;
+   padding: 8px 10px;
+   margin: 5px;
+   border-radius: 5px;
+   border: 1px solid;
+   border-color: #ffcc02;
+   background-color: #ffcc02 ;
+   cursor: pointer;
 }
 .tecno {
     display: flex;
@@ -90,7 +90,7 @@
     font-weight: 400;
     font-size: 18px;
     flex-wrap: wrap;
-    margin: 10px 35%;
+    margin: 20px 35%;
 }
 .send button:hover {
     background-color: black;
@@ -101,13 +101,13 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    margin-bottom: 40p;
+    margin-bottom: 40px;
 }
 
 /* Medium (md) */
 @media (min-width: 768px) {
     .form_container {
-        width: 68%;
+        width: 98%;
     }
     .form {
         width: 100%;
@@ -117,7 +117,7 @@
 /* Large (lg) */
 @media (min-width: 1024px) {
     .form_container {
-        width: 50%;
+        width: 98%;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: center; 
