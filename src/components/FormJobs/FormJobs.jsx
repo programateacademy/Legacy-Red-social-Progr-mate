@@ -59,7 +59,7 @@ const FormJobs = () => {
         } else {
             try {
                 if (!params.id) {
-                    await sendData("posts", postsJobs);
+                    await sendData("posts", postData);
                     navigate("/jobs");
                     
                 } else {
