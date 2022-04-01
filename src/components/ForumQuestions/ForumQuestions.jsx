@@ -203,7 +203,7 @@ const ForumQuestions = () => {
           <div>
             <div className={styles.section__head}>
               <h1 className={styles.section__title}>
-                FORO ALUMNI
+                FORO CODERY
                 <RiQuestionLine size="22" />
               </h1>
               <hr className={styles.section__lineTitle} />
