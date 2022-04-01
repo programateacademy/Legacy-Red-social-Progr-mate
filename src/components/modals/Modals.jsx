@@ -20,21 +20,21 @@ const Modals = () => {
       <h1>¿Hay algo que quieras compartir?</h1>
       <div className="buttonsnewposts">
       <button onClick={openModalJob}>
-        <Icon_job />
+        <Icon_job width={40} height={40}/>
         <p>JOBS</p>
       </button>
       <Modal IsOpen={IsOpenModalJob} closeModal={closeModalJob}>
-        <FormJobs />
+        <FormJobs width={40} height={40}/>
       </Modal>
       <button onClick={openModalNews}>
-        <Icon_news />
+        <Icon_news width={40} height={40}/>
         <p>NEWS</p>
       </button>
       <Modal IsOpen={IsOpenModalNews} closeModal={closeModalNews}>
         <FormNews/>
       </Modal>
       <button onClick={openModalEvent}>
-        <Icon_events />
+        <Icon_events width={40} height={40}/>
         <p>EVENTS</p>
       </button>
       <Modal IsOpen={IsOpenModalEvent} closeModal={closeModalEvent}>

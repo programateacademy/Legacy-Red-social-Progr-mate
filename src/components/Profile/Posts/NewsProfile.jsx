@@ -224,14 +224,14 @@ return (
       </div>
       
       <span className="Icon_news">
-        <Icon_news />
+        <Icon_news width={30} height={30}/>
       </span>
     </div>
     <div className={style.news}>
       <h3>{title}</h3>
       <p>{description}</p>
       <div className={style.techContain}>
-        {/* <p className={style.llavePost}>Tecnologías:&nbsp; </p> */}
+        
         {technologies &&
           technologies.map((tech, index) => (
             <Technologies
@@ -253,7 +253,7 @@ return (
         
       </div>
       <div className={style.like}>
-      {!params.id && (
+      {params.id === idUser && (
                             <div className={style.iconsModify}>
                                 <i
                                     className="fas fa-pencil-alt"

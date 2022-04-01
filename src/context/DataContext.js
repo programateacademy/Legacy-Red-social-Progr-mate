@@ -9,8 +9,7 @@ export const DataProvider = ({ children }) => {
 
     const [dataProfile, setDataProfile] = useState({
         user_info: _id,
-        github: "",
-        description: "",
+        
         technicalSkills: [],
         softSkills: [],
         lenguages: [],
@@ -18,6 +17,9 @@ export const DataProvider = ({ children }) => {
         experience: [{ ...experienceField, id: uuid() }],
     });
     const [dataUser, setDataUser] = useState({
+        github: "",
+        description: "",
+        portfolio:"",
         avatar: "",
         cohorte: { num: 1, name: "" },
         contactNumber: null,

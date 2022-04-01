@@ -229,7 +229,7 @@ const EventsProfile = ({
               </p>
             </div>
             <span className="Icon_events">
-              <Icon_events />
+              <Icon_events width={30} height={30} />
             </span>
           </div>
           <div className={style.news}>
@@ -267,7 +267,7 @@ const EventsProfile = ({
             <span>{likes.length}</span>
             </div>
             <div className={style.like}>
-            {!params.id && (
+            {params.id === idUser && (
                             <div className={style.iconsModify}>
                                 <i
                                     className="fas fa-pencil-alt"

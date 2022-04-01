@@ -1,0 +1,14 @@
+.icon{
+    transition: all ease 0.3s;
+}
+.icon:hover{
+    transform: scale(1.1);
+    
+}
+.icon path{
+    transition: all ease-out 0.3s;
+}
+.icon path:hover{
+    fill: #fbc900;
+   
+}

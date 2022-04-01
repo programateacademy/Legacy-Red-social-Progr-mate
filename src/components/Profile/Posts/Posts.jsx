@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { DataContext } from "../../../context/DataContext";
 import { getDataAll } from "../../../helpers/fetch";
 
@@ -9,7 +9,7 @@ import EventsProfile from "./EventsProfile";
 
 
 const Posts = ({dataUserProfile}) => {
-    const { setGetPostsProfile, getPostsProfile, idUser, dataUser } =
+    const { setGetPostsProfile, getPostsProfile } =
         useContext(DataContext);
 
     const { firstName, middleName, lastName, cohorte, avatar } = dataUserProfile;

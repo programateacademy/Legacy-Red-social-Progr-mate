@@ -167,7 +167,7 @@ const FormNews = ({user}) => {
                         type="file"
                         name="image"
                         onChange={onFileChange}
-                    />
+                    required/>
                     {data.images ? (
                         <img src={data.image} alt="File" />
                     ) : null}

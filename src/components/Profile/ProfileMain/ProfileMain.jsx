@@ -31,7 +31,7 @@ const ProfileMain = ({ dataProfile }) => {
                 )}
               </div>
               <div>
-                {!params.id && (
+                {params.id === idUser && (
                   <div className={style.icon} onClick={editProfile}>
                     <i className="fas fa-pencil-alt"></i>
                   </div>

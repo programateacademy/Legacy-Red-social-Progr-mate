@@ -1,32 +1,21 @@
 import * as React from "react";
-
-const Icon_job = (props) => (
-  <svg
-    width={60}
-    height={60}
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <g clipPath="url(#a)">
+import styles from './iconStyles.module.css';
+const Icon_job = (props) => {
+  const { width, height } = props;
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 20 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.icon}>
       <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M34.743 18.345v-3.48h-7.521v3.48zm-18.804 3.48v19.14h30.087v-19.14zm30.087-3.48c2.087 0 3.76 1.549 3.76 3.48v19.14c0 1.931-1.673 3.48-3.76 3.48H15.939c-2.087 0-3.76-1.549-3.76-3.48l.018-19.14c0-1.931 1.655-3.48 3.742-3.48h7.522v-3.48c0-1.931 1.673-3.48 3.76-3.48h7.522c2.088 0 3.761 1.549 3.761 3.48v3.48z"
-        fill="#7D7D7D"
-        style={{
-          fill: "#000",
-          fillOpacity: 1,
-          strokeWidth: 0.236964,
-        }}
+        d="M18 4H14V2C14 0.89 13.11 0 12 0H8C6.89 0 6 0.89 6 2V4H2C0.89 4 0.00999999 4.89 0.00999999 6L0 17C0 18.11 0.89 19 2 19H18C19.11 19 20 18.11 20 17V6C20 4.89 19.11 4 18 4ZM12 4H8V2H12V4Z"
+        fill="black"
       />
-    </g>
-    <defs>
-      <clipPath id="a">
-        <path fill="#fff" transform="translate(.815 .59)" d="M0 0h152v152H0z" />
-      </clipPath>
-    </defs>
-  </svg>
-);
+    </svg>
+  );
+};
 
 export default Icon_job;

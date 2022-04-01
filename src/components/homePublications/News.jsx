@@ -211,7 +211,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
             </div>
             
             <span className="Icon_news">
-              <Icon_news />
+              <Icon_news width={30} height={30}  />
             </span>
           </div>
           <div className={style.news}>

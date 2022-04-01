@@ -203,7 +203,7 @@ const News = ({
               </p>
             </div>
             <span className="Icon_events">
-              <Icon_events />
+              <Icon_events width={30} height={30}/>
             </span>
           </div>
           <div className={style.news}>

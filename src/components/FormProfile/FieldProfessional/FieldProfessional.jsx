@@ -15,9 +15,10 @@ export const FieldProfessional = () => {
     const navigate = useNavigate();
 
     const {
-        user_info,
         github,
         description,
+        portfolio,
+        user_info,
         technicalSkills,
         softSkills,
         languages,
@@ -26,6 +27,7 @@ export const FieldProfessional = () => {
     } = dataProfile;
 
     const {
+        
         avatar,
         cohorte,
         contactNumber,
@@ -51,7 +53,7 @@ export const FieldProfessional = () => {
 
     //Enviar data del usuario al modelo de user y profile
     const submitData = async (e) => {
-        console.log(dataProfile)
+        console.log(dataUSer)
         if (params.id) {
             if (dataProfile) {
                 e.preventDefault();
@@ -73,6 +75,9 @@ export const FieldProfessional = () => {
                     lastName,
                     technicalSkills,
                     softSkills,
+                    github,
+                    description,
+                    portfolio,
                     languages,
                     middleName,
                     passwordHash,

@@ -232,7 +232,7 @@ const JobsProfile = ({
             </div>
 
             <span className="Icon_job">
-              <Icon_job />
+              <Icon_job width={30} height={30} />
             </span>
           </div>
           <div className={style.news}>
@@ -273,7 +273,7 @@ const JobsProfile = ({
               <span>{likes.length}</span>
             </div>
             <div className={style.like}>
-            {!params.id && (
+            {params.id === idUser && (
                             <div className={style.iconsModify}>
                                 <i
                                     className="fas fa-pencil-alt"

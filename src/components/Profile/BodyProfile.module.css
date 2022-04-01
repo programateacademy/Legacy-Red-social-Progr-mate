@@ -1,5 +1,5 @@
 .containBodyProfile {
-    background-color: #d7d7d7;
+    background-color: var(--background);
     padding-bottom: 40px;
     display: flex;
     flex-direction: column;
@@ -20,6 +20,7 @@
 }
 .profilePosts{
     margin-top: 15px;
+    min-width: 500px;
 }
 
 .button {
@@ -46,5 +47,10 @@ a{
 .button:hover {
     background-color: black;
     color: #ffcc02;
+}
+@media(max-width:500px){
+    .profilePosts{
+        min-width: 100%;
+    }
 }
 

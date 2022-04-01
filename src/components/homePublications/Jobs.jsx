@@ -219,7 +219,7 @@ const Jobs = ({
             </div>
 
             <span className="Icon_job">
-              <Icon_job />
+              <Icon_job width={30} height={30} />
             </span>
           </div>
           <div className={style.news}>

@@ -63,11 +63,14 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
             setDataUser({
                 ...dataUser,
                 [e.target.name]: e.target.value,
+                
             });
+            console.log(e.target.value)
             e.target.value = '';
             e.preventDefault();
         }
     };
+    
     const selectChange = (e) => {
         setDataUser({
             ...dataUser,
@@ -109,6 +112,11 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                 <div className={style.forms}>
                     <Name nameField={dataUser.github} onChange={onChange} field={'github'} >
                         <h3>Github</h3>
+                    </Name>
+                </div>
+                <div className={style.forms}>
+                    <Name nameField={dataUser.portfolio} onChange={onChange} field={'portfolio'} >
+                        <h3>Portafolio</h3>
                     </Name>
                 </div>
                 <div className={style.forms}>
@@ -182,6 +190,11 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                         ))}
                     </div>
                 </div>
+                <div className={style.forms}>
+                <h3>Acerca de mi</h3>
+                    <textarea name="aboutMe" cols="30" rows="10" placeholder={dataUser.description} className={style.textarea}></textarea>
+                </div>
+                
             </form>
         </Fragment>
     );

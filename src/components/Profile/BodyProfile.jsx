@@ -75,7 +75,7 @@ const BodyProfile = () => {
               <ProfileLanguages dataUserProfile={dataUserProfile} />
               <Technologies dataUserProfile={dataUserProfile} />
 
-              <a href={dataProfile?.github} target="_blank">
+              <a href={dataUserProfile.github} target="_blank">
                 <button className={style.button} type="button">
                   Ver Github
                 </button>
