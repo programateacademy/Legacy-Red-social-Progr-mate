@@ -8,7 +8,7 @@ import { DataContext } from "../../context/DataContext";
 import { useState } from "react";
 import style from "../homePublications/Posts.module.css";
 import SkeletonPost from "../SkeletonPost/SkeletonPost";
-
+import Footer from "../Footer/Footer";
 const FilterPosts = (props) => {
     const { postType } = props;
     const { getPosts, setGetPosts, filterHome, setFilterHome, idUser } =
@@ -55,11 +55,6 @@ const FilterPosts = (props) => {
             }
         }
     }, [idUser]);
-
-
-    const showMorePosts = () => {
-        setQuantityPosts(quantityPosts + 15);
-    };
 
     useEffect(async () => {
         let isMounted = true;
@@ -132,11 +127,9 @@ const FilterPosts = (props) => {
                         <SkeletonPost key={i} />
                     ))}
 
-                <p className={style.addPosts} onClick={showMorePosts}>
-                    Ver más
-
-                </p>
+               
             </div>
+            <Footer/>
         </div>
     );
 };
