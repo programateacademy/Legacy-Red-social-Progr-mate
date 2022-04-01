@@ -47,8 +47,8 @@
 }
 .editContainer {
   position: absolute;
-  bottom: -6px;
-  right: 2px;
+  bottom: -14px;
+  right: -14px;
 }
 .circulo {
   width: 200px;
