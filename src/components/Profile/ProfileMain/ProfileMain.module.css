@@ -11,13 +11,12 @@
 }
 
 .cont {
-
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.photoSkeleton{
+.photoSkeleton {
   height: 100%;
   width: 100%;
   background: linear-gradient(90deg, #ededed, #c9c9c9);
@@ -38,12 +37,18 @@
 
 .editandphoto {
   display: flex;
+  position: relative;
 }
 .editandphoto i {
   font-size: 30px;
   color: #2a2a2af8;
   margin-top: 20px;
   margin-left: 10px;
+}
+.editContainer {
+  position: absolute;
+  bottom: -13px;
+  right: -2px;
 }
 .circulo {
   width: 200px;
