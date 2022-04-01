@@ -64,7 +64,7 @@ function CreateCohort() {
                     <input type="number" name="cohorte" onChange={handleCohort} required/>
                 </div>
                 <div className={styles.formCohortContainer}>
-                    <label>Nombre de la Cohorte</label>
+                    <label>Nombre de la Cohorte<span>*</span></label>
                     <input type="text" name="cohorte_name" onChange={handleCohort} required/>
                 </div>
                 <input type="submit" className={styles.button} value="Crear Cohorte"/>

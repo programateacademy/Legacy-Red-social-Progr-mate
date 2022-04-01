@@ -44,10 +44,14 @@ const AdminCommunity = () => {
         })
     }
 
+    const onDeleteUser = (id) => {
+        setUsers(prevState => prevState.filter(user => user._id !== id))
+        setFilterUser(prevState => prevState.filter(user => user._id !== id))
+    }
     return (
         <Fragment>
             <div className={style.container_row}>
-                <h1><span>🚀 </span>Usuarios</h1>
+                <h1><span>🟡 </span>Usuarios</h1>
             </div>
             <div className={style.container_row}>
                 <button onClick={openModal}>
@@ -78,7 +82,7 @@ const AdminCommunity = () => {
                                     <img src={user.avatar} alt="ImagDama" className={style.image}/>
                                 </td>
                                 <td>
-                                    <p>{user.firstName} {user.middleName && user.middleName}</p>
+                                    <p>{user.firstName} {user.middleName && user.middleName} { user.lastName && user.lastName}</p>
                                 </td>
                                 <td>
                                     <i>{allCohorts.map(item => (
@@ -109,7 +113,9 @@ const AdminCommunity = () => {
                                     </button>
                                 </td>
                                 <td>
-                                    <DeleteButton endpoint={'users'} id={user._id}/>
+                                    <div onClick={() => {onDeleteUser(user._id)}} className={style.containerDelete}>
+                                        <DeleteButton endpoint={'users'} id={user._id}/>
+                                    </div>
                                 </td>
                             </tr>
                         ))

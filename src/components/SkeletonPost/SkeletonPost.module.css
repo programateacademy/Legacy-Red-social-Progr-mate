@@ -22,7 +22,7 @@
 .info,
 .info2,
 .tags,
-.postImage{
+.postImage {
   background: linear-gradient(90deg, #ededed, #c9c9c9);
   background-size: 400% 400%;
   animation: loadingAnimation 2s ease-in-out infinite;
@@ -31,10 +31,9 @@
 .cohort,
 .title,
 .info,
-.info2{
-    border-radius: 10px;
+.info2 {
+  border-radius: 10px;
 }
-
 
 .infoUserContainer {
   display: flex;
@@ -73,7 +72,7 @@
   height: 1rem;
   width: 50rem;
   width: 95%;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
 }
 .info2 {
   height: 1rem;
@@ -87,7 +86,7 @@
 .tags {
   width: 5rem;
   height: 2rem;
-  margin-right: .4rem;
+  margin-right: 0.4rem;
 }
 .postImage {
   height: 27rem;
@@ -103,5 +102,10 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+@media (max-width: 500px) {
+  .title {
+    width: 50%;
   }
 }

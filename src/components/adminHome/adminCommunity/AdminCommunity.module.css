@@ -35,7 +35,7 @@
   height: 5.5rem;
 }
 
-.btn{
+.btn {
   background: none;
   border: none;
   width: 50px;
@@ -54,18 +54,22 @@
 
 .container_row button {
   padding: 1em;
-  border:none;
+  border: none;
   background-color: #ffcc02;
   border-radius: 5px;
   transition: all ease 0.3s;
   cursor: pointer;
 }
-.container_row button:hover{
+.container_row button:hover {
   background-color: black;
-  color:#ffcc02;
+  color: #ffcc02;
   transform: scale(1.1);
 }
 
 .table td {
   text-align: center;
+}
+.containerDelete {
+  display: inline-block;
+  margin: 0 auto;
 }
