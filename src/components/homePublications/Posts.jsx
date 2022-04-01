@@ -56,7 +56,7 @@ const Posts = () => {
         return filteredUser;
     };
 
-   /*  const filterPosts = () => {
+    const filterPosts = () => {
         if (filterHome.length !== 0) {
             const filtered = getPosts.filter(
                 (post) =>
@@ -75,9 +75,8 @@ const Posts = () => {
         } else {
             return getPosts?.slice(0, quantityPosts);
         }
-    }; */
+    };
 
-    const filterPosts = () => false
     const showMorePosts = () => {
         setQuantityPosts(quantityPosts + 15);
     };
@@ -151,7 +150,7 @@ const Posts = () => {
                     </p>
                 </>
                 :
-                [...Array(10)].map((x, i) => (
+                [...Array(5)].map((x, i) => (
                     <SkeletonPost key={i} />
                 ))
             }
