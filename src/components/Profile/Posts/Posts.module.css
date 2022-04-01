@@ -12,14 +12,12 @@
 .container2 {
     width: 98%;
     max-width: 98%;
-    /* width: 90%; */
     min-height: 90%;
     display: flex;
     justify-content: center;
     margin: auto;
     background-color: #ffffff;
     flex-direction: column;
-    border: 1px solid;
     border-color: #92c149;
     background-color: #ffffff;
     border-radius: 15px;

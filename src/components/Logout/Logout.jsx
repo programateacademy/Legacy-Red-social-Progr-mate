@@ -7,7 +7,6 @@ import { baseUrl } from '../../../config'
 
 function Logout() {
   const auth = useSelector(state => state.auth)
-
   const { user, isLogged } = auth
 
 

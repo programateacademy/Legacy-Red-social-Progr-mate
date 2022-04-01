@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { baseUrl } from "../../../../config";
 
 import styles from "./Login.module.css";
-
+import Icon_home from '../../../assets/icons/Icon_home'
 import logo from "../../../assets/images/programate-academy-blancos.png";
 import littleLogo from "../../../assets/images/logo-a.png";
 
@@ -58,8 +58,8 @@ function Login() {
       </div>
       <div className={styles.containerRight}>
         <div className={styles.containerRightHeader}>
-          <img className="logo" src={littleLogo} alt="logo pequeño programate" />
-          <h3>Bienvenido a la Red Alumni</h3>
+          <Icon_home width={150} height={100} />
+          <h3>Bienvenido a Codery</h3>
         </div>
         <form className={styles.containerRightForm} onSubmit={handleSubmit}>
           <input
