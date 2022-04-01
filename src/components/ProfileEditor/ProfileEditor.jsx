@@ -46,7 +46,7 @@ const ProfileEditor = () => {
     firstEntry ? localStorage.setItem("firstEntry", false) : "";
 
     return (
-            <div className={styles.formContainer}>
+            <div className={styles.editor_container}>
                 <FormPhotoUser dataUser={dataUser} setDataUser={setDataUserFromChild}/>
                 <Form_PersonalInfo dataUser={dataUser}  setDataUser={setDataUserFromChild} allCohorts={allCohorts}/>
                 <FieldProfessional dataUser={dataUser} setDataUser={setDataUserFromChild}/>

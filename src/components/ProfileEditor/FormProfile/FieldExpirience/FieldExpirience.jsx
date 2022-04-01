@@ -1,21 +1,20 @@
 import React from "react";
-import style from "../ProfessionalInformation.module.css";
+import style from "../../ProfileEditor.module.css";
 
 
 const FieldExperience = ({ deleteExperience, handleChange, item }) => {
     return (
-        <div className={style.experience} id="2">
-            <div className={style.inputs}>
-                <label className={style.label} htmlFor="position">
+        <form className={style.form_container}>
+            <div className={style.form}>
+                <h3  htmlFor="position">
                     Cargo
-                </label>
+                </h3>
                 <i
                     className="far fa-trash-alt"
                     onClick={() => deleteExperience(item.id)}
                 ></i>
                 <input
                     type="text"
-                    className={style.inputPersonal}
                     name="charge"
                     id="position"
                     value={item.charge}
@@ -24,13 +23,12 @@ const FieldExperience = ({ deleteExperience, handleChange, item }) => {
                 />
             </div>
 
-            <div className={style.inputs}>
-                <label className={style.label} htmlFor="company">
+            <div className={style.form}>
+                <h3 htmlFor="company">
                     Empresa
-                </label>
+                </h3>
                 <input
                     type="text"
-                    className={style.inputPersonal}
                     name="company"
                     id="company"
                     value={item.company}
@@ -38,13 +36,12 @@ const FieldExperience = ({ deleteExperience, handleChange, item }) => {
                     placeholder="Nombre de la empresa"
                 />
             </div>
-            <div className={style.containDate}>
-                <label className={style.label} htmlFor="email">
+            <div className={style.form}>
+                <h3 htmlFor="email">
                     Fecha inicio{" "}
-                </label>
+                </h3>
                 <input
                     type="date"
-                    className={style.inputDate}
                     name="jobDateInit"
                     id="fecha inicio"
                     value={item.jobDateInit}
@@ -52,13 +49,12 @@ const FieldExperience = ({ deleteExperience, handleChange, item }) => {
                 />
             </div>
 
-            <div className={style.containDate}>
-                <label className={style.label} htmlFor="edad">
+            <div className={style.form}>
+                <h3  htmlFor="edad">
                     Fecha fin
-                </label>
+                </h3>
                 <input
                     type="date"
-                    className={style.inputDate}
                     name="jobDateFin"
                     id="fecha fin"
                     value={item.jobDateFin}
@@ -66,14 +62,13 @@ const FieldExperience = ({ deleteExperience, handleChange, item }) => {
                 />
             </div>
 
-            <div className={style.inputs}>
-                <label className={style.label} htmlFor="description">
+            <div className={style.form}>
+                <h3 htmlFor="description">
                     {" "}
                     Descripción{" "}
-                </label>
+                </h3>
                 <input
                     type="textarea"
-                    className={style.inputPersonal}
                     name="descriptionJob"
                     id="description"
                     value={item.descriptionJob}
@@ -81,7 +76,7 @@ const FieldExperience = ({ deleteExperience, handleChange, item }) => {
                     placeholder="Realicé..."
                 />
             </div>
-        </div>
+        </form>
     );
 };
 

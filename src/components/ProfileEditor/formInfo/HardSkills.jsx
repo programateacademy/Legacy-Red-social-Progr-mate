@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { BiX } from "react-icons/bi";
-import { DataContext } from "../../../context/DataContext";
 
 const HardSkills = ({ skill, technical, setTechnical, dataUser, setDataUser}) => {
     

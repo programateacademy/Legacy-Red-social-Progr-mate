@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BiX } from "react-icons/bi";
-
-import style from "../ProfessionalInformation.module.css";
+import style from "../../ProfileEditor.module.css";
 import { DataContext } from "../../../../context/DataContext";
 
 const FieldEducation = ({
@@ -13,18 +12,17 @@ const FieldEducation = ({
 }) => {
     const { dataProfile } = useContext(DataContext);
     return (
-        <div className={style.education} id="0">
-            <div className={style.inputs}>
-                <label className={style.label} htmlFor="institution">
+        <form className={style.form_container}  >
+            <div className={style.form}>
+                <h3 htmlFor="institution">
                     Título*
-                </label>
+                </h3>
                 <i
                     className="far fa-trash-alt"
                     onClick={() => deleteEducation(item.id)}
                 />
                 <input
                     type="text"
-                    className={style.inputPersonal}
                     name="degree"
                     id="institution"
                     value={item.degree}
@@ -32,13 +30,12 @@ const FieldEducation = ({
                     placeholder="Título"
                 />
             </div>
-            <div className={style.inputs}>
-                <label className={style.label} htmlFor="institution">
+            <div  className={style.form}>
+                <h3 className={style.h3} htmlFor="institution">
                     Institución Educativa*
-                </label>
+                </h3>
                 <input
                     type="text"
-                    className={style.inputPersonal}
                     name="institution"
                     id="institution"
                     value={item.education}
@@ -47,26 +44,24 @@ const FieldEducation = ({
                 />
             </div>
             {/* seccion de las fechas */}
-            <div className={style.containDate}>
-                <label className={style.label} htmlFor="email">
+            <div className={style.form}>
+                <h3 htmlFor="email">
                     Fecha inicio{" "}
-                </label>
+                </h3>
                 <input
                     type="date"
-                    className={style.inputDate}
                     name="eduDateInit"
                     id="fecha inicio"
                     value={item.eduDateInit}
                     onChange={(e) => handleChange(e, item.id)}
                 />
             </div>
-            <div className={style.containDate}>
-                <label className={style.label} htmlFor="edad">
+            <div  className={style.form}>
+                <h3  htmlFor="edad">
                     Fecha fin
-                </label>
+                </h3>
                 <input
                     type="date"
-                    className={style.inputDate}
                     name="eduDateEnd"
                     id="fecha fin"
                     value={item.eduDateEnd}
@@ -74,10 +69,10 @@ const FieldEducation = ({
                 />
             </div>
 
-            <div name="formulario" className={style.inputFile}>
-                <label className={style.label} htmlFor="edad">
+            <div className={style.form} name="formulario" >
+                <h3 htmlFor="edad">
                     Añadir certificado <span>*jpg *png *jpeg</span>
-                </label>
+                </h3>
 
                 <input
                     type="file"
@@ -92,9 +87,8 @@ const FieldEducation = ({
                 (dataCert) =>
                     item.id === dataCert.id &&
                     dataCert.certificate && (
-                        <div className={style.containDelete} key={item.id}>
+                        <div key={item.id}>
                             <BiX
-                                className={style.deleteImg}
                                 onClick={() => deleteCertificate(item.id)}
                             />
 
@@ -117,7 +111,7 @@ const FieldEducation = ({
                     <h5 className={style.nameFile}>{nameFile[0]}</h5>
                 </div>
             ) : null} */}
-        </div>
+        </form>
     );
 };
 

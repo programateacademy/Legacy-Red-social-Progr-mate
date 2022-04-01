@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { studyField, experienceField } from "../../../../helpers/formProfile";
 import { v4 as uuid } from "uuid";
 
-import style from "../ProfessionalInformation.module.css";
+import style from "../../ProfileEditor.module.css";
 import { getData, sendData, updateData } from "../../../../helpers/fetch";
 import FieldEducation from "../FieldEducation/FieldEducation";
 import FieldExperience from "../FieldExpirience/FieldExpirience";
@@ -187,56 +187,56 @@ const FieldProfessional = ({ dataUser, setDataUser }) => {
   };
 
   return (
-    <div className={style.formProfessionalInformation}>
-      <div className={style.education}>
-        {/* Seccion de educación formal  */}
-        <div className={style.title}>
-          <h2> Educación </h2>
-
-          {prev_studes.length < 3 && (
-            <i
-              className="fa-solid fa-plus icon"
-              onClick={addEducationField}
-            ></i>
-          )}
+    <div className={style.expirience_container}>
+      <div className={style.form_container}>
+        <div className={style.row_inputs}>
+          <div className={`${style.form} ${style.card}`}>
+            {/* Seccion de educación formal  */}
+            <div >
+              <h2> Educación </h2>
+              {prev_studes.length < 3 && (
+                <i
+                  className="fa-solid fa-plus icon"
+                  onClick={addEducationField}
+                ></i>
+              )}
+            </div>
+            {prev_studes.map((edu) => (
+              <FieldEducation
+                key={edu.id}
+                handleChange={handleChangeEdu}
+                item={edu}
+                onFileChange={onFileChange}
+                deleteCertificate={deleteCertificate}
+                deleteEducation={deleteEducation}
+              />
+            ))}
+          </div>
+          {/* Experiencia laboral */}
+          <div className={`${style.form} ${style.card}`}>
+            <div >
+              <h2>Experiencia</h2>
+              {experience.length < 3 && (
+                <i
+                  className="fa-solid fa-plus icon"
+                  onClick={addExperienceField}
+                ></i>
+              )}
+            </div>
+            {experience.map((exp) => (
+              <FieldExperience
+                key={exp.id}
+                handleChange={handleChangeExperience}
+                item={exp}
+                deleteExperience={deleteExperience}
+              />
+            ))}
+          </div>
+              </div>
+              <button className={style.form_button}type="submit" onClick={submitData}>
+            Guardar cambios
+          </button>
         </div>
-        {prev_studes.map((edu) => (
-          <FieldEducation
-            key={edu.id}
-            handleChange={handleChangeEdu}
-            item={edu}
-            onFileChange={onFileChange}
-            deleteCertificate={deleteCertificate}
-            deleteEducation={deleteEducation}
-          />
-        ))}
-      </div>
-
-      {/* Experiencia laboral */}
-      <div className={style.experience}>
-        <div className={style.title}>
-          <h2>Experiencia</h2>
-
-          {experience.length < 3 && (
-            <i
-              className="fa-solid fa-plus icon"
-              onClick={addExperienceField}
-            ></i>
-          )}
-        </div>
-
-        {experience.map((exp) => (
-          <FieldExperience
-            key={exp.id}
-            handleChange={handleChangeExperience}
-            item={exp}
-            deleteExperience={deleteExperience}
-          />
-        ))}
-      </div>
-      <button className={style.btnSubmit} type="submit" onClick={submitData}>
-        Guardar cambios
-      </button>
     </div>
   );
 };

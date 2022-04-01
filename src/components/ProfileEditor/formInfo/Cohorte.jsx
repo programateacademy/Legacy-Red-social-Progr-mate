@@ -1,12 +1,10 @@
 import React from 'react';
-import styles from './Form_PersonalInfo.module.css'
 
 const Cohorte =({allCohorts, onChange, field, children})=> {
-
     return (
         <>
             {children}
-            <select className={styles.nom}
+            <select
                 type="select"
                 name= {field}
                 onChange={onChange}>
@@ -15,5 +13,4 @@ const Cohorte =({allCohorts, onChange, field, children})=> {
         </>
     )
 }
-
 export default Cohorte

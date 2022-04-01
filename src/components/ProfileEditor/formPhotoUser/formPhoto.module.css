@@ -2,8 +2,8 @@
     width: 90%;
     margin: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 10px 0 10px;
     margin-bottom: 20px;
     position: relative;
@@ -20,13 +20,6 @@
     left: 0;
 }
 
-.welcome {
-    width: 90%;
-    font-size: 18px;
-    margin: 30px auto;
-    text-align: right;
-}
-
 .label {
     font-weight: 500;
     font-family: "Roboto", sans-serif;
@@ -40,7 +33,9 @@
 .iconsHead {
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     width: 90%;
 }
 
@@ -49,6 +44,13 @@
     font-family: "Roboto", sans-serif;
 }
 
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+}
 .icons .icon {
     font-size: 1.4em;
     cursor: pointer;
@@ -94,6 +96,7 @@
     width: 100%;
     height: 100%;
     border-radius: 5px;
+    align-self: center;
 }
 
 .contain-input {
