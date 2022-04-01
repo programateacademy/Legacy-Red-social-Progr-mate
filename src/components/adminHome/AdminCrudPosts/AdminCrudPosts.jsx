@@ -56,7 +56,7 @@ function AdminCrudPosts({ children, name, postType, fields, activePanel}) {
         <>
             {/* Change emoji for icon (pass prop)*/}
             {/* <h1><span>{icon}</span>{name}</h1> */}
-            <h1 className={styles.name}><span>🚀 </span>{name}</h1>
+            <h1 className={styles.name}><span></span>{name}</h1>
             {/* Create a new post */}
             <SwitchCreatePost postType={postType}>
                 Crear {name.slice(0, -1)}

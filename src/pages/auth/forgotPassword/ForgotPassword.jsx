@@ -6,7 +6,7 @@ import logo from "../../../assets/images/logo-a.png";
 import styles from "./ForgotPassword.module.css";
 import { baseUrl } from "../../../../config";
 import { Link } from "react-router-dom";
-
+import Icon_home from "../../../assets/icons/Icon_home";
 const initialState = {
   email: "",
   err: "",
@@ -47,7 +47,7 @@ function ForgotPassword() {
   return (
     <main className={styles.wrapper}>
       <div className={styles.container}>
-        <img className={styles.containerLogo} src={logo} alt="logo" />
+        <Icon_home width={150} height={100} />
         <h2 className={styles.containerTitle}>Recuperar contraseña</h2>
         <p className={styles.containerInfo}>
           Ingresa tu correo electrónico y te enviaremos un mensaje para restablecer la contraseña.

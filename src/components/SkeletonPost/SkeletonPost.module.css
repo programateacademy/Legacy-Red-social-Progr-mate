@@ -1,0 +1,111 @@
+.card {
+  height: 46rem;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  padding-bottom: 44px;
+  border-radius: 4px;
+  box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px,
+    rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+}
+.card div {
+  content: "";
+}
+.avatar,
+.name,
+.cohort,
+.title,
+.info,
+.info2,
+.tags,
+.postImage {
+  background: linear-gradient(90deg, #ededed, #c9c9c9);
+  background-size: 400% 400%;
+  animation: loadingAnimation 2s ease-in-out infinite;
+}
+.name,
+.cohort,
+.title,
+.info,
+.info2 {
+  border-radius: 10px;
+}
+
+.infoUserContainer {
+  display: flex;
+  margin: 1rem;
+}
+.avatar {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 5px;
+  margin-right: 2rem;
+}
+.infoUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.name {
+  margin-bottom: 0.4rem;
+  width: 18rem;
+  height: 1.5rem;
+}
+.cohort {
+  height: 1rem;
+  width: 14rem;
+}
+.infoPost {
+  margin: 0 1rem;
+  margin-top: 1.6rem;
+}
+.title {
+  width: 30rem;
+  height: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+.info {
+  height: 1rem;
+  width: 50rem;
+  width: 95%;
+  margin-bottom: 0.4rem;
+}
+.info2 {
+  height: 1rem;
+  width: 50rem;
+  width: 51%;
+}
+.tagsContainer {
+  margin: 1.2rem 0;
+  display: flex;
+}
+.tags {
+  width: 5rem;
+  height: 2rem;
+  margin-right: 0.4rem;
+}
+.postImage {
+  height: 27rem;
+  width: 100%;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@media (max-width: 500px) {
+  .title {
+    width: 50%;
+  }
+}

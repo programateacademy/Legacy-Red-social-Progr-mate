@@ -1,7 +1,7 @@
 .footer {
     width: 100%;
     background-color: rgb(0, 0, 0);
-    /* margin-top: 40px; */
+    margin-top: 40px;
 }
 .containerFooter {
     max-width: 1024px;
@@ -25,13 +25,15 @@
     height: 30px;
 }
 
+
 .listRedes {
     display: flex;
     justify-content: space-around;
     margin: 0 0 5px 0;
     padding: 0;
-    list-style: none;
+    list-style: none;    
 }
+
 
 .copyright {
     color: white;

@@ -2,9 +2,10 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    width: 50vw;
-    min-height: 50vh;
+    width: 50rem;
     align-items: center;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 .text {
@@ -19,5 +20,19 @@
     border-color: transparent;
     padding: 1em;
     width: 30%;
-    border-radius: 5px
+    border-radius: 5px;
+    margin: 1rem;
+    cursor: pointer;
+}
+.form input{
+        width: 100%;
+            margin: .4rem;
+}
+@media(max-width: 640px) {
+    .form {
+        width: 100%;
+    }
+    .btn{
+        width: 50%;
+    }
 }

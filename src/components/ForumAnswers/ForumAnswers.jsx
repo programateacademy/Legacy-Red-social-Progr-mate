@@ -113,7 +113,7 @@ const ForumAnswers = () => {
     return (
         <>
             <h1 className={styles.answer__title}>
-                FORO ALUMNI
+                FORO CODERY
                 <RiQuestionLine size="22" />
             </h1>
             <hr className={styles.question__lineTitle} />

@@ -7,8 +7,9 @@ import JobsProfile from "./JobsProfile";
 import NewsProfile from "./NewsProfile";
 import EventsProfile from "./EventsProfile";
 
+import style from "./PostsProfile.module.css";
 
-const Posts = ({dataUserProfile}) => {
+const Posts = ({ dataUserProfile }) => {
     const { setGetPostsProfile, getPostsProfile } =
         useContext(DataContext);
 
@@ -36,63 +37,66 @@ const Posts = ({dataUserProfile}) => {
     }, [dataUserProfile]);
 
     return (
-        <>
-            {getPostsProfile?.map((post) =>
-                post.type === "news" ? (
-                    <NewsProfile
-                        description={post.description}
-                        images={post.image}
-                        technologies={post.technologies}
-                        title={post.title}
-                        id={post._id}
-                        firstName={firstName}
-                        middleName={middleName}
-                        lastName={lastName}
-                        cohorte={cohorte}
-                        avatar={avatar}
-                        key={post._id}
-                        user={post.user_info}
-                    />
-                ) : post.type === "jobs" ? (
-                    <JobsProfile
-                        description={post.description}
-                        technologies={post.technologies}
-                        softSkills={post.softSkills}
-                        title={post.title}
-                        company={post.company}
-                        place={post.place}
-                        modality={post.modality}
-                        salary={post.salary}
-                        contact={post.contact}
-                        id={post._id}
-                        firstName={firstName}
-                        middleName={middleName}
-                        lastName={lastName}
-                        cohorte={cohorte}
-                        avatar={avatar}
-                        key={post._id}
-                        user={post.user_info}
-                    />
-                ) : post.type === "event" ? (
-                    <EventsProfile
-                        description={post.description}
-                        technologies={post.technologies}
-                        title={post.title}
-                        place={post.place}
-                        link={post.link}
-                        dateEvent={post.dateEvent}
-                        id={post._id}
-                        firstName={firstName}
-                        middleName={middleName}
-                        lastName={lastName}
-                        cohorte={cohorte}
-                        avatar={avatar}
-                        key={post._id}
-                        user={post.user_info}
-                    />
-                ) : null
-            )}
-        </>
+        <div className={style.container}>
+            {getPostsProfile &&
+                <div className={style.profilePosts}>
+                    {getPostsProfile?.map((post) =>
+                        post.type === "news" ? (
+                            <NewsProfile
+                                description={post.description}
+                                images={post.image}
+                                technologies={post.technologies}
+                                title={post.title}
+                                id={post._id}
+                                firstName={firstName}
+                                middleName={middleName}
+                                lastName={lastName}
+                                cohorte={cohorte}
+                                avatar={avatar}
+                                key={post._id}
+                                user={post.user_info}
+                            />
+                        ) : post.type === "jobs" ? (
+                            <JobsProfile
+                                description={post.description}
+                                technologies={post.technologies}
+                                softSkills={post.softSkills}
+                                title={post.title}
+                                company={post.company}
+                                place={post.place}
+                                modality={post.modality}
+                                salary={post.salary}
+                                contact={post.contact}
+                                id={post._id}
+                                firstName={firstName}
+                                middleName={middleName}
+                                lastName={lastName}
+                                cohorte={cohorte}
+                                avatar={avatar}
+                                key={post._id}
+                                user={post.user_info}
+                            />
+                        ) : post.type === "event" ? (
+                            <EventsProfile
+                                description={post.description}
+                                technologies={post.technologies}
+                                title={post.title}
+                                place={post.place}
+                                link={post.link}
+                                dateEvent={post.dateEvent}
+                                id={post._id}
+                                firstName={firstName}
+                                middleName={middleName}
+                                lastName={lastName}
+                                cohorte={cohorte}
+                                avatar={avatar}
+                                key={post._id}
+                                user={post.user_info}
+                            />
+                        ) : null
+                    )}
+                </div>}
+        </div>
     );
 };
 

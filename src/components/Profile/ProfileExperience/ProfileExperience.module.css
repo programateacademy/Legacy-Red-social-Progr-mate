@@ -1,6 +1,7 @@
 .container1 {
     width: 357px;
-    height: 177px;
+    height: auto;
+    min-height: 177px;
     display: flex;
     background-color: white;
     
