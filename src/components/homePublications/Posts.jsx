@@ -97,10 +97,9 @@ const Posts = () => {
         }
     }, []);
 
-    console.log(filterPosts())
     return (
         <Fragment>
-            {filterPosts() ?
+            {filterPosts() && getPosts.length ?
                 <>
                     {filterPosts()?.map((post) =>
                         post.type === "news" ? (

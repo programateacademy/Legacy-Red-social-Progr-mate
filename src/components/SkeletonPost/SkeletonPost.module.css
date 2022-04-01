@@ -23,7 +23,7 @@
 .info2,
 .tags,
 .postImage{
-    background: linear-gradient(90deg, #ededed, #c9c9c9);
+  background: linear-gradient(90deg, #ededed, #c9c9c9);
   background-size: 400% 400%;
   animation: loadingAnimation 2s ease-in-out infinite;
 }

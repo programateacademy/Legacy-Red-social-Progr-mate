@@ -44,7 +44,10 @@ const AdminCommunity = () => {
         })
     }
 
-    
+    const onDelete = (id) => { 
+        setUsers(prevState => { prevState.filter(user => user._id !== id)})
+    }
+
     return (
         <Fragment>
             <div className={style.container_row}>
@@ -110,7 +113,7 @@ const AdminCommunity = () => {
                                     </button>
                                 </td>
                                 <td>
-                                    <DeleteButton endpoint={'users'} id={user._id} />
+                                    <DeleteButton endpoint={'users'} id={user._id} onClick={() =>{onDelete(user._id)}}/>
                                 </td>
                             </tr>
                         ))

@@ -79,7 +79,6 @@ const FilterPosts = (props) => {
         }
     }, []);
 
-    console.log(data)
     return (
         <div className={style.containerFilter}>
             <div className={style.postFilters}>

@@ -16,12 +16,10 @@ const CreateUser = () => {
             ...userModel,
             [target.name]: target.value
         });
-        console.log(userModel)
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
         await sendData('users', userModel)
-        console.log(userModel)
     }
     return (
         <form className={styles.form}>
