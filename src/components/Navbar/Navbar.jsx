@@ -4,6 +4,7 @@ import iconoEducamas from "../../assets/images/iconoEducamas.png";
 import { Link } from "react-router-dom";
 import DropdownLogOut from "./DropdownLogOut";
 import Icon_alarm from "../../assets/icons/Icon_alarm";
+import Icon_home from "../../assets/icons/Icon_home";
 import Notification from "../Notifications/Notification"
 import { DataContext } from "../../context/DataContext";
 import altImg from "../../assets/images/avatar.png";
@@ -45,11 +46,7 @@ const Navbar = () => {
         <div className={styles.navTop}>
           <div className={styles.navLeft}>
             <Link to="/home">
-              <img
-                src={iconoEducamas}
-                alt="Prográmate"
-                className={styles.iconoEducamas}
-              />
+              <Icon_home width={70} height={50} />
             </Link>
             <MenuButton onClickMenu={handleClickMenu} iconActive={toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars"} />
 

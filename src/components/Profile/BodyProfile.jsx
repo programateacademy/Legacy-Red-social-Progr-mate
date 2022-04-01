@@ -75,7 +75,11 @@ const BodyProfile = () => {
               <ProfileEducation dataUserProfile={dataUserProfile} />
               <ProfileLanguages dataUserProfile={dataUserProfile} />
               <Technologies dataUserProfile={dataUserProfile} />
-
+              <div className={style.profileInfo2}>
+              <ProfileSkills dataUserProfile={dataUserProfile} />
+              <ProfileExperience dataUserProfile={dataUserProfile} />
+              <ProfilePortfolio dataUserProfile={dataUserProfile} />
+            </div>
               <a href={dataUserProfile.github} target="_blank">
                 <button className={style.button} type="button">
                   Ver Github
@@ -83,11 +87,7 @@ const BodyProfile = () => {
               </a>
             </div>
             <div className={style.profilePosts}>{!showMain && <Posts dataUserProfile={dataUserProfile} />}</div>
-            <div className={style.profileInfo2}>
-              <ProfileSkills dataUserProfile={dataUserProfile} />
-              <ProfileExperience dataUserProfile={dataUserProfile} />
-              <ProfilePortfolio dataUserProfile={dataUserProfile} />
-            </div>
+            
           </div>
         </div>
       ) : (

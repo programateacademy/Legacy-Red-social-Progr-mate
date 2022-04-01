@@ -1,0 +1,8 @@
+.postUser {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.container{
+    order: 3;
+}

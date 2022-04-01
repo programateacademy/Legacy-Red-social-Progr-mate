@@ -11,13 +11,18 @@
 }
 
 .cont {
-
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-
+.photoSkeleton {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #ededed, #c9c9c9);
+  background-size: 400% 400%;
+  animation: loadingAnimation 2s ease-in-out infinite;
+}
 
 .profileTitle {
   font-size: 20px;
@@ -32,6 +37,7 @@
 
 .editandphoto {
   display: flex;
+  position: relative;
 }
 .editandphoto i {
   font-size: 30px;
@@ -39,12 +45,16 @@
   margin-top: 20px;
   margin-left: 10px;
 }
+.editContainer {
+  position: absolute;
+  bottom: -14px;
+  right: -14px;
+}
 .circulo {
   width: 200px;
   height: 200px;
   overflow: hidden;
   border-radius: 20px;
-  background-color: #d7d7d7;
   margin-top: 10px;
   overflow: hidden;
   display: flex;
@@ -128,5 +138,16 @@
 
   .circulo {
     margin-top: 25px;
+  }
+}
+@keyframes loadingAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
