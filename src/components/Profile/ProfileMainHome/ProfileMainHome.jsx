@@ -28,7 +28,8 @@ const ProfileMainHome = ({ dataProfile }) => {
     useEffect(async () => { 
         await obtainCohort();
     },[dataUser])
-    console.log(avatar)
+    console.log(cohort)
+    console.log(dataUser)
     return (
         <div className={style.container}>
             <section className={style.cont}>

@@ -2,11 +2,12 @@ import React, {useState, useEffect, useContext} from 'react';
 import {sendData, getDataAll } from '../../../helpers/fetch'
 import styles from './CreateUser.module.css'
 import {DataContext} from '../../../context/DataContext'
+import { useNavigate } from 'react-router-dom';
 /* Create user - Renders in AdminHome*/
 const CreateUser = () => {
     const [userModel, setUserModel] = useState({});
-    const {allCohorts, setCohorts}= useContext(DataContext);
-
+    const {allCohorts, setCohorts, setUsers}= useContext(DataContext);
+    const navigate = useNavigate();
     useEffect(async()=> {
         const dataCohort = await getDataAll("cohorte");
         setCohorts(dataCohort)
@@ -20,9 +21,20 @@ const CreateUser = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await sendData('users', userModel)
+        setUsers(prevState => [...prevState, userModel])
+        setUserModel({
+            firstName: '',
+            middleName: '',
+            lastName: '',
+            secondSurname: '',
+            email: '',
+            contactNumber: '',
+            passwordHash: '',
+        })
+    
     }
     return (
-        <form className={styles.form}>
+        <form className={styles.form} id="form">
             <h1>Nombre</h1>
             <input className={styles.text} type="text" name='firstName' placeholder="Primer Nombre" value={userModel.firstName} onChange={handleChange}/>
             <input className={styles.text} type="text" name='middleName' placeholder="Segundo Nombre" value={userModel.middleName} onChange={handleChange}/>
