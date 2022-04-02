@@ -40,7 +40,7 @@ _2. To see how the project works, you must go to the browser and write: http://l
 * React-media
 * React-router-dom
  
-## Team
+## Team 💪
 * **Technical leader:** [Cristian Montoya](https://github.com/CristianMontoya98)
 * **Scrum master:**  [Juan Casas](https://github.com/ourainbows)
 ### Front-end team
