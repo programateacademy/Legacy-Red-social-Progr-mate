@@ -6,7 +6,7 @@ Besides, a question and answer section was enabled for persons who prefer to deb
 
 ## INSTRUCTIONS TO START THE PROJECT AT THE LOCAL LEVEL:
 ### FRONT-END
-## Pre-requirements 🪖
+## Pre-requirements ⚖️
 _If you want to execute test and develop this project you must have any code editor like Visual Studio Code. To run this project you must have installed “Node js” in your pc._
 
 ![](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
