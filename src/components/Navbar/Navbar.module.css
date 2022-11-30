@@ -38,8 +38,11 @@
 }
 .imgProfile {
   width: 40px;
-  border-radius: 10px;
+  height: 40px;
+  border-radius: 50%;
   object-fit: cover;
+  border: 1px solid black;
+  box-shadow: 5px 6px 20px rgba(0, 0, 0, 0.473);
 }
 /*========================= Dropdown ========================= */
 .dropdownLogOut {

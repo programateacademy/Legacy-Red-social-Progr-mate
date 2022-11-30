@@ -1,21 +1,23 @@
 .container1 {
-    display: flex;  
+    display: flex;
     margin-top: 10px;
     width: 100%;
-    
 }
-.containerFilter{
+
+.containerFilter {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.postFilters{
+
+.postFilters {
 
     width: 70%;
 }
+
 .container2 {
-   
+    border: 2px solid #ffcc02;
     width: 90%;
     max-width: 100%;
     min-height: 90%;
@@ -23,13 +25,13 @@
     justify-content: center;
     margin: auto;
     flex-direction: column;
-    background-color:#ffffff;
+    background-color: #ffffff;
     margin-top: 5px;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-radius: 4px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: 5px 6px 26px rgba(0, 0, 0, 1);
 }
 
 .postUser {
@@ -49,11 +51,12 @@
 
 .icon_cont2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     flex-direction: row;
-    align-items: start;
+    align-items: center;
     width: 90%;
     margin: 15px 15px 5px 15px;
+    gap: 10px;
 }
 
 .iconsModify {
@@ -65,24 +68,29 @@
     font-size: 25px;
     cursor: pointer;
 }
-.iconsModify span{
+
+.iconsModify span {
     margin-top: 0;
     background: red;
     border-radius: 1px;
-    
+
 }
-.icon { 
+
+.icon {
     font-size: 50px;
 }
-.comment textarea{
+
+.comment textarea {
     resize: none;
     width: 80%;
     height: 40px;
 }
-.comment{
+
+.comment {
     padding-left: 25px;
 }
-.comment button{
+
+.comment button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,21 +105,24 @@
     flex-wrap: wrap;
     cursor: pointer;
 }
-.comment button:hover{
+
+.comment button:hover {
     background-color: black;
     color: #ffcc02;
 }
+
 .icon img {
     font-size: 14px;
     width: 50px;
     margin-left: 5px;
-    border-radius:  5px;
+    border-radius: 50%;
     width: 65px;
     height: 65px;
     margin-left: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
     object-fit: cover;
 }
+
 .icon i {
     width: 250px;
 }
@@ -122,16 +133,16 @@
 }
 
 .llavePost {
-    font-weight:bolder;
+    font-weight: bolder;
 }
 
-.arrtech{
-  
-  border: 1px #000;
-  background-color: #cccccc;
-  padding: 3px ;
-  border-radius: 2px; 
-  margin-right: 5px;
+.arrtech {
+
+    border: 1px #000;
+    background-color: #cccccc;
+    padding: 3px;
+    border-radius: 2px;
+    margin-right: 5px;
 }
 
 .news {
@@ -154,11 +165,11 @@
 
 .tech {
     display: inline-block;
-      border: 1px #000;
-  background-color: #cccccc;
-  padding: 3px ;
-  border-radius: 2px; 
-  margin-right: 5px;
+    border: 1px #000;
+    background-color: #cccccc;
+    padding: 3px;
+    border-radius: 2px;
+    margin-right: 5px;
 }
 
 .like {
@@ -181,27 +192,31 @@
 }
 
 @media (max-width: 565px) {
-    .comment textarea{
+    .comment textarea {
         resize: none;
         width: 75%;
         height: 32px;
     }
-    .comment button{
+
+    .comment button {
         height: 32px;
         width: 80px;
     }
 }
+
 @media (max-width: 410px) {
-    .comment textarea{
+    .comment textarea {
         resize: none;
         width: 65%;
         height: 28px;
     }
-    .comment button{
+
+    .comment button {
         height: 28px;
         width: 70px;
     }
-    .postFilters{
+
+    .postFilters {
         width: 95%;
     }
 }

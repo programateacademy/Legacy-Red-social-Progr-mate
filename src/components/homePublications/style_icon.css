@@ -1,27 +1,30 @@
-.red{
+.red {
   color: #FF2626;
 
-  }
-  .fa-heart{
-    cursor: pointer;
-   
-  }
+}
 
-  .Icon_events{
-    padding: 0% ;
-    margin: 0%;
-    background-color: #ec4444;
-    padding: 1em;
-  }
-   .Icon_job{
-    padding: 0% ;
-    margin: 0%;
-    background-color: #3a37fd;
-    padding: 1em;
-  }
-     .Icon_news{
-    padding: 0% ;
-    margin: 0%;
-    background-color: #fdd937;
-    padding: 1em;
-  }
+.fa-heart {
+  cursor: pointer;
+
+}
+
+.Icon_events {
+  padding: 0%;
+  margin: 0%;
+  background-color: #DB423B;
+  padding: 1em;
+}
+
+.Icon_job {
+  padding: 0%;
+  margin: 0%;
+  background-color: #45C0E0;
+  padding: 1em;
+}
+
+.Icon_news {
+  padding: 0%;
+  margin: 0%;
+  background-color: #fdd937;
+  padding: 1em;
+}

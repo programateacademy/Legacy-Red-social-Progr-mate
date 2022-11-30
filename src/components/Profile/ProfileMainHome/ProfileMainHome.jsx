@@ -35,7 +35,8 @@ const ProfileMainHome = ({ dataProfile }) => {
             <section className={style.cont}>
                 <div className={style.photoContainer}>
                     {avatar ? (
-                        <img src={altImg} alt="Foto" className={style.avatarImg}/>
+                        // <img src={altImg} alt="Foto" className={style.avatarImg}/>
+                        <img src={avatar} alt="Foto" className={style.avatarImg}/>
                     ) : (
                         <div className={style.photoSkeleton}></div>
                     )}
