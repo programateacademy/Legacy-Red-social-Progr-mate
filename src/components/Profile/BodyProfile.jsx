@@ -93,7 +93,7 @@ const BodyProfile = () => {
       ) : (
         <div className={style.containBodyProfileHome}>
           <ProfileMainHome dataProfile={dataUserProfile} />
-          <UserQuestions />
+          {/* <UserQuestions /> */}
         </div>
       )}
 

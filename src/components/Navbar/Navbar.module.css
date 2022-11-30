@@ -31,6 +31,7 @@
 }
 
 .btnNotification {
+  margin-left: 0.5vh;
   border: none;
   background: none;
   padding: 0%;
@@ -60,7 +61,7 @@
 }
 
 .dropdownBtn:hover {
-  color: #ffcc02;
+  color: #ffffff;
 }
 
 .dropdownContent {

@@ -4,8 +4,6 @@
   margin: auto;
   background-color: #ffffff;
   padding: 2rem;
-  display: flex;
-  
 }
 
 .cont {
@@ -28,16 +26,20 @@
   height: 100%;
   object-fit: cover;
 }
+.avatarImg{
+  border: 2px solid #ffcc02;
+  border-radius: 50%;
+}
 .photoSkeleton{
   height: 100%;
   width: 100%;
   background: linear-gradient(90deg, #ededed, #c9c9c9);
   background-size: 400% 400%;
   animation: loadingAnimation 2s ease-in-out infinite;
+  border-radius: 50%;
 }
 .tex_cont {
   width: 100%;
-  margin-left: 1.2rem;
   position: relative;
 }
 
@@ -47,6 +49,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   margin-top: 1rem;
 }
 .tex p {
@@ -62,7 +65,7 @@
   font-weight: 400;
 }
 .icon {
-  top: 0px;
+  top: -140px;
   position: absolute;
   right: -10px;
   cursor: pointer;

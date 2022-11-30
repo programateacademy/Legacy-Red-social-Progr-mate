@@ -1,6 +1,7 @@
 .btnMenu{
 display: none;
 font-size: 30px;
+margin-left: 1vh;
 
 }
 @media (max-width: 1080px){
