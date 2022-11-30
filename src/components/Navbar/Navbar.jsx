@@ -23,7 +23,7 @@ const Navbar = () => {
       const user = await getData("users", idUser)
       setAvatar(user.avatar)
     } catch (error) {
-      console.log("Error: "+ error)
+      console.log("Error: " + error)
     }
   }
 
@@ -56,7 +56,8 @@ const Navbar = () => {
           <ItemsMenu toggle={toggle} onClickItem={handleClickItem} />
           <div className={styles.containerPhoto}>
             {avatar ? (
-              <img src={avatar} alt="Foto" className={styles.imgProfile} />
+              // <img src={avatar} alt="Foto" className={styles.imgProfile} />
+              <img src={altImg} alt="Foto" className={styles.imgProfile} />
             ) : (
               <img src={altImg} alt="Foto" className={styles.imgProfile} />
             )}

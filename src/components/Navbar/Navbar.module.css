@@ -1,6 +1,6 @@
 .navBar {
   margin: 0 auto;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffcc02;
   width: 100%;
   position: fixed;
   top: 0px;
@@ -10,6 +10,8 @@
   align-items: center;
   height: 80px;
   margin-bottom: 50px;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 .navTop {
   display: flex;
@@ -37,7 +39,6 @@
   width: 40px;
   border-radius: 10px;
   object-fit: cover;
-  height: 40px;
 }
 /*========================= Dropdown ========================= */
 .dropdownLogOut {
@@ -84,3 +85,17 @@
 }
 
 /*========================= End Dropdown ========================= */
+/*========RESPONSIVE========*/
+/* DESKTOP MEDIUM*/
+@media (max-width: 768px) {
+  .navBar {
+    background-color: #ffcc02;
+  }
+}
+
+/* DESKTOP BIG*/
+@media (max-width: 1800px) {
+  .navBar {
+    background-color: #ffcc02;
+  }
+}

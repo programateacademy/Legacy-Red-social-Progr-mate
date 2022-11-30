@@ -1,12 +1,15 @@
 .menu {
     position: fixed;
-    background: white;
+    background: #ffcc02;
     height: calc(100vh - 80px);
     width: 100%;
     transition: all ease 0.7s;
     display: flex;
     justify-content: center;
     z-index: -1;
+    left: 0;
+    padding: 0;
+    margin: 0;
   }
   
   .menu__elements {
@@ -17,7 +20,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-
   }
   .menu__elements li {
     font-size: 15px;

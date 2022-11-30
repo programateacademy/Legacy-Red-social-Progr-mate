@@ -59,7 +59,7 @@ function Login() {
       <div className={styles.containerRight}>
         <div className={styles.containerRightHeader}>
           <Icon_home width={150} height={100} />
-          <h3>Bienvenido a Codery</h3>
+          <h3>Bienvenido a Codery App</h3>
         </div>
         <form className={styles.containerRightForm} onSubmit={handleSubmit}>
           <input
