@@ -8,7 +8,8 @@
 .containBodyProfileHome {
   background-color: #ffffff;
   border: 2px solid #ffcc02;
-  border-radius: 2px;
+  border-radius: 8px;
+  box-shadow: 5px 6px 26px rgba(0, 0, 0, 0.589);
 }
 .profileBodyContainer {
   display: flex;
