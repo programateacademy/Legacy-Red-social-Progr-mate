@@ -10,8 +10,10 @@ const ProfileLanguages = (props) => {
         <Fragment>
             <section className={style.container1}>
                 <div className={style.container2}>
-                    <div className={style.title}>
+                <div className={style.icon_cont}>
+                        <div className={style.title}>
                         <p>Idiomas</p>
+                    </div>
                     </div>
                     <div className={style.icon_cont2}>
                         

@@ -29,6 +29,10 @@
     font-weight: 900;
 }
 
+.title p {
+    padding-left: 30px;
+}
+
 @media (min-width: 768px) {
     .container2 {
         width: 90%;

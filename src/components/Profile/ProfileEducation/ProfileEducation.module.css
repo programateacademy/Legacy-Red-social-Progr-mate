@@ -25,6 +25,10 @@
     font-weight: 900;
 }
 
+.title p {
+    padding-left: 30px;
+}
+
 .icon_cont2 {
     display: flex;
     justify-content: left;

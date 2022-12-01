@@ -30,6 +30,10 @@
     font-weight: 900;
 }
 
+.title p {
+    padding-left: 30px;
+}
+
 .skill {
     display: inline-block;
 }

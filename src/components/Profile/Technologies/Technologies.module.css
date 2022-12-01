@@ -25,6 +25,10 @@
     font-weight: 900;
 }
 
+.title p {
+    padding-left: 30px;
+}
+
 .skill p {
     color: #000;
     font-size: 20px;

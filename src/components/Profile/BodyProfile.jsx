@@ -75,11 +75,12 @@ const BodyProfile = () => {
               <ProfileEducation dataUserProfile={dataUserProfile} />
               <ProfileLanguages dataUserProfile={dataUserProfile} />
               <Technologies dataUserProfile={dataUserProfile} />
-              {/* <div className={style.profileInfo2}>
+              
+             
               <ProfileSkills dataUserProfile={dataUserProfile} />
               <ProfileExperience dataUserProfile={dataUserProfile} />
               <ProfilePortfolio dataUserProfile={dataUserProfile} />
-            </div> */}
+             
             
             </div>
             <div className={style.btnProfile}>
