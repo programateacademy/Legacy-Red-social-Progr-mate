@@ -75,17 +75,20 @@ const BodyProfile = () => {
               <ProfileEducation dataUserProfile={dataUserProfile} />
               <ProfileLanguages dataUserProfile={dataUserProfile} />
               <Technologies dataUserProfile={dataUserProfile} />
-              <div className={style.profileInfo2}>
+              {/* <div className={style.profileInfo2}>
               <ProfileSkills dataUserProfile={dataUserProfile} />
               <ProfileExperience dataUserProfile={dataUserProfile} />
               <ProfilePortfolio dataUserProfile={dataUserProfile} />
+            </div> */}
+            
             </div>
+            <div className={style.btnProfile}>
               <a href={dataUserProfile.github} target="_blank">
-                <button className={style.button} type="button">
-                  Ver Github
-                </button>
-              </a>
-            </div>
+                  <button className={style.button} type="button">
+                    Ver Github
+                  </button>
+                </a>
+                </div>
             <div className={style.profilePosts}>{!showMain && <Posts dataUserProfile={dataUserProfile} />}</div>
             
           </div>

@@ -108,7 +108,7 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                         <div className={style.row_inputs}>
                             <div className={style.column}>
                                 <Name nameField={dataUser.firstName} onChange={onChange} field={'firstName'} >
-                                    <h3>Nombre</h3>
+                                    <h3 className="contentInput">Nombre</h3>
                                 </Name>
                             </div>
                             <div className={style.column}>
@@ -117,6 +117,7 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                                 </Name>
                             </div>
                         </div>
+
                         <div className={style.row_inputs}>
                             <div className={style.column}>
                                 <Name nameField={dataUser.lastName} onChange={onChange} field={'lastName'} >
@@ -130,6 +131,7 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                             </div>
                         </div>
                     </div>
+
                     <div className={style.form}>
                         <h2>Enlaces</h2>
                         <div className={style.row_inputs}>

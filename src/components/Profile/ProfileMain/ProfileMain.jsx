@@ -25,7 +25,7 @@ const ProfileMain = ({ dataProfile }) => {
             <div className={style.editandphoto}>
               <div className={style.circulo}>
                 {dataProfile.avatar ? (
-                  <img src={dataProfile.avatar} alt="Foto" />
+                  <img className="photoBox" src={dataProfile.avatar} alt="Foto" />
                 ) : (
                   <div className={style.photoSkeleton}></div>
                 )}

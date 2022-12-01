@@ -7,6 +7,8 @@
 }
 
 .form_container {
+    margin: 0 8px;
+    padding: 0 8px;
     max-width: 1500px;
     display: flex;
     justify-content: center;
@@ -14,7 +16,7 @@
 }
 
 .form_container input {
-    background-color: var(--input-color);   
+    background-color: var(--input-color);
     border: none;
     height: 3rem;
     border-bottom: 3px solid #FFCC02;
@@ -22,7 +24,7 @@
 }
 
 .form_container textarea {
-    background-color: var(--input-color);   
+    background-color: var(--input-color);
     border: none;
     width: 100%;
     height: 15rem;
@@ -61,8 +63,9 @@
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.5rem 5px;
 }
+
 .row_inputs input {
     width: 100%;
 }
@@ -73,7 +76,13 @@
     justify-content: center;
     width: 100%;
     padding: 1rem;
+    margin-left: 5px;
 }
+
+.contentInput {
+    margin-left: 5px;
+}
+
 .tags button {
     background-color: #ffe680;
     border-color: transparent;
@@ -85,6 +94,7 @@
     margin: 2em;
     max-width: 500px
 }
+
 @media (max-width: 425px) {
     .row_inputs {
         flex-direction: column;

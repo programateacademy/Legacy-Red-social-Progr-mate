@@ -3,22 +3,12 @@
     height: 177px;
     display: flex;
     background-color: white;
-    
-    padding: 5px 15px;
     margin-top: 15px;
     margin-bottom: 5px;
     color: #000;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
 }
-
-
-.icon_cont {
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
 
 .title {
     font-size: 24px;
@@ -26,12 +16,13 @@
 }
 
 .icon_cont2 {
-    width: 100%;
+    border-radius: 15px 15px 0 0;
+    width: 357px;
+    background: #FFCC02;
     display: flex;
-    /* justify-content: space-between; */
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
 }
 
 .icon_cont2 p {
@@ -42,6 +33,7 @@
 .text_cont {
     margin-left: -90px;
 }
+
 @media (min-width: 768px) {
     .container2 {
         width: 90%;

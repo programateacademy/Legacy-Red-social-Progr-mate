@@ -4,6 +4,7 @@ import Education from "./Education";
 
 import style from "./ProfileEducation.module.css";
 
+
 const ProfileEducation = (props) => {
     const { dataUserProfile } = props;
 
