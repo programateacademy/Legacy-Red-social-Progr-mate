@@ -11,6 +11,7 @@
 }
 
 .icon_cont {
+    text-align: center;
     border-radius: 15px 15px 0 0;
     width: 357px;
     background: #FFCC02;
@@ -26,9 +27,12 @@
 }
 
 .title {
-    padding: 0 5px;
     font-size: 24px;
     font-weight: 900;
+}
+
+.title p {
+    padding-left: 10px;
 }
 
 .skill {
