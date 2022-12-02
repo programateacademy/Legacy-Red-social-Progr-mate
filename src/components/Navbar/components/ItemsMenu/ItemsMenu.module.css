@@ -33,7 +33,7 @@
 .menu__elements p {
   margin: 0;
   display: block;
-  transition: all ease 0.3s;
+  transition: all ease 0.7s;
   font-weight: 700;
 }
 .element{
@@ -41,8 +41,10 @@
 }
 .element:hover > p {
   display: block;
+  transition: all ease 0.7s;
 }
 .menu a {
+  font-size: 50px;
   text-decoration: none;
   color: #ffcc02;
 }
