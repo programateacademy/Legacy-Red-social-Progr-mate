@@ -99,13 +99,13 @@
 /* DESKTOP MEDIUM*/
 @media (max-width: 768px) {
   .navBar {
-    background-color: #ffcc02;
+    background-color: #282828;
   }
 }
 
 /* DESKTOP BIG*/
 @media (max-width: 1800px) {
   .navBar {
-    background-color: #ffcc02;
+    background-color: #282828;
   }
 }
