@@ -8,7 +8,8 @@
 .icon path{
     transition: all ease-out 0.3s;
 }
+
 .icon path:hover{
-    fill: #000000;
+    fill: #ffcc02;
    
 }
