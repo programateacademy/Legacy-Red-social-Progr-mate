@@ -140,6 +140,7 @@
 .techContains {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .llavePost {
@@ -147,12 +148,13 @@
 }
 
 .arrtech {
-
-    border: 1px #000;
-    background-color: #cccccc;
-    padding: 3px;
-    border-radius: 2px;
+    border: 2px solid #ffcc02;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
     margin-right: 5px;
+    color: #ffcc02;
+    text-align: center;
 }
 
 .news {
@@ -168,6 +170,10 @@
 
 .news p {
     margin-left: 15px;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
 }
 
 .news img {
@@ -175,13 +181,29 @@
     margin: auto;
 }
 
+.news p > a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.containerDesc{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
 .tech {
     display: inline-block;
-    border: 1px #000;
-    background-color: #cccccc;
-    padding: 3px;
-    border-radius: 2px;
+    border: 2px solid #ffcc02;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
     margin-right: 5px;
+    color: #ffcc02;
+    text-align: center;
 }
 
 .like {
@@ -231,6 +253,15 @@
 
     .icon_cont2 {
         margin: 20px 5px 0px 10px;
+    }
+    .container2{
+        width: 100%;
+    }
+    .news p {
+        margin-right: 15px;
+    }
+    .news h3{
+        margin-right: 15px;
     }
 }
 

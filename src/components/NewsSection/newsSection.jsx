@@ -9,16 +9,16 @@ import { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 import Navbar from "../Navbar/Navbar";
 const NewsSection = () => {
-    const { dataProfile } =
+  const { dataProfile } =
     useContext(DataContext);
   return (
     <section className={styles.newsSection}>
-       <Navbar/>
-          <h2>Noticias</h2>
-          <div>
-              <div>
-                  <FilterPosts postType="news" />
-              </div>
+      <Navbar />
+      <h2>Noticias</h2>
+      <div>
+        <div>
+          <FilterPosts postType="news" />
+        </div>
       </div>
     </section>
   );
