@@ -25,19 +25,21 @@
     justify-content: center;
     margin: auto;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #232323;
     margin-top: 5px;
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 5px 6px 26px rgba(0, 0, 0, 1);
+    color: white;
 }
 
 .postUser {
     display: flex;
     gap: 20px;
     align-items: center;
+    color: white;
+    font-size: 20px;
 }
 
 .icon_cont1 {
@@ -73,7 +75,6 @@
     margin-top: 0;
     background: red;
     border-radius: 1px;
-
 }
 
 .icon {
@@ -84,10 +85,18 @@
     resize: none;
     width: 80%;
     height: 40px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
 }
 
 .comment {
     padding-left: 25px;
+}
+
+.comment p {
+    color: white;
+    font-size: 15px;
 }
 
 .comment button {
@@ -97,7 +106,7 @@
     width: 95px;
     height: 40px;
     background-color: #ffcc02;
-    border-radius: 2px;
+    border-radius: 0px 5px 5px 0px;
     color: #010101;
     border: none;
     font-family: "Roboto", sans-serif;
@@ -121,6 +130,7 @@
     margin-left: 10px;
     margin-top: 10px;
     object-fit: cover;
+    border: 2px solid #ffcc02;
 }
 
 .icon i {
@@ -148,14 +158,16 @@
 .news {
     margin-bottom: 1px;
     margin-left: 0;
+    font-size: 15px;
+    color: white;
 }
 
 .news h3 {
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .news p {
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .news img {
@@ -175,22 +187,27 @@
 .like {
     display: flex;
     align-items: center;
+    color: white;
 }
 
 .like i {
     font-size: 25px;
     margin-right: 10px;
 }
-.editButtons{
+
+.editButtons {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: inherit;
+    color: white;
 }
-.editButtons i{
+
+.editButtons i {
     font-size: 25px;
     margin-right: 10px;
 }
+
 .addPosts {
     cursor: pointer;
     font-weight: bold;
@@ -211,6 +228,7 @@
         height: 32px;
         width: 80px;
     }
+
     .icon_cont2 {
         margin: 20px 5px 0px 10px;
     }
