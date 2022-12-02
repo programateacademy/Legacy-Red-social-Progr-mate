@@ -1,8 +1,7 @@
-
 .form_container {
     width: 98%;
     height: 90%;
-    background-color: #fff;
+    background-color: #535353;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -15,6 +14,15 @@
     font-size: 18px;
     margin-left: 5px;
 }
+
+.form > input, .form > select, .form > textarea{
+    border: 2px solid #ffcc02;
+    background: #23232393;
+    border-radius: 5px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
 .nom_input {
     width: 100%;
     height: 50px;
@@ -30,11 +38,12 @@
     padding-left: 10px;
     background-color: #eceff1;
 }
+
 .textarea {
     width: 100%;
     height: 150px;
     padding: 10px;
-    border: 1px solid ;
+    border: 1px solid;
     border-radius: 2px;
     font-size: 18px;
     outline: none;
@@ -42,17 +51,19 @@
     border-color: #eceff1;
     resize: none;
 }
+
 .tecno button {
-   width: 120px;
-   height: 90%;
-   padding: 8px 10px;
-   margin: 5px;
-   border-radius: 5px;
-   border: 1px solid;
-   border-color: #ffcc02;
-   background-color: #ffcc02 ;
-   cursor: pointer;
+    width: 120px;
+    height: 90%;
+    padding: 8px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #ffcc02;
+    background-color: #ffcc02;
+    cursor: pointer;
 }
+
 .tecno {
     display: flex;
     justify-content: space-around;
@@ -92,10 +103,13 @@
     flex-wrap: wrap;
     margin: 20px 35%;
 }
+
 .send button:hover {
     background-color: black;
     color: #ffcc02;
+    cursor: pointer;
 }
+
 .send {
     width: 100%;
     display: flex;
@@ -109,6 +123,7 @@
     .form_container {
         width: 98%;
     }
+
     .form {
         width: 100%;
     }
@@ -120,12 +135,14 @@
         width: 98%;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: center; 
+        justify-content: center;
     }
+
     .form {
         width: 100%;
     }
 }
+
 .headerPerfil {
     width: 90%;
     margin: auto;

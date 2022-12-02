@@ -2,7 +2,7 @@
 display: none;
 font-size: 30px;
 margin-left: 1vh;
-
+color: #ffcc02;
 }
 @media (max-width: 1080px){
     .btnMenu{

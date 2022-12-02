@@ -1,5 +1,5 @@
 .containernewposts{
-    background-color: #ffff;
+    background-color: #282828;
     border-radius: 7px;
     width: 90%;
     display: grid;
@@ -9,6 +9,8 @@
     margin-top: 5px;
     margin-bottom: 20px;
     box-shadow: 5px 6px 26px rgba(0, 0, 0, 0.486);
+    color: white;
+    text-align: center;
 }
 .buttonsnewposts {
     display: flex;
@@ -17,10 +19,9 @@
 }
 .buttonsnewposts > button {
     border: 0;
-    background-color: #ffff;
+    background-color: #282828;
     cursor: pointer;
-    
-  
+    color: white;
 }
 .buttonsnewposts > button > p{
     margin: 0;
