@@ -170,6 +170,7 @@
 
 .news p {
     margin-left: 15px;
+    margin-right: 15px;
     display: flex;
     margin-top: 0;
     margin-bottom: 8px;

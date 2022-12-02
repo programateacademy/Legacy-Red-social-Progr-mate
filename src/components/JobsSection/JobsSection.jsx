@@ -5,8 +5,8 @@ import styles from './JobsSection.module.css';
 const JobsSection = () => {
     return (
         <section className={styles.jobsSection}>
-             <Navbar/>
-        <h2>Ofertas</h2>
+            <Navbar />
+            <h2>Ofertas</h2>
             <FilterPosts postType="jobs" />
         </section>
     );
