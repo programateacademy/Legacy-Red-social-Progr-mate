@@ -23,7 +23,7 @@ const Navbar = () => {
       const user = await getData("users", idUser)
       setAvatar(user.avatar)
     } catch (error) {
-      console.log("Error: "+ error)
+      console.log("Error: " + error)
     }
   }
 

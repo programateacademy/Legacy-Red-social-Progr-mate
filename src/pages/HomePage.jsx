@@ -12,7 +12,7 @@ const HomePage = () => {
       <div className={style.homePage}>
          <Navbar/>
         <div className={style.containBody}>
-          <Media query="(min-width: 1024px)">
+          {/* <Media query="(min-width: 1024px)">
             {(matches) => {
               return (
                 matches && (
@@ -22,7 +22,7 @@ const HomePage = () => {
                 )
               );
             }}
-          </Media>
+          </Media> */}
           <div className={style.mainContent}>
             <div className={style.containFilter}>
             </div>

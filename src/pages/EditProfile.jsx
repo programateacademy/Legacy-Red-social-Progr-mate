@@ -8,7 +8,7 @@ const EditProfile = () => {
     return (
         <>
             <Navbar/>
-            <ProfileEditor idUser={params.id}/>;
+            <ProfileEditor idUser={params.id}/>
         </>
         )
 };

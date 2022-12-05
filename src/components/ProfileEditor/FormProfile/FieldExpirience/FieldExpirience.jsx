@@ -1,5 +1,5 @@
-import React from "react";
-import style from "../../ProfileEditor.module.css";
+import React from "react"
+import style from "../../ProfileEditor.module.css"
 
 
 const FieldExperience = ({ deleteExperience, handleChange, item }) => {
@@ -77,7 +77,7 @@ const FieldExperience = ({ deleteExperience, handleChange, item }) => {
                 />
             </div>
         </form>
-    );
-};
+    )
+}
 
-export default FieldExperience;
+export default FieldExperience

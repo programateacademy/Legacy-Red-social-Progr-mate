@@ -77,9 +77,7 @@ const Posts = () => {
         }
     };
 
-    const showMorePosts = () => {
-        setQuantityPosts(quantityPosts + 15);
-    };
+ 
 
     useEffect(async () => {
         let isMounted = true
@@ -143,10 +141,7 @@ const Posts = () => {
                             />
                         ) : null
                     )}
-                    <p className={style.addPosts} onClick={showMorePosts}>
-                        Ver más
-
-                    </p>
+                    
                 </>
                 :
                 [...Array(5)].map((x, i) => (

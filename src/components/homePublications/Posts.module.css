@@ -1,21 +1,23 @@
 .container1 {
-    display: flex;  
+    display: flex;
     margin-top: 10px;
     width: 100%;
-    
 }
-.containerFilter{
+
+.containerFilter {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.postFilters{
+
+.postFilters {
 
     width: 70%;
 }
+
 .container2 {
-   
+    border: 2px solid #ffcc02;
     width: 90%;
     max-width: 100%;
     min-height: 90%;
@@ -23,19 +25,21 @@
     justify-content: center;
     margin: auto;
     flex-direction: column;
-    background-color:#ffffff;
+    background-color: #232323;
     margin-top: 5px;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-radius: 4px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    color: white;
 }
 
 .postUser {
     display: flex;
     gap: 20px;
     align-items: center;
+    color: white;
+    font-size: 20px;
 }
 
 .icon_cont1 {
@@ -49,11 +53,12 @@
 
 .icon_cont2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     flex-direction: row;
-    align-items: start;
-    width: 90%;
-    margin: 15px 15px 5px 15px;
+    align-items: center;
+    width: 95%;
+    margin: 20px 5px 0px 20px;
+    gap: 10px;
 }
 
 .iconsModify {
@@ -65,31 +70,43 @@
     font-size: 25px;
     cursor: pointer;
 }
-.iconsModify span{
+
+.iconsModify span {
     margin-top: 0;
     background: red;
     border-radius: 1px;
-    
 }
-.icon { 
+
+.icon {
     font-size: 50px;
 }
-.comment textarea{
+
+.comment textarea {
     resize: none;
     width: 80%;
     height: 40px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
 }
-.comment{
+
+.comment {
     padding-left: 25px;
 }
-.comment button{
+
+.comment p {
+    color: white;
+    font-size: 15px;
+}
+
+.comment button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 95px;
     height: 40px;
     background-color: #ffcc02;
-    border-radius: 2px;
+    border-radius: 0px 5px 5px 0px;
     color: #010101;
     border: none;
     font-family: "Roboto", sans-serif;
@@ -97,21 +114,25 @@
     flex-wrap: wrap;
     cursor: pointer;
 }
-.comment button:hover{
+
+.comment button:hover {
     background-color: black;
     color: #ffcc02;
 }
+
 .icon img {
     font-size: 14px;
     width: 50px;
     margin-left: 5px;
-    border-radius:  5px;
+    border-radius: 50%;
     width: 65px;
     height: 65px;
     margin-left: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
     object-fit: cover;
+    border: 2px solid #ffcc02;
 }
+
 .icon i {
     width: 250px;
 }
@@ -119,32 +140,41 @@
 .techContains {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .llavePost {
-    font-weight:bolder;
+    font-weight: bolder;
 }
 
-.arrtech{
-  
-  border: 1px #000;
-  background-color: #cccccc;
-  padding: 3px ;
-  border-radius: 2px; 
-  margin-right: 5px;
+.arrtech {
+    border: 2px solid #ffcc02;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+    color: #ffcc02;
+    text-align: center;
 }
 
 .news {
     margin-bottom: 1px;
     margin-left: 0;
+    font-size: 15px;
+    color: white;
 }
 
 .news h3 {
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .news p {
-    margin-left: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
 }
 
 .news img {
@@ -152,21 +182,51 @@
     margin: auto;
 }
 
+.news p > a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.containerDesc{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
 .tech {
     display: inline-block;
-      border: 1px #000;
-  background-color: #cccccc;
-  padding: 3px ;
-  border-radius: 2px; 
-  margin-right: 5px;
+    border: 2px solid #ffcc02;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+    color: #ffcc02;
+    text-align: center;
 }
 
 .like {
     display: flex;
     align-items: center;
+    color: white;
 }
 
 .like i {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.editButtons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: inherit;
+    color: white;
+}
+
+.editButtons i {
     font-size: 25px;
     margin-right: 10px;
 }
@@ -181,27 +241,44 @@
 }
 
 @media (max-width: 565px) {
-    .comment textarea{
+    .comment textarea {
         resize: none;
         width: 75%;
         height: 32px;
     }
-    .comment button{
+
+    .comment button {
         height: 32px;
         width: 80px;
     }
+
+    .icon_cont2 {
+        margin: 20px 5px 0px 10px;
+    }
+    .container2{
+        width: 100%;
+    }
+    .news p {
+        margin-right: 15px;
+    }
+    .news h3{
+        margin-right: 15px;
+    }
 }
+
 @media (max-width: 410px) {
-    .comment textarea{
+    .comment textarea {
         resize: none;
         width: 65%;
         height: 28px;
     }
-    .comment button{
+
+    .comment button {
         height: 28px;
         width: 70px;
     }
-    .postFilters{
+
+    .postFilters {
         width: 95%;
     }
 }

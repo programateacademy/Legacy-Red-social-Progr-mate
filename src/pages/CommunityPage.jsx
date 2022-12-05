@@ -11,7 +11,7 @@ const CommunityPage = () => {
 
     return (
         <>
-             <Navbar/>
+            <Navbar/>
             <UsersList />
             <Footer />
         </>

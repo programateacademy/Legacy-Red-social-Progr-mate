@@ -1,8 +1,10 @@
 .newsSection{
     padding-top: 80px;
-    background: var(--background)
+    background: #535353
 }
 .newsSection h2{
     font-size: 40px;
     text-align: center;
+    color: white;
+    font-family: "Roboto", sans-serif;
 }

@@ -4,59 +4,59 @@ import React, {
     useEffect,
     useRef,
     useState,
-} from "react";
+} from "react"
 
-import style from "../ProfileEditor.module.css";
-import Languages from "./Languages";
-import HardSkills from "./HardSkills";
-import SoftSkills from "./SoftSkills";
+import style from "../ProfileEditor.module.css"
+import Languages from "./Languages"
+import HardSkills from "./HardSkills"
+import SoftSkills from "./SoftSkills"
 import Name from './Name'
 import Cohorte from './Cohorte'
-import TextArea from "./TextArea";
+import TextArea from "./TextArea"
 const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
-    const [technical, setTechnical] = useState([]);
-    const [softSkills, setsoftSkills] = useState([]);
-    const [languages, setLanguages] = useState([]);
+    const [technical, setTechnical] = useState([])
+    const [softSkills, setsoftSkills] = useState([])
+    const [languages, setLanguages] = useState([])
 
     
     const onKeyHardSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
-            technical.push(e.target.value);
+            technical.push(e.target.value)
             setDataUser({
                 ...dataUser,
                 technicalSkills: technical,
-            });
-            e.target.value = "";
-            e.preventDefault();
+            })
+            e.target.value = ""
+            e.preventDefault()
             console.log(dataUser)
         }
         
-    };
+    }
 
     const onKeySoftSkills = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
-            softSkills.push(e.target.value);
+            softSkills.push(e.target.value)
             setDataUser({
                 ...dataUser,
                 softSkills: softSkills,
-            });
-            e.target.value = "";
-            e.preventDefault();
+            })
+            e.target.value = ""
+            e.preventDefault()
         }
-    };
+    }
 
-    // let targetSkill = useRef("null");
+    // let targetSkill = useRef("null")
     const onKeyLanguages = (e) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
-            languages.push(e.target.value);
+            languages.push(e.target.value)
             setDataUser({
                 ...dataUser,
                 lenguages: languages,
-            });
-            e.target.value = "";
-            e.preventDefault();
+            })
+            e.target.value = ""
+            e.preventDefault()
         }
-    };
+    }
 
     
     const onChange = (e) => {
@@ -65,26 +65,26 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                 ...dataUser,
                 [e.target.name]: e.target.value,
                 
-            });
+            })
             console.log(e.target.value)
-            e.target.value = '';
-            e.preventDefault();
+            e.target.value = ''
+            e.preventDefault()
         }
-    };
+    }
     
     const selectChange = (e) => {
         setDataUser({
             ...dataUser,
             [e.target.name]: e.target.value,
-        });
-        e.preventDefault();
-        console.log('allName()');
+        })
+        e.preventDefault()
+        console.log('allName()')
     }
     useEffect(async () => {
-        setLanguages(dataUser.languages);
-        setsoftSkills(dataUser.softSkills);
-        setTechnical(dataUser.technicalSkills);
-    }, [dataUser]);
+        setLanguages(dataUser.languages)
+        setsoftSkills(dataUser.softSkills)
+        setTechnical(dataUser.technicalSkills)
+    }, [dataUser])
 
     
     return (
@@ -107,8 +107,8 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                         <h2>Nombre Completo</h2>
                         <div className={style.row_inputs}>
                             <div className={style.column}>
-                                <Name nameField={dataUser.firstName} onChange={onChange} field={'firstName'} >
-                                    <h3>Nombre</h3>
+                                <Name className={style.imputProfile} nameField={dataUser.firstName} onChange={onChange} field={'firstName'} >
+                                    <h3 className="contentInput">Nombre</h3>
                                 </Name>
                             </div>
                             <div className={style.column}>
@@ -117,6 +117,7 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                                 </Name>
                             </div>
                         </div>
+
                         <div className={style.row_inputs}>
                             <div className={style.column}>
                                 <Name nameField={dataUser.lastName} onChange={onChange} field={'lastName'} >
@@ -130,6 +131,7 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                             </div>
                         </div>
                     </div>
+
                     <div className={style.form}>
                         <h2>Enlaces</h2>
                         <div className={style.row_inputs}>
@@ -213,6 +215,6 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                         </div>
             </form>
         </Fragment>
-    );
-};
-export default Form_PersonalInfo;
+    )
+}
+export default Form_PersonalInfo

@@ -1,6 +1,6 @@
 .navBar {
   margin: 0 auto;
-  background-color: rgb(255, 255, 255);
+  background-color: #282828;
   width: 100%;
   position: fixed;
   top: 0px;
@@ -10,6 +10,8 @@
   align-items: center;
   height: 80px;
   margin-bottom: 50px;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 .navTop {
   display: flex;
@@ -26,18 +28,25 @@
 .containerPhoto {
   display: flex;
   align-items: center;
+  margin-left: 0.5vh;
 }
 
 .btnNotification {
+  margin-left: 1vh;
   border: none;
   background: none;
   padding: 0%;
+  font-size: 30px;
+  margin-right: 2vh;
+  color: #ffcc02;
 }
 .imgProfile {
   width: 40px;
-  border-radius: 10px;
-  object-fit: cover;
   height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffcc02;
+  box-shadow: 5px 6px 20px rgba(0, 0, 0, 0.473);
 }
 /*========================= Dropdown ========================= */
 .dropdownLogOut {
@@ -47,8 +56,10 @@
   margin: 0 5px;
   position: relative;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 2px solid #ffcc02;
   cursor: pointer;
+  color: #ffcc02;
+  font-size: 15px;
 }
 .dropdownBtn {
   height: 100%;
@@ -59,7 +70,7 @@
 }
 
 .dropdownBtn:hover {
-  color: #ffcc02;
+  color: #ffffff;
 }
 
 .dropdownContent {
@@ -84,3 +95,17 @@
 }
 
 /*========================= End Dropdown ========================= */
+/*========RESPONSIVE========*/
+/* DESKTOP MEDIUM*/
+@media (max-width: 768px) {
+  .navBar {
+    background-color: #282828;
+  }
+}
+
+/* DESKTOP BIG*/
+@media (max-width: 1800px) {
+  .navBar {
+    background-color: #282828;
+  }
+}
