@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
-import { BiX } from "react-icons/bi";
-import style from "../../ProfileEditor.module.css";
-import { DataContext } from "../../../../context/DataContext";
+import React, { useContext, useEffect, useState } from "react"
+import { BiX } from "react-icons/bi"
+import style from "../../ProfileEditor.module.css"
+import { DataContext } from "../../../../context/DataContext"
 
 const FieldEducation = ({
     item,
@@ -10,7 +10,7 @@ const FieldEducation = ({
     deleteCertificate,
     deleteEducation,
 }) => {
-    const { dataProfile } = useContext(DataContext);
+    const { dataProfile } = useContext(DataContext)
     return (
         <form className={style.form_container}  >
             <div className={style.form}>
@@ -112,7 +112,7 @@ const FieldEducation = ({
                 </div>
             ) : null} */}
         </form>
-    );
-};
+    )
+}
 
-export default FieldEducation;
+export default FieldEducation

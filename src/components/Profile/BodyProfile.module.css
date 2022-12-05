@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+}
+
 .containBodyProfile {
     background-color: var(--background);
     padding-bottom: 40px;
