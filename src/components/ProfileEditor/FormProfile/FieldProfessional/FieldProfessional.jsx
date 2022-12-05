@@ -1,16 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { studyField, experienceField } from "../../../../helpers/formProfile";
-import { v4 as uuid } from "uuid";
+import React, { useContext, useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom"
+import { studyField, experienceField } from "../../../../helpers/formProfile"
+import { v4 as uuid } from "uuid"
 
-import style from "../../ProfileEditor.module.css";
-import { getData, sendData, updateData } from "../../../../helpers/fetch";
-import FieldEducation from "../FieldEducation/FieldEducation";
-import FieldExperience from "../FieldExpirience/FieldExpirience";
+import style from "../../ProfileEditor.module.css"
+import { getData, sendData, updateData } from "../../../../helpers/fetch"
+import FieldEducation from "../FieldEducation/FieldEducation"
+import FieldExperience from "../FieldExpirience/FieldExpirience"
 
 const FieldProfessional = ({ dataUser, setDataUser }) => {
-  const params = useParams();
-  const navigate = useNavigate();
+  const params = useParams()
+  const navigate = useNavigate()
 
   const {
     github,
@@ -34,16 +34,16 @@ const FieldProfessional = ({ dataUser, setDataUser }) => {
     languages,
     prev_studes,
     experience,
-  } = dataUser;
+  } = dataUser
 
   //Traer data del usuario
 
   //Enviar data del usuario al modelo de user y profile
   const submitData = async (e) => {
-   
+
     if (params.id) {
       if (dataUser) {
-        e.preventDefault();
+        e.preventDefault()
         // await sendData("users", {
         //     user_info: params.id,
         //     github,
@@ -52,7 +52,7 @@ const FieldProfessional = ({ dataUser, setDataUser }) => {
         //     softSkills,
         //     languages,
         //     prev_studes,
-        // });
+        // })
         await updateData("users", params.id, {
           avatar,
           cohorte,
@@ -75,34 +75,34 @@ const FieldProfessional = ({ dataUser, setDataUser }) => {
           _id: params.id,
           experience,
           prev_studes,
-        });
-        let url = `/${params.type}`;
-        navigate(url.toString());
+        })
+        let url = `/${params.type}`
+        navigate(url.toString())
       } else {
-        e.preventDefault();
-        console.log("Error");
+        e.preventDefault()
+        console.log("Error")
       }
     } else {
       try {
-        await updateData("users", params.id, dataUser);
-        /* await updateData("users", dataUser._id, dataUser); */
-        navigate(`/profile`);
+        await updateData("users", params.id, dataUser)
+        /* await updateData("users", dataUser._id, dataUser) */
+        navigate(`/profile`)
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
     }
-  };
+  }
 
   const handleChangeEdu = ({ target }, id) => {
-    const { name, value } = target;
+    const { name, value } = target
     setDataUser({
       ...dataUser,
       prev_studes: dataUser.prev_studes.map((item) => ({
         ...item,
         [name]: item.id === id ? value : item[name],
       })),
-    });
-  };
+    })
+  }
 
   const addEducationField = () => {
     setDataUser({
@@ -114,14 +114,14 @@ const FieldProfessional = ({ dataUser, setDataUser }) => {
           id: uuid(),
         },
       ],
-    });
-  };
+    })
+  }
 
-  const [nameFile, setNameFile] = useState(["", "", ""]);
+  const [nameFile, setNameFile] = useState(["", "", ""])
   const onFileChange = ({ target }, id) => {
-    const file = target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
+    const file = target.files[0]
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
     reader.onload = function load() {
       setDataUser({
         ...dataUser,
@@ -129,14 +129,14 @@ const FieldProfessional = ({ dataUser, setDataUser }) => {
           ...item,
           certificate: item.id === id ? reader.result : item.certificate,
         })),
-      });
-    };
+      })
+    }
 
     if (file.type === "application/pdf") {
-      nameFile[0] = file.name;
-      setNameFile([...nameFile]);
+      nameFile[0] = file.name
+      setNameFile([...nameFile])
     }
-  };
+  }
 
   const deleteCertificate = (id) => {
     setDataUser({
@@ -145,33 +145,33 @@ const FieldProfessional = ({ dataUser, setDataUser }) => {
         ...item,
         certificate: item.id === id ? "" : item.certificate,
       })),
-    });
-  };
+    })
+  }
 
   const deleteEducation = (id) => {
     setDataUser({
       ...dataUser,
       prev_studes: dataUser.prev_studes.filter((item) => item.id !== id),
-    });
-  };
+    })
+  }
 
   const handleChangeExperience = ({ target }, id) => {
-    const { name, value } = target;
+    const { name, value } = target
     setDataUser({
       ...dataUser,
       experience: dataUser.experience.map((item) => ({
         ...item,
         [name]: item.id === id ? value : item[name],
       })),
-    });
-  };
+    })
+  }
 
   const deleteExperience = (id) => {
     setDataUser({
       ...dataUser,
       experience: dataUser.experience.filter((item) => item.id !== id),
-    });
-  };
+    })
+  }
 
   const addExperienceField = () => {
     setDataUser({
@@ -183,8 +183,8 @@ const FieldProfessional = ({ dataUser, setDataUser }) => {
           id: uuid(),
         },
       ],
-    });
-  };
+    })
+  }
 
   return (
     <div className={style.expirience_container}>
@@ -232,13 +232,13 @@ const FieldProfessional = ({ dataUser, setDataUser }) => {
               />
             ))}
           </div>
-              </div>
-              <button className={style.form_button}type="submit" onClick={submitData}>
-            Guardar cambios
-          </button>
         </div>
+        <button className={style.form_button} type="submit" onClick={submitData}>
+          Guardar cambios
+        </button>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default FieldProfessional;
+export default FieldProfessional

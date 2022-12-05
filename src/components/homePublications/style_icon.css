@@ -11,20 +11,23 @@
 .Icon_events {
   padding: 0%;
   margin: 0%;
-  background-color: #DB423B;
+  background-color: transparent;
   padding: 1em;
+  border-radius: 0 8px 0 8px;
 }
 
 .Icon_job {
   padding: 0%;
   margin: 0%;
-  background-color: #45C0E0;
+  background-color: transparent;
   padding: 1em;
+  border-radius: 0 8px 0 8px;
 }
 
 .Icon_news {
   padding: 0%;
   margin: 0%;
-  background-color: #fdd937;
+  background-color: transparent;
   padding: 1em;
+  border-radius: 0 8px 0 8px;
 }

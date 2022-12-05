@@ -25,19 +25,21 @@
     justify-content: center;
     margin: auto;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #232323;
     margin-top: 5px;
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 5px 6px 26px rgba(0, 0, 0, 1);
+    color: white;
 }
 
 .postUser {
     display: flex;
     gap: 20px;
     align-items: center;
+    color: white;
+    font-size: 20px;
 }
 
 .icon_cont1 {
@@ -73,7 +75,6 @@
     margin-top: 0;
     background: red;
     border-radius: 1px;
-
 }
 
 .icon {
@@ -84,10 +85,18 @@
     resize: none;
     width: 80%;
     height: 40px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
 }
 
 .comment {
     padding-left: 25px;
+}
+
+.comment p {
+    color: white;
+    font-size: 15px;
 }
 
 .comment button {
@@ -97,7 +106,7 @@
     width: 95px;
     height: 40px;
     background-color: #ffcc02;
-    border-radius: 2px;
+    border-radius: 0px 5px 5px 0px;
     color: #010101;
     border: none;
     font-family: "Roboto", sans-serif;
@@ -121,6 +130,7 @@
     margin-left: 10px;
     margin-top: 10px;
     object-fit: cover;
+    border: 2px solid #ffcc02;
 }
 
 .icon i {
@@ -130,6 +140,7 @@
 .techContains {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .llavePost {
@@ -137,25 +148,33 @@
 }
 
 .arrtech {
-
-    border: 1px #000;
-    background-color: #cccccc;
-    padding: 3px;
-    border-radius: 2px;
+    border: 2px solid #ffcc02;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
     margin-right: 5px;
+    color: #ffcc02;
+    text-align: center;
 }
 
 .news {
     margin-bottom: 1px;
     margin-left: 0;
+    font-size: 15px;
+    color: white;
 }
 
 .news h3 {
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .news p {
-    margin-left: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
 }
 
 .news img {
@@ -163,34 +182,55 @@
     margin: auto;
 }
 
+.news p > a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.containerDesc{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
 .tech {
     display: inline-block;
-    border: 1px #000;
-    background-color: #cccccc;
-    padding: 3px;
-    border-radius: 2px;
+    border: 2px solid #ffcc02;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
     margin-right: 5px;
+    color: #ffcc02;
+    text-align: center;
 }
 
 .like {
     display: flex;
     align-items: center;
+    color: white;
 }
 
 .like i {
     font-size: 25px;
     margin-right: 10px;
 }
-.editButtons{
+
+.editButtons {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: inherit;
+    color: white;
 }
-.editButtons i{
+
+.editButtons i {
     font-size: 25px;
     margin-right: 10px;
 }
+
 .addPosts {
     cursor: pointer;
     font-weight: bold;
@@ -211,8 +251,18 @@
         height: 32px;
         width: 80px;
     }
+
     .icon_cont2 {
         margin: 20px 5px 0px 10px;
+    }
+    .container2{
+        width: 100%;
+    }
+    .news p {
+        margin-right: 15px;
+    }
+    .news h3{
+        margin-right: 15px;
     }
 }
 
