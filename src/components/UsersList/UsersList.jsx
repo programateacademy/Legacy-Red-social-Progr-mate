@@ -25,28 +25,27 @@ const UsersList = () => {
     return (
         <Fragment>
             <div className={style.container}>
-                {users.length > 0?
+                {users.length > 0 ?
                     users.map((user) => (
                         <Link key={user._id} className={style.card} to={`/profile/${user._id}`}>
+                            <div className={style.containerName}>
+                                <p className={style.p}>
+                                    {user.firstName}{" "}{user.lastName}
+                                </p>
+                            </div>
                             <img
                                 className={style.img}
                                 src={user.avatar}
-                                alt="ImagDama"
+                                alt={user.firstName + "AlterIMG"}
                             />
-                            <div>
-                                <p className={style.p}>
-                                    {user.firstName}{" "}{user.lastName}
-                                    <br />
-                                </p>
-                                <div className={style.cohorteCom}>
-                                    {user.firstName}{" "}
-                                </div>
+                            <div className={style.cohorteCom}>
+                                {user.cohorte_name}
                             </div>
                         </Link>
                     )) :
                     [...Array(10)].map((x, i) =>
-                <UsersListSkeleton key={i} />
-            )}
+                        <UsersListSkeleton key={i} />
+                    )}
             </div>
         </Fragment>
     );
