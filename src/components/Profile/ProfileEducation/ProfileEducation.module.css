@@ -8,6 +8,7 @@
     color: #FFCC02;
     box-shadow: 2px 2px 2px 1px rgb(255, 204, 2);
     border-radius: 15px;
+    overflow: scroll;
 }
 
 .icon_cont {
@@ -31,6 +32,7 @@
 }
 
 .icon_cont2 {
+    margin: 15px;
     display: flex;
     justify-content: left;
     flex-direction: row;
@@ -39,7 +41,7 @@
 }
 
 .icon_cont2 p {
-    margin-top: 0;
+    margin-top: 5px;
     font-size: 15px;
 }
 

@@ -122,9 +122,15 @@
         width: 120px;
         height: 120px;
     }
+    .headerPerfil p {
+        font-size: 15px;
+    }
 }
 
 @media (min-width: 1024px) {
+    .headerPerfil p {
+        font-size: 15px;
+    }
     .fileImage {
         width: 120px;
         height: 120px;

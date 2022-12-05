@@ -107,7 +107,7 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                         <h2>Nombre Completo</h2>
                         <div className={style.row_inputs}>
                             <div className={style.column}>
-                                <Name nameField={dataUser.firstName} onChange={onChange} field={'firstName'} >
+                                <Name className={style.imputProfile} nameField={dataUser.firstName} onChange={onChange} field={'firstName'} >
                                     <h3 className="contentInput">Nombre</h3>
                                 </Name>
                             </div>

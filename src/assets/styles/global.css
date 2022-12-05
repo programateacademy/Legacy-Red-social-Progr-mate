@@ -13,7 +13,7 @@
     --text-color: #000000;
     --input-color: #eceff1;
     --input-text: #2c2a2a;
-    --secundary-background: #ffffff;
+    --secundary-background: #282828;
     --required-fied: #e72a2a;
     --background: #282828;
 }
@@ -27,7 +27,6 @@ html {
 }
 
 body {
-    margin: 0;
     font-family: Gilroy-light;
     padding: 0;
     min-height: 100vh

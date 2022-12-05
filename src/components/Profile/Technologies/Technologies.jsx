@@ -1,20 +1,20 @@
 import React from "react";
-import style from "./Technologies.module.css";
-
+// import style from "./Technologies.module.css";
+import styles from '../cardProfile.module.css';
 const Technologies = (props) => {
     const { dataUserProfile } = props;
     
 
     return (
         <>
-            <section className={style.container1}>
-                <div className={style.container2}>
-                    <div className={style.icon_cont}>
-                        <div className={style.title}>
+            <section className={styles.container1}>
+                <div className={styles.container2}>
+                    <div className={styles.icon_cont}>
+                        <div className={styles.title}>
                             <p>Tecnologías</p>
                         </div>
                     </div>
-                    <div className={style.skill}>
+                    <div className={styles.icon_cont2}>
                         {dataUserProfile.technicalSkills?.map((skill, index) => (
                             <p  key={index}>
                                 {skill} -&nbsp;

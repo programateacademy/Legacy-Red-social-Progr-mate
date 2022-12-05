@@ -8,6 +8,7 @@
     color: #FFCC02;
     box-shadow: 2px 2px 2px 1px rgb(255, 204, 2);
     border-radius: 15px;
+    overflow: scroll;
 }
 
 .icon_cont {

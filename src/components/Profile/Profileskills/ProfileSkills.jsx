@@ -1,6 +1,9 @@
 import React from "react";
 
-import style from "./ProfileSkills.module.css";
+// import styles from "./ProfileSkills.module.css";
+import styles from '../cardProfile.module.css';
+
+
 
 const ProfileSkills = (props) => {
     const { dataUserProfile } = props;
@@ -9,16 +12,16 @@ const ProfileSkills = (props) => {
 
     return (
         <>
-            <section className={style.container1}>
-                <div className={style.container2}>
-                    <div className={style.icon_cont}>
-                        <div className={style.title}>
+            <section className={styles.container1}>
+                <div className={styles.container2}>
+                    <div className={styles.icon_cont}>
+                        <div className={styles.title}>
                             <p>Habilidades</p>
                         </div>
                     </div>
-                    <div className={style.icon_cont2}>
+                    <div className={styles.icon_cont2}>
                         {dataUserProfile.softSkills?.map((skill, index) => (
-                            <p className={style.skill} key={index}>
+                            <p className={styles.skill} key={index}>
                                 {skill} -&nbsp;
                             </p>
                         ))}

@@ -71,6 +71,8 @@ const BodyProfile = () => {
           <ProfileMain dataProfile={dataUserProfile} />
           <div className={style.profileBodyContainer}>
             <div className={style.profileInfo1}>
+
+              <div className={style.boxComponents}>
               <AboutMe dataUserProfile={dataUserProfile}/>
               <ProfileEducation dataUserProfile={dataUserProfile} />
               <ProfileLanguages dataUserProfile={dataUserProfile} />
@@ -80,19 +82,20 @@ const BodyProfile = () => {
               <ProfileSkills dataUserProfile={dataUserProfile} />
               <ProfileExperience dataUserProfile={dataUserProfile} />
               <ProfilePortfolio dataUserProfile={dataUserProfile} />
-             
+              </div>
             
             </div>
-            <div className={style.btnProfile}>
+           
+            <div className={style.profilePosts}>{!showMain && <Posts dataUserProfile={dataUserProfile} />}</div>
+            
+          </div>
+          <div className={style.btnProfile}>
               <a href={dataUserProfile.github} target="_blank">
                   <button className={style.button} type="button">
                     Ver Github
                   </button>
                 </a>
                 </div>
-            <div className={style.profilePosts}>{!showMain && <Posts dataUserProfile={dataUserProfile} />}</div>
-            
-          </div>
         </div>
       ) : (
         <div className={style.containBodyProfileHome}>
