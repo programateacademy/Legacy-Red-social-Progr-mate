@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./ProfileEducation.module.css";
 
+
 const Education = ({ study }) => {
     return (
         <div className={style.icon_cont2}>

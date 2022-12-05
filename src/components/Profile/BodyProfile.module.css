@@ -11,6 +11,11 @@
     padding-top: 80px;
 }
 
+.boxComponents {
+    display: flex;
+    flex-direction: row;
+}
+
 .containBodyProfileHome {
     background-color: #ffffff;
     border: 2px solid #ffcc02;
@@ -19,14 +24,25 @@
 }
 
 .profileBodyContainer {
-    display: flex;
-    justify-content: space-evenly;
+    height: auto;
     flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    overflow: auto
+}
+
+::-webkit-scrollbar {
+    background: #010101;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffcc02;
 }
 
 .profileInfo1 {
     display: flex;
-    flex-direction: column;
+    height: 48em;
+    flex-direction: row;
     align-items: center;
 }
 

@@ -1,14 +1,15 @@
 .icon{
-    transition: all ease 0.3s;
+    transition: all ease 0.7s;
 }
 .icon:hover{
     transform: scale(1.1);
     
 }
 .icon path{
-    transition: all ease-out 0.3s;
+    transition: all ease-out 0.7s;
 }
+
 .icon path:hover{
-    fill: #000000;
+    fill: #ffcc02;
    
 }

@@ -171,13 +171,13 @@ const FormJobs = () => {
                     >
                         <option value="select">Selecciona la modalidad</option>
                         <option className={style.opcion} value="Presencial">
-                            presencial
+                            Presencial
                         </option>
                         <option className={style.opcion} value="hibrida">
-                            hibrida
+                            Hibrida
                         </option>
                         <option className={style.opcion} value="remota">
-                            remota
+                            Remota
                         </option>
                     </select>
                     <br />
@@ -195,7 +195,7 @@ const FormJobs = () => {
                     <br />
                 </div>
                 <div className={style.forms}>
-                    <h3>contacto</h3>
+                    <h3>Contacto</h3>
                     <input
                         className={style.nom}
                         type="text"

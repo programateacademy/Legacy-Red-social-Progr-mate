@@ -2,9 +2,19 @@
     width: 98%;
     display: flex;
     flex-direction: column;
-    padding:  2rem;
+    padding: 2rem;
     margin-top: 30px;
-    
+
+}
+
+.forms>input,
+.forms>select,
+.forms>textarea {
+    border: 2px solid #ffcc02;
+    background: #23232393;
+    border-radius: 5px;
+    color: white;
+    font-family: "Roboto", sans-serif;
 }
 
 .nom {
@@ -31,9 +41,9 @@
     border-radius: 5px;
     border: 1px solid;
     border-color: #ffcc02;
-    background-color: #ffcc02 ;
+    background-color: #ffcc02;
     cursor: pointer;
-    
+
 }
 
 .tecnologias {
@@ -57,12 +67,13 @@
     font-size: 18px;
     flex-wrap: wrap;
     margin: 20px 35%;
-  
+
 }
 
 .enviar button:hover {
     background-color: black;
     color: #ffcc02;
+    cursor: pointer;
 }
 
 .enviar {
