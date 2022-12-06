@@ -1,22 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./ForumQuestions.module.css";
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import LazyLoad from 'react-lazy-load';
 
 export const Question = ({ data, name }) => {
     let date = data.createdAt.slice(0, 10);
-    
-    
-    
     return (
-        
         <div className={styles.questionContainerMain}>
             <div className={styles.containerProfileInfo} >
-                <img
-                loading="lazy"
-                    className={styles.question}
-                    src={name(data.user_info, false)}
-                />
+                <LazyLoad threshold={0.95}>
+                    <img
+                        loading="lazy"
+                        className={styles.question}
+                        src={name(data.user_info, false)}
+                    />
+                </LazyLoad>
                 <p className={styles.name}>
                     {name(data.user_info, true)}
                 </p>
