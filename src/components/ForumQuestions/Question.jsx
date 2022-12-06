@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { getDataAll, getData } from "../../helpers/fetch";
+import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./ForumQuestions.module.css";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export const Question = ({ data, name }) => {
     let date = data.createdAt.slice(0, 10);
+    
+    
+    
     return (
+        
         <div className={styles.questionContainerMain}>
             <div className={styles.containerProfileInfo} >
                 <img
+                loading="lazy"
                     className={styles.question}
                     src={name(data.user_info, false)}
                 />

@@ -1,9 +1,10 @@
 import React, { Fragment, useContext } from "react";
 import style from "./ProfileMain.module.css";
+import styles from '../cardProfile.module.css';
 
 import { DataContext } from "../../../context/DataContext";
 import { useNavigate, useParams } from "react-router-dom";
-import altImg from "../../../assets/images/avatar.png";
+// import altImg from "../../../assets/images/avatar.png";
 
 const ProfileMain = ({ dataProfile }) => {
     const { dataUser, idUser } = useContext(DataContext);
@@ -18,10 +19,10 @@ const ProfileMain = ({ dataProfile }) => {
     };
     return (
         <Fragment>
+        
             <section className={style.container}>
         <div className={style.cont}>
                   <div className={style.circulo_cont}>
-                      <div className={style.profileTitle}><h2>Tu perfil</h2></div>
             <div className={style.editandphoto}>
               <div className={style.circulo}>
                 {dataProfile.avatar ? (
@@ -50,6 +51,7 @@ const ProfileMain = ({ dataProfile }) => {
         </div>
 
       </section>
+     
         </Fragment>
     );
 };

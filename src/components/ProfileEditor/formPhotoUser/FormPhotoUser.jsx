@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import style from "./formPhoto.module.css"
 import { BiTrash } from "react-icons/bi"
-import logo from "../../../assets/images/logo-a-color-.jpg"
 
 import { DataContext } from "../../../context/DataContext"
 

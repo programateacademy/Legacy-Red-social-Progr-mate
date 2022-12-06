@@ -42,7 +42,7 @@ const ForumQuestions = () => {
     const data = await getDataAll(`posts${searchUrl}`);
     setQuestions(data.reverse());
   };
-
+ 
   // get the questions to the page 
   useEffect(() => {
     let isMounted = true
@@ -62,7 +62,6 @@ const ForumQuestions = () => {
       return key ? `${userFilter.firstName}  ${userFilter.lastName}` : `${userFilter.avatar}`;
     }
   };
-  console.log(questions)
   return (
     <section
       className={styles.section}
@@ -213,11 +212,13 @@ const ForumQuestions = () => {
             <p>{questions.length} preguntas</p>
           </div>
         </div>
+              {/*********** seccionn de cards preguntas ************/}
         <div className={styles.section__container}>
           {questions.map((data) => (
             <Question key={data._id} data={data} name={filterPostCreator} />
           ))}
         </div>
+
       </div>
     </section>
   );
