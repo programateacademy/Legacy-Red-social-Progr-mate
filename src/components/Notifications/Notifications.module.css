@@ -7,8 +7,7 @@
     background-color: #535353;
     padding-bottom: 5vh;
     position: fixed;
-    z-index: 3;
-
+    z-index: 5;
     border-radius: 0 0 10px 10px;
 }
 
@@ -22,7 +21,7 @@
     width: 100%;
     color: white;
 }
-.cardContainer h2{
+.titleNotification{
     color: #ffcc02;
 }
 
@@ -100,6 +99,7 @@
         float: right;
         gap: 1%;
         left: 78%;
+        top: 13%;
     }
 
     .titleIcons {
@@ -107,3 +107,10 @@
         margin-right: 10px;
     }
 }
+@media (min-width: 1800px) {
+    .main{
+        left: 85%;
+        top: 9%;
+    }
+}
+
