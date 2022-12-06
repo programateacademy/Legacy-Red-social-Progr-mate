@@ -112,10 +112,12 @@ const ForumAnswers = () => {
 
     return (
         <>
+        <div className={styles.titleForum}>
             <h1 className={styles.answer__title}>
                 FORO CODERY
                 <RiQuestionLine size="22" />
             </h1>
+            
             <hr className={styles.question__lineTitle} />
             <div className={styles.questionContainerMain}>
                 <div className={styles.containerQuestion}>
@@ -202,6 +204,7 @@ const ForumAnswers = () => {
             ))}
 
             <br />
+            </div>
         </>
     );
 };

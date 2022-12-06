@@ -1,15 +1,22 @@
+.titleForum {
+    background: #535353;
+    color: #fff;
+}
+
 .questionContainerMain {
-    border: 1px solid #D7D7D7;
+    box-shadow: 0 2px 3px 0 rgba(73, 72, 72, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.514);
     padding: 2.3rem;
-    border-radius: 2px;
+    border-radius: 5px;
     width: 80%;
     margin: 0 auto;
-    background-color: white;
+    background-color: #282828;
+    color: #ffcc02;
     display: flex;
     flex-direction: column;
     row-gap: 15px;
     margin-top: 15px;
 }
+
 .answer__title {
     padding: 2rem 0 0 0;
     font-size: 3.5rem;
@@ -19,6 +26,7 @@
     margin: 0;
     animation: mymove 6s;
 }
+
 @keyframes mymove {
     0% {
         left: 100rem;
@@ -31,7 +39,8 @@
         color: black;
         width: 100%;
     }
-}   
+}
+
 .question__lineTitle {
     width: 150px;
     border: 2px solid #ffcc02;
@@ -41,33 +50,40 @@
     text-align: center;
     font-size: 1.3rem;
 }
+
 .question,
 .tagsItems,
 .name {
     margin: 0;
 }
+
 .containerQuestion {
     display: flex;
     gap: 2rem;
 }
-.containerQuestion img{
+
+.containerQuestion img {
     width: 7rem;
     height: 7rem;
     border-radius: 5px;
 }
-.dateQuestion{
+
+.dateQuestion {
     margin-left: auto;
     font-size: 1.3rem;
 }
-.questionName{
+
+.questionName {
     font-size: 1.8rem;
 }
+
 .questionTitle {
     font-size: 2rem;
     margin: 0;
 }
-.questionText{
-    color: #504f4f;
+
+.questionText {
+    color: #f8f5f5;
     font-size: 1.5rem;
 }
 
@@ -77,6 +93,7 @@
     column-gap: 30px;
     row-gap: 5px;
 }
+
 .tagsItems {
     padding: 0.5rem 1rem;
     background-color: #d7d7d7;
@@ -84,9 +101,11 @@
     font-family: Gilroy-light;
     letter-spacing: 1.5px;
 }
+
 .infoContainer {
     margin-left: auto;
 }
+
 .enviar button {
     display: flex;
     justify-content: center;
@@ -102,6 +121,7 @@
     flex-wrap: wrap;
     margin-left: auto;
 }
+
 .enviar button:hover {
     background-color: black;
     color: #ffcc02;
@@ -115,6 +135,8 @@
 }
 
 
+/* Caja de texto */
+
 .nom {
     width: 100%;
     height: auto;
@@ -125,7 +147,8 @@
     padding: 10px 15px;
     font-size: 18px;
     resize: none;
-    background-color: #ECEFF1;
+    background-color: #000000;
+    color: #fff;
     /* padding-left: 25px;*/
 }
 
@@ -151,36 +174,45 @@
     display: flex;
     justify-content: center;
 }
+
 .links {
     cursor: pointer;
     margin-left: auto;
 }
+
 .links:hover {
     cursor: pointer;
     text-decoration: underline;
 }
-.answerInfoAnswer{
+
+.answerInfoAnswer {
     display: flex;
     gap: 20px;
 }
-.answerAvatar{
+
+.answerAvatar {
     width: 7rem;
     height: 7rem;
     border-radius: 2px;
 }
-.dateQuestion2{
+
+.dateQuestion2 {
     margin-left: auto;
     font-size: 1.3rem;
 }
-.answerName{
+
+.answerName {
     font-size: 1.8rem;
 }
-.answerDelete{
+
+.answerDelete {
     margin-left: auto;
 }
-.answerUserAnswer{
-    color: #504f4f;
+
+.answerUserAnswer {
+    color: #f7f7f7;
     font-size: 2rem;
 }
+
 
 /* Medium (md) */
