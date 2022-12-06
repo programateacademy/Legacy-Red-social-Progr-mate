@@ -1,18 +1,15 @@
-body{
+body {
     margin: 0;
 }
 
 .containBodyProfile {
+    padding: 60px 25px 60px 25px;
     background-color: var(--background);
-    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
-    padding-top: 80px;
     background-color: var(--background);
-    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
-    padding-top: 80px;
 }
 
 .boxComponents {
@@ -20,7 +17,20 @@ body{
     flex-direction: row;
 }
 
+.titelHeader {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.titelHeader h2 {
+    font-size: 20px;
+    color: #ffcc02;
+}
+
 .containBodyProfileHome {
+    padding-bottom: 15px;
     background-color: #ffffff;
     border: 2px solid #ffcc02;
     border-radius: 8px;
@@ -28,6 +38,7 @@ body{
 }
 
 .profileBodyContainer {
+    padding-bottom: 10px;
     height: auto;
     flex-wrap: wrap;
     display: flex;
@@ -37,6 +48,7 @@ body{
 
 ::-webkit-scrollbar {
     background: #010101;
+    height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -51,7 +63,6 @@ body{
 }
 
 .profilePosts {
-    margin-top: 15px;
     min-width: 500px;
 }
 
@@ -66,7 +77,6 @@ body{
 }
 
 .profileInfo1 {
-    margin: 15px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -123,7 +133,6 @@ a {
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
-        padding: 10px;
     }
 }
 

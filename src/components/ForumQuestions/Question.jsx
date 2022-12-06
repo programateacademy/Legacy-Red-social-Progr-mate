@@ -2,13 +2,21 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getDataAll, getData } from "../../helpers/fetch";
 import styles from "./ForumQuestions.module.css";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export const Question = ({ data, name }) => {
     let date = data.createdAt.slice(0, 10);
+    
+    
+    
     return (
+        
         <div className={styles.questionContainerMain}>
                 <div className={styles.containerProfileInfo} >
+                    
                 <img
+                loading="lazy"
                     className={styles.question}
                     src={name(data.user_info, false)}
                 />
@@ -18,7 +26,7 @@ export const Question = ({ data, name }) => {
                 <p className={styles.dateQuestion}>Creado: {date}</p>
                 </div>
                 <div className={styles.containerQuestion}>
-                <h5 className={styles.question}>{data.title}</h5>
+                {/* <h5 className={styles.question}>{data.title}</h5> */}
                 <p className={styles.question} >{data.description}</p>
                
             </div>

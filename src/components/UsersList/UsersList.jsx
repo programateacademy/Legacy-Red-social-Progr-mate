@@ -34,6 +34,7 @@ const UsersList = () => {
                                 </p>
                             </div>
                             <img
+                            
                                 className={style.img}
                                 src={user.avatar}
                                 alt={user.firstName + "AlterIMG"}
