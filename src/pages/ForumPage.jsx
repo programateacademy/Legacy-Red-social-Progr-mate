@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar/Navbar";
 const ForumPage = () => {
     return (
         <>
-             <Navbar/>
+            <Navbar/>
             <ForumQuestions />
             <Footer />
         </>

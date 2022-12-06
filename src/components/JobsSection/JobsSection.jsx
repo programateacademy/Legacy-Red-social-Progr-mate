@@ -6,7 +6,7 @@ const JobsSection = () => {
     return (
         <section className={styles.jobsSection}>
             <Navbar />
-            <h2>Ofertas</h2>
+            <h2 className={styles.titleSection}>Ofertas</h2>
             <FilterPosts postType="jobs" />
         </section>
     );

@@ -28,6 +28,7 @@
 .containerRightHeader h3 {
   font-size: 2.5rem;
   text-align: center;
+  color: white;
 }
 .containerLeft img {
   width: 80%;
@@ -66,10 +67,10 @@
   font-size: 1.6rem;
   margin: 2rem 0;
   text-align: center;
-   color: black;
+   color: white;
 }
 .forgotPassword:visited {
-  color: black;
+  color: whitesmoke;
 }
 
 /* ------------- MEDIA QUERIES --------------- */

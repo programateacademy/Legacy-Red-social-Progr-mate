@@ -19,10 +19,10 @@ const Notification = () => {
             isMounted = false
         }
     },[])
-    return (
+    return ( 
         <aside className={styles.main}>
             <div className={styles.cardContainer}>
-                <h2>Notificaciones</h2>
+                <h2 className={styles.titleNotification}>Notificaciones</h2>
                 {reminder.map((noti) => (
                     <Notifications
                         key={noti.idNotifications}

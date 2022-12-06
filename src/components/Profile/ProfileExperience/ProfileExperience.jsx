@@ -2,7 +2,6 @@ import React, { Fragment} from "react";
 
 import Experience from "./Experience";
 
-// import styles from "./ProfileExperience.module.css";
 import styles from '../cardProfile.module.css';
 
 const ProfileExperience = (props) => {
