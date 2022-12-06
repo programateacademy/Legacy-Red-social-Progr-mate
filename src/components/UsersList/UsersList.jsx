@@ -30,7 +30,9 @@ const UsersList = () => {
                         <Link key={user._id} className={style.card} to={`/profile/${user._id}`}>
                             <div className={style.containerName}>
                                 <p className={style.p}>
-                                    {user.firstName}{" "}{user.lastName}
+                                    {user.firstName}
+                                    {" "}
+                                    {user.lastName}
                                 </p>
                             </div>
                             <img
@@ -39,7 +41,7 @@ const UsersList = () => {
                                 alt={user.firstName + "AlterIMG"}
                             />
                             <div className={style.cohorteCom}>
-                                {user.cohorte_name}
+                                {user.contactNumber}
                             </div>
                         </Link>
                     )) :
