@@ -9,7 +9,7 @@ const CommunityPage = () => {
 
     return (
         <>
-            <Navbar/>
+            <Navbar />
             <LazyLoad threshold={0.95}>
                 <UsersList />
             </LazyLoad>

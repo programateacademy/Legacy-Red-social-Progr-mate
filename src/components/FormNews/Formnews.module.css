@@ -15,7 +15,9 @@
     margin-left: 5px;
 }
 
-.form > input, .form > select, .form > textarea{
+.form>input,
+.form>select,
+.form>textarea {
     border: 2px solid #ffcc02;
     background: #23232393;
     border-radius: 5px;

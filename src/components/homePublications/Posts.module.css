@@ -182,13 +182,13 @@
     margin: auto;
 }
 
-.news p > a{
+.news p>a {
     color: white;
     cursor: pointer;
     text-decoration: none;
 }
 
-.containerDesc{
+.containerDesc {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -255,13 +255,16 @@
     .icon_cont2 {
         margin: 20px 5px 0px 10px;
     }
-    .container2{
+
+    .container2 {
         width: 100%;
     }
+
     .news p {
         margin-right: 15px;
     }
-    .news h3{
+
+    .news h3 {
         margin-right: 15px;
     }
 }

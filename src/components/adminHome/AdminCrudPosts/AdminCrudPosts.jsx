@@ -5,7 +5,7 @@ import { deleteData, getDataAll } from '../../../helpers/fetch'
 import { SwitchCreatePost } from '../../SwitchCreatePost/SwitchCreatePost'
 import styles from './AdminCrudPosts.module.css'
 import Icon_delete from "../../../assets/icons/Icon_delete"
-import { BsThreeDotsVertical} from 'react-icons/bs'
+import { BsThreeDotsVertical } from 'react-icons/bs'
 
 /* Table for render events, news, jobs, and forum CRUD
     props:
@@ -15,7 +15,7 @@ import { BsThreeDotsVertical} from 'react-icons/bs'
         children: array -> <td> to render in the body of table
         icon: string -> icon to render in the top of content
 */
-function AdminCrudPosts({ children, name, postType, fields, activePanel}) {
+function AdminCrudPosts({ children, name, postType, fields, activePanel }) {
     const { postsContext, setPostsContext, users, setUsers } = useContext(DataContext)
     const [data, setData] = useState([])
     const navigate = useNavigate()
@@ -98,11 +98,11 @@ function AdminCrudPosts({ children, name, postType, fields, activePanel}) {
                                     <button
                                         className={styles.editBtn}
                                         onClick={() => window.open(
-                                        postType === 'news' ? `/formnews/${post._id}` :
-                                            postType === 'event' ? `/formeventedit/${post._id}` :
-                                                postType === 'jobs' ? `/formjobs/${post._id}` :
-                                                    postType === 'questions' ? `/addquestion/${post._id}/${post.user_info}` : ''
-                                        , '_blank')}><BsThreeDotsVertical/></button>
+                                            postType === 'news' ? `/formnews/${post._id}` :
+                                                postType === 'event' ? `/formeventedit/${post._id}` :
+                                                    postType === 'jobs' ? `/formjobs/${post._id}` :
+                                                        postType === 'questions' ? `/addquestion/${post._id}/${post.user_info}` : ''
+                                            , '_blank')}><BsThreeDotsVertical /></button>
                                 </td>
                                 <td>
                                     <button

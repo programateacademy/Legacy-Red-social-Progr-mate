@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-// import styles from "./ProfilePortfolio.module.css";
 import styles from '../cardProfile.module.css';
 const ProfilePortfolio = (props) => {
     const { dataUserProfile } = props;
@@ -14,7 +13,7 @@ const ProfilePortfolio = (props) => {
                         </div>
                     </div>
                     <div className={styles.icon_cont2}>
-                    <a href={dataUserProfile.portfolio} target="_blank" rel="noopener noreferrer">{dataUserProfile.portfolio}</a>
+                        <a href={dataUserProfile.portfolio} target="_blank" rel="noopener noreferrer">{dataUserProfile.portfolio}</a>
                     </div>
                 </div>
             </section>

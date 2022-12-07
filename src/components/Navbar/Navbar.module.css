@@ -13,6 +13,7 @@
   padding-left: 2%;
   padding-right: 2%;
 }
+
 .navTop {
   display: flex;
   align-items: center;
@@ -20,6 +21,7 @@
   width: 100%;
   z-index: -1;
 }
+
 .navLeft {
   display: flex;
   align-items: center;
@@ -40,6 +42,7 @@
   margin-right: 2vh;
   color: #ffcc02;
 }
+
 .imgProfile {
   width: 40px;
   height: 40px;
@@ -48,6 +51,7 @@
   border: 2px solid #ffcc02;
   box-shadow: 5px 6px 20px rgba(0, 0, 0, 0.473);
 }
+
 /*========================= Dropdown ========================= */
 .dropdownLogOut {
   width: 30px;
@@ -61,6 +65,7 @@
   color: #ffcc02;
   font-size: 15px;
 }
+
 .dropdownBtn {
   height: 100%;
   width: 100%;
@@ -83,10 +88,12 @@
   width: 145px;
   border-radius: 10px;
 }
+
 .dropdownContent a {
   text-decoration: none;
   color: black;
 }
+
 .dropdownOptions {
   padding: 8px;
   display: flex;

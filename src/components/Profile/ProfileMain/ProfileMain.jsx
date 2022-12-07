@@ -1,28 +1,25 @@
 import React, { Fragment, useContext } from "react";
 import style from "./ProfileMain.module.css";
-import styles from '../cardProfile.module.css';
-
 import { DataContext } from "../../../context/DataContext";
 import { useNavigate, useParams } from "react-router-dom";
-// import altImg from "../../../assets/images/avatar.png";
 
 const ProfileMain = ({ dataProfile }) => {
-    const { dataUser, idUser } = useContext(DataContext);
-    
+  const { dataUser, idUser } = useContext(DataContext);
 
-    let navigate = useNavigate();
-    const params = useParams();
 
-    const editProfile = () => {
-        // console.log(idUser);
-        navigate(`/formprofile/home/${dataProfile._id}`);
-    };
-    return (
-        <Fragment>
-        
-            <section className={style.container}>
+  let navigate = useNavigate();
+  const params = useParams();
+
+  const editProfile = () => {
+    // console.log(idUser);
+    navigate(`/formprofile/home/${dataProfile._id}`);
+  };
+  return (
+    <Fragment>
+
+      <section className={style.container}>
         <div className={style.cont}>
-                  <div className={style.circulo_cont}>
+          <div className={style.circulo_cont}>
             <div className={style.editandphoto}>
               <div className={style.circulo}>
                 {dataProfile.avatar ? (
@@ -44,16 +41,16 @@ const ProfileMain = ({ dataProfile }) => {
                 <b>
                   {dataProfile.firstName} {dataProfile.middleName} {dataProfile.lastName}
                 </b>
-                
+
               </p>
             </div>
           </div>
         </div>
 
       </section>
-     
-        </Fragment>
-    );
+
+    </Fragment>
+  );
 };
 
 export default ProfileMain;

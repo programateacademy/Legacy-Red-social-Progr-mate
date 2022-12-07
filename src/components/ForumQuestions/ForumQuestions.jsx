@@ -5,7 +5,7 @@ import { RiQuestionLine } from "react-icons/ri";
 import { BiFilterAlt } from "react-icons/bi";
 import { BiMessageAdd } from "react-icons/bi";
 import { useLocation } from "react-router-dom";
-import { getDataAll, getData } from "../../helpers/fetch";
+import { getDataAll } from "../../helpers/fetch";
 import { Search } from "./Search";
 import { useModals } from "../modals/useModals";
 import Modal from "../modals/Modal";

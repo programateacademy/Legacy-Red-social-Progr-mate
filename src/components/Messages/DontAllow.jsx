@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { dispatchGetUser, dispatchLogin, fetchUser } from '../../redux/actions/authAction'
-import { Navigate } from 'react-router'
 import styles from "./DontAllow.module.css"
 import { baseUrl } from '../../../config'
 

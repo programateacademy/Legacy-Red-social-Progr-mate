@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext } from "react"
 import { BiX } from "react-icons/bi"
 import style from "../../ProfileEditor.module.css"
 import { DataContext } from "../../../../context/DataContext"
@@ -30,7 +30,7 @@ const FieldEducation = ({
                     placeholder="Título"
                 />
             </div>
-            <div  className={style.form}>
+            <div className={style.form}>
                 <h3 className={style.h3} htmlFor="institution">
                     Institución Educativa*
                 </h3>
@@ -56,8 +56,8 @@ const FieldEducation = ({
                     onChange={(e) => handleChange(e, item.id)}
                 />
             </div>
-            <div  className={style.form}>
-                <h3  htmlFor="edad">
+            <div className={style.form}>
+                <h3 htmlFor="edad">
                     Fecha fin
                 </h3>
                 <input

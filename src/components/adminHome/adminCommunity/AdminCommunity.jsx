@@ -6,7 +6,7 @@ import Searcher from './Searcher/Searcher'
 import DeleteButton from '../../DeleteButton/DeleteButton'
 import { DataContext } from '../../../context/DataContext';
 import CreateUser from '../CreateUser/CreateUser'
-import {useModals} from '../../modals/useModals'
+import { useModals } from '../../modals/useModals'
 import Modal from '../../modals/Modal'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 
@@ -16,10 +16,10 @@ const AdminCommunity = () => {
     const navigate = useNavigate()
     // const [allUser, setAllUser] = useState([])
     const [filterUser, setFilterUser] = useState([])
-    const {users, setUsers,allCohorts, setCohorts } = useContext(DataContext)
-    
-    
-    
+    const { users, setUsers, allCohorts, setCohorts } = useContext(DataContext)
+
+
+
     useEffect(async () => {
         const data = await getDataAll("users")
         setUsers(data)
@@ -27,7 +27,7 @@ const AdminCommunity = () => {
         const dataCohort = await getDataAll("cohorte");
         setCohorts(dataCohort)
     }, [])
-    
+
     const onToggle = (id) => {
         users.map((user) => {
             if (user._id === id) {
@@ -58,9 +58,9 @@ const AdminCommunity = () => {
                     Crear Usuario
                 </button>
                 <Modal IsOpen={IsOpenModal} closeModal={closeModal}>
-                    <CreateUser/>
+                    <CreateUser />
                 </Modal>
-                <Searcher typeOfSearch='Busqueda por correo' setFilter={setFilterUser} dataToFilter={users} objectKey={'email'}/>
+                <Searcher typeOfSearch='Busqueda por correo' setFilter={setFilterUser} dataToFilter={users} objectKey={'email'} />
             </div>
             <div className={style.tableContainer}>
                 <table className={style.table}>
@@ -79,10 +79,10 @@ const AdminCommunity = () => {
                         {filterUser.map((user) => (
                             <tr key={user._id} >
                                 <td>
-                                    <img src={user.avatar} alt="ImagDama" className={style.image}/>
+                                    <img src={user.avatar} alt="ImagDama" className={style.image} />
                                 </td>
                                 <td>
-                                    <p>{user.firstName} {user.middleName && user.middleName} { user.lastName && user.lastName}</p>
+                                    <p>{user.firstName} {user.middleName && user.middleName} {user.lastName && user.lastName}</p>
                                 </td>
                                 <td>
                                     <i>{allCohorts.map(item => (
@@ -113,8 +113,8 @@ const AdminCommunity = () => {
                                     </button>
                                 </td>
                                 <td>
-                                    <div onClick={() => {onDeleteUser(user._id)}} className={style.containerDelete}>
-                                        <DeleteButton endpoint={'users'} id={user._id}/>
+                                    <div onClick={() => { onDeleteUser(user._id) }} className={style.containerDelete}>
+                                        <DeleteButton endpoint={'users'} id={user._id} />
                                     </div>
                                 </td>
                             </tr>

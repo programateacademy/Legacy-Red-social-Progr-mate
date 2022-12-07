@@ -1,4 +1,4 @@
-.containernewposts{
+.containernewposts {
     background-color: #282828;
     border-radius: 7px;
     width: 90%;
@@ -12,22 +12,24 @@
     color: white;
     text-align: center;
 }
+
 .buttonsnewposts {
     display: flex;
     justify-content: space-around;
     margin-bottom: 12px;
 }
-.buttonsnewposts > button {
+
+.buttonsnewposts>button {
     border: 0;
     background-color: #282828;
     cursor: pointer;
     color: white;
 }
-.buttonsnewposts > button > p{
+
+.buttonsnewposts>button>p {
     margin: 0;
 }
-.buttonsnewposts > button :hover{
+
+.buttonsnewposts>button :hover {
     color: #FFD800;
 }
-
-  

@@ -6,9 +6,9 @@ import Navbar from "../components/Navbar/Navbar";
 const AdminHomePage = () => {
     return (
         <>
-            <Navbar/>
-            <AdminHome/>
-            <Footer/>
+            <Navbar />
+            <AdminHome />
+            <Footer />
         </>
     );
 };

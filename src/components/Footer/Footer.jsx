@@ -10,8 +10,8 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.containerFooter}>
-      <img className={styles.logoProgramate} src={logoProgramate} alt="Programate" />
-        
+        <img className={styles.logoProgramate} src={logoProgramate} alt="Programate" />
+
         <div className={styles.logoRedes}>
           <ul className={styles.listRedes}>
             <li>

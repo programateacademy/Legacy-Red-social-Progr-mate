@@ -7,7 +7,7 @@ function AdminCohortPage() {
     return (
         <>
             <AdminNavigation />
-            <CreateCohort/>
+            <CreateCohort />
         </>
     )
 }

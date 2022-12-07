@@ -1,27 +1,25 @@
 import React from "react";
 import FilterPosts from "../FilterPosts/FilterPosts";
 import styles from "./newsSection.module.css";
-import { useContext } from "react";
-import { DataContext } from "../../context/DataContext";
 import Navbar from "../Navbar/Navbar";
 import LazyLoad from 'react-lazy-load';
 
 const NewsSection = () => {
-  const { dataProfile } =
-    useContext(DataContext);
+  // const { dataProfile } =
+  //   useContext(DataContext);
   return (
     <section className={styles.newsSection}>
       <Navbar />
-        <h2 className={styles.titleSection}>Noticias</h2>
-        <LazyLoad threshold={0.95}>
+      <h2 className={styles.titleSection}>Noticias</h2>
+      <LazyLoad threshold={0.95}>
+        <div>
           <div>
-            <div>
-              <LazyLoad threshold={0.95}>
-                <FilterPosts postType="news" />
-              </LazyLoad>
-            </div>
+            <LazyLoad threshold={0.95}>
+              <FilterPosts postType="news" />
+            </LazyLoad>
           </div>
-        </LazyLoad>
+        </div>
+      </LazyLoad>
     </section>
   );
 };

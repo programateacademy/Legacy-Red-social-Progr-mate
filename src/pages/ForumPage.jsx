@@ -7,7 +7,7 @@ import LazyLoad from 'react-lazy-load';
 const ForumPage = () => {
     return (
         <>
-            <Navbar/>
+            <Navbar />
             <LazyLoad threshold={0.95}>
                 <ForumQuestions />
             </LazyLoad>

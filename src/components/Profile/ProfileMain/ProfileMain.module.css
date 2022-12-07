@@ -148,9 +148,11 @@
         margin-top: 20px;
         gap: 30px;
     }
+
     .tex_editar {
         visibility: visible;
     }
+
     .circulo {
         margin-top: 25px;
     }
@@ -160,9 +162,11 @@
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }

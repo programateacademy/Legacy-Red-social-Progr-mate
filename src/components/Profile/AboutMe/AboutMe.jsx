@@ -12,10 +12,10 @@ const AboutMe = (props) => {
                         </div>
                     </div>
                     <div className={styles.icon_cont2}>
-                        
-                            <p className={styles.skill}>
-                                {dataUserProfile.description}
-                            </p>
+
+                        <p className={styles.skill}>
+                            {dataUserProfile.description}
+                        </p>
                     </div>
                 </div>
             </section>

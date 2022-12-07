@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { BrowserRouter as Router, useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getData, getDataAll, sendData, deleteData } from "../../helpers/fetch";
 import styles from "./ForumAnswers.module.css";
 import { DataContext } from "../../context/DataContext";
@@ -113,7 +113,7 @@ const ForumAnswers = () => {
 
     return (
         <>
-            <Navbar/>
+            <Navbar />
             <div className={styles.titleForum}>
                 <h1 className={styles.answer__title}>
                     FORO CODERY

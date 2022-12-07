@@ -13,7 +13,7 @@ const FormJobsPage = () => {
             <LazyLoad threshold={0.95}>
                 <FormJobs />
             </LazyLoad>
-            <Footer/>                    
+            <Footer />
         </>
     );
 };

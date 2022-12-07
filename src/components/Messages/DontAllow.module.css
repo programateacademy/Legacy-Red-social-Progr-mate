@@ -10,12 +10,14 @@
   flex-direction: column;
   align-items: center;
 }
+
 .notallowed_container {
   width: 100%;
   padding: 50px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
+
 .title_container {
   display: flex;
   justify-content: center;
@@ -29,6 +31,7 @@
   border-radius: 10px;
   background-color: #ffd800;
 }
+
 /* .card_img {
   display: flex;
   justify-content: center;
@@ -39,12 +42,12 @@
 
 @media (min-width:768px) {
   .title_container {
-      width: 60%;
+    width: 60%;
   }
 }
 
 @media (min-width: 1024px) {
   .title_container {
-      width: 50%;
+    width: 50%;
   }
 }

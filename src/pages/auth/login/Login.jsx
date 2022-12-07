@@ -4,11 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { showErrMsg, showSuccessMsg } from "../../../utils/notification";
 import { useDispatch } from "react-redux";
 import { baseUrl } from "../../../../config";
-
 import styles from "./Login.module.css";
 import Icon_home from '../../../assets/icons/Icon_home'
 import logo from "../../../assets/images/programate-academy-blancos.png";
-import littleLogo from "../../../assets/images/logo-a.png";
 
 const initialState = {
   email: "",
@@ -78,7 +76,7 @@ function Login() {
           <button className={styles.buttonLogin} type="submit">
             INGRESAR
           </button>
-          <Link  className={styles.forgotPassword} to="/forgot_password">¿Olvidaste la contraseña?</Link>
+          <Link className={styles.forgotPassword} to="/forgot_password">¿Olvidaste la contraseña?</Link>
         </form>
 
       </div>

@@ -41,6 +41,7 @@
         color: #ffcc02;
         width: 85%;
     }
+
     100% {
         left: 200rem;
         left: 50%;
@@ -288,12 +289,15 @@
     .questionContainerMain {
         padding: 1rem;
     }
+
     .containerQuestion {
         display: block;
     }
+
     .name {
         margin-bottom: 10px;
     }
+
     .searchQuestion {
         width: 100%;
     }
@@ -303,22 +307,28 @@
     .infoContainer {
         display: block;
     }
+
     .tagsItems {
         font-size: 0.8rem;
     }
+
     .containerProfileInfo p {
         font-size: 1rem;
     }
+
     .btn__question {
         padding: 10px 5px;
         font-size: 9px;
     }
+
     .containerQuestion h5 {
         font-size: 1.4rem;
     }
+
     .containerQuestion p {
         font-size: 1.2rem;
     }
+
     .containerProfileInfo img {
         width: 5rem;
         height: 5rem;

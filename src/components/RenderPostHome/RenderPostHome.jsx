@@ -19,17 +19,17 @@ const RenderPostHome = () => {
         <LazyLoad threshold={0.95}>
             <section className={style.section}>
                 <div className={style.cardContainer}>
-                {news.map((post) => (
-                    <RenderPostGrid
-                        key={post.id}
-                        avatar={post.avatar}
-                        name_person={post.name_person}
-                        cohort={post.cohort}
-                        time={post.time}
-                        image={post.image}
-                        news={post.news}
-                    />
-                ))}
+                    {news.map((post) => (
+                        <RenderPostGrid
+                            key={post.id}
+                            avatar={post.avatar}
+                            name_person={post.name_person}
+                            cohort={post.cohort}
+                            time={post.time}
+                            image={post.image}
+                            news={post.news}
+                        />
+                    ))}
                 </div>
             </section>
         </LazyLoad>

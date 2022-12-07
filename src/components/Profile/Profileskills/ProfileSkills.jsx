@@ -1,13 +1,9 @@
 import React from "react";
-
-// import styles from "./ProfileSkills.module.css";
 import styles from '../cardProfile.module.css';
-
-
 
 const ProfileSkills = (props) => {
     const { dataUserProfile } = props;
-    
+
 
 
     return (

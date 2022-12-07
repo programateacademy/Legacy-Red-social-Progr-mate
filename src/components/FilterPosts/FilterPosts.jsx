@@ -81,7 +81,7 @@ const FilterPosts = (props) => {
                     <>
                         {data?.map((post) =>
                             post.type === "news" ? (
-                                <LazyLoad threshold={0.95}>                                  
+                                <LazyLoad threshold={0.95}>
                                     <News
                                         description={post.description}
                                         images={post.image}
@@ -133,9 +133,9 @@ const FilterPosts = (props) => {
                         <SkeletonPost key={i} />
                     ))}
 
-               
+
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };
