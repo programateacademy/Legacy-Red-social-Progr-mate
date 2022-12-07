@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BiX } from "react-icons/bi";
 
-const Languages = ({ skill, languages, setLanguages, dataUser, setDataUser }) => {
-
+const Languages = ({ skill, languages, setLanguages, dataUser, setDataUser}) => {
+    
 
     const deleteSkill = (e) => {
         e.preventDefault();

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment} from "react";
 
 import Education from "./Education";
 import styles from '../cardProfile.module.css';
@@ -17,14 +17,14 @@ const ProfileEducation = (props) => {
                         </div>
                     </div>
                     <div className={styles.icon_cont2}>
-                        {dataUserProfile.prev_studes?.map(
-                            (study, index) =>
-                                study.degree && (
-                                    <Education key={index} study={study} />
-                                )
-                        )}
-                    </div>
-
+                    {dataUserProfile.prev_studes?.map(
+                        (study, index) =>
+                            study.degree && (
+                                <Education key={index} study={study} />
+                            )
+                    )}
+</div>
+                    
                 </div>
             </section>
         </Fragment>

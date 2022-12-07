@@ -1,8 +1,9 @@
 import React from "react";
+// import style from "./Technologies.module.css";
 import styles from '../cardProfile.module.css';
 const Technologies = (props) => {
     const { dataUserProfile } = props;
-
+    
 
     return (
         <>
@@ -15,7 +16,7 @@ const Technologies = (props) => {
                     </div>
                     <div className={styles.icon_cont2}>
                         {dataUserProfile.technicalSkills?.map((skill, index) => (
-                            <p key={index}>
+                            <p  key={index}>
                                 {skill} -&nbsp;
                             </p>
                         ))}

@@ -1,10 +1,10 @@
-import React, { useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { studyField, experienceField } from "../../../../helpers/formProfile"
 import { v4 as uuid } from "uuid"
 
 import style from "../../ProfileEditor.module.css"
-import { updateData } from "../../../../helpers/fetch"
+import { getData, sendData, updateData } from "../../../../helpers/fetch"
 import FieldEducation from "../FieldEducation/FieldEducation"
 import FieldExperience from "../FieldExpirience/FieldExpirience"
 

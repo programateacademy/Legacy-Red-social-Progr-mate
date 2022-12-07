@@ -1,7 +1,10 @@
-import React, { useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import style from "./formPhoto.module.css"
 import { BiTrash } from "react-icons/bi"
-const FormPhotoUser = ({ dataUser, setDataUser }) => {
+
+import { DataContext } from "../../../context/DataContext"
+
+const FormPhotoUser = ({dataUser, setDataUser}) => {
 
     const [pathImage, setPathImage] = useState("")
 
@@ -16,7 +19,7 @@ const FormPhotoUser = ({ dataUser, setDataUser }) => {
     const onFileChange = (e) => {
         if (e.target.files.length) {
             const file = e.target.files[0]
-            // the picture must be less than 75KB
+// the picture must be less than 75KB
             if (file.size < 75000) {
                 if (file.type.includes("image")) {
                     const reader = new FileReader()
@@ -43,7 +46,7 @@ const FormPhotoUser = ({ dataUser, setDataUser }) => {
             <div className={style.headerPerfil}>
                 <h1>Completa tu perfil</h1>
                 <p>Hola {`${dataUser.firstName} ${dataUser.middleName} ${dataUser.lastName} ${dataUser.secondSurname}`}, completa tus datos</p>
-            </div>
+            </div>        
             <form>
                 <div className={style.containPhoto}>
                     <div className={style.iconsHead}>
@@ -72,7 +75,7 @@ const FormPhotoUser = ({ dataUser, setDataUser }) => {
                             />
                         </div>
                     </div>
-
+                    
                 </div>
             </form>
         </>

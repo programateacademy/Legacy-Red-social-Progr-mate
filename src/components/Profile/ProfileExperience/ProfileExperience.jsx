@@ -1,12 +1,12 @@
-import React, { Fragment } from "react";
+import React, { Fragment} from "react";
 
 import Experience from "./Experience";
 
 import styles from '../cardProfile.module.css';
 
 const ProfileExperience = (props) => {
-    const { dataUserProfile } = props
-
+    const {dataUserProfile} = props
+    
 
     return (
         <Fragment>
@@ -18,14 +18,14 @@ const ProfileExperience = (props) => {
                         </div>
                     </div>
                     <div className={styles.icon_cont2}>
-                        {dataUserProfile.experience?.map(
-                            (exper, index) =>
-                                exper.charge && (
-                                    <Experience key={index} exper={exper} />
-                                )
-                        )}
-                    </div>
-
+                    {dataUserProfile.experience?.map(
+                        (exper, index) =>
+                            exper.charge && (
+                                <Experience key={index} exper={exper} />
+                            )
+                    )}
+</div>
+                    
                 </div>
             </section>
         </Fragment>

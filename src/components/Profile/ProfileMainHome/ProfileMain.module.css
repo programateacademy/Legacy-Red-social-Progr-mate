@@ -22,19 +22,16 @@
   height: 10rem;
   overflow: hidden;
 }
-
 .photoContainer img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-.avatarImg {
+.avatarImg{
   border: 2px solid #ffcc02;
   border-radius: 50%;
 }
-
-.photoSkeleton {
+.photoSkeleton{
   height: 100%;
   width: 100%;
   background: linear-gradient(90deg, #ededed, #c9c9c9);
@@ -42,7 +39,6 @@
   animation: loadingAnimation 2s ease-in-out infinite;
   border-radius: 50%;
 }
-
 .tex_cont {
   width: 100%;
   position: relative;
@@ -57,38 +53,31 @@
   align-items: center;
   margin-top: 1rem;
 }
-
 .tex p {
   margin: 0;
 }
-
 .name {
   font-size: 1.8rem;
   font-weight: 600;
   padding-bottom: 1.2rem;
 }
-
 .cohort {
   font-size: 1.6rem;
   font-weight: 400;
 }
-
 .icon {
   top: -140px;
   position: absolute;
   right: -10px;
   cursor: pointer;
 }
-
 @keyframes loadingAnimation {
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }

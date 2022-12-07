@@ -6,7 +6,7 @@ const FieldExperience = ({ deleteExperience, handleChange, item }) => {
     return (
         <form className={style.form_container}>
             <div className={style.form}>
-                <h3 htmlFor="position">
+                <h3  htmlFor="position">
                     Cargo
                 </h3>
                 <i
@@ -50,7 +50,7 @@ const FieldExperience = ({ deleteExperience, handleChange, item }) => {
             </div>
 
             <div className={style.form}>
-                <h3 htmlFor="edad">
+                <h3  htmlFor="edad">
                     Fecha fin
                 </h3>
                 <input
