@@ -4,6 +4,7 @@ import AdminNavigation from '../AdminNavigation/AdminNavigation';
 import AdminCrudPosts from './AdminCrudPosts/AdminCrudPosts';
 import CreateCohort from '../CreateCohort/CreateCohort'
 import style from "./AdminHome.module.css"
+
 /* Renders in AdminHomePage */
 const AdminHome = () => {
     const [activePanel, setActivePanel] = useState('users')
