@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-
+import React from "react";
+import LazyLoad from 'react-lazy-load';
 import FormJobs from "../components/FormJobs/FormJobs";
 import Footer from "../components/Footer/Footer";
 
@@ -10,7 +10,9 @@ const FormJobsPage = () => {
 
     return (
         <>
-            <FormJobs />
+            <LazyLoad threshold={0.95}>
+                <FormJobs />
+            </LazyLoad>
             <Footer/>                    
         </>
     );

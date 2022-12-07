@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../context/DataContext";
-import { getDataAll, getData } from "../../helpers/fetch";
+import { getData } from "../../helpers/fetch";
 import Technologies from "./Technologies/Technologies";
 import ProfileMain from "./ProfileMain/ProfileMain";
-
 import ProfileSkills from "./Profileskills/ProfileSkills";
 import ProfileEducation from "./ProfileEducation/ProfileEducation";
 import ProfileExperience from "./ProfileExperience/ProfileExperience";
@@ -12,7 +11,7 @@ import style from "./BodyProfile.module.css";
 import ProfileMainHome from "./ProfileMainHome/ProfileMainHome";
 import { useParams } from "react-router-dom";
 import ProfilePortfolio from "./ProfilePortfolio/ProfilePortfolio";
-
+import LazyLoad from 'react-lazy-load';
 const BodyProfile = () => {
   const { dataProfile, setDataUser } =
     useContext(DataContext);
@@ -64,41 +63,40 @@ const BodyProfile = () => {
   return (
     <>
       {!showMain ? (
-        <div className={style.containBodyProfile}>
-          <div className={style.profileBodyContainer}>
-            <div className={style.profileInfo1}>
-              {/* Componentes (****  Cards ****) */}
-              <div className={style.boxComponents}>
-              {/* <AboutMe dataUserProfile={dataUserProfile}/> */}
-              <ProfileMain dataProfile={dataUserProfile} />
-              <ProfileEducation dataUserProfile={dataUserProfile} />
-              <ProfileLanguages dataUserProfile={dataUserProfile} />
-              <Technologies dataUserProfile={dataUserProfile} />
-              <ProfileSkills dataUserProfile={dataUserProfile} />
-              <ProfileExperience dataUserProfile={dataUserProfile} />
-              <ProfilePortfolio dataUserProfile={dataUserProfile} />
-              </div>
-            
-            </div>
-                       
-          </div>
-          {/* boton GitHub */}
-          <div className={style.btnProfile}>
-              <a href={dataUserProfile.github} target="_blank">
-                  <button className={style.button} type="button">
-                    Ver Github
-                  </button>
-                </a>
+        <LazyLoad threshold={0.95}>
+          <div className={style.containBodyProfile}>
+            <div className={style.profileBodyContainer}>
+              <div className={style.profileInfo1}>
+                {/* Componentes (****  Cards ****) */}
+                <div className={style.boxComponents}>
+                  {/* <AboutMe dataUserProfile={dataUserProfile}/> */}
+                  <ProfileMain dataProfile={dataUserProfile} />
+                  <ProfileEducation dataUserProfile={dataUserProfile} />
+                  <ProfileLanguages dataUserProfile={dataUserProfile} />
+                  <Technologies dataUserProfile={dataUserProfile} />
+                  <ProfileSkills dataUserProfile={dataUserProfile} />
+                  <ProfileExperience dataUserProfile={dataUserProfile} />
+                  <ProfilePortfolio dataUserProfile={dataUserProfile} />
                 </div>
-        </div>
+
+              </div>
+
+            </div>
+            {/* boton GitHub */}
+            <div className={style.btnProfile}>
+              <a href={dataUserProfile.github} target="_blank">
+                <button className={style.button} type="button">
+                  Ver Github
+                </button>
+              </a>
+            </div>
+          </div>
+        </LazyLoad>
       ) : (
         <div className={style.containBodyProfileHome}>
           <ProfileMainHome dataProfile={dataUserProfile} />
-          {/* <UserQuestions /> */}
         </div>
       )}
-
-
     </>
   );
 };

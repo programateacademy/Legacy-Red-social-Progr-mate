@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../../context/DataContext";
 import { getDataAll } from "../../helpers/fetch";
 import styles from "./UserQuestions.module.css";
-
+import LazyLoad from 'react-lazy-load';
 /* Questions maded by user -> renders in bodyprofile */
 function UserQuestions() {
     const { postsContext, setPostsContext, idUser } = useContext(DataContext)
@@ -12,23 +12,25 @@ function UserQuestions() {
     useEffect(async () => {
         let isMounted = true
         const getUserQuestions = async () => {
-        if (!postsContext) {
-            const data = await getDataAll("posts")
-            /* Only get questions maded by user */
-            const filterData = await data.filter((post) => post.type === "questions" && post.user_info === idUser)
-            setFilterUserQuestions(filterData)
-            setPostsContext(data)
+            if (!postsContext) {
+                const data = await getDataAll("posts")
+                /* Only get questions maded by user */
+                const filterData = await data.filter((post) => post.type === "questions" && post.user_info === idUser)
+                setFilterUserQuestions(filterData)
+                setPostsContext(data)
+            }
+            else {
+                const filterData = postsContext.filter((post) => post.type === "questions" && post.user_info === idUser)
+                setFilterUserQuestions(filterData)
+            }
         }
-        else {
-            const filterData = postsContext.filter((post) => post.type === "questions" && post.user_info === idUser)
-            setFilterUserQuestions(filterData)
-        }}
         await getUserQuestions()
         return () => isMounted = false
     }, [idUser])
 
     return (
         <>
+        <LazyLoad threshold={0.95}>
             {filterUserQuestions.length > 0 &&
                 <div>
                     <p className={styles.myquestions}>Mis Preguntas - FORO</p>
@@ -42,6 +44,7 @@ function UserQuestions() {
                     ))}
                 </div>
             }
+        </LazyLoad>
         </>
     );
 }
