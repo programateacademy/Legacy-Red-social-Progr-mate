@@ -215,19 +215,19 @@ const News = ({
             <div className={style.containerDesc}>
               <p>
                 {" "}
-                <span className={style.llavePost}><svg width="25px" height="25px" stroke-width="1.73" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffcc02"><path d="M20 10c0 4.418-8 12-8 12s-8-7.582-8-12a8 8 0 1116 0z" stroke="#ffcc02" stroke-width="1.73"></path><path d="M12 11a1 1 0 100-2 1 1 0 000 2z" fill="#ffcc02" stroke="#ffcc02" stroke-width="1.73" stroke-linecap="round" stroke-linejoin="round"></path></svg></span> &nbsp;
+                <span className={style.llavePost}><svg width="25px" height="25px" strokeWidth="1.73" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffcc02"><path d="M20 10c0 4.418-8 12-8 12s-8-7.582-8-12a8 8 0 1116 0z" stroke="#ffcc02" strokeWidth="1.73"></path><path d="M12 11a1 1 0 100-2 1 1 0 000 2z" fill="#ffcc02" stroke="#ffcc02" strokeWidth="1.73" strokeLinecap="round" strokeLinejoin="round"></path></svg></span> &nbsp;
                 {place}
               </p>
             </div>
             <div className={style.containerDesc}>
               <p>
-                <span className={style.llavePost}><svg width="25px" height="25px" stroke-width="1.73" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffcc02"><path d="M15 4V2m0 2v2m0-2h-4.5M3 10v9a2 2 0 002 2h14a2 2 0 002-2v-9H3zM3 10V6a2 2 0 012-2h2M7 2v4M21 10V6a2 2 0 00-2-2h-.5" stroke="#ffcc02" stroke-width="1.73" stroke-linecap="round" stroke-linejoin="round"></path></svg></span> &nbsp;
+                <span className={style.llavePost}><svg width="25px" height="25px" strokeWidth="1.73" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffcc02"><path d="M15 4V2m0 2v2m0-2h-4.5M3 10v9a2 2 0 002 2h14a2 2 0 002-2v-9H3zM3 10V6a2 2 0 012-2h2M7 2v4M21 10V6a2 2 0 00-2-2h-.5" stroke="#ffcc02" strokeWidth="1.73" strokeLinecap="round" strokeLinejoin="round"></path></svg></span> &nbsp;
                 {dateEvent}
               </p>
             </div>
             <div className={style.containerDesc}>
               <p>
-                <span className={style.llavePost}><svg width="25px" height="25px" stroke-width="1.73" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffcc02"><path d="M14 11.998C14 9.506 11.683 7 8.857 7H7.143C4.303 7 2 9.238 2 11.998c0 2.378 1.71 4.368 4 4.873a5.3 5.3 0 001.143.124" stroke="#ffcc02" stroke-width="1.73" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 11.998c0 2.491 2.317 4.997 5.143 4.997h1.714c2.84 0 5.143-2.237 5.143-4.997 0-2.379-1.71-4.37-4-4.874A5.304 5.304 0 0016.857 7" stroke="#ffcc02" stroke-width="1.73" stroke-linecap="round" stroke-linejoin="round"></path></svg>&nbsp;</span> <a href={link}>{link}</a>
+                <span className={style.llavePost}><svg width="25px" height="25px" strokeWidth="1.73" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffcc02"><path d="M14 11.998C14 9.506 11.683 7 8.857 7H7.143C4.303 7 2 9.238 2 11.998c0 2.378 1.71 4.368 4 4.873a5.3 5.3 0 001.143.124" stroke="#ffcc02" strokeWidth="1.73" strokeLinecap="round" strokeLinejoin="round"></path><path d="M10 11.998c0 2.491 2.317 4.997 5.143 4.997h1.714c2.84 0 5.143-2.237 5.143-4.997 0-2.379-1.71-4.37-4-4.874A5.304 5.304 0 0016.857 7" stroke="#ffcc02" strokeWidth="1.73" strokeLinecap="round" strokeLinejoin="round"></path></svg>&nbsp;</span> <a href={link}>{link}</a>
               </p>
             </div>
             <div className={style.techContains}>

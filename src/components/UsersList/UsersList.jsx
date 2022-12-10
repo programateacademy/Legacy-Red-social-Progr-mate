@@ -1,14 +1,18 @@
 import React, { Fragment, useContext, useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../context/DataContext";
 import { getDataAll } from "../../helpers/fetch";
 import UsersListSkeleton from "../UserListSkeleton/UserListSkeleton";
 import style from "./UsersList.module.css";
+import pagination from "./pagination.module.css";
 import LazyLoad from 'react-lazy-load';
 
 const UsersList = () => {
 
     const { users, setUsers } = useContext(DataContext)
+
+    const [filterUser, setFilterUser] = useState({})
 
     const getUsers = async () => {
         const data = await getDataAll("users");
@@ -18,13 +22,25 @@ const UsersList = () => {
     const handleChange = e => {
         filtrar(e.target.value);
     }
-
+    
     const filtrar = (terminoBusqueda) => {
         let resultArray = users.filter(user => user.firstName == terminoBusqueda)
         console.log(resultArray)
         console.log(users)
-        // setUsers(resultArray);
+        setFilterUser(resultArray);
+        console.log(filterUser)
+
+        //Cantidad de usuarios encontrados
+        var number = 0;
+        if (resultArray.length == 0) {
+            number = users.length
+        } else {
+            number = resultArray.length
+        }
+        console.log(`Usuarios encontrados: ${number}`)
     }
+
+    
 
     useEffect(() => {
         let isMounted = true
@@ -34,21 +50,13 @@ const UsersList = () => {
         }
     }, [])
 
-    // const dataSearch = () => {
-    //     var number = 0;
-    //     if (resultArray.length == 0) {
-    //         number = users.length
-    //     }else{
-    //         number = resultArray.length
-    //     }
-    //     console.log(number)
-    // }
+
 
     return (
         <Fragment>
             <div className={style.searchUser}>
                 <input type="text" placeholder="Busca un estudiante..." id="searchDataUser" onChange={handleChange} />
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button onClick={handleChange}><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <div className={style.searchCount}>
                 <h3>Usuarios encontrados: </h3><h3 className={style.searchCountVar} id="userNumber"></h3>

@@ -110,7 +110,7 @@ const Posts = () => {
                                         id={post._id}
                                         user={post.user_info ? post.user_info : ""}
                                         rol={getRol}
-                                        key={post._id}
+                                        key={post._id+"News"}
                                     />
                                 </LazyLoad>
                             ) : post.type === "jobs" ? (
@@ -127,7 +127,7 @@ const Posts = () => {
                                         id={post._id}
                                         user={post.user_info ? post.user_info : ""}
                                         rol={getRol}
-                                        key={post._id}
+                                        key={post._id+"Jobs"}
                                     />
                                 </LazyLoad>
                             ) : post.type === "event" ? (
@@ -142,7 +142,7 @@ const Posts = () => {
                                         id={post._id}
                                         user={post.user_info ? post.user_info : ""}
                                         rol={getRol}
-                                        key={post._id}
+                                        key={post._id+"Event"}
                                     />
                                 </LazyLoad>
                             ) : null
