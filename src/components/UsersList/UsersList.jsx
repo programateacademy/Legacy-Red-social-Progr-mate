@@ -11,34 +11,39 @@ import LazyLoad from 'react-lazy-load';
 const UsersList = () => {
 
     const { users, setUsers } = useContext(DataContext)
-    
+    const [tablaUsuarios, setTablaUsuarios] = useState([]);
     const getUsers = async () => {
         const data = await getDataAll("users");
         setUsers(data)
-        setFilterUser(data)
+        setTablaUsuarios(data)
     }
-    
-    const [filterUser, setFilterUser] = useState()
-    const [counterUser, setcounterUser] = useState(users.length)
 
+    const [counterUser, setcounterUser] = useState(users.length);
+    const [busqueda, setBusqueda] = useState("");
 
     const handleChange = e => {
+        setBusqueda(e.target.value);
         filtrar(e.target.value);
     }
-    console.log(filterUser)
 
     const filtrar = (terminoBusqueda) => {
-        let resultArray = filterUser.filter(user => user.firstName == terminoBusqueda)
-        // console.log(resultArray)
-        // setUsers(resultArray);
-        // console.log(users)
+
+        var resultadosBusqueda = tablaUsuarios.filter((elemento) => {
+            if (elemento.firstName.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+                || elemento.lastName.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+            ) {
+                return elemento;
+            }
+        });
+
+        setUsers(resultadosBusqueda);
 
         //Cantidad de usuarios encontrados
         var number = 0;
-        if (resultArray.length == 0) {
+        if (resultadosBusqueda.length == 0) {
             number = users.length
         } else {
-            number = resultArray.length
+            number = resultadosBusqueda.length
         }
         console.log(`Usuarios encontrados: ${number}`)
         setcounterUser(number)
@@ -66,7 +71,7 @@ const UsersList = () => {
                 <h3>Usuarios encontrados: </h3><h3 className={style.searchCountVar} id="userNumber">{counterUser}</h3>
             </div>
             <LazyLoad threshold={0.95}>
-                <div className={style.container} onLoad={handleChange}>
+                <div className={style.container}>
                     {users.length > 0 ?
                         users.map((user) => (
                             <Link key={user._id} className={style.card} to={`/profile/${user._id}`}>
