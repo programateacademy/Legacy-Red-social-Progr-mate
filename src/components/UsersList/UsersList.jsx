@@ -11,14 +11,16 @@ import LazyLoad from 'react-lazy-load';
 const UsersList = () => {
 
     const { users, setUsers } = useContext(DataContext)
-
-    const [filterUser, setFilterUser] = useState()
-
+    
     const getUsers = async () => {
         const data = await getDataAll("users");
         setUsers(data)
         setFilterUser(data)
     }
+    
+    const [filterUser, setFilterUser] = useState()
+    const [counterUser, setcounterUser] = useState(users.length)
+
 
     const handleChange = e => {
         filtrar(e.target.value);
@@ -39,6 +41,7 @@ const UsersList = () => {
             number = resultArray.length
         }
         console.log(`Usuarios encontrados: ${number}`)
+        setcounterUser(number)
     }
 
 
@@ -60,10 +63,10 @@ const UsersList = () => {
                 <button onClick={handleChange}><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <div className={style.searchCount}>
-                <h3>Usuarios encontrados: </h3><h3 className={style.searchCountVar} id="userNumber"></h3>
+                <h3>Usuarios encontrados: </h3><h3 className={style.searchCountVar} id="userNumber">{counterUser}</h3>
             </div>
             <LazyLoad threshold={0.95}>
-                <div className={style.container}>
+                <div className={style.container} onLoad={handleChange}>
                     {users.length > 0 ?
                         users.map((user) => (
                             <Link key={user._id} className={style.card} to={`/profile/${user._id}`}>
