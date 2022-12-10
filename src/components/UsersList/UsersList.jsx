@@ -12,23 +12,24 @@ const UsersList = () => {
 
     const { users, setUsers } = useContext(DataContext)
 
-    const [filterUser, setFilterUser] = useState({})
+    const [filterUser, setFilterUser] = useState()
 
     const getUsers = async () => {
         const data = await getDataAll("users");
         setUsers(data)
+        setFilterUser(data)
     }
 
     const handleChange = e => {
         filtrar(e.target.value);
     }
-    
+    console.log(filterUser)
+
     const filtrar = (terminoBusqueda) => {
-        let resultArray = users.filter(user => user.firstName == terminoBusqueda)
-        console.log(resultArray)
-        console.log(users)
-        setFilterUser(resultArray);
-        console.log(filterUser)
+        let resultArray = filterUser.filter(user => user.firstName == terminoBusqueda)
+        // console.log(resultArray)
+        // setUsers(resultArray);
+        // console.log(users)
 
         //Cantidad de usuarios encontrados
         var number = 0;
@@ -40,7 +41,7 @@ const UsersList = () => {
         console.log(`Usuarios encontrados: ${number}`)
     }
 
-    
+
 
     useEffect(() => {
         let isMounted = true
