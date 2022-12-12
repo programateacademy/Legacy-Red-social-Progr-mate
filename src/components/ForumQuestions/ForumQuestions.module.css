@@ -186,7 +186,7 @@
 
 .questionContainerMain {
     /*border: 2.2px solid #92c149;*/
-    border: 2.2px solid #2b2929;
+    border: 2px solid #ffcc02;
     color: #ffcc02;
     padding: 1rem 2rem;
     border-radius: 5px;
@@ -231,7 +231,8 @@
 .containerProfileInfo img {
     width: 7rem;
     height: 7rem;
-    border-radius: 2px;
+    border-radius: 50%;
+    border: 2px solid #ffcc02;
 }
 
 .containerProfileInfo p {

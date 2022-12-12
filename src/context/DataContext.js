@@ -9,7 +9,7 @@ export const DataProvider = ({ children }) => {
 
     const [dataProfile, setDataProfile] = useState({
         user_info: _id,
-        
+
         technicalSkills: [],
         softSkills: [],
         lenguages: [],
@@ -19,7 +19,7 @@ export const DataProvider = ({ children }) => {
     const [dataUser, setDataUser] = useState({
         github: "",
         description: "",
-        portfolio:"",
+        portfolio: "",
         avatar: "",
         cohorte: { num: 1, name: "" },
         contactNumber: null,
@@ -81,8 +81,8 @@ export const DataProvider = ({ children }) => {
     const [allCohorts, setCohorts] = useState([]);
     const [getPosts, setGetPosts] = useState();
     const [getPostsProfile, setGetPostsProfile] = useState();
-    const [users, setUsers]  = useState([]);
-    const [postsContext, setPostsContext]  = useState();
+    const [users, setUsers] = useState([]);
+    const [postsContext, setPostsContext] = useState();
     const [filterHome, setFilterHome] = useState("");
     const [avatar, setAvatar] = useState();
 
@@ -113,7 +113,7 @@ export const DataProvider = ({ children }) => {
                 getPostsProfile,
                 avatar,
                 setAvatar,
-                allCohorts, 
+                allCohorts,
                 setCohorts
             }}
         >
