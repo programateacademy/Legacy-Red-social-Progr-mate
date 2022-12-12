@@ -3,7 +3,6 @@ import { DataContext } from "../../context/DataContext";
 import { getDataAll, getData } from "../../helpers/fetch";
 import Technologies from "./Technologies/Technologies";
 import ProfileMain from "./ProfileMain/ProfileMain";
-
 import ProfileSkills from "./Profileskills/ProfileSkills";
 import ProfileEducation from "./ProfileEducation/ProfileEducation";
 import ProfileExperience from "./ProfileExperience/ProfileExperience";
@@ -94,7 +93,7 @@ const BodyProfile = () => {
       ) : (
         <div className={style.containBodyProfileHome}>
           <ProfileMainHome dataProfile={dataUserProfile} />
-          {/* <UserQuestions /> */}
+     
         </div>
       )}
 
