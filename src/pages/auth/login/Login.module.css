@@ -3,16 +3,19 @@
   display: flex;
   min-height: 100vh;
 }
+
 .containerLeft,
 .containerRight {
   width: 50%;
 }
+
 .containerLeft {
   background-color: var(--main-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .containerRight {
   background-color: var(--secundary-background);
   display: flex;
@@ -20,22 +23,27 @@
   flex-direction: column;
   padding-top: 10rem;
 }
+
 .containerRightHeader {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .containerRightHeader h3 {
   font-size: 2.5rem;
   text-align: center;
   color: white;
 }
+
 .containerLeft img {
   width: 80%;
 }
+
 .containerRightForm {
   width: 80%;
 }
+
 .containerRightForm input,
 .buttonLogin {
   width: 100%;
@@ -45,30 +53,36 @@
   margin-bottom: 2rem;
   padding-left: 1rem;
 }
+
 .containerRightForm input {
   background-color: var(--input-color);
 }
+
 .containerRightForm input::placeholder {
   padding: 0.8rem;
   color: var(--input-text);
 }
+
 .containerRightForm input:focus {
   outline: none;
   border: 1px solid #add2fa;
   box-shadow: 0 0 5pt 2pt #d7e9ff;
 }
+
 .buttonLogin {
   background-color: var(--main-color);
   cursor: pointer;
 }
+
 .forgotPassword {
   display: flex;
   justify-content: center;
   font-size: 1.6rem;
   margin: 2rem 0;
   text-align: center;
-   color: white;
+  color: white;
 }
+
 .forgotPassword:visited {
   color: whitesmoke;
 }
@@ -78,6 +92,7 @@
   .containerLeft {
     display: none;
   }
+
   .containerRight {
     width: 100%;
     margin: 0;

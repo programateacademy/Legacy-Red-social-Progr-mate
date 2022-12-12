@@ -1,7 +1,5 @@
-import React, {Fragment, useContext, useState, useEffect } from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
 import style from "./FormJobs.module.css";
-import logo from "../../assets/images/logo-a-color-.jpg";
-import { DataContext } from "../../context/DataContext";
 import { getData, sendData, updateData } from "../../helpers/fetch";
 import HardSkills from "../formInfo/HardSkills";
 import { useNavigate, useParams } from "react-router-dom";
@@ -15,7 +13,7 @@ const FormJobs = () => {
     const params = useParams();
     const [technical, setTechnical] = useState([]);
 
-    const getDataJobs = async (id)  => {
+    const getDataJobs = async (id) => {
         try {
             const dataJobs = await getData("posts", id);
             setPostData(dataJobs);
@@ -31,7 +29,7 @@ const FormJobs = () => {
         }
     }, []);
 
-    
+
 
     //Send User data to user model and profile
 
@@ -61,12 +59,12 @@ const FormJobs = () => {
                 if (!params.id) {
                     await sendData("posts", postData);
                     navigate("/jobs");
-                    
+
                 } else {
                     await updateData("posts", params.id, postData);
                 }
 
-                
+
             } catch (error) {
                 console.log(error);
             }

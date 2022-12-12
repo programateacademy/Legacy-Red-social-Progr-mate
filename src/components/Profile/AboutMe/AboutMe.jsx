@@ -1,13 +1,7 @@
 import React from "react";
 
-import styles from '../cardProfile.module.css';
-// import styles from './AboutMe.module.css';
-
 const AboutMe = (props) => {
     const { dataUserProfile } = props;
-    
-
-
     return (
         <>
             <section className={styles.container1}>
@@ -22,7 +16,6 @@ const AboutMe = (props) => {
                             <p className={styles.skill}>
                                 {dataUserProfile.description}
                             </p>
-                        
                     </div>
                 </div>
             </section>

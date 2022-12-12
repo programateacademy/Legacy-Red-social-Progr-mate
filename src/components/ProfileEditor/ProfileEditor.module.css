@@ -98,6 +98,15 @@
     margin-left: 5px;
 }
 
+a {
+    color: #FFCC02;
+    font-size: 20px;
+}
+
+.tags {
+    height: 200px;
+}
+
 .tags button {
     border-radius: 10px;
     background-color: #535353;

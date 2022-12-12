@@ -1,8 +1,6 @@
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import styles from "./Formnews.module.css";
-import logo from "../../assets/images/logo-a-color-.jpg";
 import { getData, sendData, updateData } from "../../helpers/fetch";
-import { DataContext } from "../../context/DataContext";
 import HardSkills from "./HardSkills";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";

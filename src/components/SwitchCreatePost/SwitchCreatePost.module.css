@@ -1,17 +1,17 @@
-.button{
-    margin: 0 2%;
-    height: 3rem;
-    width: 18rem;
-    border: none;
-    color: var(--text-color);
-    background-color: var(--main-color);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all ease 0.3s;
+.button {
+  margin: 0 2%;
+  height: 3rem;
+  width: 18rem;
+  border: none;
+  color: var(--text-color);
+  background-color: var(--main-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all ease 0.3s;
 }
 
-.button:hover{
-    background-color: black;
-  color:#ffcc02;
+.button:hover {
+  background-color: black;
+  color: #ffcc02;
   transform: scale(1.1);
 }

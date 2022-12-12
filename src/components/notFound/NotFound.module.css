@@ -1,9 +1,9 @@
-.imgNotFound{
+.imgNotFound {
     width: 250px;
     height: 250px;
 }
 
-.NotFound{
+.NotFound {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,9 +13,9 @@
 
 
 @media (min-width:768px) {
-    .imgNotFound{
+    .imgNotFound {
         width: 350px;
         height: 350px;
     }
-    
-  }
+
+}

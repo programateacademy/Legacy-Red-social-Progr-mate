@@ -4,7 +4,9 @@
     width: 100%;
 }
 
-.forms > input, .forms > select, .forms > textarea{
+.forms>input,
+.forms>select,
+.forms>textarea {
     border: 2px solid #ffcc02;
     background: #23232393;
     border-radius: 5px;

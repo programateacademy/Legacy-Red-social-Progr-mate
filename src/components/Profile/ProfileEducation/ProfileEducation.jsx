@@ -1,8 +1,6 @@
 import React, { Fragment} from "react";
 
 import Education from "./Education";
-
-// import styles from "./ProfileEducation.module.css";
 import styles from '../cardProfile.module.css';
 
 

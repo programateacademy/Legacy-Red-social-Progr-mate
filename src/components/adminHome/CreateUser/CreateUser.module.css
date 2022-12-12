@@ -24,15 +24,18 @@
     margin: 1rem;
     cursor: pointer;
 }
-.form input{
-        width: 100%;
-            margin: .4rem;
+
+.form input {
+    width: 100%;
+    margin: .4rem;
 }
+
 @media(max-width: 640px) {
     .form {
         width: 100%;
     }
-    .btn{
+
+    .btn {
         width: 50%;
     }
 }

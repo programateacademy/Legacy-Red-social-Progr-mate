@@ -2,7 +2,6 @@ import React, {
     Fragment,
     useContext,
     useEffect,
-    useRef,
     useState,
 } from "react";
 
@@ -21,7 +20,7 @@ const Form_PersonalInfo = () => {
     const [softSkills, setsoftSkills] = useState([]);
     const [languages, setLanguages] = useState([]);
 
-   
+
 
     const onChange = ({ target }) => {
         // console.log(dataProfile);
@@ -88,7 +87,7 @@ const Form_PersonalInfo = () => {
     return (
         <Fragment>
             <form className={style.form_container}>
-            <div className={style.forms}>
+                <div className={style.forms}>
                     <h3>Link de Git Hub</h3>
                     <input
                         className={style.nom}

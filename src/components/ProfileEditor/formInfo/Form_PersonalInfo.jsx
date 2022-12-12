@@ -12,7 +12,7 @@ import HardSkills from "./HardSkills"
 import SoftSkills from "./SoftSkills"
 import Name from './Name'
 import Cohorte from './Cohorte'
-import TextArea from "./TextArea"
+// import TextArea from "./TextArea"
 const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
     const [technical, setTechnical] = useState([])
     const [softSkills, setsoftSkills] = useState([])
@@ -96,13 +96,13 @@ const Form_PersonalInfo = ({dataUser, setDataUser, allCohorts}) => {
                                 <Cohorte nameField={dataUser.cohorte} onChange={selectChange} field={'cohorte'} allCohorts={allCohorts}/>
                         </div>
                     </div>
-                    <div className={style.form}>
+                    {/* <div className={style.form}>
                         <div className={style.column}>
                             <TextArea nameField={dataUser.description} onChange={onChange} field={'description'} >
                                 <h2>Acerca de mi</h2>
                             </TextArea>
                         </div>
-                    </div>
+                    </div> */}
                     <div className={style.form}>
                         <h2>Nombre Completo</h2>
                         <div className={style.row_inputs}>

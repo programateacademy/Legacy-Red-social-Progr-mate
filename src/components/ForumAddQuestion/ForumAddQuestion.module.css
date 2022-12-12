@@ -14,7 +14,6 @@
 .section {
     /* padding: 3rem 0 2rem; */
     width: 100%;
-    /* height: 100vh; */
     background-color: #ececec;
     font-family: Gilroy-bold;
 }
@@ -158,6 +157,7 @@
     .containerYellow {
         display: none;
     }
+
     .containerForum {
         width: 100%;
     }

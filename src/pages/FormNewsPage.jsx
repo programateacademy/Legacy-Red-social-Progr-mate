@@ -1,18 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import Footer from "../components/Footer/Footer";
-
-
+import LazyLoad from 'react-lazy-load';
 import FormNews from "../components/FormNews/Formnews";
-import { DataContext } from "../context/DataContext";
 
 const FormNewsPage = () => {
 
-    const { sendData } = useContext(DataContext);
-
     return (
         <>
-            <FormNews />
-            <Footer/>
+            <LazyLoad threshold={0.95}>
+                <FormNews />
+            </LazyLoad>
+            <Footer />
         </>
     );
 };

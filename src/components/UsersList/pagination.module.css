@@ -1,0 +1,33 @@
+.pagination1 {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    justify-content: center;
+    gap: .5rem;
+    margin: 1rem 0;
+    font-family: var(--title);
+    
+}
+
+.pageItem1 .pageLink1 {
+    border-radius: 5px;
+    background-color: var(--purple);
+}
+
+.pageLink1:hover {
+    z-index: 2;
+    color: white;
+    background-color: var(--fusia);
+    
+}
+
+.pageLink1 {
+    position: relative;
+    display: block;
+    color: white;
+    padding: 0.375rem 0.75rem;
+    text-decoration: none;
+   
+   
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}

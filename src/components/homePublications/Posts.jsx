@@ -1,16 +1,15 @@
 import React, { Fragment, useContext, useEffect } from "react";
-
 import News from "./News";
 import Jobs from "./Jobs";
 import Events from "./Events";
 import { getData, getDataAll } from "../../helpers/fetch";
 import { DataContext } from "../../context/DataContext";
 import { useState } from "react";
-import style from "./Posts.module.css";
 import SkeletonPost from "../SkeletonPost/SkeletonPost";
+import LazyLoad from 'react-lazy-load';
 
 const Posts = () => {
-    const { getPosts, setGetPosts, filterHome, setFilterHome, idUser } =
+    const { getPosts, setGetPosts, filterHome, idUser } =
         useContext(DataContext);
 
     const [dataUsers, setDataUsers] = useState([]);
@@ -77,7 +76,7 @@ const Posts = () => {
         }
     };
 
- 
+
 
     useEffect(async () => {
         let isMounted = true
@@ -96,60 +95,67 @@ const Posts = () => {
     }, []);
 
     return (
-        <Fragment>
-            {filterPosts() && getPosts.length ?
-                <>
-                    {filterPosts()?.map((post) =>
-                        post.type === "news" ? (
-                            <News
-                                description={post.description}
-                                images={post.image}
-                                technologies={post.technologies}
-                                title={post.title}
-                                id={post._id}
-                                user={post.user_info ? post.user_info : ""}
-                                rol={getRol}
-                                key={post._id}
-                            />
-                        ) : post.type === "jobs" ? (
-                            <Jobs
-                                description={post.description}
-                                technologies={post.technologies}
-                                title={post.title}
-                                company={post.company}
-                                place={post.place}
-                                modality={post.modality}
-                                salary={post.salary}
-                                contact={post.contact}
-                                id={post._id}
-                                user={post.user_info ? post.user_info : ""}
-                                rol={getRol}
-                                key={post._id}
-                            />
-                        ) : post.type === "event" ? (
-                            <Events
-                                description={post.description}
-                                technologies={post.technologies}
-                                title={post.title}
-                                place={post.place}
-                                link={post.link}
-                                dateEvent={post.dateEvent}
-                                id={post._id}
-                                user={post.user_info ? post.user_info : ""}
-                                rol={getRol}
-                                key={post._id}
-                            />
-                        ) : null
-                    )}
-                    
-                </>
-                :
-                [...Array(5)].map((x, i) => (
-                    <SkeletonPost key={i} />
-                ))
-            }
-        </Fragment>
+        <LazyLoad threshold={0.95}>
+            <Fragment>
+                {filterPosts() && getPosts.length ?
+                    <>
+                        {filterPosts()?.map((post) =>
+                            post.type === "news" ? (
+                                <LazyLoad threshold={0.95}>
+                                    <News
+                                        description={post.description}
+                                        images={post.image}
+                                        technologies={post.technologies}
+                                        title={post.title}
+                                        id={post._id}
+                                        user={post.user_info ? post.user_info : ""}
+                                        rol={getRol}
+                                        key={post._id+"News"}
+                                    />
+                                </LazyLoad>
+                            ) : post.type === "jobs" ? (
+                                <LazyLoad threshold={0.95}>
+                                    <Jobs
+                                        description={post.description}
+                                        technologies={post.technologies}
+                                        title={post.title}
+                                        company={post.company}
+                                        place={post.place}
+                                        modality={post.modality}
+                                        salary={post.salary}
+                                        contact={post.contact}
+                                        id={post._id}
+                                        user={post.user_info ? post.user_info : ""}
+                                        rol={getRol}
+                                        key={post._id+"Jobs"}
+                                    />
+                                </LazyLoad>
+                            ) : post.type === "event" ? (
+                                <LazyLoad threshold={0.95}>
+                                    <Events
+                                        description={post.description}
+                                        technologies={post.technologies}
+                                        title={post.title}
+                                        place={post.place}
+                                        link={post.link}
+                                        dateEvent={post.dateEvent}
+                                        id={post._id}
+                                        user={post.user_info ? post.user_info : ""}
+                                        rol={getRol}
+                                        key={post._id+"Event"}
+                                    />
+                                </LazyLoad>
+                            ) : null
+                        )}
 
+                    </>
+                    :
+                    [...Array(5)].map((x, i) => (
+                        <SkeletonPost key={i} />
+                    ))
+                }
+            </Fragment>
+        </LazyLoad>
     );
 };
 

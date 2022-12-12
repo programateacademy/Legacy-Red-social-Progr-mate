@@ -1,23 +1,22 @@
-import React, { useEffect, useState, useContext} from "react"
+import React, { useEffect, useState, useContext } from "react"
 import { sendData, getDataAll } from "../../helpers/fetch"
 import styles from "./styles.module.css"
 
 import { showErrMsg } from "../../utils/notification"
-import { useNavigate } from "react-router-dom"
 import { DataContext } from "../../context/DataContext"
 import DeleteButton from "../DeleteButton/DeleteButton"
 /* Create cohort and his users - Renders in AdminCohort*/
 function CreateCohort() {
-    const {allCohorts, setCohorts}= useContext(DataContext);
+    const { allCohorts, setCohorts } = useContext(DataContext);
     const [newCohort, setNewCohort] = useState([])
-    
+
     const [cohorts, set] = useState([])
     /* Update cohort state */
 
     useEffect(() => {
         set(allCohorts)
-    },[allCohorts])
-    
+    }, [allCohorts])
+
     const updateCohorts = async () => {
         const dataCohort = await getDataAll("cohorte");
         set(dataCohort)
@@ -29,7 +28,7 @@ function CreateCohort() {
         if (checkNumber || checkName) {
             console.log(allCohorts.map((e) => e.cohorte == cohort.cohorte).filter(c => c === true))
             return false
-        } else { return true}
+        } else { return true }
     }
     const handleCohort = (e) => {
         setNewCohort({
@@ -42,8 +41,8 @@ function CreateCohort() {
     /* create cohort in data base */
     const sendCohort = async (event) => {
         event.preventDefault()
-        if (checkCohort(newCohort))
-            {try {
+        if (checkCohort(newCohort)) {
+            try {
                 await sendData("cohorte", newCohort)
             } catch (err) {
                 console.log(err)
@@ -56,39 +55,39 @@ function CreateCohort() {
     }
     return (
         <>
-            
+
             <form id="cohort" onSubmit={sendCohort} className={`${styles.formCohort} ${styles.form}`}>
-            <h1 className={styles.title}>Cohorte</h1>
+                <h1 className={styles.title}>Cohorte</h1>
                 <div className={styles.formCohortContainer}>
                     <label>Numero de Cohorte<span>*</span></label>
-                    <input type="number" name="cohorte" onChange={handleCohort} required/>
+                    <input type="number" name="cohorte" onChange={handleCohort} required />
                 </div>
                 <div className={styles.formCohortContainer}>
                     <label>Nombre de la Cohorte<span>*</span></label>
-                    <input type="text" name="cohorte_name" onChange={handleCohort} required/>
+                    <input type="text" name="cohorte_name" onChange={handleCohort} required />
                 </div>
-                <input type="submit" className={styles.button} value="Crear Cohorte"/>
+                <input type="submit" className={styles.button} value="Crear Cohorte" />
             </form>
             <table className={styles.table}>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Cohorte</th>
-                            <th>Eliminar</th>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Cohorte</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {cohorts.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.cohorte}</td>
+                            <td>{item.cohorte_name}</td>
+                            <td>
+                                <DeleteButton endpoint="cohorte" id={item._id} onClick={updateCohorts} />
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {cohorts.map((item, index) => (
-                            <tr key={index}>
-                                <td>{item.cohorte}</td>
-                                <td>{item.cohorte_name}</td>
-                                <td>
-                                    <DeleteButton endpoint="cohorte" id={item._id} onClick={updateCohorts}/>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                    ))}
+                </tbody>
+            </table>
         </>
     )
 }
