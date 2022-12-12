@@ -1,17 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import Footer from "../components/Footer/Footer";
-
-
+import LazyLoad from 'react-lazy-load';
 import FormEvent from "../components/FormEvent/FormEvent";
-import { DataContext } from "../context/DataContext";
 
 const FormEventPage = () => {
-
-    const { sendData } = useContext(DataContext);
-
     return (
         <>
-            <FormEvent />
+            <LazyLoad threshold={0.95}>
+                <FormEvent />
+            </LazyLoad>
             <Footer />
         </>
     );

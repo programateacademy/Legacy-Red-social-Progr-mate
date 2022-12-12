@@ -5,7 +5,7 @@ import { DataProvider } from "../context/DataContext";
 
 //Login Redux
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import Autentification from "../components/autentication/Autentification";
 import axios from "axios";
@@ -16,7 +16,6 @@ import {
     fetchUser,
 } from "../redux/actions/authAction";
 
-import Logout from "../components/Logout/Logout";
 import { baseUrl } from "../../config";
 
 
@@ -33,7 +32,7 @@ const App = () => {
             const refreshtoken = user.refresh_token;
 
             const getToken = async () => {
-                
+
                 const res = await axios.post(`${baseUrl}/api/refresh_token`, {
                     refreshtoken,
                 });
@@ -61,7 +60,7 @@ const App = () => {
         <>
             <DataProvider>
                 <Router>
-                    
+
                     <Autentification />
                 </Router>
             </DataProvider>

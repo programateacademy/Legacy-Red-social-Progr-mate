@@ -1,17 +1,17 @@
-import React from "react";
-import styles from "./Footer.module.css";
-import logoProgramate from "../../assets/images/logo.svg";
-import logoEducamas from "../../assets/images/programate-academy-blancos.png";
-import logoFacebook from "../../assets/images/facebook.png";
-import logoLinkedin from "../../assets/images/linkedin.png";
-import logoInstagram from "../../assets/images/instagram.png";
+import React from "react"
+import styles from "./Footer.module.css"
+import logoProgramate from "../../assets/images/logo.svg"
+import logoEducamas from "../../assets/images/programate-academy-blancos.png"
+import logoFacebook from "../../assets/images/facebook.png"
+import logoLinkedin from "../../assets/images/linkedin.png"
+import logoInstagram from "../../assets/images/instagram.png"
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.containerFooter}>
-      <img className={styles.logoProgramate} src={logoProgramate} alt="Programate" />
-        
+        <img className={styles.logoProgramate} src={logoProgramate} alt="Programate" />
+
         <div className={styles.logoRedes}>
           <ul className={styles.listRedes}>
             <li>
@@ -43,7 +43,7 @@ const Footer = () => {
         />
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

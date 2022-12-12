@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, { useState, useContext, useEffect } from "react";
 import styles from "../Notifications/Notifications.module.css";
 import { Notifications } from "./Notifications";
 import reminder from "./notifications.json";
@@ -10,7 +10,7 @@ const Notification = () => {
     const [notificationData, setNotficationData] = useState()
     useEffect(() => {
         let isMounted = true
-        const set =async () => {
+        const set = async () => {
             const data = await getData('notifications', idUser)
             setNotficationData(data)
         }
@@ -18,11 +18,11 @@ const Notification = () => {
         return () => {
             isMounted = false
         }
-    },[])
+    }, [])
     return (
         <aside className={styles.main}>
             <div className={styles.cardContainer}>
-                <h2>Notificaciones</h2>
+                <h2 className={styles.titleNotification}>Notificaciones</h2>
                 {reminder.map((noti) => (
                     <Notifications
                         key={noti.idNotifications}

@@ -1,117 +1,137 @@
 @font-face {
     font-family: Gilroy-bold;
     src: url("../../assets/fonts/Gilroy-ExtraBold.otf") format("opentype");
-  }
-  @font-face {
+}
+
+@font-face {
     font-family: Gilroy-light;
     src: url("../../assets/fonts/Gilroy-Light.otf") format("opentype");
-  }
-  
-  /*=============== REUSABLE CSS CLASSES ===============*/
-  .section {
+}
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+.section {
     /* padding: 3rem 0 2rem; */
     width: 100%;
-    /* height: 100vh; */
     background-color: #ececec;
     font-family: Gilroy-bold;
-  }
-  .containerYellow{
+}
+
+.containerYellow {
     background-color: #FFCC02;
     width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
-  }
-  .yellowTitle{
+}
+
+.yellowTitle {
     font-size: 2.5rem;
     padding-left: 1.4rem;
-  }
-  .yellowText{
+}
+
+.yellowText {
     font-size: 1.8rem;
     padding: 1.4rem;
-  }
-  .section__global {
+}
+
+.section__global {
     max-width: 1240px;
     margin: 0 auto;
     display: flex;
-  }
-  /*=============== ==================== ===============*/
-  .containerForum {
+}
+
+
+/*=============== ==================== ===============*/
+
+.containerForum {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  .containerTitle {
+}
+
+.containerTitle {
     margin-bottom: 20px;
-  }
-  .title {
+}
+
+.title {
     margin: 0;
     display: flex;
     align-items: center;
     column-gap: 7px;
-  }
-  .lineTitle {
+}
+
+.lineTitle {
     width: 100%;
     height: 3px;
     border: none;
-  }
-  /*================== FORUM  =================*/
-  .forumAdd {
+}
+
+
+/*================== FORUM  =================*/
+
+.forumAdd {
     display: flex;
     flex-direction: column;
-  }
-  .forumAdd label{
-      margin: 10px 0 7px 0;
-  }
-  
-  .inputs,
-  .inputSelect,
-  .textArea {
+}
+
+.forumAdd label {
+    margin: 10px 0 7px 0;
+}
+
+.inputs,
+.inputSelect,
+.textArea {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     background-color: #fff;
     outline: none;
-  }
-  .textArea {
+}
+
+.textArea {
     resize: none;
     height: 100px;
-  }
-  .inputSelect{
+}
+
+.inputSelect {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-  }
-  
-  .inputFile{
-    padding: 10px;
-  }
-  .btnAdd{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 20px;
-      column-gap: 5px;
-      padding: 7px 20px;
-      border-radius: 5px;
-      background-color: #FFCC02;
-      color: #010101;
-      font-size: 16px;
-      text-decoration: none;
-      font-family: Gilroy-light;
-      border: none;
-      width: 30%;
-      cursor: pointer;
-    }
-    .btn__question:hover {
-      background-color: black;
-      color: #FFCC02;
-    }
+}
 
-  .error {
+.inputFile {
+    padding: 10px;
+}
+
+.btnAdd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    column-gap: 5px;
+    padding: 7px 20px;
+    border-radius: 5px;
+    background-color: #FFCC02;
+    color: #010101;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: Gilroy-light;
+    border: none;
+    width: 30%;
+    cursor: pointer;
+}
+
+.btn__question:hover {
+    background-color: black;
+    color: #FFCC02;
+}
+
+.error {
     color: red;
     font-size: 13px;
     letter-spacing: 0.8px;
@@ -120,23 +140,25 @@
     align-items: center;
     column-gap: 3px;
     font-family: Gilroy-bold;
-  }
-  .btnAsk{
+}
+
+.btnAsk {
     display: flex;
     justify-content: center;
-  }
-  
-  @media (max-width: 640px) {
-      .containerForum {
-          width: 90%;
-      }
-  } 
-   
-  @media(max-width:900px){
-    .containerYellow{
-      display: none;
+}
+
+@media (max-width: 640px) {
+    .containerForum {
+        width: 90%;
     }
-    .containerForum{
-      width: 100%;
+}
+
+@media(max-width:900px) {
+    .containerYellow {
+        display: none;
     }
-  }
+
+    .containerForum {
+        width: 100%;
+    }
+}

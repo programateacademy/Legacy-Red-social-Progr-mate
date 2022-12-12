@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { dispatchGetUser, dispatchLogin, fetchUser } from '../../redux/actions/authAction'
@@ -45,8 +45,8 @@ const Redirect = () => {
       <div>
         <div>
           <p>Redirigiendo..</p>
-{/*           {firstEntry ? <Navigate replace to={`/formprofile/home/:${idUser}`}/> : <Navigate replace to="/" />} */}
-          {firstEntry ? <Navigate replace to={`/formprofile/home/${idUser}`}/> : <Navigate replace to="/" />}
+          {/*           {firstEntry ? <Navigate replace to={`/formprofile/home/:${idUser}`}/> : <Navigate replace to="/" />} */}
+          {firstEntry ? <Navigate replace to={`/formprofile/home/${idUser}`} /> : <Navigate replace to="/" />}
         </div>
       </div>
 

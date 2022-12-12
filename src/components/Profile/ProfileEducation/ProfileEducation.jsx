@@ -1,28 +1,29 @@
 import React, { Fragment} from "react";
 
 import Education from "./Education";
+import styles from '../cardProfile.module.css';
 
-import style from "./ProfileEducation.module.css";
 
 const ProfileEducation = (props) => {
     const { dataUserProfile } = props;
 
     return (
         <Fragment>
-            <section className={style.container1}>
-                <div className={style.container2}>
-                    <div className={style.icon_cont}>
-                        <div className={style.title}>
+            <section className={styles.container1}>
+                <div className={styles.container2}>
+                    <div className={styles.icon_cont}>
+                        <div className={styles.title}>
                             <p>Educación</p>
                         </div>
                     </div>
+                    <div className={styles.icon_cont2}>
                     {dataUserProfile.prev_studes?.map(
                         (study, index) =>
                             study.degree && (
                                 <Education key={index} study={study} />
                             )
                     )}
-
+</div>
                     
                 </div>
             </section>

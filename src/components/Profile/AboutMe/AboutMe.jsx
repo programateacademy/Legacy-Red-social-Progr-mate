@@ -1,27 +1,21 @@
 import React from "react";
 
-import style from './AboutMe.module.css';
-
 const AboutMe = (props) => {
     const { dataUserProfile } = props;
-    
-
-
     return (
         <>
-            <section className={style.container1}>
-                <div className={style.container2}>
-                    <div className={style.icon_cont}>
-                        <div className={style.title}>
+            <section className={styles.container1}>
+                <div className={styles.container2}>
+                    <div className={styles.icon_cont}>
+                        <div className={styles.title}>
                             <p>Acerca de mi</p>
                         </div>
                     </div>
-                    <div className={style.icon_cont2}>
+                    <div className={styles.icon_cont2}>
                         
-                            <p className={style.skill}>
+                            <p className={styles.skill}>
                                 {dataUserProfile.description}
                             </p>
-                        
                     </div>
                 </div>
             </section>

@@ -6,9 +6,8 @@ import CreateCohort from '../components/CreateCohort/CreateCohort'
 function AdminCohortPage() {
     return (
         <>
-            
             <AdminNavigation />
-            <CreateCohort/>
+            <CreateCohort />
         </>
     )
 }

@@ -1,9 +1,9 @@
 import React from "react";
-import style from "./ProfileExperience.module.css";
+import styles from '../cardProfile.module.css';
 
 const Experience = ({ exper }) => {
     return (
-        <div className={style.icon_cont2}>
+        <div className={styles.icon_cont2}>
             <div>
                 <i className="fas fa-briefcase"></i>
             </div>

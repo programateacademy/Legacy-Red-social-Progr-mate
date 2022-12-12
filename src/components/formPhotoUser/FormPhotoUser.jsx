@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import style from "./formPhoto.module.css";
 import { BiTrash } from "react-icons/bi";
 import logo from "../../assets/images/logo-a-color-.jpg";
@@ -20,7 +20,7 @@ const FormPhotoUser = () => {
     const onFileChange = (e) => {
         if (e.target.files.length) {
             const file = e.target.files[0];
-// the picture must be less than 75KB
+            // the picture must be less than 75KB
             if (file.size < 75000) {
                 if (file.type.includes("image")) {
                     const reader = new FileReader();

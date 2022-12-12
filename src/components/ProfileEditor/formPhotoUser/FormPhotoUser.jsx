@@ -1,46 +1,45 @@
-import React, { useContext, useEffect, useState } from "react";
-import style from "./formPhoto.module.css";
-import { BiTrash } from "react-icons/bi";
-import logo from "../../../assets/images/logo-a-color-.jpg";
+import React, { useContext, useEffect, useState } from "react"
+import style from "./formPhoto.module.css"
+import { BiTrash } from "react-icons/bi"
 
-import { DataContext } from "../../../context/DataContext";
+import { DataContext } from "../../../context/DataContext"
 
 const FormPhotoUser = ({dataUser, setDataUser}) => {
 
-    const [pathImage, setPathImage] = useState("");
+    const [pathImage, setPathImage] = useState("")
 
     const deleteImage = () => {
         setDataUser({
             ...dataUser,
             avatar: "https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png",
-        });
-    };
+        })
+    }
 
 
     const onFileChange = (e) => {
         if (e.target.files.length) {
-            const file = e.target.files[0];
+            const file = e.target.files[0]
 // the picture must be less than 75KB
             if (file.size < 75000) {
                 if (file.type.includes("image")) {
-                    const reader = new FileReader();
-                    reader.readAsDataURL(file);
+                    const reader = new FileReader()
+                    reader.readAsDataURL(file)
                     reader.onload = function load() {
-                        setPathImage(reader.result);
+                        setPathImage(reader.result)
                         setDataUser({
                             ...dataUser,
                             avatar: reader.result,
-                        });
-                        console.log(reader.result);
-                    };
+                        })
+                        console.log(reader.result)
+                    }
                 } else {
-                    console.log("Hubo un error");
+                    console.log("Hubo un error")
                 }
             } else {
-                alert(`El tamaño máximo es 70 KB`);
+                alert(`El tamaño máximo es 70 KB`)
             }
         }
-    };
+    }
 
     return (
         <>
@@ -80,7 +79,7 @@ const FormPhotoUser = ({dataUser, setDataUser}) => {
                 </div>
             </form>
         </>
-    );
-};
+    )
+}
 
-export default FormPhotoUser;
+export default FormPhotoUser

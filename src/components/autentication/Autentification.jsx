@@ -36,9 +36,8 @@ import ProfilePage from "../../pages/ProfilePage";
 
 
 //admin
-import  AdminHomePage from "../../pages/AdminHomePage";
+import AdminHomePage from "../../pages/AdminHomePage";
 import { NewsSection } from "../NewsSection/newsSection";
-import Navbar from "../Navbar/Navbar";
 import { JobsSection } from "../JobsSection/JobsSection";
 import { EventsSection } from "../EventsSection/EventsSection";
 
@@ -144,7 +143,7 @@ function Autentification() {
                 <Route
                     exact
                     path="/formnews/:id"
-                    element={isLogged ? <FormNewsPage/> : <DontAllow />}
+                    element={isLogged ? <FormNewsPage /> : <DontAllow />}
                 />
 
                 <Route

@@ -1,12 +1,12 @@
 .home_container {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     min-height: 100vh;
     background-color: #ECEFF1;
     padding-top: 80px;
-    
+
 }
 
 .admin_navigation {
@@ -14,7 +14,7 @@
     background-color: #fff;
 }
 
-.admin_panel{
+.admin_panel {
     width: 80%;
     height: 100%;
     margin: 2%;
@@ -28,13 +28,15 @@
         flex-direction: column;
         justify-content: flex-start;
     }
-    .admin_navigation{
+
+    .admin_navigation {
         width: 100%;
-        
+
     }
-    .admin_panel{
+
+    .admin_panel {
         width: 100%;
         margin: 0;
     }
-    
+
 }

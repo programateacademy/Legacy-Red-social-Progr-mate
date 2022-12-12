@@ -1,5 +1,5 @@
-import React, { Fragment, useContext, useEffect } from "react";
-
+import React, { useContext, useEffect } from "react";
+import LazyLoad from 'react-lazy-load';
 import News from "../homePublications/News";
 import Jobs from "../homePublications/Jobs";
 import Events from "../homePublications/Events";
@@ -11,11 +11,11 @@ import SkeletonPost from "../SkeletonPost/SkeletonPost";
 import Footer from "../Footer/Footer";
 const FilterPosts = (props) => {
     const { postType } = props;
-    const { getPosts, setGetPosts, filterHome, setFilterHome, idUser } =
+    const { setGetPosts, idUser } =
         useContext(DataContext);
 
-    const [dataUsers, setDataUsers] = useState([]);
-    const [quantityPosts, setQuantityPosts] = useState(35);
+    // const [dataUsers, setDataUsers] = useState([]);
+    // const [quantityPosts, setQuantityPosts] = useState(35);
     const [getRol, setGetRol] = useState(1);
     const [data, setData] = useState([])
     const fetchDataPosts = async () => {
@@ -81,44 +81,50 @@ const FilterPosts = (props) => {
                     <>
                         {data?.map((post) =>
                             post.type === "news" ? (
-                                <News
-                                    description={post.description}
-                                    images={post.image}
-                                    technologies={post.technologies}
-                                    title={post.title}
-                                    id={post._id}
-                                    user={post.user_info ? post.user_info : ""}
-                                    rol={getRol}
-                                    key={post._id}
-                                />
+                                <LazyLoad threshold={0.95}>
+                                    <News
+                                        description={post.description}
+                                        images={post.image}
+                                        technologies={post.technologies}
+                                        title={post.title}
+                                        id={post._id}
+                                        user={post.user_info ? post.user_info : ""}
+                                        rol={getRol}
+                                        key={post._id}
+                                    />
+                                </LazyLoad>
                             ) : post.type === "jobs" ? (
-                                <Jobs
-                                    description={post.description}
-                                    technologies={post.technologies}
-                                    title={post.title}
-                                    company={post.company}
-                                    place={post.place}
-                                    modality={post.modality}
-                                    salary={post.salary}
-                                    contact={post.contact}
-                                    id={post._id}
-                                    user={post.user_info ? post.user_info : ""}
-                                    rol={getRol}
-                                    key={post._id}
-                                />
+                                <LazyLoad threshold={0.95}>
+                                    <Jobs
+                                        description={post.description}
+                                        technologies={post.technologies}
+                                        title={post.title}
+                                        company={post.company}
+                                        place={post.place}
+                                        modality={post.modality}
+                                        salary={post.salary}
+                                        contact={post.contact}
+                                        id={post._id}
+                                        user={post.user_info ? post.user_info : ""}
+                                        rol={getRol}
+                                        key={post._id}
+                                    />
+                                </LazyLoad>
                             ) : post.type === "event" ? (
-                                <Events
-                                    description={post.description}
-                                    technologies={post.technologies}
-                                    title={post.title}
-                                    place={post.place}
-                                    link={post.link}
-                                    dateEvent={post.dateEvent}
-                                    id={post._id}
-                                    user={post.user_info ? post.user_info : ""}
-                                    rol={getRol}
-                                    key={post._id}
-                                />
+                                <LazyLoad threshold={0.95}>
+                                    <Events
+                                        description={post.description}
+                                        technologies={post.technologies}
+                                        title={post.title}
+                                        place={post.place}
+                                        link={post.link}
+                                        dateEvent={post.dateEvent}
+                                        id={post._id}
+                                        user={post.user_info ? post.user_info : ""}
+                                        rol={getRol}
+                                        key={post._id}
+                                    />
+                                </LazyLoad>
                             ) : null
                         )}
                     </>
@@ -127,9 +133,9 @@ const FilterPosts = (props) => {
                         <SkeletonPost key={i} />
                     ))}
 
-               
+
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };

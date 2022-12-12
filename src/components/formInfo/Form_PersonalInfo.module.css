@@ -45,6 +45,7 @@ h3 {
     border-color: #92c149;
     background-color: #ffffff;
 }
+
 .tecnologias {
     display: flex;
     justify-content: space-around;
@@ -64,6 +65,7 @@ h3 {
         flex-direction: row;
         justify-content: space-between;
     }
+
     .forms {
         width: 47%;
     }

@@ -1,7 +1,17 @@
 .section {
-    padding: 3rem  2rem;
+    padding: 3rem 2rem;
     min-height: 100%;
     width: 100%;
+}
+
+.forms>input,
+.forms>select,
+.forms>textarea {
+    border: 2px solid #ffcc02;
+    background: #23232393;
+    border-radius: 5px;
+    color: white;
+    font-family: "Roboto", sans-serif;
 }
 
 .from_container {
@@ -12,6 +22,7 @@
     padding: 0 3rem;
     margin-top: 30px;
 }
+
 .tecnologias button {
     width: 120px;
     height: 90%;
@@ -20,7 +31,7 @@
     border-radius: 5px;
     border: 1px solid;
     border-color: #ffcc02;
-    background-color: #ffcc02 ;
+    background-color: #ffcc02;
     cursor: pointer;
 }
 
@@ -39,7 +50,8 @@
     resize: none;
 }
 
-.subtitle, .opcion {
+.subtitle,
+.opcion {
     font-family: "Roboto", sans-serif;
     margin-left: 5px;
     font-size: 16px;
@@ -56,8 +68,9 @@
     outline: none;
     border-color: #eceff1;
     background-color: #eceff1;
-    
+
 }
+
 .select {
     width: 100%;
     font-size: 16px;
@@ -102,6 +115,7 @@
 .enviar button:hover {
     background-color: black;
     color: #ffcc02;
+    cursor: pointer;
 }
 
 .enviar {
@@ -111,6 +125,7 @@
     margin-top: 30px;
     margin-bottom: 40px;
 }
+
 .headerPerfil {
     width: 90%;
     margin: auto;
@@ -138,12 +153,14 @@
     .from_container {
         width: 95%;
     }
-    .subtitle, .opcion {
-    font-family: "Roboto", sans-serif;
-    margin-left: 5px;
-    font-size: 15px;
-    width: 10px;
-}
+
+    .subtitle,
+    .opcion {
+        font-family: "Roboto", sans-serif;
+        margin-left: 5px;
+        font-size: 15px;
+        width: 10px;
+    }
 
 
 }
@@ -168,5 +185,5 @@
         margin-top: 30px;
         margin-bottom: 40px;
     }
-    
+
 }

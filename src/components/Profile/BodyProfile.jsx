@@ -8,13 +8,10 @@ import ProfileSkills from "./Profileskills/ProfileSkills";
 import ProfileEducation from "./ProfileEducation/ProfileEducation";
 import ProfileExperience from "./ProfileExperience/ProfileExperience";
 import ProfileLanguages from "./ProfileLanguages/ProfileLanguages";
-import Posts from "./Posts/Posts";
 import style from "./BodyProfile.module.css";
 import ProfileMainHome from "./ProfileMainHome/ProfileMainHome";
 import { useParams } from "react-router-dom";
-import { UserQuestions } from "../UserQuestions/UserQuestions";
 import ProfilePortfolio from "./ProfilePortfolio/ProfilePortfolio";
-import AboutMe from "./AboutMe/AboutMe";
 
 const BodyProfile = () => {
   const { dataProfile, setDataUser } =
@@ -68,32 +65,36 @@ const BodyProfile = () => {
     <>
       {!showMain ? (
         <div className={style.containBodyProfile}>
-          <ProfileMain dataProfile={dataUserProfile} />
           <div className={style.profileBodyContainer}>
             <div className={style.profileInfo1}>
-              <AboutMe dataUserProfile={dataUserProfile}/>
-              <ProfileEducation dataUserProfile={dataUserProfile} />
-              <ProfileLanguages dataUserProfile={dataUserProfile} />
-              <Technologies dataUserProfile={dataUserProfile} />
-              <div className={style.profileInfo2}>
-              <ProfileSkills dataUserProfile={dataUserProfile} />
-              <ProfileExperience dataUserProfile={dataUserProfile} />
-              <ProfilePortfolio dataUserProfile={dataUserProfile} />
+              {/* Componentes (****  Cards ****) */}
+              <div className={style.boxComponents}>
+                {/* <AboutMe dataUserProfile={dataUserProfile}/> */}
+                <ProfileMain dataProfile={dataUserProfile} />
+                <ProfileEducation dataUserProfile={dataUserProfile} />
+                <ProfileLanguages dataUserProfile={dataUserProfile} />
+                <Technologies dataUserProfile={dataUserProfile} />
+                <ProfileSkills dataUserProfile={dataUserProfile} />
+                <ProfileExperience dataUserProfile={dataUserProfile} />
+                <ProfilePortfolio dataUserProfile={dataUserProfile} />
+              </div>
+
             </div>
-              <a href={dataUserProfile.github} target="_blank">
-                <button className={style.button} type="button">
-                  Ver Github
-                </button>
-              </a>
-            </div>
-            <div className={style.profilePosts}>{!showMain && <Posts dataUserProfile={dataUserProfile} />}</div>
-            
+
+          </div>
+          {/* boton GitHub */}
+          <div className={style.btnProfile}>
+            <a href={dataUserProfile.github} target="_blank">
+              <button className={style.button} type="button">
+                Ver Github
+              </button>
+            </a>
           </div>
         </div>
       ) : (
         <div className={style.containBodyProfileHome}>
           <ProfileMainHome dataProfile={dataUserProfile} />
-          <UserQuestions />
+          {/* <UserQuestions /> */}
         </div>
       )}
 

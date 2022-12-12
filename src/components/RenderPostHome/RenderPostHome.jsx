@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./RenderPostHome.module.css";
 import { RenderPostGrid } from "./RenderPostGrid";
-
+import LazyLoad from 'react-lazy-load';
 /* This is the father component of the news */
 
 const RenderPostHome = () => {
@@ -12,25 +12,27 @@ const RenderPostHome = () => {
         const data = await resp.json();
         return data
     };
-    
+
     console.log(getTest())
 
     return (
-        <section className={style.section}>
-            <div className={style.cardContainer}>
-            {news.map((post) => (
-                <RenderPostGrid
-                    key={post.id}
-                    avatar={post.avatar}
-                    name_person={post.name_person}
-                    cohort={post.cohort}
-                    time={post.time}
-                    image={post.image}
-                    news={post.news}
-                />
-            ))}
-            </div>
-        </section>
+        <LazyLoad threshold={0.95}>
+            <section className={style.section}>
+                <div className={style.cardContainer}>
+                    {news.map((post) => (
+                        <RenderPostGrid
+                            key={post.id}
+                            avatar={post.avatar}
+                            name_person={post.name_person}
+                            cohort={post.cohort}
+                            time={post.time}
+                            image={post.image}
+                            news={post.news}
+                        />
+                    ))}
+                </div>
+            </section>
+        </LazyLoad>
     );
 };
 

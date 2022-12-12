@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import styles from "../Navbar/Navbar.module.css";
-import iconoEducamas from "../../assets/images/iconoEducamas.png";
 import { Link } from "react-router-dom";
 import DropdownLogOut from "./DropdownLogOut";
 import Icon_alarm from "../../assets/icons/Icon_alarm";
@@ -23,7 +22,7 @@ const Navbar = () => {
       const user = await getData("users", idUser)
       setAvatar(user.avatar)
     } catch (error) {
-      console.log("Error: "+ error)
+      console.log("Error: " + error)
     }
   }
 

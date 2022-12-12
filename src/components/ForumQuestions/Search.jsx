@@ -4,6 +4,7 @@ import { BiSearch } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getDataAll } from "../../helpers/fetch";
+import LazyLoad from 'react-lazy-load';
 
 export const Search = ({
     setQuestions,
@@ -18,9 +19,9 @@ export const Search = ({
 
     useEffect(() => {
         let isMounted = true;
-        const getUser =async() => {
+        const getUser = async () => {
             const data = await getDataAll("users");
-            if (isMounted) {setGetUsers(data);}
+            if (isMounted) { setGetUsers(data); }
         }
         getUser()
         return () => {
@@ -62,12 +63,14 @@ export const Search = ({
 
     useEffect(() => {
         let isMounted = true
-        const filterQuestions = async () =>{const filteredForum = questions.filter((item) =>
-            item?.tags
-                ?.map((quest) => quest.toLowerCase())
-                .includes(filterTag.toLowerCase())
-        );
-        if (isMounted) {await setQuestions(filteredForum)};}
+        const filterQuestions = async () => {
+            const filteredForum = questions.filter((item) =>
+                item?.tags
+                    ?.map((quest) => quest.toLowerCase())
+                    .includes(filterTag.toLowerCase())
+            );
+            if (isMounted) { await setQuestions(filteredForum) };
+        }
         filterQuestions()
         return () => {
             isMounted = false;
@@ -76,20 +79,22 @@ export const Search = ({
 
     return (
         <>
-        <form className={styles.searchContainer} onSubmit={handleSubmit}>
-            <div className={styles.searchBox}>
-            <input
-                type="text"
-                placeholder="Buscar pregunta"
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
-                className={styles.searchInput}
-            />
-            <button type="submit" className={styles.searchButton}>
-                <BiSearch size="20" />
-            </button>
-            </div>
-        </form>
+            <LazyLoad threshold={0.95}>
+                <form className={styles.searchContainer} onSubmit={handleSubmit}>
+                    <div className={styles.searchBox}>
+                        <input
+                            type="text"
+                            placeholder="Buscar pregunta"
+                            value={searchText}
+                            onChange={(e) => setSearchText(e.target.value)}
+                            className={styles.searchInput}
+                        />
+                        <button type="submit" className={styles.searchButton}>
+                            <BiSearch size="20" />
+                        </button>
+                    </div>
+                </form>
+            </LazyLoad>
         </>
     );
 };

@@ -1,5 +1,8 @@
 .editor_container {
+    color: #fff;
+    background-color: #282828;
     padding-top: 5em;
+    padding-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,14 +10,23 @@
 }
 
 .form_container {
+    margin: 0 8px;
+    padding: 0 8px;
     max-width: 1500px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+.card {
+    border: 0.5px solid #FFCC02;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
 .form_container input {
-    background-color: var(--input-color);   
+    background-color: #282828;
+    color: #fff;
     border: none;
     height: 3rem;
     border-bottom: 3px solid #FFCC02;
@@ -22,7 +34,10 @@
 }
 
 .form_container textarea {
-    background-color: var(--input-color);   
+    background-color: #535353;
+    box-shadow: 1px 2px 2px 1px rgba(182, 180, 180, 0.473);
+    padding: 2rem;
+    color: #fff;
     border: none;
     width: 100%;
     height: 15rem;
@@ -32,7 +47,7 @@
     background-color: #FFCC02;
     border: none;
     border-radius: 5px;
-    color: black;
+    color: rgb(255, 255, 255);
     height: 3.2rem;
     width: 200px;
     cursor: pointer;
@@ -40,6 +55,7 @@
 }
 
 .form {
+    text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -50,7 +66,8 @@
 .form select {
     padding: 0.5rem;
     font-family: inherit;
-    background-color: var(--input-color);
+    background-color: #272727;
+    color: #FFCC02;
     border: 3px solid #FFCC02;
     width: 40%;
 }
@@ -61,8 +78,9 @@
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.5rem 5px;
 }
+
 .row_inputs input {
     width: 100%;
 }
@@ -73,9 +91,27 @@
     justify-content: center;
     width: 100%;
     padding: 1rem;
+    margin-left: 5px;
 }
+
+.contentInput {
+    margin-left: 5px;
+}
+
+a {
+    color: #FFCC02;
+    font-size: 20px;
+}
+
+.tags {
+    height: 200px;
+}
+
 .tags button {
-    background-color: #ffe680;
+    border-radius: 10px;
+    background-color: #535353;
+    color: #FFCC02;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     border-color: transparent;
     margin: 1em
 }
@@ -85,8 +121,20 @@
     margin: 2em;
     max-width: 500px
 }
+
 @media (max-width: 425px) {
     .row_inputs {
         flex-direction: column;
+    }
+}
+
+@media (min-width: 700px) {
+    .form_container textarea {
+        background-color: #535353;
+        color: #fff;
+        font-size: 20px;
+    }
+    .form select {
+        font-size: 15px;
     }
 }

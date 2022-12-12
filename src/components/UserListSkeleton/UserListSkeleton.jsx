@@ -13,4 +13,4 @@ function UsersListSkeleton() {
     )
 }
 
-export default UsersListSkeleton
+export default UsersListSkeleton;

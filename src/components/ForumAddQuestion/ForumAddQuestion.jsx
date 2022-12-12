@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import styles from "./ForumAddQuestion.module.css";
-import { Formik, Form, Field, ErrorMessage, useFormikContext } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { getData, sendData, updateData } from "../../helpers/fetch";
 import { BiMessageAltX } from "react-icons/bi";
 import { BiBox } from "react-icons/bi";
@@ -8,7 +8,7 @@ import { DataContext } from "../../context/DataContext";
 import { TagsInput } from "react-tag-input-component";
 
 import "@pathofdev/react-tag-input/build/index.css"; //Review !
-import { useNavigate, useParams} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ForumAddQuestion = () => {
     let params = useParams()
@@ -16,7 +16,7 @@ const ForumAddQuestion = () => {
     const [tags, setTags] = useState([]);
     let navigate = useNavigate();
     const { idUser } = useContext(DataContext);
-    
+
     function getBase64(file) {
         let reader = new FileReader();
         reader.readAsDataURL(file);
@@ -41,14 +41,14 @@ const ForumAddQuestion = () => {
         })
     }
 
-    useEffect(async () => {  
+    useEffect(async () => {
         /* Validate if question will be updated */
         params.questionId && await getQuestion()
-     }, [])
-    
+    }, [])
 
 
-  
+
+
     return (
         <section className={styles.section}>
             <div className={styles.section__global}>
@@ -67,7 +67,7 @@ const ForumAddQuestion = () => {
                         enableReinitialize={true}
                         initialValues={
                             {
-                                title: data?.title ? data.title : "", 
+                                title: data?.title ? data.title : "",
                                 description: data?.description ? data.description : "",
                                 tags: data?.tags ? data.tags : [],
                                 images: data?.images ? data.images : [],
@@ -182,9 +182,9 @@ const ForumAddQuestion = () => {
                                     )}
                                 />
                                 <div className={styles.btnAsk}>
-                                <button className={styles.btnAdd} type="submit">
-                                    Preguntar
-                                </button>
+                                    <button className={styles.btnAdd} type="submit">
+                                        Preguntar
+                                    </button>
                                 </div>
                             </Form>
                         )}

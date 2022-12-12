@@ -7,13 +7,16 @@
     font-family: Gilroy-light;
     src: url("../../assets/fonts/Gilroy-Light.otf") format("opentype");
 }
+
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 
 .section {
     padding: 3rem 0 2rem;
     width: 100%;
     min-height: 100vh;
-    background-color: #ececec;
+    background-color: #535353;
+    color: #fff;
     font-family: Gilroy-bold;
     padding-top: 80px;
 }
@@ -38,10 +41,11 @@
         color: #ffcc02;
         width: 85%;
     }
+
     100% {
         left: 200rem;
         left: 50%;
-        color: black;
+        color: #ffcc02;
         width: 100%;
     }
 }
@@ -58,13 +62,17 @@
     padding-top: 10px;
 }
 
+
 /*=============== QUESTION COMPONENT ===============*/
+
 .section__options {
     width: 80%;
     margin: 0 auto;
 }
 
+
 /*=============== SEARCH COMPONENT ===============*/
+
 .searchContainer {
     display: flex;
     justify-content: center;
@@ -86,6 +94,7 @@
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 0 10px 10px 0;
 }
+
 .searchInput {
     font-size: 16px;
     border-radius: 10px;
@@ -94,12 +103,14 @@
     outline: none;
     width: 100%;
 }
+
 .clearFilter {
     position: absolute;
     right: 20%;
     top: 70px;
     cursor: pointer;
 }
+
 
 /* .container__search{
   display: flex;
@@ -112,6 +123,7 @@
   padding: 10px 15px;
   width: 80%;
 } */
+
 
 /*=============== SEARCH COMPONENT ===============*/
 
@@ -129,6 +141,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     background-color: #ffcc02;
+    box-shadow: 0 1px 2px 0 rgba(22, 23, 24, 0.3), 0 2px 6px 2px #dde2e654;
     color: #010101;
     font-size: 16px;
     text-decoration: none;
@@ -140,9 +153,11 @@
     background-color: black;
     color: #ffcc02;
 }
+
 .btn__container {
     position: relative;
 }
+
 .dropdown_content {
     position: absolute;
     top: 105%;
@@ -151,32 +166,38 @@
     background: #fff;
     box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
     font-weight: 500;
-    color: #333;
+    color: rgb(58, 182, 1);
     width: 170px;
     overflow: scroll;
     max-height: 300px;
 }
+
 .dropdown_content .dropdown_item {
     padding: 10px;
     cursor: pointer;
     transition: all 0.2s;
 }
+
 .dropdown_content .dropdown_item:hover {
     background: #f4f4f4;
 }
 
+
+/* Estilos de cards */
+
 .questionContainerMain {
     /*border: 2.2px solid #92c149;*/
-    border: 2.2px solid #D7D7D7 ;
+    border: 2px solid #ffcc02;
+    color: #ffcc02;
     padding: 1rem 2rem;
     border-radius: 5px;
     width: 80%;
     margin: 0 auto;
-    background-color: white;
+    background-color: #282828;
     display: flex;
     flex-direction: column;
     row-gap: 15px;
-    box-shadow: 0px 5px 5px -6px black;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
 }
 
 .question,
@@ -190,34 +211,36 @@
     display: flex;
     flex-direction: column;
 }
-.containerQuestion h5{
+
+.containerQuestion h5 {
     font-size: 2rem;
 }
 
-.containerQuestion p{
-    color: #504f4f;
+.containerQuestion p {
+    color: rgb(218, 218, 218);
     padding-top: 1rem;
     font-size: 1.5rem;
 }
 
-
-.containerProfileInfo{
+.containerProfileInfo {
     display: flex;
     flex-direction: row;
     gap: 0.8rem;
     padding: 1rem;
 }
-.containerProfileInfo img{
+
+.containerProfileInfo img {
     width: 7rem;
     height: 7rem;
-    border-radius: 2px;
+    border-radius: 50%;
+    border: 2px solid #ffcc02;
 }
 
-.containerProfileInfo p{
+.containerProfileInfo p {
     font-size: 1.3rem;
 }
 
-.dateQuestion{
+.dateQuestion {
     margin-left: auto;
     margin-right: 0;
 }
@@ -230,9 +253,9 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 15px;
-
 }
-.questionTags{
+
+.questionTags {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -241,12 +264,12 @@
 
 .tagsItems {
     padding: 1rem;
-    background-color: #d7d7d7;
+    background-color: #282828;
+    box-shadow: 0 1px 2px 0 rgba(46, 49, 51, 0.3), 0 2px 6px 2px rgba(201, 206, 211, 0.15);
     border-radius: 2px;
     font-family: Gilroy-light;
     font-size: 1.2rem;
 }
-
 
 .infoContainer {
     margin-left: auto;
@@ -256,7 +279,8 @@
 .btn__answer {
     cursor: pointer;
 }
-.questionBottom{
+
+.questionBottom {
     display: flex;
     flex-direction: row;
 }
@@ -265,12 +289,15 @@
     .questionContainerMain {
         padding: 1rem;
     }
+
     .containerQuestion {
         display: block;
     }
+
     .name {
         margin-bottom: 10px;
     }
+
     .searchQuestion {
         width: 100%;
     }
@@ -280,23 +307,29 @@
     .infoContainer {
         display: block;
     }
-    .tagsItems{
+
+    .tagsItems {
         font-size: 0.8rem;
     }
-    .containerProfileInfo p{
+
+    .containerProfileInfo p {
         font-size: 1rem;
     }
+
     .btn__question {
         padding: 10px 5px;
         font-size: 9px;
     }
-    .containerQuestion h5{
+
+    .containerQuestion h5 {
         font-size: 1.4rem;
     }
-    .containerQuestion p{
+
+    .containerQuestion p {
         font-size: 1.2rem;
     }
-    .containerProfileInfo img{
+
+    .containerProfileInfo img {
         width: 5rem;
         height: 5rem;
     }
