@@ -1,12 +1,11 @@
-import { render, screen } from '@testing-library/react'
+import { render } from 'react-three-fiber';
 import Name from '../components/ProfileEditor/formInfo/Name';
 
-describe('TextBox component', () => {
-    test('Probando test', () => {
-      render(<Name/>);
+ it('Prueba Name', () => {
+ render(<Name/>)
 
-      const inputNode = screen.getByLabelText('Username')
+   const labelName= screen.getByRole('h3',{name:/Nombre/i});
+   expect(labelName).toBeInTheDocument();
 
-    })
-    
-});
+ })
+ 
