@@ -1,0 +1,294 @@
+.container1 {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.containerFilter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.postFilters {
+
+    width: 70%;
+}
+
+.container2 {
+    border: 2px solid #ffcc02;
+    width: 90%;
+    max-width: 100%;
+    min-height: 90%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-direction: column;
+    background-color: #232323;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+}
+
+.postUser {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
+.icon_cont1 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.icon_cont2 {
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    align-items: center;
+    width: 95%;
+    margin: 20px 5px 0px 20px;
+    gap: 10px;
+}
+
+.iconsModify {
+    display: flex;
+    margin-top: 0;
+}
+
+.iconsModify i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.iconsModify span {
+    margin-top: 0;
+    background: red;
+    border-radius: 1px;
+}
+
+.icon {
+    font-size: 50px;
+}
+
+.comment textarea {
+    resize: none;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+}
+
+.comment {
+    padding-left: 25px;
+}
+
+.comment p {
+    color: white;
+    font-size: 15px;
+}
+
+.comment button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95px;
+    height: 40px;
+    background-color: #ffcc02;
+    border-radius: 0px 5px 5px 0px;
+    color: #010101;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.comment button:hover {
+    background-color: black;
+    color: #ffcc02;
+}
+
+.icon img {
+    font-size: 14px;
+    width: 50px;
+    margin-left: 5px;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    margin-left: 10px;
+    margin-top: 10px;
+    object-fit: cover;
+    border: 2px solid #ffcc02;
+}
+
+.icon i {
+    width: 250px;
+}
+
+.techContains {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.llavePost {
+    font-weight: bolder;
+}
+
+.arrtech {
+    border: 2px solid #ffcc02;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+    color: #ffcc02;
+    text-align: center;
+}
+
+.news {
+    margin-bottom: 1px;
+    margin-left: 0;
+    font-size: 15px;
+    color: white;
+}
+
+.news h3 {
+    margin-left: 15px;
+}
+
+.news p {
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.news img {
+    width: 100%;
+    margin: auto;
+}
+
+.news p>a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.containerDesc {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.tech {
+    display: inline-block;
+    border: 2px solid #ffcc02;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+    color: #ffcc02;
+    text-align: center;
+}
+
+.like {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.like i {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.editButtons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: inherit;
+    color: white;
+}
+
+.editButtons i {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.addPosts {
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: #000;
+    float: right;
+    font-size: 18px;
+}
+
+@media (max-width: 565px) {
+    .comment textarea {
+        resize: none;
+        width: 75%;
+        height: 32px;
+    }
+
+    .comment button {
+        height: 32px;
+        width: 80px;
+    }
+
+    .icon_cont2 {
+        margin: 20px 5px 0px 10px;
+    }
+
+    .container2 {
+        width: 100%;
+    }
+
+    .news p {
+        margin-right: 15px;
+    }
+
+    .news h3 {
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 410px) {
+    .comment textarea {
+        resize: none;
+        width: 65%;
+        height: 28px;
+    }
+
+    .comment button {
+        height: 28px;
+        width: 70px;
+    }
+
+    .postFilters {
+        width: 95%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container2 {
+        min-width: 47%;
+        /* max-width: 540px; */
+    }
+}

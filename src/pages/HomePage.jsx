@@ -4,6 +4,7 @@ import Posts from "../components/homePublications/Posts";
 import style from "../components/filterHome/filterHome.module.css";
 import Modals from "../components/modals/Modals";
 import Navbar from "../components/Navbar/Navbar";
+import Isla from "../components/islaAccesibilidad/islaFlotante";
 import LazyLoad from 'react-lazy-load';
 
 const HomePage = () => {
@@ -22,6 +23,7 @@ const HomePage = () => {
           </div>
         </div>
       </LazyLoad>
+      <Isla />
       <Footer />
     </div>
   );
