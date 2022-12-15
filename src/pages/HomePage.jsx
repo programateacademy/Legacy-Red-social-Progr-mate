@@ -9,7 +9,7 @@ import LazyLoad from 'react-lazy-load';
 
 const HomePage = () => {
   return (
-    <div className={style.homePage}>
+    <div className={style.homePage} id="divGeneral">
       <Navbar />
       <LazyLoad threshold={0.95}>
         <div className={style.containBody}>

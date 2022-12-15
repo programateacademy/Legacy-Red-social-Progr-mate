@@ -1,7 +1,13 @@
-.homePage {
+.homePageL {
     scrollbar-width: none;
     padding-top: 80px;
     background-color: var(--backgroundL);
+}
+
+.homePage {
+    scrollbar-width: none;
+    padding-top: 80px;
+    background-color: var(--background);
 }
 
 .containBody {
