@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../Navbar/Navbar.module.css";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlinePoweroff } from "react-icons/ai";
 import { BiUser } from "react-icons/bi";
 import axios from "axios";
 import { baseUrl } from "../../../config";
@@ -47,7 +47,7 @@ function DropdownLogOut() {
 
                     <Link to="/" onClick={handleLogout}>
                         <div className={styles.dropdownOptions}>
-                            <AiOutlineCloseCircle size="24" /> Cerrar Sesión
+                            <AiOutlinePoweroff size="24" /> Cerrar Sesión
                         </div>
                     </Link>
                 </div>
