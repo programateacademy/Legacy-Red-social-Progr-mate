@@ -1,5 +1,4 @@
 import React from 'react'
-import style from '../ProfileEditor.module.css'
 const Name = ({nameField, onChange , field, children, value}) => {
         return (
             

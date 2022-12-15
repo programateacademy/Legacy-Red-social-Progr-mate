@@ -50,7 +50,7 @@ const DontAllow = () => {
     <section className={styles.access_container}>
 
       <div className={styles.notallowed_container}>
-        <h1 className={styles.title_container}>405 Not Allowed</h1>
+        <h1 className={styles.title_container}>Cargando ... </h1>
       </div>
 
       {/* <picture className={styles.card_img}>

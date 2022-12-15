@@ -14,6 +14,22 @@
   padding-right: 2%;
 }
 
+.navBarL {
+  margin: 0 auto;
+  background-color: #7c7c7c;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  margin-bottom: 50px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
 .navTop {
   display: flex;
   align-items: center;
@@ -105,14 +121,10 @@
 /*========RESPONSIVE========*/
 /* DESKTOP MEDIUM*/
 @media (max-width: 768px) {
-  .navBar {
-    background-color: #282828;
-  }
+
 }
 
 /* DESKTOP BIG*/
 @media (max-width: 1800px) {
-  .navBar {
-    background-color: #282828;
-  }
+
 }

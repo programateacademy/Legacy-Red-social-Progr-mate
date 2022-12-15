@@ -1,14 +1,19 @@
-.homePage {
-    background-color: #535353;
+.homePageL {
     scrollbar-width: none;
     padding-top: 80px;
+    background-color: var(--backgroundL);
+}
+
+.homePage {
+    scrollbar-width: none;
+    padding-top: 80px;
+    background-color: var(--background);
 }
 
 .containBody {
     display: flex;
     width: 100%;
     max-width: 1240px;
-    background-color: #535353;
     padding: 5px;
     gap: 15px;
     justify-content: center;
