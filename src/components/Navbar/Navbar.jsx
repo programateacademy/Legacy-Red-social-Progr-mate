@@ -41,7 +41,7 @@ const Navbar = () => {
   }
   return (
     <header>
-      <nav className={styles.navBar}>
+      <nav className={styles.navBar} id="navbarContent">
         <div className={styles.navTop}>
           <div className={styles.navLeft}>
             <Link to="/home">

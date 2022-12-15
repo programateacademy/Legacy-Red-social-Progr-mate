@@ -1,6 +1,5 @@
 .menu {
   position: fixed;
-  background: #282828;
   height: calc(100vh - 80px);
   width: 100%;
   transition: all ease 0.7s;
