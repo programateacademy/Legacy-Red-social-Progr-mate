@@ -261,6 +261,10 @@
     .news h3 {
         margin-right: 15px;
     }
+    .postFilters {
+        width: 100%;
+    }
+    
 }
 
 @media (max-width: 410px) {
