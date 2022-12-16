@@ -39,7 +39,6 @@
     overflow: hidden;
 }
 
-
 .containFilter {
     /* width: 47%; */
     max-width: 750px;
@@ -92,18 +91,20 @@
 }
 
 @media (min-width: 768px) {
+    .contenZoom {
+        position: fixed;
+        display: flex;
+        margin-left: 5em;
+    }
     .mainContent {
         width: 85%;
         max-width: 85%;
         margin: auto;
-
     }
-
     .containFilter {
         width: 100%;
         max-width: 100%;
     }
-
     .filter {
         width: 95%;
         margin: 0px auto 15px;
@@ -115,16 +116,13 @@
         width: 100%;
         max-width: 540px;
     }
-
     .filter {
         width: 95%;
         margin: 10px auto;
     }
-
     .mainContent {
         /* width: 47%; */
         max-width: 750px;
         margin: 0;
-
     }
 }

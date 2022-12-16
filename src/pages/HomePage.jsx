@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar/Navbar";
 import LazyLoad from 'react-lazy-load';
 
 const HomePage = () => {
+
   return (
     <div className={style.homePage}>
       <Navbar />

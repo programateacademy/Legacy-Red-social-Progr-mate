@@ -8,6 +8,9 @@ import Technologies from "./Technologies";
 import "./style_icon.css";
 import Icon_news from "../../assets/icons/Icon_new";
 import LazyLoad from 'react-lazy-load';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
+
 
 const News = ({ description, images, technologies, title, id, user, rol }) => {
   const { setGetPosts, idUser, allCohorts, setCohorts } = useContext(DataContext);
@@ -21,6 +24,8 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
   const [like, setLike] = useState(true);
   const [likes, setLikes] = useState([]);
   const [userPost, setUserPost] = useState();
+
+  
 
   let navigate = useNavigate();
 
@@ -158,6 +163,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
       <div key={index} className={styles.comments}>
         <div className={styles.comment_div}>
           <div className={styles.header}>
+
             <img
               className={styles.img}
               src={onImage(comment.user_id)}
@@ -185,6 +191,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
   return (
     <LazyLoad threshold={0.95}>
       <section className={style.container1}>
+     
         <div className={style.container2}>
           <div className={style.icon_cont1}>
             <div className={style.postUser}>
@@ -231,8 +238,13 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
                   />
                 ))}
             </div>
+            <TransformWrapper>
+        <TransformComponent>
             <img src={images} alt="Foto" />
+            </TransformComponent>
+      </TransformWrapper>
           </div>
+
           <div className={style.icon_cont2}>
             <div className={style.like}>
               <i

@@ -7,6 +7,9 @@ import { baseUrl } from "../../../../config";
 import styles from "./Login.module.css";
 import Icon_home from '../../../assets/icons/Icon_home'
 import logo from "../../../assets/images/programate-academy-blancos.png";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
+
 
 const initialState = {
   email: "",
@@ -52,7 +55,11 @@ function Login() {
   return (
     <div className={styles.container}>
       <div className={styles.containerLeft}>
+      <TransformWrapper>
+        <TransformComponent>
         <img src={logo} alt="Logo de programate" />
+        </TransformComponent>
+      </TransformWrapper>
       </div>
       <div className={styles.containerRight}>
         <div className={styles.containerRightHeader}>

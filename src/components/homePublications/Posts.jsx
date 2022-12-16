@@ -8,6 +8,7 @@ import { useState } from "react";
 import SkeletonPost from "../SkeletonPost/SkeletonPost";
 import LazyLoad from 'react-lazy-load';
 
+
 const Posts = () => {
     const { getPosts, setGetPosts, filterHome, idUser } =
         useContext(DataContext);
@@ -76,7 +77,7 @@ const Posts = () => {
         }
     };
 
-
+ 
 
     useEffect(async () => {
         let isMounted = true
