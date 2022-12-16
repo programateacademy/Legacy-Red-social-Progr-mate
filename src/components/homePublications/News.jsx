@@ -7,10 +7,12 @@ import styles from "./Comment_likes.module.css";
 import Technologies from "./Technologies";
 import "./style_icon.css";
 import Icon_news from "../../assets/icons/Icon_new";
-import LazyLoad from 'react-lazy-load';
+import LazyLoad from "react-lazy-load";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 const News = ({ description, images, technologies, title, id, user, rol }) => {
-  const { setGetPosts, idUser, allCohorts, setCohorts } = useContext(DataContext);
+  const { setGetPosts, idUser, allCohorts, setCohorts } =
+    useContext(DataContext);
   const [showComments, setShowComments] = useState(false);
   const [moreComments, setMoreComments] = useState(false);
   const [inputComment, setInputComment] = useState("");
@@ -37,18 +39,17 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
     try {
       const data = await getData("users", user);
       setUserPost(data);
-
     } catch (error) {
       console.log(error);
     }
   };
   const cohort = async () => {
     const dataCohort = await getDataAll("cohorte");
-    setCohorts(dataCohort)
-  }
+    setCohorts(dataCohort);
+  };
 
   useEffect(() => {
-    let isMounted = true
+    let isMounted = true;
     const getInfo = async () => {
       if (isMounted) {
         getUser();
@@ -60,19 +61,19 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
     getInfo();
     return () => {
       isMounted = false;
-    }
+    };
   }, []);
   useEffect(() => {
-    let isMounted = true
+    let isMounted = true;
     const commentAsync = async () => {
       if (isMounted) {
         commentInfo();
       }
-    }
+    };
     commentAsync();
     return () => {
       isMounted = false;
-    }
+    };
   }, [refresh, setRefresh]);
 
   const deletePost = async () => {
@@ -86,7 +87,6 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
   };
 
   const toggle = () => {
-
     setShowComments(!showComments);
   };
   const submitData = async (e) => {
@@ -146,7 +146,6 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
 
     likes.map((like) => {
       if (like.user_id === idUser) {
-
         deleteData("likes", like._id);
         setRefresh(!refresh);
       }
@@ -163,9 +162,7 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
               src={onImage(comment.user_id)}
               alt={comment.user_id}
             />
-            <span className={styles.name}>
-              {onName(comment.user_id)}
-            </span>
+            <span className={styles.name}>{onName(comment.user_id)}</span>
           </div>
 
           <span>{comment.comment}</span>
@@ -231,16 +228,22 @@ const News = ({ description, images, technologies, title, id, user, rol }) => {
                   />
                 ))}
             </div>
-            <img src={images} alt="Foto" />
+            <TransformWrapper>
+              <TransformComponent>
+                <img src={images} alt="Foto" />
+              </TransformComponent>
+            </TransformWrapper>
           </div>
+
           <div className={style.icon_cont2}>
             <div className={style.like}>
               <i
                 onClick={like ? submitLike : onDeleteLike}
-                className={like ? "fa-regular fa-heart" : "fa-solid fa-heart red "}
+                className={
+                  like ? "fa-regular fa-heart" : "fa-solid fa-heart red "
+                }
               ></i>
               <span>{likes.length}</span>
-
             </div>
             <div className={style.like}>
               <i onClick={toggle} className="far fa-comment-dots"></i>

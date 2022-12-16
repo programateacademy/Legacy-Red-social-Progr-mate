@@ -60,6 +60,7 @@
 
 .show {
   top: 80px;
+  background: #535353;
 }
 
 @media (min-width: 900px) {
