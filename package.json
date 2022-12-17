@@ -6,6 +6,7 @@
         "@fortawesome/react-fontawesome": "^0.1.16",
         "@pathofdev/react-tag-input": "^1.0.7",
         "@react-icons/all-files": "^4.1.0",
+        "accessibility": "^4.5.5",
         "axios": "^0.24.0",
         "babel-jest": "^29.3.1",
         "boxicons": "^2.0.9",
