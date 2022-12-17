@@ -33,14 +33,12 @@ const HomePage = () => {
       var options = {
         labels: labels,
         icon: {
-          circular: [true],
-          img: ['accessibility'],
-          useEmojis: [true],
           position: {
             bottom: { size: 50, units: 'px' },
             right: { size: 30, units: 'px' },
             type: 'fixed'
           },
+          circular: [true],
         }
 
       }
