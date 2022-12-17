@@ -40,7 +40,7 @@ _2. To see how the project works, you must go to the browser and write: http://l
 * React-media
 * React-router-dom
  
-## Team 💪
+## Team Cohorte 💪
 * **Technical leader:** [Cristian Montoya](https://github.com/CristianMontoya98)
 * **Scrum master:**  [Juan Casas](https://github.com/ourainbows)
 ### Front-end team
@@ -52,3 +52,7 @@ _2. To see how the project works, you must go to the browser and write: http://l
 * **Back-end dev:** [Andrés Chacón](https://github.com/andreschaconr)
 * **Back-end dev:** [Hernando Silva](https://github.com/HernandoSilvaLeal)
 
+## Team Cohorte V DragonCoders 💪
+### Front-end team
+* **Front-end Dev:** [Cristian Garcia](https://github.com/camilo7896)
+* **Front-end Dev:** [Jefferson Pulido](https://github.com/JeffersonPulido)

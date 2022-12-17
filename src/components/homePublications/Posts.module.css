@@ -12,7 +12,6 @@
 }
 
 .postFilters {
-
     width: 70%;
 }
 
@@ -246,27 +245,26 @@
         width: 75%;
         height: 32px;
     }
-
     .comment button {
         height: 32px;
         width: 80px;
     }
-
     .icon_cont2 {
         margin: 20px 5px 0px 10px;
     }
-
     .container2 {
         width: 100%;
     }
-
     .news p {
         margin-right: 15px;
     }
-
     .news h3 {
         margin-right: 15px;
     }
+    .postFilters {
+        width: 100%;
+    }
+    
 }
 
 @media (max-width: 410px) {
@@ -275,12 +273,10 @@
         width: 65%;
         height: 28px;
     }
-
     .comment button {
         height: 28px;
         width: 70px;
     }
-
     .postFilters {
         width: 95%;
     }
