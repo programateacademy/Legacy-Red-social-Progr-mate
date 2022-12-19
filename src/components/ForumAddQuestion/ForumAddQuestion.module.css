@@ -14,7 +14,7 @@
 .section {
     /* padding: 3rem 0 2rem; */
     width: 100%;
-    background-color: #ececec;
+    background-color: #535353;
     font-family: Gilroy-bold;
 }
 
@@ -50,7 +50,6 @@
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
