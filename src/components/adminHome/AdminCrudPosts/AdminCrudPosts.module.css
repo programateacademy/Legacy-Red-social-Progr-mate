@@ -35,8 +35,13 @@
     height: 5.5rem;
 }
 
-.deleteBtn,
+.deleteBtn {
+    background-color: #ffcc02;
+}
+
 .editBtn {
+    cursor: pointer;
+    color: #ffcc02;
     background: none;
     border: none;
     cursor: pointer;

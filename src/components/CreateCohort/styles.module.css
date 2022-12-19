@@ -100,6 +100,22 @@
     height: 5.5rem;
 }
 
+.tdDelete {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.btnDelete {
+    background-color: #FFCC02;
+    border: 1px solid black;
+    width: 40px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media(max-width:400px) {
     .table th {
         padding: 0;
