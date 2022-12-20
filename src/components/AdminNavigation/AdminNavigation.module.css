@@ -1,6 +1,5 @@
 .list {
     padding: 0;
-
 }
 
 .list button {
@@ -20,6 +19,7 @@
 }
 
 .menu button {
+    color: #FFCC02;
     border-style: none;
     background-color: transparent;
     cursor: pointer;
@@ -29,18 +29,16 @@
 
 .active {
     border-left: 4px solid #FFCC02;
-    background-color: rgba(255, 204, 2, 0.38)
+    background-color: rgba(255, 204, 2, 0.171)
 }
 
 @media (max-width: 750px) {
     .list {
         display: flex;
     }
-
     .list button {
         font-size: 1.5rem;
     }
-
 }
 
 @media (max-width: 420px) {
