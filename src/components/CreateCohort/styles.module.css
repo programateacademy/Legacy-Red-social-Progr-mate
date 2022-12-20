@@ -107,8 +107,6 @@
 }
 
 .btnDelete {
-    background-color: #FFCC02;
-    border: 1px solid black;
     width: 40px;
     height: auto;
     display: flex;

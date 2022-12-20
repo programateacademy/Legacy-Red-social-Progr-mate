@@ -36,7 +36,9 @@
 }
 
 .deleteBtn {
-    background-color: #ffcc02;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .editBtn {
