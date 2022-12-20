@@ -107,14 +107,13 @@ function CreateCohort() {
             <tr key={index}>
               <td>{item.cohorte}</td>
               <td>{item.cohorte_name}</td>
-              <td className={styles.tdDelete}>
-                <div className={styles.btnDelete}>
-                  <DeleteButton
-                    endpoint="cohorte"
-                    id={item._id}
-                    onClick={updateCohorts}
-                  />
-                </div>
+              <td>
+                <DeleteButton
+                  endpoint="cohorte"
+                  id={item._id}
+                  onClick={updateCohorts}
+                />
+
               </td>
             </tr>
           ))}
