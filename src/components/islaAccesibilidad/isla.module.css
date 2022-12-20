@@ -1,13 +1,13 @@
 /* The switch - the box around the slider */
 .switch {
-  --width-of-switch: 3.5em;
-  --height-of-switch: 2em;
-  --size-of-icon: 1.4em;
+  --width-of-switch: 4em;
+  --height-of-switch: 3em;
+  --size-of-icon: 2em;
   --slider-offset: 0.3em;
   position: fixed;
   width: var(--width-of-switch);
   height: var(--height-of-switch);
-  left: 3em;
+  right: 2em;
   top: 10em;
 }
 
